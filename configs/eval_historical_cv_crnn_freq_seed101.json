@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "model": "crnn_freq",
+  "seed": 101,
+  "metadata_sha256": "ca660da60191a97de289983a05821c9382d852a38a2ba8428980816b68cf6246",
+  "dataset_identity": "ESC-50 source metadata shipped in project package",
+  "selection_disclosure": "Retrospective historical five-fold characterization; folds were accessed during earlier development, not an independent confirmation",
+  "folds": [
+    {
+      "test_fold": 1,
+      "val_fold": 5,
+      "train_folds": [
+        2,
+        3,
+        4
+      ],
+      "source_policy": "source-strict",
+      "predictions": "results/historical/final_study/results/holdout/crnn_freq_fold1_seed101_60ep/test_predictions.csv",
+      "metrics": "results/historical/final_study/results/holdout/crnn_freq_fold1_seed101_60ep/test.json",
+      "run_dir": "results/historical/final_study/runs/crnn_freq_fold1_seed101_60ep",
+      "checkpoint": "results/historical/final_study/models/crnn_freq_fold1_seed101_60ep.pt"
+    },
+    {
+      "test_fold": 2,
+      "val_fold": 1,
+      "train_folds": [
+        3,
+        4,
+        5
+      ],
+      "source_policy": "source-strict",
+      "predictions": "results/historical/final_study/results/holdout/crnn_freq_fold2_seed101_60ep/test_predictions.csv",
+      "metrics": "results/historical/final_study/results/holdout/crnn_freq_fold2_seed101_60ep/test.json",
+      "run_dir": "results/historical/final_study/runs/crnn_freq_fold2_seed101_60ep",
+      "checkpoint": "results/historical/final_study/models/crnn_freq_fold2_seed101_60ep.pt"
+    },
+    {
+      "test_fold": 3,
+      "val_fold": 2,
+      "train_folds": [
+        1,
+        4,
+        5
+      ],
+      "source_policy": "source-strict",
+      "predictions": "results/historical/final_study/results/holdout/crnn_freq_fold3_seed101_60ep/test_predictions.csv",
+      "metrics": "results/historical/final_study/results/holdout/crnn_freq_fold3_seed101_60ep/test.json",
+      "run_dir": "results/historical/final_study/runs/crnn_freq_fold3_seed101_60ep",
+      "checkpoint": "results/historical/final_study/models/crnn_freq_fold3_seed101_60ep.pt"
+    },
+    {
+      "test_fold": 4,
+      "val_fold": 3,
+      "train_folds": [
+        1,
+        2,
+        5
+      ],
+      "source_policy": "source-strict",
+      "predictions": "results/historical/final_study/results/holdout/crnn_freq_fold4_seed101_60ep/test_predictions.csv",
+      "metrics": "results/historical/final_study/results/holdout/crnn_freq_fold4_seed101_60ep/test.json",
+      "run_dir": "results/historical/final_study/runs/crnn_freq_fold4_seed101_60ep",
+      "checkpoint": "results/historical/final_study/models/crnn_freq_fold4_seed101_60ep.pt"
+    },
+    {
+      "test_fold": 5,
+      "val_fold": 4,
+      "train_folds": [
+        1,
+        2,
+        3
+      ],
+      "source_policy": "source-strict",
+      "predictions": "results/historical/final_study/results/holdout/crnn_freq_seed101_60ep/test_predictions.csv",
+      "metrics": "results/historical/final_study/results/holdout/crnn_freq_seed101_60ep/test.json",
+      "run_dir": "results/historical/final_study/runs/crnn_freq_seed101_60ep",
+      "checkpoint": "results/historical/final_study/models/crnn_freq_seed101_60ep.pt"
+    }
+  ]
+}

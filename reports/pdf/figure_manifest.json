@@ -1,0 +1,138 @@
+[
+  {
+    "filename": "ESC50_Complete_Study_Report_EN.pdf",
+    "source": "docs/bilingual_20261028/report_en.md",
+    "figures": [
+      {
+        "number": 1,
+        "title": "Three-seed development validation; SD is not a confidence interval.",
+        "path": "results/colab_matrix_20261028/figures/architecture.png",
+        "sha256": "f91b98c8c1f735ae97191b4cfbaca4b4df5e7e889807c44a78ea865322646cc1",
+        "note": "Three-seed development validation; SD is not a confidence interval.",
+        "pdf_page": 12
+      },
+      {
+        "number": 2,
+        "title": "Augmentation affects training only; validation recordings stay clean.",
+        "path": "results/colab_matrix_20261028/figures/augmentation.png",
+        "sha256": "a41d7493232a822fb9c33e255076945311e143ab070c6f888442efae445ba473",
+        "note": "Augmentation affects training only; validation recordings stay clean.",
+        "pdf_page": 13
+      },
+      {
+        "number": 3,
+        "title": "Within-seed deltas; these are not significance tests.",
+        "path": "results/colab_matrix_20261028/figures/paired_effects.png",
+        "sha256": "7092d14388d547e278140129263ff953a67b9ea585c292c3fb1857a918762efa",
+        "note": "Within-seed deltas; these are not significance tests.",
+        "pdf_page": 14
+      },
+      {
+        "number": 4,
+        "title": "Track D uses the 26,658-parameter pooled CNN; interpret separately from the main architecture track.",
+        "path": "results/colab_matrix_20261028/figures/feature_sampling.png",
+        "sha256": "0ff9071537914de9d22262c4c79da0c58c8619623c83129b032dbab0feee07af",
+        "note": "Track D uses the 26,658-parameter pooled CNN; interpret separately from the main architecture track.",
+        "pdf_page": 15
+      },
+      {
+        "number": 5,
+        "title": "398 clips per cell; one selected seed101 checkpoint per model.",
+        "path": "results/colab_matrix_20261028/figures/robustness.png",
+        "sha256": "8e3cdbd1c53e22b9370d1fa7f871baa5a01daf2799afa22e39179ed3af04d967",
+        "note": "398 clips per cell; one selected seed101 checkpoint per model.",
+        "pdf_page": 16
+      },
+      {
+        "number": 6,
+        "title": "Fixed-seed101 validation curves; checkpoints use minimum cross-entropy.",
+        "path": "results/colab_matrix_20261028/figures/learning_curves.png",
+        "sha256": "bb55f86202b7cec66e0032dc922715a9f0b130068a713a8525144e6aedcd3e2f",
+        "note": "Fixed-seed101 validation curves; checkpoints use minimum cross-entropy.",
+        "pdf_page": 17
+      },
+      {
+        "number": 7,
+        "title": "A real validation waveform and Log-Mel representation",
+        "path": "results/colab_matrix_20261028/runtime_verification/frontend_example.png",
+        "sha256": "37fd4bbe1f292eb1852d09af6af13107b2208a9f12f2dd9aa1b7064f5213b801",
+        "note": "Five-second hand-saw validation example; visualization only, not an extra training or test result.",
+        "pdf_page": 18
+      }
+    ],
+    "tables": 12,
+    "headings": 15
+  },
+  {
+    "filename": "ESC50_CNN_CRNN_Baseline_Report_EN.pdf",
+    "source": "docs/research.md",
+    "figures": [
+      {
+        "number": 1,
+        "title": "Model comparison",
+        "path": "results/figures/model_comparison.png",
+        "sha256": "d2942ec9233016cd25782732513e2a609bac8874d03783f01ca8dc48ed3fe9dd",
+        "note": "Model comparison",
+        "pdf_page": 11
+      },
+      {
+        "number": 2,
+        "title": "Learning curves",
+        "path": "results/figures/learning_curves.png",
+        "sha256": "fdfac41a73cb96481ac31ed254b6120170c0a62c1a83b7bb465b27bbbfc60e17",
+        "note": "Learning curves",
+        "pdf_page": 12
+      },
+      {
+        "number": 3,
+        "title": "Named confusions",
+        "path": "results/figures/top_confusions.png",
+        "sha256": "79827bc0e431693a389c05516e7990879ede1be7ce8b441b706503f64e102193",
+        "note": "Named confusions",
+        "pdf_page": 13
+      },
+      {
+        "number": 4,
+        "title": "Order probe",
+        "path": "results/figures/order_probe.png",
+        "sha256": "2554075bc764b21ba9c2f93bcb34cded74e7545b72a76e0f40f62a869f477ae1",
+        "note": "Order probe",
+        "pdf_page": 14
+      },
+      {
+        "number": 5,
+        "title": "Synthetic stress",
+        "path": "results/figures/synthetic_stress.png",
+        "sha256": "034da662937b3069d54ee94182ddd138e1efe6f4a579f7631f4b3685eb4ec3b5",
+        "note": "Synthetic stress",
+        "pdf_page": 15
+      },
+      {
+        "number": 6,
+        "title": "Five-fold characterization",
+        "path": "results/figures/cross_validation.png",
+        "sha256": "4729604f951573720c2742e116cc56698d63ad58d3917e8015d57b34dd207679",
+        "note": "Five-fold characterization",
+        "pdf_page": 16
+      },
+      {
+        "number": 7,
+        "title": "CNN primary fold-5 confusion matrix",
+        "path": "results/holdout_primary_comparison/right_confusion.png",
+        "sha256": "6b55d3aa08b45ef78d39fab99c51eae624df608f4d1c6f0c04e79c16985a465f",
+        "note": "Historical primary seed101 checkpoint; 400 clips, eight per class. In the original comparison files, left is CRNN and right is CNN. The plotted class IDs follow the official metadata.",
+        "pdf_page": 17
+      },
+      {
+        "number": 8,
+        "title": "CRNN (CNN + BiGRU) primary fold-5 confusion matrix",
+        "path": "results/holdout_primary_comparison/left_confusion.png",
+        "sha256": "564dd7a08cada64caad02a0bd8f5c041c2a49b650f4516e7740c9af4c591b92e",
+        "note": "Historical primary seed101 checkpoint; 400 clips, eight per class. In the original comparison files, left is CRNN and right is CNN. The plotted class IDs follow the official metadata.",
+        "pdf_page": 18
+      }
+    ],
+    "tables": 7,
+    "headings": 16
+  }
+]

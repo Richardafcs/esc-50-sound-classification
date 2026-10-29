@@ -1,0 +1,26 @@
+{
+  "base": "ESC50_Phase1_Attention_Updated.zip",
+  "modified_or_new": [
+    ".github/workflows/ci.yml",
+    ".gitignore",
+    "README.md",
+    "docs/infra_architecture_v1.md",
+    "docs/infra_audit_2026-10-28.md",
+    "results/infra_v1/archive_index.csv",
+    "results/infra_v1/archive_index.json",
+    "results/infra_v1/comparison_example.json",
+    "results/infra_v1/final_study_index.csv",
+    "results/infra_v1/final_study_index.json",
+    "results/infra_v1/interrupted_full_suite_stdout.txt",
+    "results/infra_v1/preflight.json",
+    "results/infra_v1/synthetic_smoke.json",
+    "results/infra_v1/targeted_tests.txt",
+    "results/infra_v1/validation_summary.json",
+    "src/esc50_sound/cli.py",
+    "src/esc50_sound/infra.py",
+    "src/esc50_sound/records.py",
+    "tests/test_infra.py",
+    "tests/test_runner.py"
+  ],
+  "note": "Historical runs, model weights and test results preserved. Phase 0 infra only; future phases in design document."
+}

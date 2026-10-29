@@ -1,0 +1,8 @@
+{
+  "epochs": 2,
+  "paused_after": 1,
+  "final_status": "completed",
+  "weights_bitwise_equal_to_uninterrupted_pilot": true,
+  "validation_predictions_identical": true,
+  "scope": "same-runtime exact epoch-boundary replay; not cross-device or cross-version resume"
+}

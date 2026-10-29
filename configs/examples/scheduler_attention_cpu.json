@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "max_cpu_threads": 3,
+  "jobs": [
+    {"id": "cnn_seed101", "kind": "esc50_train", "cpu_threads": 3, "device": "cpu", "timeout_seconds": 3600,
+     "train_args": ["--cache", "data/esc50_features.npz", "--model", "crnn_freq", "--epochs", "60", "--seed", "101", "--batch-size", "32", "--scheduler", "cosine"]},
+    {"id": "attention_ta_seed101", "kind": "esc50_train", "cpu_threads": 3, "device": "cpu", "timeout_seconds": 3600,
+     "train_args": ["--cache", "data/esc50_features.npz", "--model", "crnn_freq_ta", "--epochs", "60", "--seed", "101", "--batch-size", "32", "--scheduler", "cosine"]}
+  ]
+}

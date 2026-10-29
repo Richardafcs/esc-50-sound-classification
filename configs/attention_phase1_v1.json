@@ -1,0 +1,32 @@
+{
+  "study": "Attention-CRNN prospective development study Phase 1",
+  "status": "architecture implemented and locally tested; ESC-50 training not executed",
+  "prior_history": "The source-strict 3+1+1 ESC-50 protocol and all five outer folds were previously inspected. This is a development comparison, NOT a fresh blinded holdout or a standard official four-fold-training benchmark.",
+  "models": ["crnn_freq", "crnn_freq_ta", "crnn_freq_ca", "crnn_freq_tca"],
+  "seeds": [101, 202, 303],
+  "frontend": "original 16 kHz/512 fft/256 hop/64 mel cache; do not change",
+  "train_folds": [1, 2, 3],
+  "validation_fold": 4,
+  "sealed_test_fold": 5,
+  "source_policy": "strict: exclude cross-role original source overlaps; retain previous policy",
+  "training": {
+    "epochs": 60,
+    "batch_size": 32,
+    "optimizer": "AdamW",
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "scheduler": "cosine",
+    "specaugment": false,
+    "selection": "minimum validation cross entropy; earliest tie"
+  },
+  "experimental_contrasts": {
+    "temporal": "accuracy(crnn_freq_ta) - accuracy(crnn_freq)",
+    "channel": "accuracy(crnn_freq_ca) - accuracy(crnn_freq)",
+    "combined": "accuracy(crnn_freq_tca) - accuracy(crnn_freq)",
+    "interaction": "accuracy(tca) - accuracy(ta) - accuracy(ca) + accuracy(base)"
+  },
+  "primary_dev_metrics": ["validation_accuracy", "validation_macro_f1", "validation_cross_entropy"],
+  "required_secondary_metrics": ["number_of_parameters", "inference_latency", "per_class_errors"],
+  "interpretation": "No single seed or previously seen test fold may be used as unbiased confirmatory evidence. Do not attribute changes exclusively to attention without paired/variance checks.",
+  "compute_status": "No GPU or WAV/audio feature cache is present in this conversation's cloud runtime. Synthetic integration is only a correctness demonstration."
+}

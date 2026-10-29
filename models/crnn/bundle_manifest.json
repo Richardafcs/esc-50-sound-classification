@@ -1,0 +1,152 @@
+{
+  "bundle_schema_version": 2,
+  "created_utc": "2026-10-27T22:42:21.661360+00:00",
+  "model": "crnn_freq",
+  "class_names": [
+    "dog",
+    "rooster",
+    "pig",
+    "cow",
+    "frog",
+    "cat",
+    "hen",
+    "insects",
+    "sheep",
+    "crow",
+    "rain",
+    "sea_waves",
+    "crackling_fire",
+    "crickets",
+    "chirping_birds",
+    "water_drops",
+    "wind",
+    "pouring_water",
+    "toilet_flush",
+    "thunderstorm",
+    "crying_baby",
+    "sneezing",
+    "clapping",
+    "breathing",
+    "coughing",
+    "footsteps",
+    "laughing",
+    "brushing_teeth",
+    "snoring",
+    "drinking_sipping",
+    "door_wood_knock",
+    "mouse_click",
+    "keyboard_typing",
+    "door_wood_creaks",
+    "can_opening",
+    "washing_machine",
+    "vacuum_cleaner",
+    "clock_alarm",
+    "clock_tick",
+    "glass_breaking",
+    "helicopter",
+    "chainsaw",
+    "siren",
+    "car_horn",
+    "engine",
+    "train",
+    "church_bells",
+    "airplane",
+    "fireworks",
+    "hand_saw"
+  ],
+  "frontend": {
+    "sample_rate": 16000,
+    "seconds": 5,
+    "n_fft": 512,
+    "hop_length": 256,
+    "n_mels": 64,
+    "mel_scale": "htk",
+    "center": true,
+    "log": "natural",
+    "floor": 1e-10
+  },
+  "model_manifest_id": "e504fd3dc9f638935ed12f5d2e1d060d6c547a351c65b9d8337a70103567b29c",
+  "source_policy": "keep test; remove test sources from validation and held-out sources from train",
+  "provenance_verification": "verified embedded manifest",
+  "runtime_at_packaging": {
+    "python": "3.12.7",
+    "torch": "2.13.0",
+    "numpy": "2.5.2"
+  },
+  "command": "python predict.py --checkpoint checkpoint.pt --audio YOUR_SHORT_CLIP.wav",
+  "files": {
+    "src/esc50_sound/__init__.py": {
+      "sha256": "61a01fa5343ff08e242daba0f9f70d9af0e7dcc657c7ff7aaa39959362851e02",
+      "bytes": 272
+    },
+    "src/esc50_sound/__main__.py": {
+      "sha256": "3a04e6aecb243d5b7a6520353adf64ba69b5462705fda9c200dd0b834d4483e2",
+      "bytes": 130
+    },
+    "src/esc50_sound/audio.py": {
+      "sha256": "e555a33b0633b5f15c2d08fdf099855a018d7c76ddc35d6120a867540dd9d7e3",
+      "bytes": 2449
+    },
+    "src/esc50_sound/baseline.py": {
+      "sha256": "fa2cd1e8a75b71afeca839d98cb12b0630a534e815efdbfa3ebf0a3a557209c5",
+      "bytes": 12019
+    },
+    "src/esc50_sound/checkpoints.py": {
+      "sha256": "5a826e97b9e2877dac46ed260757c8538b2fb5f7456b38ec41b771867af09dc0",
+      "bytes": 2853
+    },
+    "src/esc50_sound/cli.py": {
+      "sha256": "6139410074f4db73cc2d87088e93373a70b945baf6dda330fe0f0eb9ece2d6a3",
+      "bytes": 4877
+    },
+    "src/esc50_sound/data.py": {
+      "sha256": "8fae55e34382ec1d5ff2ec3bd0ce090c6727e3421b558f3e007c603eaf4a465d",
+      "bytes": 12204
+    },
+    "src/esc50_sound/evaluation.py": {
+      "sha256": "b2aaa03d98c4a4b03766098ec4532483adb881861ed1ca220897a31e751e9a21",
+      "bytes": 6414
+    },
+    "src/esc50_sound/inference.py": {
+      "sha256": "e4e7a14263479b3760b83018f93320a565143291c5ee6d518d16e68bd328cf16",
+      "bytes": 12805
+    },
+    "src/esc50_sound/models.py": {
+      "sha256": "eb76670c77c21538dc231ed5d8d9b42b985d2199bad9bb6d89021e9989d71001",
+      "bytes": 5110
+    },
+    "src/esc50_sound/records.py": {
+      "sha256": "c3d6b4b2ba836f81a2d60052755a11243bd19e8fcef15cf2987be4de0df6bcbd",
+      "bytes": 2290
+    },
+    "src/esc50_sound/training.py": {
+      "sha256": "2ed7325893d7c17e02082af10b1d8c79cad6c49b4b34400bf770204c734bea47",
+      "bytes": 12044
+    },
+    "pyproject.toml": {
+      "sha256": "2d77574c4462ecd33e2d73943e2de46ee68303e1c61176572e23c182a688c743",
+      "bytes": 603
+    },
+    "requirements.txt": {
+      "sha256": "e7e859227fcee9c3688241abf6914ac3bacbfd353daec6edc06403e7c02949f9",
+      "bytes": 60
+    },
+    "checkpoint.pt": {
+      "sha256": "037eee005bb092b7c1c7b61cdba55f2fc2d59f0d0cff60845a93fd562cc4f282",
+      "bytes": 1098142
+    },
+    "MODEL_CARD.md": {
+      "sha256": "ba9ab9ae7f20ca89ca61609c20b700be29827c7fd87a23e437bf429beaa1e55a",
+      "bytes": 4833
+    },
+    "predict.py": {
+      "sha256": "31cdc0e6b5a5d3cf91a6f70e92ac4c44df6400fb5c095326d91eedf82d6a10ac",
+      "bytes": 178
+    },
+    "README.md": {
+      "sha256": "0377e56d2c3b7024484653ce6d34390bb45e62c22794d548316eed5813448f2f",
+      "bytes": 713
+    }
+  },
+  "contents_scope": "package source, one checkpoint, dependency specifications, README and model card; no dataset audio"
+}

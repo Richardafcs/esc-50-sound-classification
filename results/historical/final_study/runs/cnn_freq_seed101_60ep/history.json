@@ -1,0 +1,1622 @@
+[
+  {
+    "epoch": 1,
+    "training_loss": 3.524366143544515,
+    "learning_rate": 0.001,
+    "next_learning_rate": 0.0009993147673772868,
+    "scheduler": "cosine",
+    "training_loss_definition": "online training-mode cross-entropy over changing weights",
+    "train_evaluation": {
+      "accuracy": 0.2075,
+      "macro_f1": 0.15210848472570937,
+      "n": 1200,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 3.104367643992106
+    },
+    "training_examples": 1200,
+    "optimizer_updates": 38,
+    "validation": {
+      "accuracy": 0.16834170854271358,
+      "macro_f1": 0.13101201818613345,
+      "n": 398,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 3.173547754335643
+    },
+    "best_epoch": 1,
+    "seconds": 3.5880322069999693,
+    "partial_epoch": false
+  },
+  {
+    "epoch": 2,
+    "training_loss": 2.8141606140136717,
+    "learning_rate": 0.0009993147673772868,
+    "next_learning_rate": 0.0009972609476841365,
+    "scheduler": "cosine",
+    "training_loss_definition": "online training-mode cross-entropy over changing weights",
+    "train_evaluation": {
+      "accuracy": 0.3441666666666667,
+      "macro_f1": 0.31905598071979285,
+      "n": 1200,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 2.419311580657959
+    },
+    "training_examples": 1200,
+    "optimizer_updates": 76,
+    "validation": {
+      "accuracy": 0.3341708542713568,
+      "macro_f1": 0.283866276369081,
+      "n": 398,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 2.5305610397952285
+    },
+    "best_epoch": 2,
+    "seconds": 4.710081758999991,
+    "partial_epoch": false
+  },
+  {
+    "epoch": 3,
+    "training_loss": 2.4059450085957845,
+    "learning_rate": 0.0009972609476841365,
+    "next_learning_rate": 0.0009938441702975688,
+    "scheduler": "cosine",
+    "training_loss_definition": "online training-mode cross-entropy over changing weights",
+    "train_evaluation": {
+      "accuracy": 0.4633333333333333,
+      "macro_f1": 0.42101624471858756,
+      "n": 1200,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 2.111383927663167
+    },
+    "training_examples": 1200,
+    "optimizer_updates": 114,
+    "validation": {
+      "accuracy": 0.39949748743718594,
+      "macro_f1": 0.34327705827024707,
+      "n": 398,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 2.2599964525232363
+    },
+    "best_epoch": 3,
+    "seconds": 5.830253483999968,
+    "partial_epoch": false
+  },
+  {
+    "epoch": 4,
+    "training_loss": 2.0699346415201823,
+    "learning_rate": 0.0009938441702975688,
+    "next_learning_rate": 0.0009890738003669028,
+    "scheduler": "cosine",
+    "training_loss_definition": "online training-mode cross-entropy over changing weights",
+    "train_evaluation": {
+      "accuracy": 0.5283333333333333,
+      "macro_f1": 0.5054709961722322,
+      "n": 1200,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 1.8780492941538494
+    },
+    "training_examples": 1200,
+    "optimizer_updates": 152,
+    "validation": {
+      "accuracy": 0.4472361809045226,
+      "macro_f1": 0.40024945849542237,
+      "n": 398,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 2.0940327764156477
+    },
+    "best_epoch": 4,
+    "seconds": 6.9528656960000035,
+    "partial_epoch": false
+  },
+  {
+    "epoch": 5,
+    "training_loss": 1.8115319220225017,
+    "learning_rate": 0.0009890738003669028,
+    "next_learning_rate": 0.0009829629131445341,
+    "scheduler": "cosine",
+    "training_loss_definition": "online training-mode cross-entropy over changing weights",
+    "train_evaluation": {
+      "accuracy": 0.5591666666666667,
+      "macro_f1": 0.5535899646881137,
+      "n": 1200,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 1.6762519407272338
+    },
+    "training_examples": 1200,
+    "optimizer_updates": 190,
+    "validation": {
+      "accuracy": 0.45979899497487436,
+      "macro_f1": 0.4301834121050236,
+      "n": 398,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 1.9567167004149164
+    },
+    "best_epoch": 5,
+    "seconds": 8.075248531000057,
+    "partial_epoch": false
+  },
+  {
+    "epoch": 6,
+    "training_loss": 1.6598438914616902,
+    "learning_rate": 0.0009829629131445341,
+    "next_learning_rate": 0.0009755282581475769,
+    "scheduler": "cosine",
+    "training_loss_definition": "online training-mode cross-entropy over changing weights",
+    "train_evaluation": {
+      "accuracy": 0.64,
+      "macro_f1": 0.6288887056087149,
+      "n": 1200,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 1.472920864423116
+    },
+    "training_examples": 1200,
+    "optimizer_updates": 228,
+    "validation": {
+      "accuracy": 0.5100502512562815,
+      "macro_f1": 0.4792639539311487,
+      "n": 398,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 1.7740497205724668
+    },
+    "best_epoch": 6,
+    "seconds": 9.208188853000024,
+    "partial_epoch": false
+  },
+  {
+    "epoch": 7,
+    "training_loss": 1.49811905225118,
+    "learning_rate": 0.0009755282581475769,
+    "next_learning_rate": 0.0009667902132486009,
+    "scheduler": "cosine",
+    "training_loss_definition": "online training-mode cross-entropy over changing weights",
+    "train_evaluation": {
+      "accuracy": 0.6733333333333333,
+      "macro_f1": 0.6708330753066194,
+      "n": 1200,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 1.3041834942499797
+    },
+    "training_examples": 1200,
+    "optimizer_updates": 266,
+    "validation": {
+      "accuracy": 0.5527638190954773,
+      "macro_f1": 0.5314755083626533,
+      "n": 398,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 1.641735891600949
+    },
+    "best_epoch": 7,
+    "seconds": 10.336358797000003,
+    "partial_epoch": false
+  },
+  {
+    "epoch": 8,
+    "training_loss": 1.3854967371622722,
+    "learning_rate": 0.0009667902132486009,
+    "next_learning_rate": 0.0009567727288213005,
+    "scheduler": "cosine",
+    "training_loss_definition": "online training-mode cross-entropy over changing weights",
+    "train_evaluation": {
+      "accuracy": 0.7316666666666667,
+      "macro_f1": 0.7297621776305528,
+      "n": 1200,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 1.1849270900090536
+    },
+    "training_examples": 1200,
+    "optimizer_updates": 304,
+    "validation": {
+      "accuracy": 0.5904522613065326,
+      "macro_f1": 0.5886857939446175,
+      "n": 398,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 1.5705775399902957
+    },
+    "best_epoch": 8,
+    "seconds": 11.462906848999978,
+    "partial_epoch": false
+  },
+  {
+    "epoch": 9,
+    "training_loss": 1.24878311475118,
+    "learning_rate": 0.0009567727288213005,
+    "next_learning_rate": 0.0009455032620941839,
+    "scheduler": "cosine",
+    "training_loss_definition": "online training-mode cross-entropy over changing weights",
+    "train_evaluation": {
+      "accuracy": 0.7583333333333333,
+      "macro_f1": 0.759439795365843,
+      "n": 1200,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 1.0720133940378824
+    },
+    "training_examples": 1200,
+    "optimizer_updates": 342,
+    "validation": {
+      "accuracy": 0.5979899497487438,
+      "macro_f1": 0.5878571324728277,
+      "n": 398,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 1.4572556006848512
+    },
+    "best_epoch": 9,
+    "seconds": 12.584658636999961,
+    "partial_epoch": false
+  },
+  {
+    "epoch": 10,
+    "training_loss": 1.156633484363556,
+    "learning_rate": 0.0009455032620941839,
+    "next_learning_rate": 0.0009330127018922195,
+    "scheduler": "cosine",
+    "training_loss_definition": "online training-mode cross-entropy over changing weights",
+    "train_evaluation": {
+      "accuracy": 0.7441666666666666,
+      "macro_f1": 0.7355168450036603,
+      "n": 1200,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 1.0309606981277466
+    },
+    "training_examples": 1200,
+    "optimizer_updates": 380,
+    "validation": {
+      "accuracy": 0.5753768844221105,
+      "macro_f1": 0.5567247186041102,
+      "n": 398,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 1.471395243352382
+    },
+    "best_epoch": 9,
+    "seconds": 13.71222358700004,
+    "partial_epoch": false
+  },
+  {
+    "epoch": 11,
+    "training_loss": 1.0527388159434001,
+    "learning_rate": 0.0009330127018922195,
+    "next_learning_rate": 0.0009193352839727121,
+    "scheduler": "cosine",
+    "training_loss_definition": "online training-mode cross-entropy over changing weights",
+    "train_evaluation": {
+      "accuracy": 0.7941666666666667,
+      "macro_f1": 0.7923706178530471,
+      "n": 1200,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 0.8692956821123758
+    },
+    "training_examples": 1200,
+    "optimizer_updates": 418,
+    "validation": {
+      "accuracy": 0.6231155778894473,
+      "macro_f1": 0.6049210500915305,
+      "n": 398,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 1.3701085517154865
+    },
+    "best_epoch": 11,
+    "seconds": 14.830248545000018,
+    "partial_epoch": false
+  },
+  {
+    "epoch": 12,
+    "training_loss": 0.9861384598414104,
+    "learning_rate": 0.0009193352839727121,
+    "next_learning_rate": 0.0009045084971874737,
+    "scheduler": "cosine",
+    "training_loss_definition": "online training-mode cross-entropy over changing weights",
+    "train_evaluation": {
+      "accuracy": 0.7983333333333333,
+      "macro_f1": 0.7988993352878526,
+      "n": 1200,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 0.8221316123008728
+    },
+    "training_examples": 1200,
+    "optimizer_updates": 456,
+    "validation": {
+      "accuracy": 0.6055276381909548,
+      "macro_f1": 0.5846691257820616,
+      "n": 398,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 1.3369747262504232
+    },
+    "best_epoch": 12,
+    "seconds": 15.957104714000025,
+    "partial_epoch": false
+  },
+  {
+    "epoch": 13,
+    "training_loss": 0.9179323180516561,
+    "learning_rate": 0.0009045084971874737,
+    "next_learning_rate": 0.0008885729807284855,
+    "scheduler": "cosine",
+    "training_loss_definition": "online training-mode cross-entropy over changing weights",
+    "train_evaluation": {
+      "accuracy": 0.815,
+      "macro_f1": 0.8134692114494629,
+      "n": 1200,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 0.8129650020599365
+    },
+    "training_examples": 1200,
+    "optimizer_updates": 494,
+    "validation": {
+      "accuracy": 0.6080402010050251,
+      "macro_f1": 0.584873997556862,
+      "n": 398,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 1.3403036845988365
+    },
+    "best_epoch": 12,
+    "seconds": 17.081652881999958,
+    "partial_epoch": false
+  },
+  {
+    "epoch": 14,
+    "training_loss": 0.8889246559143067,
+    "learning_rate": 0.0008885729807284855,
+    "next_learning_rate": 0.0008715724127386972,
+    "scheduler": "cosine",
+    "training_loss_definition": "online training-mode cross-entropy over changing weights",
+    "train_evaluation": {
+      "accuracy": 0.8208333333333333,
+      "macro_f1": 0.8210874779946924,
+      "n": 1200,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 0.758986808458964
+    },
+    "training_examples": 1200,
+    "optimizer_updates": 532,
+    "validation": {
+      "accuracy": 0.628140703517588,
+      "macro_f1": 0.6045913686847595,
+      "n": 398,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 1.3289754546467383
+    },
+    "best_epoch": 14,
+    "seconds": 18.200680224000052,
+    "partial_epoch": false
+  },
+  {
+    "epoch": 15,
+    "training_loss": 0.8595111350218455,
+    "learning_rate": 0.0008715724127386972,
+    "next_learning_rate": 0.0008535533905932738,
+    "scheduler": "cosine",
+    "training_loss_definition": "online training-mode cross-entropy over changing weights",
+    "train_evaluation": {
+      "accuracy": 0.845,
+      "macro_f1": 0.8445287814618604,
+      "n": 1200,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 0.6911403171221415
+    },
+    "training_examples": 1200,
+    "optimizer_updates": 570,
+    "validation": {
+      "accuracy": 0.635678391959799,
+      "macro_f1": 0.6120076725670345,
+      "n": 398,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 1.284996655718166
+    },
+    "best_epoch": 15,
+    "seconds": 19.33590975200002,
+    "partial_epoch": false
+  },
+  {
+    "epoch": 16,
+    "training_loss": 0.7775762208302816,
+    "learning_rate": 0.0008535533905932738,
+    "next_learning_rate": 0.0008345653031794292,
+    "scheduler": "cosine",
+    "training_loss_definition": "online training-mode cross-entropy over changing weights",
+    "train_evaluation": {
+      "accuracy": 0.8266666666666667,
+      "macro_f1": 0.8212128591572843,
+      "n": 1200,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 0.697171242237091
+    },
+    "training_examples": 1200,
+    "optimizer_updates": 608,
+    "validation": {
+      "accuracy": 0.6658291457286433,
+      "macro_f1": 0.6449090706678942,
+      "n": 398,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 1.2519553809908766
+    },
+    "best_epoch": 16,
+    "seconds": 20.467326154000034,
+    "partial_epoch": false
+  },
+  {
+    "epoch": 17,
+    "training_loss": 0.7507953373591105,
+    "learning_rate": 0.0008345653031794292,
+    "next_learning_rate": 0.0008146601955249188,
+    "scheduler": "cosine",
+    "training_loss_definition": "online training-mode cross-entropy over changing weights",
+    "train_evaluation": {
+      "accuracy": 0.8316666666666667,
+      "macro_f1": 0.8293201099628841,
+      "n": 1200,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 0.7327934193611145
+    },
+    "training_examples": 1200,
+    "optimizer_updates": 646,
+    "validation": {
+      "accuracy": 0.6206030150753769,
+      "macro_f1": 0.6040247014707373,
+      "n": 398,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 1.3157690410038934
+    },
+    "best_epoch": 16,
+    "seconds": 21.60017604899997,
+    "partial_epoch": false
+  },
+  {
+    "epoch": 18,
+    "training_loss": 0.7267835807800292,
+    "learning_rate": 0.0008146601955249188,
+    "next_learning_rate": 0.0007938926261462366,
+    "scheduler": "cosine",
+    "training_loss_definition": "online training-mode cross-entropy over changing weights",
+    "train_evaluation": {
+      "accuracy": 0.8525,
+      "macro_f1": 0.8538403831308545,
+      "n": 1200,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 0.5924325998624166
+    },
+    "training_examples": 1200,
+    "optimizer_updates": 684,
+    "validation": {
+      "accuracy": 0.6557788944723618,
+      "macro_f1": 0.628655371041964,
+      "n": 398,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 1.2397338517347174
+    },
+    "best_epoch": 18,
+    "seconds": 22.722346646000005,
+    "partial_epoch": false
+  },
+  {
+    "epoch": 19,
+    "training_loss": 0.6742751177151998,
+    "learning_rate": 0.0007938926261462366,
+    "next_learning_rate": 0.0007723195175075136,
+    "scheduler": "cosine",
+    "training_loss_definition": "online training-mode cross-entropy over changing weights",
+    "train_evaluation": {
+      "accuracy": 0.8716666666666667,
+      "macro_f1": 0.8732863189375597,
+      "n": 1200,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 0.564969520966212
+    },
+    "training_examples": 1200,
+    "optimizer_updates": 722,
+    "validation": {
+      "accuracy": 0.6582914572864321,
+      "macro_f1": 0.6418248574436487,
+      "n": 398,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 1.2455052071480295
+    },
+    "best_epoch": 18,
+    "seconds": 23.855623974999958,
+    "partial_epoch": false
+  },
+  {
+    "epoch": 20,
+    "training_loss": 0.6276512622833252,
+    "learning_rate": 0.0007723195175075136,
+    "next_learning_rate": 0.00075,
+    "scheduler": "cosine",
+    "training_loss_definition": "online training-mode cross-entropy over changing weights",
+    "train_evaluation": {
+      "accuracy": 0.8891666666666667,
+      "macro_f1": 0.8888509306257439,
+      "n": 1200,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 0.4862085135777791
+    },
+    "training_examples": 1200,
+    "optimizer_updates": 760,
+    "validation": {
+      "accuracy": 0.6909547738693468,
+      "macro_f1": 0.6815478981316914,
+      "n": 398,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 1.1518076700181816
+    },
+    "best_epoch": 20,
+    "seconds": 24.976772814000014,
+    "partial_epoch": false
+  },
+  {
+    "epoch": 21,
+    "training_loss": 0.6232531547546387,
+    "learning_rate": 0.00075,
+    "next_learning_rate": 0.0007269952498697733,
+    "scheduler": "cosine",
+    "training_loss_definition": "online training-mode cross-entropy over changing weights",
+    "train_evaluation": {
+      "accuracy": 0.9033333333333333,
+      "macro_f1": 0.9045082731303709,
+      "n": 1200,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 0.47224353710810346
+    },
+    "training_examples": 1200,
+    "optimizer_updates": 798,
+    "validation": {
+      "accuracy": 0.678391959798995,
+      "macro_f1": 0.6609187664611004,
+      "n": 398,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 1.1690606615651193
+    },
+    "best_epoch": 20,
+    "seconds": 26.111410646999957,
+    "partial_epoch": false
+  },
+  {
+    "epoch": 22,
+    "training_loss": 0.600161155462265,
+    "learning_rate": 0.0007269952498697733,
+    "next_learning_rate": 0.0007033683215379002,
+    "scheduler": "cosine",
+    "training_loss_definition": "online training-mode cross-entropy over changing weights",
+    "train_evaluation": {
+      "accuracy": 0.91,
+      "macro_f1": 0.9099428886013178,
+      "n": 1200,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 0.4718732790152232
+    },
+    "training_examples": 1200,
+    "optimizer_updates": 836,
+    "validation": {
+      "accuracy": 0.6884422110552764,
+      "macro_f1": 0.6728611486896316,
+      "n": 398,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 1.183855984079179
+    },
+    "best_epoch": 20,
+    "seconds": 27.240411709,
+    "partial_epoch": false
+  },
+  {
+    "epoch": 23,
+    "training_loss": 0.5561219302813212,
+    "learning_rate": 0.0007033683215379002,
+    "next_learning_rate": 0.0006791839747726503,
+    "scheduler": "cosine",
+    "training_loss_definition": "online training-mode cross-entropy over changing weights",
+    "train_evaluation": {
+      "accuracy": 0.8883333333333333,
+      "macro_f1": 0.8850547159620605,
+      "n": 1200,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 0.49372811158498126
+    },
+    "training_examples": 1200,
+    "optimizer_updates": 874,
+    "validation": {
+      "accuracy": 0.6582914572864321,
+      "macro_f1": 0.6448805779815673,
+      "n": 398,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 1.2141709327697754
+    },
+    "best_epoch": 20,
+    "seconds": 28.372882291999986,
+    "partial_epoch": false
+  },
+  {
+    "epoch": 24,
+    "training_loss": 0.5380270147323608,
+    "learning_rate": 0.0006791839747726503,
+    "next_learning_rate": 0.0006545084971874737,
+    "scheduler": "cosine",
+    "training_loss_definition": "online training-mode cross-entropy over changing weights",
+    "train_evaluation": {
+      "accuracy": 0.92,
+      "macro_f1": 0.9201087246620523,
+      "n": 1200,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 0.42578683614730833
+    },
+    "training_examples": 1200,
+    "optimizer_updates": 912,
+    "validation": {
+      "accuracy": 0.6633165829145728,
+      "macro_f1": 0.6563581464836402,
+      "n": 398,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 1.198667413625286
+    },
+    "best_epoch": 20,
+    "seconds": 29.502421492000053,
+    "partial_epoch": false
+  },
+  {
+    "epoch": 25,
+    "training_loss": 0.5467133529980978,
+    "learning_rate": 0.0006545084971874737,
+    "next_learning_rate": 0.0006294095225512603,
+    "scheduler": "cosine",
+    "training_loss_definition": "online training-mode cross-entropy over changing weights",
+    "train_evaluation": {
+      "accuracy": 0.9158333333333334,
+      "macro_f1": 0.9159173489993975,
+      "n": 1200,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 0.4323509852091471
+    },
+    "training_examples": 1200,
+    "optimizer_updates": 950,
+    "validation": {
+      "accuracy": 0.6884422110552764,
+      "macro_f1": 0.6772623430347887,
+      "n": 398,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 1.1473193312410135
+    },
+    "best_epoch": 25,
+    "seconds": 30.628291847000014,
+    "partial_epoch": false
+  },
+  {
+    "epoch": 26,
+    "training_loss": 0.5041845917701722,
+    "learning_rate": 0.0006294095225512603,
+    "next_learning_rate": 0.0006039558454088795,
+    "scheduler": "cosine",
+    "training_loss_definition": "online training-mode cross-entropy over changing weights",
+    "train_evaluation": {
+      "accuracy": 0.9208333333333333,
+      "macro_f1": 0.9220680057875187,
+      "n": 1200,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 0.401802792151769
+    },
+    "training_examples": 1200,
+    "optimizer_updates": 988,
+    "validation": {
+      "accuracy": 0.6909547738693468,
+      "macro_f1": 0.6810042833013893,
+      "n": 398,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 1.1551435808440549
+    },
+    "best_epoch": 25,
+    "seconds": 31.762501961999988,
+    "partial_epoch": false
+  },
+  {
+    "epoch": 27,
+    "training_loss": 0.4731699593861898,
+    "learning_rate": 0.0006039558454088795,
+    "next_learning_rate": 0.0005782172325201154,
+    "scheduler": "cosine",
+    "training_loss_definition": "online training-mode cross-entropy over changing weights",
+    "train_evaluation": {
+      "accuracy": 0.9391666666666667,
+      "macro_f1": 0.9395601657807697,
+      "n": 1200,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 0.3745929555098216
+    },
+    "training_examples": 1200,
+    "optimizer_updates": 1026,
+    "validation": {
+      "accuracy": 0.7110552763819096,
+      "macro_f1": 0.7030995169261423,
+      "n": 398,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 1.1246426788406756
+    },
+    "best_epoch": 27,
+    "seconds": 32.891621001999965,
+    "partial_epoch": false
+  },
+  {
+    "epoch": 28,
+    "training_loss": 0.4646350908279419,
+    "learning_rate": 0.0005782172325201154,
+    "next_learning_rate": 0.0005522642316338267,
+    "scheduler": "cosine",
+    "training_loss_definition": "online training-mode cross-entropy over changing weights",
+    "train_evaluation": {
+      "accuracy": 0.9425,
+      "macro_f1": 0.9419264410022563,
+      "n": 1200,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 0.3506738559405009
+    },
+    "training_examples": 1200,
+    "optimizer_updates": 1064,
+    "validation": {
+      "accuracy": 0.7110552763819096,
+      "macro_f1": 0.7045685205747124,
+      "n": 398,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 1.112632794595843
+    },
+    "best_epoch": 28,
+    "seconds": 34.033430892999945,
+    "partial_epoch": false
+  },
+  {
+    "epoch": 29,
+    "training_loss": 0.45630569219589234,
+    "learning_rate": 0.0005522642316338267,
+    "next_learning_rate": 0.0005261679781214719,
+    "scheduler": "cosine",
+    "training_loss_definition": "online training-mode cross-entropy over changing weights",
+    "train_evaluation": {
+      "accuracy": 0.9491666666666667,
+      "macro_f1": 0.9492771642165294,
+      "n": 1200,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 0.3313608797391256
+    },
+    "training_examples": 1200,
+    "optimizer_updates": 1102,
+    "validation": {
+      "accuracy": 0.7160804020100503,
+      "macro_f1": 0.7042717102523267,
+      "n": 398,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 1.0936238274502394
+    },
+    "best_epoch": 29,
+    "seconds": 35.170595738999964,
+    "partial_epoch": false
+  },
+  {
+    "epoch": 30,
+    "training_loss": 0.43541067600250244,
+    "learning_rate": 0.0005261679781214719,
+    "next_learning_rate": 0.0005000000000000001,
+    "scheduler": "cosine",
+    "training_loss_definition": "online training-mode cross-entropy over changing weights",
+    "train_evaluation": {
+      "accuracy": 0.9408333333333333,
+      "macro_f1": 0.9412513525746619,
+      "n": 1200,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 0.3293081827958425
+    },
+    "training_examples": 1200,
+    "optimizer_updates": 1140,
+    "validation": {
+      "accuracy": 0.6984924623115578,
+      "macro_f1": 0.673671882162796,
+      "n": 398,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 1.1357730357491191
+    },
+    "best_epoch": 29,
+    "seconds": 36.31113257300001,
+    "partial_epoch": false
+  },
+  {
+    "epoch": 31,
+    "training_loss": 0.433068155447642,
+    "learning_rate": 0.0005000000000000001,
+    "next_learning_rate": 0.00047383202187852816,
+    "scheduler": "cosine",
+    "training_loss_definition": "online training-mode cross-entropy over changing weights",
+    "train_evaluation": {
+      "accuracy": 0.93,
+      "macro_f1": 0.9299899651014979,
+      "n": 1200,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 0.35584404309590656
+    },
+    "training_examples": 1200,
+    "optimizer_updates": 1178,
+    "validation": {
+      "accuracy": 0.7085427135678392,
+      "macro_f1": 0.6901540221044864,
+      "n": 398,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 1.1677680363008125
+    },
+    "best_epoch": 29,
+    "seconds": 37.43937935600002,
+    "partial_epoch": false
+  },
+  {
+    "epoch": 32,
+    "training_loss": 0.41006852785746256,
+    "learning_rate": 0.00047383202187852816,
+    "next_learning_rate": 0.00044773576836617336,
+    "scheduler": "cosine",
+    "training_loss_definition": "online training-mode cross-entropy over changing weights",
+    "train_evaluation": {
+      "accuracy": 0.9441666666666667,
+      "macro_f1": 0.9447208064127389,
+      "n": 1200,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 0.31090470850467683
+    },
+    "training_examples": 1200,
+    "optimizer_updates": 1216,
+    "validation": {
+      "accuracy": 0.7035175879396985,
+      "macro_f1": 0.6937788767819727,
+      "n": 398,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 1.1316451642980527
+    },
+    "best_epoch": 29,
+    "seconds": 38.572107413000026,
+    "partial_epoch": false
+  },
+  {
+    "epoch": 33,
+    "training_loss": 0.39342719395955406,
+    "learning_rate": 0.00044773576836617336,
+    "next_learning_rate": 0.0004217827674798846,
+    "scheduler": "cosine",
+    "training_loss_definition": "online training-mode cross-entropy over changing weights",
+    "train_evaluation": {
+      "accuracy": 0.9458333333333333,
+      "macro_f1": 0.9464526004938577,
+      "n": 1200,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 0.3284785087903341
+    },
+    "training_examples": 1200,
+    "optimizer_updates": 1254,
+    "validation": {
+      "accuracy": 0.7185929648241206,
+      "macro_f1": 0.6984698035396647,
+      "n": 398,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 1.1341911656173629
+    },
+    "best_epoch": 29,
+    "seconds": 39.70706669599997,
+    "partial_epoch": false
+  },
+  {
+    "epoch": 34,
+    "training_loss": 0.36723551352818806,
+    "learning_rate": 0.0004217827674798846,
+    "next_learning_rate": 0.00039604415459112036,
+    "scheduler": "cosine",
+    "training_loss_definition": "online training-mode cross-entropy over changing weights",
+    "train_evaluation": {
+      "accuracy": 0.9558333333333333,
+      "macro_f1": 0.9559604398203112,
+      "n": 1200,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 0.2734302305181821
+    },
+    "training_examples": 1200,
+    "optimizer_updates": 1292,
+    "validation": {
+      "accuracy": 0.7211055276381909,
+      "macro_f1": 0.7162067304900122,
+      "n": 398,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 1.0740931297666463
+    },
+    "best_epoch": 34,
+    "seconds": 40.838483086999986,
+    "partial_epoch": false
+  },
+  {
+    "epoch": 35,
+    "training_loss": 0.3760428071022034,
+    "learning_rate": 0.00039604415459112036,
+    "next_learning_rate": 0.00037059047744873974,
+    "scheduler": "cosine",
+    "training_loss_definition": "online training-mode cross-entropy over changing weights",
+    "train_evaluation": {
+      "accuracy": 0.9583333333333334,
+      "macro_f1": 0.9581117973339042,
+      "n": 1200,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 0.2653940663735072
+    },
+    "training_examples": 1200,
+    "optimizer_updates": 1330,
+    "validation": {
+      "accuracy": 0.7060301507537688,
+      "macro_f1": 0.6928195078055758,
+      "n": 398,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 1.0811462042918756
+    },
+    "best_epoch": 34,
+    "seconds": 41.984327957000005,
+    "partial_epoch": false
+  },
+  {
+    "epoch": 36,
+    "training_loss": 0.37330244620641073,
+    "learning_rate": 0.00037059047744873974,
+    "next_learning_rate": 0.0003454915028125264,
+    "scheduler": "cosine",
+    "training_loss_definition": "online training-mode cross-entropy over changing weights",
+    "train_evaluation": {
+      "accuracy": 0.9583333333333334,
+      "macro_f1": 0.9584519681224947,
+      "n": 1200,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 0.2739244862397512
+    },
+    "training_examples": 1200,
+    "optimizer_updates": 1368,
+    "validation": {
+      "accuracy": 0.7010050251256281,
+      "macro_f1": 0.6896811895646866,
+      "n": 398,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 1.1380902726446565
+    },
+    "best_epoch": 34,
+    "seconds": 43.11739296099995,
+    "partial_epoch": false
+  },
+  {
+    "epoch": 37,
+    "training_loss": 0.3516590396563212,
+    "learning_rate": 0.0003454915028125264,
+    "next_learning_rate": 0.0003208160252273499,
+    "scheduler": "cosine",
+    "training_loss_definition": "online training-mode cross-entropy over changing weights",
+    "train_evaluation": {
+      "accuracy": 0.9566666666666667,
+      "macro_f1": 0.9568065961754351,
+      "n": 1200,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 0.26314771513144175
+    },
+    "training_examples": 1200,
+    "optimizer_updates": 1406,
+    "validation": {
+      "accuracy": 0.7060301507537688,
+      "macro_f1": 0.6866171262891547,
+      "n": 398,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 1.1180571862800637
+    },
+    "best_epoch": 34,
+    "seconds": 44.25035711500004,
+    "partial_epoch": false
+  },
+  {
+    "epoch": 38,
+    "training_loss": 0.35146973888079325,
+    "learning_rate": 0.0003208160252273499,
+    "next_learning_rate": 0.00029663167846210003,
+    "scheduler": "cosine",
+    "training_loss_definition": "online training-mode cross-entropy over changing weights",
+    "train_evaluation": {
+      "accuracy": 0.965,
+      "macro_f1": 0.9650445766460521,
+      "n": 1200,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 0.23801872491836548
+    },
+    "training_examples": 1200,
+    "optimizer_updates": 1444,
+    "validation": {
+      "accuracy": 0.7160804020100503,
+      "macro_f1": 0.7045002967822324,
+      "n": 398,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 1.097284276281769
+    },
+    "best_epoch": 34,
+    "seconds": 45.385822763999954,
+    "partial_epoch": false
+  },
+  {
+    "epoch": 39,
+    "training_loss": 0.3423230204979579,
+    "learning_rate": 0.00029663167846210003,
+    "next_learning_rate": 0.0002730047501302267,
+    "scheduler": "cosine",
+    "training_loss_definition": "online training-mode cross-entropy over changing weights",
+    "train_evaluation": {
+      "accuracy": 0.9666666666666667,
+      "macro_f1": 0.9669811165539296,
+      "n": 1200,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 0.22933495819568633
+    },
+    "training_examples": 1200,
+    "optimizer_updates": 1482,
+    "validation": {
+      "accuracy": 0.7110552763819096,
+      "macro_f1": 0.7011028115705057,
+      "n": 398,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 1.0755568425259998
+    },
+    "best_epoch": 34,
+    "seconds": 46.52010659999996,
+    "partial_epoch": false
+  },
+  {
+    "epoch": 40,
+    "training_loss": 0.3632781008879344,
+    "learning_rate": 0.0002730047501302267,
+    "next_learning_rate": 0.00025000000000000017,
+    "scheduler": "cosine",
+    "training_loss_definition": "online training-mode cross-entropy over changing weights",
+    "train_evaluation": {
+      "accuracy": 0.9741666666666666,
+      "macro_f1": 0.9741414115322355,
+      "n": 1200,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 0.23165494283040364
+    },
+    "training_examples": 1200,
+    "optimizer_updates": 1520,
+    "validation": {
+      "accuracy": 0.7361809045226131,
+      "macro_f1": 0.7295423073658367,
+      "n": 398,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 1.0831792486372904
+    },
+    "best_epoch": 34,
+    "seconds": 47.65544379200003,
+    "partial_epoch": false
+  },
+  {
+    "epoch": 41,
+    "training_loss": 0.33519038438797,
+    "learning_rate": 0.00025000000000000017,
+    "next_learning_rate": 0.00022768048249248665,
+    "scheduler": "cosine",
+    "training_loss_definition": "online training-mode cross-entropy over changing weights",
+    "train_evaluation": {
+      "accuracy": 0.9725,
+      "macro_f1": 0.9725858712808997,
+      "n": 1200,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 0.22717367351055145
+    },
+    "training_examples": 1200,
+    "optimizer_updates": 1558,
+    "validation": {
+      "accuracy": 0.7211055276381909,
+      "macro_f1": 0.710906217449561,
+      "n": 398,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 1.0782101369982389
+    },
+    "best_epoch": 34,
+    "seconds": 48.78945632700004,
+    "partial_epoch": false
+  },
+  {
+    "epoch": 42,
+    "training_loss": 0.3366396272182465,
+    "learning_rate": 0.00022768048249248665,
+    "next_learning_rate": 0.00020610737385376354,
+    "scheduler": "cosine",
+    "training_loss_definition": "online training-mode cross-entropy over changing weights",
+    "train_evaluation": {
+      "accuracy": 0.9708333333333333,
+      "macro_f1": 0.9707217125268454,
+      "n": 1200,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 0.22599472343921662
+    },
+    "training_examples": 1200,
+    "optimizer_updates": 1596,
+    "validation": {
+      "accuracy": 0.7160804020100503,
+      "macro_f1": 0.7026989475952322,
+      "n": 398,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 1.0809440492984637
+    },
+    "best_epoch": 34,
+    "seconds": 49.93178133399999,
+    "partial_epoch": false
+  },
+  {
+    "epoch": 43,
+    "training_loss": 0.3288600993156433,
+    "learning_rate": 0.00020610737385376354,
+    "next_learning_rate": 0.0001853398044750814,
+    "scheduler": "cosine",
+    "training_loss_definition": "online training-mode cross-entropy over changing weights",
+    "train_evaluation": {
+      "accuracy": 0.9708333333333333,
+      "macro_f1": 0.9708538843180243,
+      "n": 1200,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 0.21872393429279327
+    },
+    "training_examples": 1200,
+    "optimizer_updates": 1634,
+    "validation": {
+      "accuracy": 0.7236180904522613,
+      "macro_f1": 0.7152327923194796,
+      "n": 398,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 1.0815546644392924
+    },
+    "best_epoch": 34,
+    "seconds": 51.072450376999996,
+    "partial_epoch": false
+  },
+  {
+    "epoch": 44,
+    "training_loss": 0.2890894357363383,
+    "learning_rate": 0.0001853398044750814,
+    "next_learning_rate": 0.0001654346968205711,
+    "scheduler": "cosine",
+    "training_loss_definition": "online training-mode cross-entropy over changing weights",
+    "train_evaluation": {
+      "accuracy": 0.9733333333333334,
+      "macro_f1": 0.973339407215245,
+      "n": 1200,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 0.21166826446851095
+    },
+    "training_examples": 1200,
+    "optimizer_updates": 1672,
+    "validation": {
+      "accuracy": 0.7110552763819096,
+      "macro_f1": 0.7007655943987211,
+      "n": 398,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 1.0696495226280174
+    },
+    "best_epoch": 44,
+    "seconds": 52.20934730199997,
+    "partial_epoch": false
+  },
+  {
+    "epoch": 45,
+    "training_loss": 0.3092830761273702,
+    "learning_rate": 0.0001654346968205711,
+    "next_learning_rate": 0.0001464466094067263,
+    "scheduler": "cosine",
+    "training_loss_definition": "online training-mode cross-entropy over changing weights",
+    "train_evaluation": {
+      "accuracy": 0.9716666666666667,
+      "macro_f1": 0.9715431153687909,
+      "n": 1200,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 0.21985016405582428
+    },
+    "training_examples": 1200,
+    "optimizer_updates": 1710,
+    "validation": {
+      "accuracy": 0.7336683417085427,
+      "macro_f1": 0.7228899220834205,
+      "n": 398,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 1.0667896354617785
+    },
+    "best_epoch": 45,
+    "seconds": 53.353503502999956,
+    "partial_epoch": false
+  },
+  {
+    "epoch": 46,
+    "training_loss": 0.29448569476604464,
+    "learning_rate": 0.0001464466094067263,
+    "next_learning_rate": 0.00012842758726130303,
+    "scheduler": "cosine",
+    "training_loss_definition": "online training-mode cross-entropy over changing weights",
+    "train_evaluation": {
+      "accuracy": 0.9775,
+      "macro_f1": 0.9775890403781237,
+      "n": 1200,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 0.20624763786792755
+    },
+    "training_examples": 1200,
+    "optimizer_updates": 1748,
+    "validation": {
+      "accuracy": 0.7261306532663316,
+      "macro_f1": 0.7176064949842038,
+      "n": 398,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 1.0643118122714248
+    },
+    "best_epoch": 46,
+    "seconds": 54.50099935200001,
+    "partial_epoch": false
+  },
+  {
+    "epoch": 47,
+    "training_loss": 0.2949807647864024,
+    "learning_rate": 0.00012842758726130303,
+    "next_learning_rate": 0.00011142701927151459,
+    "scheduler": "cosine",
+    "training_loss_definition": "online training-mode cross-entropy over changing weights",
+    "train_evaluation": {
+      "accuracy": 0.9766666666666667,
+      "macro_f1": 0.9767539679331492,
+      "n": 1200,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 0.2039820463458697
+    },
+    "training_examples": 1200,
+    "optimizer_updates": 1786,
+    "validation": {
+      "accuracy": 0.7261306532663316,
+      "macro_f1": 0.719429677059304,
+      "n": 398,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 1.0558618624605725
+    },
+    "best_epoch": 47,
+    "seconds": 55.64887753000005,
+    "partial_epoch": false
+  },
+  {
+    "epoch": 48,
+    "training_loss": 0.29522205074628194,
+    "learning_rate": 0.00011142701927151459,
+    "next_learning_rate": 9.549150281252635e-05,
+    "scheduler": "cosine",
+    "training_loss_definition": "online training-mode cross-entropy over changing weights",
+    "train_evaluation": {
+      "accuracy": 0.9766666666666667,
+      "macro_f1": 0.976730569700306,
+      "n": 1200,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 0.20390197187662124
+    },
+    "training_examples": 1200,
+    "optimizer_updates": 1824,
+    "validation": {
+      "accuracy": 0.7261306532663316,
+      "macro_f1": 0.7175767725566488,
+      "n": 398,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 1.0786231726258244
+    },
+    "best_epoch": 47,
+    "seconds": 56.81023765500004,
+    "partial_epoch": false
+  },
+  {
+    "epoch": 49,
+    "training_loss": 0.2759901718298594,
+    "learning_rate": 9.549150281252635e-05,
+    "next_learning_rate": 8.066471602728805e-05,
+    "scheduler": "cosine",
+    "training_loss_definition": "online training-mode cross-entropy over changing weights",
+    "train_evaluation": {
+      "accuracy": 0.9758333333333333,
+      "macro_f1": 0.9758894975452644,
+      "n": 1200,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 0.19901137461264928
+    },
+    "training_examples": 1200,
+    "optimizer_updates": 1862,
+    "validation": {
+      "accuracy": 0.7135678391959799,
+      "macro_f1": 0.7050426098781192,
+      "n": 398,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 1.0719597639150955
+    },
+    "best_epoch": 47,
+    "seconds": 57.95417318,
+    "partial_epoch": false
+  },
+  {
+    "epoch": 50,
+    "training_loss": 0.2865159304936727,
+    "learning_rate": 8.066471602728805e-05,
+    "next_learning_rate": 6.698729810778066e-05,
+    "scheduler": "cosine",
+    "training_loss_definition": "online training-mode cross-entropy over changing weights",
+    "train_evaluation": {
+      "accuracy": 0.9766666666666667,
+      "macro_f1": 0.976747299252726,
+      "n": 1200,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 0.19993320355812708
+    },
+    "training_examples": 1200,
+    "optimizer_updates": 1900,
+    "validation": {
+      "accuracy": 0.7211055276381909,
+      "macro_f1": 0.7129674233948697,
+      "n": 398,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 1.0688269174278682
+    },
+    "best_epoch": 47,
+    "seconds": 59.09704958400005,
+    "partial_epoch": false
+  },
+  {
+    "epoch": 51,
+    "training_loss": 0.26836515883604684,
+    "learning_rate": 6.698729810778066e-05,
+    "next_learning_rate": 5.449673790581612e-05,
+    "scheduler": "cosine",
+    "training_loss_definition": "online training-mode cross-entropy over changing weights",
+    "train_evaluation": {
+      "accuracy": 0.9766666666666667,
+      "macro_f1": 0.9767332482669293,
+      "n": 1200,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 0.18977981487909953
+    },
+    "training_examples": 1200,
+    "optimizer_updates": 1938,
+    "validation": {
+      "accuracy": 0.7110552763819096,
+      "macro_f1": 0.7018356662631127,
+      "n": 398,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 1.073516269425052
+    },
+    "best_epoch": 47,
+    "seconds": 60.24561703400002,
+    "partial_epoch": false
+  },
+  {
+    "epoch": 52,
+    "training_loss": 0.27729970335960386,
+    "learning_rate": 5.449673790581612e-05,
+    "next_learning_rate": 4.322727117869952e-05,
+    "scheduler": "cosine",
+    "training_loss_definition": "online training-mode cross-entropy over changing weights",
+    "train_evaluation": {
+      "accuracy": 0.9766666666666667,
+      "macro_f1": 0.9767302018309637,
+      "n": 1200,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 0.1964813142021497
+    },
+    "training_examples": 1200,
+    "optimizer_updates": 1976,
+    "validation": {
+      "accuracy": 0.7236180904522613,
+      "macro_f1": 0.7149986121549589,
+      "n": 398,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 1.0657627175201723
+    },
+    "best_epoch": 47,
+    "seconds": 61.386109944000054,
+    "partial_epoch": false
+  },
+  {
+    "epoch": 53,
+    "training_loss": 0.26964609781901044,
+    "learning_rate": 4.322727117869952e-05,
+    "next_learning_rate": 3.3209786751399136e-05,
+    "scheduler": "cosine",
+    "training_loss_definition": "online training-mode cross-entropy over changing weights",
+    "train_evaluation": {
+      "accuracy": 0.9775,
+      "macro_f1": 0.9775763265528229,
+      "n": 1200,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 0.19500786026318867
+    },
+    "training_examples": 1200,
+    "optimizer_updates": 2014,
+    "validation": {
+      "accuracy": 0.7135678391959799,
+      "macro_f1": 0.7027102082643876,
+      "n": 398,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 1.0795710458228336
+    },
+    "best_epoch": 47,
+    "seconds": 62.52927700700002,
+    "partial_epoch": false
+  },
+  {
+    "epoch": 54,
+    "training_loss": 0.27559463401635487,
+    "learning_rate": 3.3209786751399136e-05,
+    "next_learning_rate": 2.4471741852423238e-05,
+    "scheduler": "cosine",
+    "training_loss_definition": "online training-mode cross-entropy over changing weights",
+    "train_evaluation": {
+      "accuracy": 0.9791666666666666,
+      "macro_f1": 0.979204722481037,
+      "n": 1200,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 0.19571728299061458
+    },
+    "training_examples": 1200,
+    "optimizer_updates": 2052,
+    "validation": {
+      "accuracy": 0.7211055276381909,
+      "macro_f1": 0.7126384002993909,
+      "n": 398,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 1.077578029440875
+    },
+    "best_epoch": 47,
+    "seconds": 63.673439066000014,
+    "partial_epoch": false
+  },
+  {
+    "epoch": 55,
+    "training_loss": 0.27096438864866895,
+    "learning_rate": 2.4471741852423238e-05,
+    "next_learning_rate": 1.7037086855465846e-05,
+    "scheduler": "cosine",
+    "training_loss_definition": "online training-mode cross-entropy over changing weights",
+    "train_evaluation": {
+      "accuracy": 0.9816666666666667,
+      "macro_f1": 0.9817374708995533,
+      "n": 1200,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 0.19522069940964382
+    },
+    "training_examples": 1200,
+    "optimizer_updates": 2090,
+    "validation": {
+      "accuracy": 0.7160804020100503,
+      "macro_f1": 0.7062285296402941,
+      "n": 398,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 1.0760874987846643
+    },
+    "best_epoch": 47,
+    "seconds": 64.81592343,
+    "partial_epoch": false
+  },
+  {
+    "epoch": 56,
+    "training_loss": 0.2572156886259715,
+    "learning_rate": 1.7037086855465846e-05,
+    "next_learning_rate": 1.0926199633097158e-05,
+    "scheduler": "cosine",
+    "training_loss_definition": "online training-mode cross-entropy over changing weights",
+    "train_evaluation": {
+      "accuracy": 0.9783333333333334,
+      "macro_f1": 0.9784389714698943,
+      "n": 1200,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 0.1969565584262212
+    },
+    "training_examples": 1200,
+    "optimizer_updates": 2128,
+    "validation": {
+      "accuracy": 0.7135678391959799,
+      "macro_f1": 0.7032785812398814,
+      "n": 398,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 1.069725083346343
+    },
+    "best_epoch": 47,
+    "seconds": 65.96415002900005,
+    "partial_epoch": false
+  },
+  {
+    "epoch": 57,
+    "training_loss": 0.26510964035987855,
+    "learning_rate": 1.0926199633097158e-05,
+    "next_learning_rate": 6.155829702431172e-06,
+    "scheduler": "cosine",
+    "training_loss_definition": "online training-mode cross-entropy over changing weights",
+    "train_evaluation": {
+      "accuracy": 0.9808333333333333,
+      "macro_f1": 0.9809285231206266,
+      "n": 1200,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 0.18782214721043905
+    },
+    "training_examples": 1200,
+    "optimizer_updates": 2166,
+    "validation": {
+      "accuracy": 0.7135678391959799,
+      "macro_f1": 0.7032496495592468,
+      "n": 398,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 1.0695829223747828
+    },
+    "best_epoch": 47,
+    "seconds": 67.11776110300002,
+    "partial_epoch": false
+  },
+  {
+    "epoch": 58,
+    "training_loss": 0.25807826439539594,
+    "learning_rate": 6.155829702431172e-06,
+    "next_learning_rate": 2.7390523158633003e-06,
+    "scheduler": "cosine",
+    "training_loss_definition": "online training-mode cross-entropy over changing weights",
+    "train_evaluation": {
+      "accuracy": 0.9791666666666666,
+      "macro_f1": 0.9792505674866544,
+      "n": 1200,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 0.18845516930023828
+    },
+    "training_examples": 1200,
+    "optimizer_updates": 2204,
+    "validation": {
+      "accuracy": 0.7236180904522613,
+      "macro_f1": 0.7145700896970246,
+      "n": 398,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 1.0653838608133135
+    },
+    "best_epoch": 47,
+    "seconds": 68.27530752099995,
+    "partial_epoch": false
+  },
+  {
+    "epoch": 59,
+    "training_loss": 0.25286412358283994,
+    "learning_rate": 2.7390523158633003e-06,
+    "next_learning_rate": 6.852326227130837e-07,
+    "scheduler": "cosine",
+    "training_loss_definition": "online training-mode cross-entropy over changing weights",
+    "train_evaluation": {
+      "accuracy": 0.98,
+      "macro_f1": 0.9801224988679027,
+      "n": 1200,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 0.18776228219270708
+    },
+    "training_examples": 1200,
+    "optimizer_updates": 2242,
+    "validation": {
+      "accuracy": 0.7236180904522613,
+      "macro_f1": 0.7154344611356994,
+      "n": 398,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 1.0642973897445143
+    },
+    "best_epoch": 47,
+    "seconds": 69.42596020500002,
+    "partial_epoch": false
+  },
+  {
+    "epoch": 60,
+    "training_loss": 0.26584693491458894,
+    "learning_rate": 6.852326227130837e-07,
+    "next_learning_rate": 0.0,
+    "scheduler": "cosine",
+    "training_loss_definition": "online training-mode cross-entropy over changing weights",
+    "train_evaluation": {
+      "accuracy": 0.9791666666666666,
+      "macro_f1": 0.9792543358024914,
+      "n": 1200,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 0.1910161746541659
+    },
+    "training_examples": 1200,
+    "optimizer_updates": 2280,
+    "validation": {
+      "accuracy": 0.7185929648241206,
+      "macro_f1": 0.7099330823974787,
+      "n": 398,
+      "confusion_convention": "rows=true, columns=predicted",
+      "loss": 1.0713215137845906
+    },
+    "best_epoch": 47,
+    "seconds": 70.58950095900002,
+    "partial_epoch": false
+  }
+]

@@ -1,47 +1,55 @@
 # ESC-50 Environmental Sound Classification
 
-A reproducible research project for environmental sound classification with classical baselines, CNN and CNN+BiGRU (CRNN), attention, augmentation and feature comparisons.
+A team research project for environmental sound classification with classical baselines, a frequency-preserving CNN, CNN + BiGRU (CRNN), channel attention, audio augmentation, and feature comparisons.
 
-## 从这里开始 / Start here
+The completed study contains **65 registered tasks**, including **60 neural runs of 60 epochs**. This repository shares the implementation, protocols, portable CNN/CRNN models, compact result evidence, English PDF reports, all report figures, and the full regression suite. Large local experiment collections are intentionally excluded.
 
-| 目的 | 入口 |
+## Start here
+
+| Purpose | Entry point |
 | --- | --- |
-| 阅读完整英文 PDF | [最新完整研究](reports/pdf/ESC50_Complete_Study_Report_EN.pdf) · [CNN/CRNN baseline](reports/pdf/ESC50_CNN_CRNN_Baseline_Report_EN.pdf) |
-| 阅读中文说明与结果 | [内容说明](docs/guides/guide_zh.md) · [最新结果](reports/matrix_20261028/report_zh.md) |
-| English guide and results | [Guide](docs/guides/guide_en.md) · [Latest results](reports/matrix_20261028/report_en.md) |
-| 使用或检查模型 | [Models](models/README.md) |
-| 下载模型与独立包 | [Releases](releases/README.md) |
-| 使用 Colab | [Notebook guide](notebooks/README.md) · [已保存的双语 Colab](https://colab.research.google.com/drive/1A3gtdOMYvkezTTnwXzB1ux9wz-vjU_Nf?authuser=1) |
-| 了解目录与迁移 | [Project structure](docs/PROJECT_STRUCTURE.md) |
+| Read complete English PDFs | [Latest matrix study](reports/pdf/ESC50_Complete_Study_Report_EN.pdf) · [CNN/CRNN baseline study](reports/pdf/ESC50_CNN_CRNN_Baseline_Report_EN.pdf) |
+| Understand the project | [English guide](docs/guides/guide_en.md) · [Chinese guide](docs/guides/guide_zh.md) |
+| Inspect findings and figures | [Reports and evidence](reports/README.md) |
+| Predict with pretrained models | [Portable CNN and CRNN](models/README.md) |
+| Work in Colab | [Notebook guide](notebooks/README.md) |
+| Find commands | [Script catalog](scripts/README.md) |
 
-## 项目结构 / Layout
+## Install and check
 
-```text
-src/esc50_sound/       Main Python implementation
-scripts/              Experiment, audit and reporting commands
-configs/              Protocols, study matrix and runnable examples
-data/                 Dataset metadata, licensing and generated feature caches
-notebooks/            Templates, executed evidence and archived notebooks
-models/               Portable CNN and CRNN checkpoints
-results/              Current study, historical evidence and future run outputs
-reports/              English PDFs, bilingual results and research figures
-docs/                 Guides, methods, engineering notes and reviews
-tests/                Unit, integration and research-contract tests
-releases/             Published ZIPs and standalone package source assemblies
-archive/              Frozen sources, original downloads and migration records
-```
-
-## Install and run
-
-Python 3.11+. Install from the project root:
+Use Python 3.11 or later. Repository access is required because the project is private.
 
 ```sh
+git clone https://github.com/Richardafcs/esc-50-sound-classification.git
+cd esc-50-sound-classification
+python -m venv .venv
+source .venv/bin/activate
 python -m pip install -e '.[dev,baseline,report]'
 python -m esc50_sound --help
 python -m pytest -q
 ```
 
-Prepare the pinned data and run a new CNN experiment:
+The full CPU suite contains **274 tests**. Tests use synthetic inputs and small saved regression fixtures; they do not download audio or launch Colab training. GitHub Actions runs the suite on pushes and pull requests. For Windows, activate the environment with `.venv\Scripts\activate`.
+
+## Shared project layout
+
+```text
+src/esc50_sound/       Main Python implementation
+scripts/              Experiment, audit, and reporting tools
+configs/              Protocols, study matrix, and runnable examples
+data/                 Official dataset metadata, licensing, and credits
+notebooks/            Editable templates and a compact executed results reader
+models/               Portable CNN and CRNN inference bundles
+reports/              English PDFs, bilingual reports, all figures, summary evidence
+docs/                 Guides, methods, engineering notes, and reviews
+tests/                Full unit, integration, and research-contract suite
+results/historical/   Only the numerical fixtures required by the test suite
+archive/              Only two frozen source references required by tests
+```
+
+## Data and a new experiment
+
+ESC-50 contains 2,000 five-second recordings in 50 classes. The dataset revision is pinned to `33c8ce9eb2cf0b1c2f8bcf322eb349b6be34dbb6`. The source-strict development roles are **1,200 training / 398 validation / 400 designated test clips**; two clips are excluded to avoid source overlap. Normalization is fitted on training recordings only.
 
 ```sh
 python -m esc50_sound prepare
@@ -51,18 +59,40 @@ python -m esc50_sound predict --checkpoint results/runs/new_cnn/best.pt \
   --audio YOUR_SHORT_CLIP.wav
 ```
 
-The complete study can be audited from saved records with `python scripts/analyze_colab_matrix.py --require-complete`. No new training or test evaluation is needed for that audit. See [script navigation](scripts/README.md) for other tools.
+`prepare` downloads the pinned official audio and builds the validated feature cache. Training requires the selected device; use `--device cpu` if needed. Choose a unique output directory for every run. Review the matrix notebook's resource budget before starting its full study.
 
-## Recorded research status
+## Baselines and findings
 
-The latest matrix executed **65 tasks**, including **60 neural runs of 60 epochs**. Validation accuracy across three seeds was 72.61% for CNN, 73.87% for CRNN and 74.37% for CRNN + channel attention. These are development-validation measurements on the same 398 clips. Historical exposure to every ESC-50 fold prevents a fresh independent-test claim. See the full reports for macro-F1, spread, controls and negative robustness findings.
+| Model family | Validation accuracy | Scope |
+| --- | ---: | --- |
+| Log-Mel statistics + logistic regression | 42.21% | One selected classical model |
+| DCT cepstral statistics + Linear SVM | 40.20% | One selected classical model |
+| CNN (`cnn_freq`) | 72.61% ± 0.25 pp | Mean ± sample SD, three training seeds |
+| CNN + BiGRU / CRNN (`crnn_freq`) | 73.87% ± 1.26 pp | Mean ± sample SD, three training seeds |
+| CRNN + channel attention | 74.37% ± 1.15 pp | Mean ± sample SD, three training seeds |
 
-The source-strict roles contain 1,200 train / 398 validation / 400 designated test clips. Normalization fits training data only. All 62 fitted models reproduced 24,676 validation-WAV predictions in the recorded replay. These are internal agent-produced checks, not external human replication.
+CNN and CRNN are the deep-learning baselines; logistic regression and SVM are the classical baselines. The classical input representations differ, so their score difference is not a classifier-only comparison. The selected seed101 CRNN checkpoint scores 75.13% on validation; this is distinct from its three-seed mean.
 
-## Reproducibility and provenance
+Channel attention adds about 0.50 percentage points over CRNN in this development setting. Synthetic Gaussian-noise augmentation improves the seed101 CNN at 10 dB added-noise SNR from 23.37% to 62.81%, but accuracy at 0 dB remains only 26.13%. Consult the reports for every condition, macro-F1, paired differences, and limitations.
 
-Current implementation lives in `src/`; retained compatibility tools live in `scripts/legacy/`. Executed notebooks, run/checkpoint records and existing published ZIP/PDF bytes retain their historical identities. The [migration map](archive/reorganization_20261029/path_map.json) locates their earlier project paths. Working config path bindings were updated; their original bytes remain archived.
+These are **development-validation** results on the same 398 clips. Earlier research accessed all ESC-50 folds, so these results do not establish fresh independent confirmation, field robustness, state of the art, or production readiness. The reports keep historical test results separate from the latest validation study.
 
-Use `results/runs/` for new outputs. `results/historical/` preserves earlier research. Exact resume of a historical training state still requires its original source/runtime; use the frozen release when reproducing that environment. The directory reorganization does not re-run experiments or alter reported scores.
+## Evidence and repository scope
 
-Dataset: [official ESC-50](https://github.com/karolpiczak/ESC-50), pinned commit `33c8ce9eb2cf0b1c2f8bcf322eb349b6be34dbb6`. Retain the [dataset license](data/ESC-50/LICENSE) and recording credits.
+The [summary tables and verification receipts](reports/evidence/matrix_20261028/) retain the numerical values from the completed study. The recorded waveform replay matched all **24,676 predictions** from 62 fitted models on 398 validation clips each. The retained receipts describe that historical check; this lean checkout does not contain every original model and raw run log needed to repeat the full replay.
+
+| Shared in Git | Local and ignored |
+| --- | --- |
+| Source, configs, tests, dataset metadata and licenses | Downloaded WAVs and generated feature caches |
+| Portable CNN/CRNN checkpoints and model cards | Bulk matrix weights, optimizer states, raw experiment logs |
+| Two English PDFs, all 15 PNG figures and 13 SVG versions | Duplicate release ZIPs and standalone package assemblies |
+| Curated summary CSVs and verification records | Historical pilot outputs, source archives, bulky training notebooks |
+| 45 byte-preserved regression files, about 3.47 MB | New experiment outputs under `results/runs/` |
+
+The [.gitignore](.gitignore) enforces this scope. The [fixture manifest](tests/historical_fixtures.json) identifies the exact historical files needed by tests. The [layout map](docs/project_layout_migration.json) records relocations, including paths printed inside older reports. Some dated engineering notes describe optional local evidence that is intentionally absent from a fresh checkout. Full-history audit and figure-regeneration commands need that original local collection; ordinary development, inference, tests, and reading the reports do not.
+
+## Provenance and licensing
+
+Current implementation lives in `src/`; frozen compatibility utilities live in `scripts/legacy/`. Keep historical evidence unchanged and record new experiments separately. The published checks were produced by the research agents and have not been independently replicated by external reviewers.
+
+Dataset: [official ESC-50](https://github.com/karolpiczak/ESC-50). Retain the [dataset license](data/ESC-50/LICENSE) and [per-recording credits](data/ESC-50/meta/esc50.csv). The dataset is distributed overall under CC BY-NC 3.0; this project does not grant additional commercial-use rights.

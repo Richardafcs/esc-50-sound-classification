@@ -1,0 +1,94 @@
+{
+  "reviewed_utc": "2026-10-28T11:12:59.839056+00:00",
+  "contribution": "separate internal agent verification; not external human replication",
+  "readiness": "Ready within reviewed scope",
+  "scope": "All65 new matrix task records and validation outputs only; historical/test predictions not opened",
+  "checks": {
+    "auditor_command": "python tools/analyze_colab_matrix.py --require-complete",
+    "auditor_exit_code": 0,
+    "status_counts": {
+      "audited": 65
+    },
+    "unique_task_ids": 65,
+    "matrix_ids_match": true,
+    "independently_recalculated_primary_prediction_files": 80,
+    "independently_recalculated_primary_prediction_rows": 31840,
+    "arithmetic": "Second pure-Python Counter oracle, independent of package/numpy metric helper",
+    "group_mean_and_sample_sd_checks": 20,
+    "within_seed_contrast_checks": 75,
+    "aggregated_effects": 25,
+    "stress_condition_checks": 18,
+    "new_heldout_result_files": [],
+    "canonical_validation_n": 398,
+    "full_budget_neural_runs": 60,
+    "neural_epochs": 3600,
+    "all_full_budget_checks": "Auditor checks all60; selected-loss raw history spotchecks retained below",
+    "raw_selected_loss_spotchecks": {
+      "B_cnn_freq_s101": {
+        "epochs": 60,
+        "selected_epoch": 47,
+        "selected_validation_loss": 1.0558618624605725
+      },
+      "B_crnn_freq_tca_s303": {
+        "epochs": 60,
+        "selected_epoch": 40,
+        "selected_validation_loss": 0.9127645420668712
+      },
+      "C_noise_s101": {
+        "epochs": 60,
+        "selected_epoch": 57,
+        "selected_validation_loss": 1.0006279490101877
+      },
+      "C_mixup_s303": {
+        "epochs": 60,
+        "selected_epoch": 57,
+        "selected_validation_loss": 1.2489175221428799
+      },
+      "D_sr16_fmax8_logmel32_s101": {
+        "epochs": 60,
+        "selected_epoch": 58,
+        "selected_validation_loss": 1.6394258479976176
+      },
+      "D_sr32_fmax16_mfcc40_s303": {
+        "epochs": 60,
+        "selected_epoch": 59,
+        "selected_validation_loss": 1.9596668128392205
+      }
+    },
+    "classical_baseline_search": "All3 logistic candidates converged; selected L2=.001 by minimum validation CE. All4 SVM candidates have no convergence warning; selected C=1 by accuracy/F1/smallerC."
+  },
+  "findings": [
+    {
+      "claim": "Architecture development means",
+      "evidence": "CNN72.6131%,GRU73.8693%,CA74.3719%,TA72.2781%,TCA72.8643%; CA versus GRU +0.5025pp, TA -1.5913pp, TCA -1.0050pp",
+      "limit": "Three seeds on one previously used validation partition; no causal/new-test superiority claim."
+    },
+    {
+      "claim": "Augmentation development means",
+      "evidence": "Clean72.6131%,noise73.1156%,SpecAugment71.8593%,Mixup71.6080%",
+      "limit": "Changes apply to this recipe; seed pairing does not eliminate optimization/search uncertainty."
+    },
+    {
+      "claim": "Noise training improves simulated stress",
+      "evidence": "Seed101 clean CNN versus noise-trained CNN: SNR20 47.7387→70.6030%;SNR10 23.3668→62.8141%;SNR0 6.7839→26.1307%. Both clean accuracy72.6131%.",
+      "limit": "One checkpoint/seed, deterministic Gaussian realizations;0dB accuracy remains26.13%, no field robustness established."
+    },
+    {
+      "claim": "Feature track favors32Mel here",
+      "evidence": "Best D mean57.1189%=32kHz/16kHzfmax/logmel32.32Mel versus64Mel gains4.0201/4.4389/6.0302pp across three spectral conditions. Matched8kHz bandwidth sample-rate contrasts range-.8375 to+.5863pp.",
+      "limit": "D uses pooled26,658parameterCNN, not B/C frequency-preservingCNN; bandwidth changes filter spacing and MFCC changes coordinate semantics."
+    },
+    {
+      "claim": "Traditional baselines",
+      "evidence": "Logistic42.2111%;DCT20 temporal-statistics LinearSVC40.2010%.",
+      "limit": "Feature and classifier both change, and selection policies differ; not a pure SVM-versus-logistic causal test."
+    }
+  ],
+  "limitations": [
+    "Artifact consistency and independent arithmetic; no independent full retraining.",
+    "All62 model/baseline WAV-replay probe is pending and not certified by this record.",
+    "Historical ESC50test exposure cannot be undone. This matrix provides development evidence, not fresh confirmation.",
+    "20group means use sampleSD over3trainingseeds; SD is not a confidence interval over independent datasets.",
+    "PANNs/AST/BEATs/CLAP/RL are not integrated or executed."
+  ]
+}

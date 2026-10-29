@@ -1,0 +1,72 @@
+{
+  "study": "frequency-family repeated development v2",
+  "registered_before_results": true,
+  "screen_evidence": "results/historical/gpu_screen_summary.json",
+  "models": [
+    "cnn_freq",
+    "crnn_freq",
+    "cnn_freq_matched",
+    "cnn_freq_token"
+  ],
+  "seeds": [
+    101,
+    202,
+    303
+  ],
+  "epochs": 60,
+  "scheduler": "cosine",
+  "lr": 0.001,
+  "batch_size": 32,
+  "specaugment": false,
+  "checkpoint_selection": "minimum validation cross-entropy, earliest tie",
+  "source_policy": "strict",
+  "train_folds": [
+    1,
+    2,
+    3
+  ],
+  "val_fold": 4,
+  "test_fold": 5,
+  "test_prediction_permitted": false,
+  "time_permutation_seeds": [
+    101,
+    202,
+    303,
+    404,
+    505
+  ],
+  "validation_noise_conditions": [
+    "clean",
+    "snr_20",
+    "snr_10",
+    "snr_0",
+    "gain_-6",
+    "gain_6"
+  ],
+  "noise_seed": 2026,
+  "additional_development_run": {
+    "model": "crnn_freq",
+    "seed": 101,
+    "specaugment": true,
+    "epochs": 60,
+    "reason": "one predeclared regularization candidate; compare to unaugmented101, no confirmationclaim",
+    "practical_selection_rule": "consider only if validation accuracy improves by >=2 percentage points without macroF1 deterioration; then require repeats before finalselection"
+  },
+  "decision_rule": "prefer cheaper nonrecurrent model unless recurrent mean accuracy gain >=3pp and mean macroF1 not lower; measure actual latency; any mechanism claim remains limited by controls and seedvariation",
+  "primary_confirmation_seed": 101,
+  "resource": {
+    "device": "authorized Colab GPU",
+    "training_seconds_per_run": 300,
+    "process_seconds_per_run": 480,
+    "total_development_seconds_after_setup": 1800,
+    "currency_spend": 0
+  },
+  "code_sha256": {
+    "esc50.py": "a484680f5f213226fcc984edf76c69004a2df8e91d417407c22a213ec4b67f6e",
+    "study.py": "044bda997710d93871bbb57f7012725a45ddfacf51a3a5eb05ba7336e0c3f575",
+    "diagnostics.py": "3ee58a0a64e6716e3ddc590f36dd4f09818ef56d8d78841521f93daa5ef2af6d",
+    "classify.py": "8bc5fa4964e23d92e8273afa54253e35d94dc329076dab154efc35f8c619d51c",
+    "runner.py": "eda1e253955d7a34ac495bd83c80fb2d822af7e2bf1e547a9725c897e819f592",
+    "artifacts.py": "2c3ca152edfa72777011b8715e3910c12fdfb8a3d640307e7325bb83412ba7d1"
+  }
+}

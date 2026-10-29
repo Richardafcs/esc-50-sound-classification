@@ -1,0 +1,152 @@
+{
+  "cpu_model": "Intel(R) Xeon(R) CPU @ 2.00GHz",
+  "gpu": "Tesla T4",
+  "threads": 2,
+  "batch_size": 1,
+  "warmup": 10,
+  "repetitions": 100,
+  "wav": "4-102844-A-49.wav",
+  "scope": "Warm OS file cache, loaded model, float32. Includes decode/frontend/transfer for WAV-to-logits; excludes model load and process startup. CUDA synchronized.",
+  "measurements": [
+    {
+      "model": "cnn_freq",
+      "device": "cpu",
+      "parameters": 49058,
+      "checkpoint_bytes": 287841,
+      "model_only": {
+        "median_ms": 5.003630000032899,
+        "p95_ms": 5.316781800001991
+      },
+      "wav_to_logits": {
+        "median_ms": 19.200744499983102,
+        "p95_ms": 25.786691750084852
+      }
+    },
+    {
+      "model": "cnn_freq",
+      "device": "cuda",
+      "parameters": 49058,
+      "checkpoint_bytes": 287841,
+      "model_only": {
+        "median_ms": 0.5023785000162206,
+        "p95_ms": 0.6201572500401653
+      },
+      "wav_to_logits": {
+        "median_ms": 14.395254500016108,
+        "p95_ms": 16.04513024996095
+      }
+    },
+    {
+      "model": "crnn_freq",
+      "device": "cpu",
+      "parameters": 251810,
+      "checkpoint_bytes": 1101257,
+      "model_only": {
+        "median_ms": 8.231214499971884,
+        "p95_ms": 9.099227899986312
+      },
+      "wav_to_logits": {
+        "median_ms": 21.748592499989172,
+        "p95_ms": 24.477381700052092
+      }
+    },
+    {
+      "model": "crnn_freq",
+      "device": "cuda",
+      "parameters": 251810,
+      "checkpoint_bytes": 1101257,
+      "model_only": {
+        "median_ms": 0.7816869999714982,
+        "p95_ms": 0.8682691999979397
+      },
+      "wav_to_logits": {
+        "median_ms": 14.430992499967488,
+        "p95_ms": 17.859853800018755
+      }
+    },
+    {
+      "model": "crnn_freq_ta",
+      "device": "cpu",
+      "parameters": 251939,
+      "checkpoint_bytes": 1102339,
+      "model_only": {
+        "median_ms": 8.154831499950888,
+        "p95_ms": 9.335974949971154
+      },
+      "wav_to_logits": {
+        "median_ms": 21.757172500031174,
+        "p95_ms": 32.398340899987936
+      }
+    },
+    {
+      "model": "crnn_freq_ta",
+      "device": "cuda",
+      "parameters": 251939,
+      "checkpoint_bytes": 1102339,
+      "model_only": {
+        "median_ms": 0.8096924999563271,
+        "p95_ms": 0.9574500999747214
+      },
+      "wav_to_logits": {
+        "median_ms": 14.45182599996997,
+        "p95_ms": 16.50133309999546
+      }
+    },
+    {
+      "model": "crnn_freq_ca",
+      "device": "cpu",
+      "parameters": 252906,
+      "checkpoint_bytes": 1106813,
+      "model_only": {
+        "median_ms": 8.238455500020336,
+        "p95_ms": 9.341692249955713
+      },
+      "wav_to_logits": {
+        "median_ms": 22.19407149999597,
+        "p95_ms": 25.846477100020593
+      }
+    },
+    {
+      "model": "crnn_freq_ca",
+      "device": "cuda",
+      "parameters": 252906,
+      "checkpoint_bytes": 1106813,
+      "model_only": {
+        "median_ms": 0.9889959999895837,
+        "p95_ms": 1.1006130999476227
+      },
+      "wav_to_logits": {
+        "median_ms": 14.814733500031707,
+        "p95_ms": 17.290467350039762
+      }
+    },
+    {
+      "model": "crnn_freq_tca",
+      "device": "cpu",
+      "parameters": 253035,
+      "checkpoint_bytes": 1107895,
+      "model_only": {
+        "median_ms": 8.51693399999931,
+        "p95_ms": 10.175140749987568
+      },
+      "wav_to_logits": {
+        "median_ms": 22.158515500052545,
+        "p95_ms": 35.36559834998911
+      }
+    },
+    {
+      "model": "crnn_freq_tca",
+      "device": "cuda",
+      "parameters": 253035,
+      "checkpoint_bytes": 1107895,
+      "model_only": {
+        "median_ms": 1.0062439999387607,
+        "p95_ms": 1.1693324999839658
+      },
+      "wav_to_logits": {
+        "median_ms": 14.600386999973125,
+        "p95_ms": 17.275845299951694
+      }
+    }
+  ]
+}

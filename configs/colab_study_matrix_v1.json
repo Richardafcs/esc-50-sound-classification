@@ -1,0 +1,926 @@
+{
+  "schema": "esc50_colab_study_v1",
+  "scope": "development-validation only; held-out test access disabled",
+  "train_protocol": {
+    "train_folds": [
+      1,
+      2,
+      3
+    ],
+    "validation_fold": 4,
+    "held_out_fold": 5,
+    "source_strict": true,
+    "seeds": [
+      101,
+      202,
+      303
+    ],
+    "epochs": 60,
+    "batch_size": 32,
+    "learning_rate": 0.001,
+    "scheduler": "cosine"
+  },
+  "groups": {
+    "A_baselines": {
+      "title": "Traditional baselines",
+      "status": "runnable",
+      "required": true
+    },
+    "B_architecture": {
+      "title": "CNN/CRNN/Temporal+Channel Attention",
+      "status": "runnable",
+      "required": true
+    },
+    "C_augmentation": {
+      "title": "SpecAugment / waveform noise / Mixup",
+      "status": "runnable",
+      "required": true
+    },
+    "D_feature_sampling": {
+      "title": "12 feature x sample-rate cases; 3 seeds",
+      "status": "runnable",
+      "required": false
+    },
+    "E_robustness": {
+      "title": "Development-validation only noise/gain stress",
+      "status": "runnable",
+      "required": false
+    },
+    "F_advanced": {
+      "title": "PANNs / CLAP / BEATs / RL",
+      "status": "not_implemented",
+      "required": false
+    },
+    "G_confirmation": {
+      "title": "Held-out test / final CV",
+      "status": "manual_only_after_freeze",
+      "required": false
+    }
+  },
+  "not_executable": [
+    {
+      "name": "PANNs frozen/fine-tuned",
+      "reason": "No integrated pretrained encoder/checkpoint or pretraining overlap audit"
+    },
+    {
+      "name": "CLAP zero-shot",
+      "reason": "No CLAP runtime/weights/text prompt protocol implemented"
+    },
+    {
+      "name": "BEATs/AST",
+      "reason": "No pretrained model backend and weights"
+    },
+    {
+      "name": "Reinforcement learning",
+      "reason": "Out of scope for current supervised ESC-50 study"
+    },
+    {
+      "name": "Final held-out test / fixed CV",
+      "reason": "Requires frozen recipe, protocol approval and disclosure of prior test access"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "A_logistic",
+      "group": "A_baselines",
+      "kind": "baseline",
+      "method": "logistic",
+      "priority": "required",
+      "requires": [
+        "base_cache"
+      ]
+    },
+    {
+      "id": "A_cepstral_svm",
+      "group": "A_baselines",
+      "kind": "baseline",
+      "method": "cepstral_svm",
+      "priority": "required",
+      "requires": [
+        "base_cache"
+      ]
+    },
+    {
+      "id": "B_cnn_freq_s101",
+      "group": "B_architecture",
+      "kind": "supervised",
+      "model": "cnn_freq",
+      "seed": 101,
+      "priority": "core",
+      "requires": [
+        "base_cache"
+      ],
+      "augmentation": "clean"
+    },
+    {
+      "id": "B_cnn_freq_s202",
+      "group": "B_architecture",
+      "kind": "supervised",
+      "model": "cnn_freq",
+      "seed": 202,
+      "priority": "core",
+      "requires": [
+        "base_cache"
+      ],
+      "augmentation": "clean"
+    },
+    {
+      "id": "B_cnn_freq_s303",
+      "group": "B_architecture",
+      "kind": "supervised",
+      "model": "cnn_freq",
+      "seed": 303,
+      "priority": "core",
+      "requires": [
+        "base_cache"
+      ],
+      "augmentation": "clean"
+    },
+    {
+      "id": "B_crnn_freq_s101",
+      "group": "B_architecture",
+      "kind": "supervised",
+      "model": "crnn_freq",
+      "seed": 101,
+      "priority": "core",
+      "requires": [
+        "base_cache"
+      ],
+      "augmentation": "clean"
+    },
+    {
+      "id": "B_crnn_freq_s202",
+      "group": "B_architecture",
+      "kind": "supervised",
+      "model": "crnn_freq",
+      "seed": 202,
+      "priority": "core",
+      "requires": [
+        "base_cache"
+      ],
+      "augmentation": "clean"
+    },
+    {
+      "id": "B_crnn_freq_s303",
+      "group": "B_architecture",
+      "kind": "supervised",
+      "model": "crnn_freq",
+      "seed": 303,
+      "priority": "core",
+      "requires": [
+        "base_cache"
+      ],
+      "augmentation": "clean"
+    },
+    {
+      "id": "B_crnn_freq_ta_s101",
+      "group": "B_architecture",
+      "kind": "supervised",
+      "model": "crnn_freq_ta",
+      "seed": 101,
+      "priority": "core",
+      "requires": [
+        "base_cache"
+      ],
+      "augmentation": "clean"
+    },
+    {
+      "id": "B_crnn_freq_ta_s202",
+      "group": "B_architecture",
+      "kind": "supervised",
+      "model": "crnn_freq_ta",
+      "seed": 202,
+      "priority": "core",
+      "requires": [
+        "base_cache"
+      ],
+      "augmentation": "clean"
+    },
+    {
+      "id": "B_crnn_freq_ta_s303",
+      "group": "B_architecture",
+      "kind": "supervised",
+      "model": "crnn_freq_ta",
+      "seed": 303,
+      "priority": "core",
+      "requires": [
+        "base_cache"
+      ],
+      "augmentation": "clean"
+    },
+    {
+      "id": "B_crnn_freq_ca_s101",
+      "group": "B_architecture",
+      "kind": "supervised",
+      "model": "crnn_freq_ca",
+      "seed": 101,
+      "priority": "core",
+      "requires": [
+        "base_cache"
+      ],
+      "augmentation": "clean"
+    },
+    {
+      "id": "B_crnn_freq_ca_s202",
+      "group": "B_architecture",
+      "kind": "supervised",
+      "model": "crnn_freq_ca",
+      "seed": 202,
+      "priority": "core",
+      "requires": [
+        "base_cache"
+      ],
+      "augmentation": "clean"
+    },
+    {
+      "id": "B_crnn_freq_ca_s303",
+      "group": "B_architecture",
+      "kind": "supervised",
+      "model": "crnn_freq_ca",
+      "seed": 303,
+      "priority": "core",
+      "requires": [
+        "base_cache"
+      ],
+      "augmentation": "clean"
+    },
+    {
+      "id": "B_crnn_freq_tca_s101",
+      "group": "B_architecture",
+      "kind": "supervised",
+      "model": "crnn_freq_tca",
+      "seed": 101,
+      "priority": "core",
+      "requires": [
+        "base_cache"
+      ],
+      "augmentation": "clean"
+    },
+    {
+      "id": "B_crnn_freq_tca_s202",
+      "group": "B_architecture",
+      "kind": "supervised",
+      "model": "crnn_freq_tca",
+      "seed": 202,
+      "priority": "core",
+      "requires": [
+        "base_cache"
+      ],
+      "augmentation": "clean"
+    },
+    {
+      "id": "B_crnn_freq_tca_s303",
+      "group": "B_architecture",
+      "kind": "supervised",
+      "model": "crnn_freq_tca",
+      "seed": 303,
+      "priority": "core",
+      "requires": [
+        "base_cache"
+      ],
+      "augmentation": "clean"
+    },
+    {
+      "id": "C_specaugment_s101",
+      "group": "C_augmentation",
+      "kind": "supervised",
+      "model": "cnn_freq",
+      "seed": 101,
+      "priority": "core",
+      "requires": [
+        "base_cache"
+      ],
+      "augmentation": "specaugment"
+    },
+    {
+      "id": "C_specaugment_s202",
+      "group": "C_augmentation",
+      "kind": "supervised",
+      "model": "cnn_freq",
+      "seed": 202,
+      "priority": "core",
+      "requires": [
+        "base_cache"
+      ],
+      "augmentation": "specaugment"
+    },
+    {
+      "id": "C_specaugment_s303",
+      "group": "C_augmentation",
+      "kind": "supervised",
+      "model": "cnn_freq",
+      "seed": 303,
+      "priority": "core",
+      "requires": [
+        "base_cache"
+      ],
+      "augmentation": "specaugment"
+    },
+    {
+      "id": "C_noise_s101",
+      "group": "C_augmentation",
+      "kind": "supervised",
+      "model": "cnn_freq",
+      "seed": 101,
+      "priority": "core",
+      "requires": [
+        "base_cache",
+        "raw_wav"
+      ],
+      "augmentation": "noise"
+    },
+    {
+      "id": "C_noise_s202",
+      "group": "C_augmentation",
+      "kind": "supervised",
+      "model": "cnn_freq",
+      "seed": 202,
+      "priority": "core",
+      "requires": [
+        "base_cache",
+        "raw_wav"
+      ],
+      "augmentation": "noise"
+    },
+    {
+      "id": "C_noise_s303",
+      "group": "C_augmentation",
+      "kind": "supervised",
+      "model": "cnn_freq",
+      "seed": 303,
+      "priority": "core",
+      "requires": [
+        "base_cache",
+        "raw_wav"
+      ],
+      "augmentation": "noise"
+    },
+    {
+      "id": "C_mixup_s101",
+      "group": "C_augmentation",
+      "kind": "supervised",
+      "model": "cnn_freq",
+      "seed": 101,
+      "priority": "core",
+      "requires": [
+        "base_cache",
+        "raw_wav"
+      ],
+      "augmentation": "mixup"
+    },
+    {
+      "id": "C_mixup_s202",
+      "group": "C_augmentation",
+      "kind": "supervised",
+      "model": "cnn_freq",
+      "seed": 202,
+      "priority": "core",
+      "requires": [
+        "base_cache",
+        "raw_wav"
+      ],
+      "augmentation": "mixup"
+    },
+    {
+      "id": "C_mixup_s303",
+      "group": "C_augmentation",
+      "kind": "supervised",
+      "model": "cnn_freq",
+      "seed": 303,
+      "priority": "core",
+      "requires": [
+        "base_cache",
+        "raw_wav"
+      ],
+      "augmentation": "mixup"
+    },
+    {
+      "id": "D_sr16_fmax8_logmel64_s101",
+      "group": "D_feature_sampling",
+      "kind": "feature_ablation",
+      "case": "sr16_fmax8_logmel64",
+      "model": "cnn",
+      "seed": 101,
+      "priority": "recommended",
+      "requires": [
+        "raw_wav",
+        "feature_cache:sr16_fmax8_logmel64"
+      ]
+    },
+    {
+      "id": "D_sr16_fmax8_logmel64_s202",
+      "group": "D_feature_sampling",
+      "kind": "feature_ablation",
+      "case": "sr16_fmax8_logmel64",
+      "model": "cnn",
+      "seed": 202,
+      "priority": "recommended",
+      "requires": [
+        "raw_wav",
+        "feature_cache:sr16_fmax8_logmel64"
+      ]
+    },
+    {
+      "id": "D_sr16_fmax8_logmel64_s303",
+      "group": "D_feature_sampling",
+      "kind": "feature_ablation",
+      "case": "sr16_fmax8_logmel64",
+      "model": "cnn",
+      "seed": 303,
+      "priority": "recommended",
+      "requires": [
+        "raw_wav",
+        "feature_cache:sr16_fmax8_logmel64"
+      ]
+    },
+    {
+      "id": "D_sr16_fmax8_logmel32_s101",
+      "group": "D_feature_sampling",
+      "kind": "feature_ablation",
+      "case": "sr16_fmax8_logmel32",
+      "model": "cnn",
+      "seed": 101,
+      "priority": "recommended",
+      "requires": [
+        "raw_wav",
+        "feature_cache:sr16_fmax8_logmel32"
+      ]
+    },
+    {
+      "id": "D_sr16_fmax8_logmel32_s202",
+      "group": "D_feature_sampling",
+      "kind": "feature_ablation",
+      "case": "sr16_fmax8_logmel32",
+      "model": "cnn",
+      "seed": 202,
+      "priority": "recommended",
+      "requires": [
+        "raw_wav",
+        "feature_cache:sr16_fmax8_logmel32"
+      ]
+    },
+    {
+      "id": "D_sr16_fmax8_logmel32_s303",
+      "group": "D_feature_sampling",
+      "kind": "feature_ablation",
+      "case": "sr16_fmax8_logmel32",
+      "model": "cnn",
+      "seed": 303,
+      "priority": "recommended",
+      "requires": [
+        "raw_wav",
+        "feature_cache:sr16_fmax8_logmel32"
+      ]
+    },
+    {
+      "id": "D_sr16_fmax8_mfcc40_s101",
+      "group": "D_feature_sampling",
+      "kind": "feature_ablation",
+      "case": "sr16_fmax8_mfcc40",
+      "model": "cnn",
+      "seed": 101,
+      "priority": "recommended",
+      "requires": [
+        "raw_wav",
+        "feature_cache:sr16_fmax8_mfcc40"
+      ]
+    },
+    {
+      "id": "D_sr16_fmax8_mfcc40_s202",
+      "group": "D_feature_sampling",
+      "kind": "feature_ablation",
+      "case": "sr16_fmax8_mfcc40",
+      "model": "cnn",
+      "seed": 202,
+      "priority": "recommended",
+      "requires": [
+        "raw_wav",
+        "feature_cache:sr16_fmax8_mfcc40"
+      ]
+    },
+    {
+      "id": "D_sr16_fmax8_mfcc40_s303",
+      "group": "D_feature_sampling",
+      "kind": "feature_ablation",
+      "case": "sr16_fmax8_mfcc40",
+      "model": "cnn",
+      "seed": 303,
+      "priority": "recommended",
+      "requires": [
+        "raw_wav",
+        "feature_cache:sr16_fmax8_mfcc40"
+      ]
+    },
+    {
+      "id": "D_sr16_fmax8_loglinear64_s101",
+      "group": "D_feature_sampling",
+      "kind": "feature_ablation",
+      "case": "sr16_fmax8_loglinear64",
+      "model": "cnn",
+      "seed": 101,
+      "priority": "recommended",
+      "requires": [
+        "raw_wav",
+        "feature_cache:sr16_fmax8_loglinear64"
+      ]
+    },
+    {
+      "id": "D_sr16_fmax8_loglinear64_s202",
+      "group": "D_feature_sampling",
+      "kind": "feature_ablation",
+      "case": "sr16_fmax8_loglinear64",
+      "model": "cnn",
+      "seed": 202,
+      "priority": "recommended",
+      "requires": [
+        "raw_wav",
+        "feature_cache:sr16_fmax8_loglinear64"
+      ]
+    },
+    {
+      "id": "D_sr16_fmax8_loglinear64_s303",
+      "group": "D_feature_sampling",
+      "kind": "feature_ablation",
+      "case": "sr16_fmax8_loglinear64",
+      "model": "cnn",
+      "seed": 303,
+      "priority": "recommended",
+      "requires": [
+        "raw_wav",
+        "feature_cache:sr16_fmax8_loglinear64"
+      ]
+    },
+    {
+      "id": "D_sr32_fmax8_logmel64_s101",
+      "group": "D_feature_sampling",
+      "kind": "feature_ablation",
+      "case": "sr32_fmax8_logmel64",
+      "model": "cnn",
+      "seed": 101,
+      "priority": "recommended",
+      "requires": [
+        "raw_wav",
+        "feature_cache:sr32_fmax8_logmel64"
+      ]
+    },
+    {
+      "id": "D_sr32_fmax8_logmel64_s202",
+      "group": "D_feature_sampling",
+      "kind": "feature_ablation",
+      "case": "sr32_fmax8_logmel64",
+      "model": "cnn",
+      "seed": 202,
+      "priority": "recommended",
+      "requires": [
+        "raw_wav",
+        "feature_cache:sr32_fmax8_logmel64"
+      ]
+    },
+    {
+      "id": "D_sr32_fmax8_logmel64_s303",
+      "group": "D_feature_sampling",
+      "kind": "feature_ablation",
+      "case": "sr32_fmax8_logmel64",
+      "model": "cnn",
+      "seed": 303,
+      "priority": "recommended",
+      "requires": [
+        "raw_wav",
+        "feature_cache:sr32_fmax8_logmel64"
+      ]
+    },
+    {
+      "id": "D_sr32_fmax8_logmel32_s101",
+      "group": "D_feature_sampling",
+      "kind": "feature_ablation",
+      "case": "sr32_fmax8_logmel32",
+      "model": "cnn",
+      "seed": 101,
+      "priority": "recommended",
+      "requires": [
+        "raw_wav",
+        "feature_cache:sr32_fmax8_logmel32"
+      ]
+    },
+    {
+      "id": "D_sr32_fmax8_logmel32_s202",
+      "group": "D_feature_sampling",
+      "kind": "feature_ablation",
+      "case": "sr32_fmax8_logmel32",
+      "model": "cnn",
+      "seed": 202,
+      "priority": "recommended",
+      "requires": [
+        "raw_wav",
+        "feature_cache:sr32_fmax8_logmel32"
+      ]
+    },
+    {
+      "id": "D_sr32_fmax8_logmel32_s303",
+      "group": "D_feature_sampling",
+      "kind": "feature_ablation",
+      "case": "sr32_fmax8_logmel32",
+      "model": "cnn",
+      "seed": 303,
+      "priority": "recommended",
+      "requires": [
+        "raw_wav",
+        "feature_cache:sr32_fmax8_logmel32"
+      ]
+    },
+    {
+      "id": "D_sr32_fmax8_mfcc40_s101",
+      "group": "D_feature_sampling",
+      "kind": "feature_ablation",
+      "case": "sr32_fmax8_mfcc40",
+      "model": "cnn",
+      "seed": 101,
+      "priority": "recommended",
+      "requires": [
+        "raw_wav",
+        "feature_cache:sr32_fmax8_mfcc40"
+      ]
+    },
+    {
+      "id": "D_sr32_fmax8_mfcc40_s202",
+      "group": "D_feature_sampling",
+      "kind": "feature_ablation",
+      "case": "sr32_fmax8_mfcc40",
+      "model": "cnn",
+      "seed": 202,
+      "priority": "recommended",
+      "requires": [
+        "raw_wav",
+        "feature_cache:sr32_fmax8_mfcc40"
+      ]
+    },
+    {
+      "id": "D_sr32_fmax8_mfcc40_s303",
+      "group": "D_feature_sampling",
+      "kind": "feature_ablation",
+      "case": "sr32_fmax8_mfcc40",
+      "model": "cnn",
+      "seed": 303,
+      "priority": "recommended",
+      "requires": [
+        "raw_wav",
+        "feature_cache:sr32_fmax8_mfcc40"
+      ]
+    },
+    {
+      "id": "D_sr32_fmax8_loglinear64_s101",
+      "group": "D_feature_sampling",
+      "kind": "feature_ablation",
+      "case": "sr32_fmax8_loglinear64",
+      "model": "cnn",
+      "seed": 101,
+      "priority": "recommended",
+      "requires": [
+        "raw_wav",
+        "feature_cache:sr32_fmax8_loglinear64"
+      ]
+    },
+    {
+      "id": "D_sr32_fmax8_loglinear64_s202",
+      "group": "D_feature_sampling",
+      "kind": "feature_ablation",
+      "case": "sr32_fmax8_loglinear64",
+      "model": "cnn",
+      "seed": 202,
+      "priority": "recommended",
+      "requires": [
+        "raw_wav",
+        "feature_cache:sr32_fmax8_loglinear64"
+      ]
+    },
+    {
+      "id": "D_sr32_fmax8_loglinear64_s303",
+      "group": "D_feature_sampling",
+      "kind": "feature_ablation",
+      "case": "sr32_fmax8_loglinear64",
+      "model": "cnn",
+      "seed": 303,
+      "priority": "recommended",
+      "requires": [
+        "raw_wav",
+        "feature_cache:sr32_fmax8_loglinear64"
+      ]
+    },
+    {
+      "id": "D_sr32_fmax16_logmel64_s101",
+      "group": "D_feature_sampling",
+      "kind": "feature_ablation",
+      "case": "sr32_fmax16_logmel64",
+      "model": "cnn",
+      "seed": 101,
+      "priority": "recommended",
+      "requires": [
+        "raw_wav",
+        "feature_cache:sr32_fmax16_logmel64"
+      ]
+    },
+    {
+      "id": "D_sr32_fmax16_logmel64_s202",
+      "group": "D_feature_sampling",
+      "kind": "feature_ablation",
+      "case": "sr32_fmax16_logmel64",
+      "model": "cnn",
+      "seed": 202,
+      "priority": "recommended",
+      "requires": [
+        "raw_wav",
+        "feature_cache:sr32_fmax16_logmel64"
+      ]
+    },
+    {
+      "id": "D_sr32_fmax16_logmel64_s303",
+      "group": "D_feature_sampling",
+      "kind": "feature_ablation",
+      "case": "sr32_fmax16_logmel64",
+      "model": "cnn",
+      "seed": 303,
+      "priority": "recommended",
+      "requires": [
+        "raw_wav",
+        "feature_cache:sr32_fmax16_logmel64"
+      ]
+    },
+    {
+      "id": "D_sr32_fmax16_logmel32_s101",
+      "group": "D_feature_sampling",
+      "kind": "feature_ablation",
+      "case": "sr32_fmax16_logmel32",
+      "model": "cnn",
+      "seed": 101,
+      "priority": "recommended",
+      "requires": [
+        "raw_wav",
+        "feature_cache:sr32_fmax16_logmel32"
+      ]
+    },
+    {
+      "id": "D_sr32_fmax16_logmel32_s202",
+      "group": "D_feature_sampling",
+      "kind": "feature_ablation",
+      "case": "sr32_fmax16_logmel32",
+      "model": "cnn",
+      "seed": 202,
+      "priority": "recommended",
+      "requires": [
+        "raw_wav",
+        "feature_cache:sr32_fmax16_logmel32"
+      ]
+    },
+    {
+      "id": "D_sr32_fmax16_logmel32_s303",
+      "group": "D_feature_sampling",
+      "kind": "feature_ablation",
+      "case": "sr32_fmax16_logmel32",
+      "model": "cnn",
+      "seed": 303,
+      "priority": "recommended",
+      "requires": [
+        "raw_wav",
+        "feature_cache:sr32_fmax16_logmel32"
+      ]
+    },
+    {
+      "id": "D_sr32_fmax16_mfcc40_s101",
+      "group": "D_feature_sampling",
+      "kind": "feature_ablation",
+      "case": "sr32_fmax16_mfcc40",
+      "model": "cnn",
+      "seed": 101,
+      "priority": "recommended",
+      "requires": [
+        "raw_wav",
+        "feature_cache:sr32_fmax16_mfcc40"
+      ]
+    },
+    {
+      "id": "D_sr32_fmax16_mfcc40_s202",
+      "group": "D_feature_sampling",
+      "kind": "feature_ablation",
+      "case": "sr32_fmax16_mfcc40",
+      "model": "cnn",
+      "seed": 202,
+      "priority": "recommended",
+      "requires": [
+        "raw_wav",
+        "feature_cache:sr32_fmax16_mfcc40"
+      ]
+    },
+    {
+      "id": "D_sr32_fmax16_mfcc40_s303",
+      "group": "D_feature_sampling",
+      "kind": "feature_ablation",
+      "case": "sr32_fmax16_mfcc40",
+      "model": "cnn",
+      "seed": 303,
+      "priority": "recommended",
+      "requires": [
+        "raw_wav",
+        "feature_cache:sr32_fmax16_mfcc40"
+      ]
+    },
+    {
+      "id": "D_sr32_fmax16_loglinear64_s101",
+      "group": "D_feature_sampling",
+      "kind": "feature_ablation",
+      "case": "sr32_fmax16_loglinear64",
+      "model": "cnn",
+      "seed": 101,
+      "priority": "recommended",
+      "requires": [
+        "raw_wav",
+        "feature_cache:sr32_fmax16_loglinear64"
+      ]
+    },
+    {
+      "id": "D_sr32_fmax16_loglinear64_s202",
+      "group": "D_feature_sampling",
+      "kind": "feature_ablation",
+      "case": "sr32_fmax16_loglinear64",
+      "model": "cnn",
+      "seed": 202,
+      "priority": "recommended",
+      "requires": [
+        "raw_wav",
+        "feature_cache:sr32_fmax16_loglinear64"
+      ]
+    },
+    {
+      "id": "D_sr32_fmax16_loglinear64_s303",
+      "group": "D_feature_sampling",
+      "kind": "feature_ablation",
+      "case": "sr32_fmax16_loglinear64",
+      "model": "cnn",
+      "seed": 303,
+      "priority": "recommended",
+      "requires": [
+        "raw_wav",
+        "feature_cache:sr32_fmax16_loglinear64"
+      ]
+    },
+    {
+      "id": "E_clean_cnn",
+      "group": "E_robustness",
+      "kind": "robustness",
+      "checkpoint_task": "B_cnn_freq_s101",
+      "priority": "recommended",
+      "requires": [
+        "raw_wav",
+        "base_cache",
+        "completed:B_cnn_freq_s101"
+      ],
+      "conditions": [
+        "clean",
+        "snr_20",
+        "snr_10",
+        "snr_0",
+        "gain_-6",
+        "gain_6"
+      ]
+    },
+    {
+      "id": "E_clean_crnn",
+      "group": "E_robustness",
+      "kind": "robustness",
+      "checkpoint_task": "B_crnn_freq_s101",
+      "priority": "recommended",
+      "requires": [
+        "raw_wav",
+        "base_cache",
+        "completed:B_crnn_freq_s101"
+      ],
+      "conditions": [
+        "clean",
+        "snr_20",
+        "snr_10",
+        "snr_0",
+        "gain_-6",
+        "gain_6"
+      ]
+    },
+    {
+      "id": "E_noise_cnn",
+      "group": "E_robustness",
+      "kind": "robustness",
+      "checkpoint_task": "C_noise_s101",
+      "priority": "recommended",
+      "requires": [
+        "raw_wav",
+        "base_cache",
+        "completed:C_noise_s101"
+      ],
+      "conditions": [
+        "clean",
+        "snr_20",
+        "snr_10",
+        "snr_0",
+        "gain_-6",
+        "gain_6"
+      ]
+    }
+  ]
+}

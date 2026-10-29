@@ -1,0 +1,232 @@
+{
+  "schema_version": 1,
+  "purpose": "Small, byte-preserved historical fixtures required by the full regression suite; not a new independent evaluation",
+  "total_bytes": 3469994,
+  "files": [
+    {
+      "path": "results/historical/final_study/models/cnn_freq_fold1_seed101_60ep.pt",
+      "bytes": 286113,
+      "sha256": "d3c62d9183b8858c2d75f90406790c555f4e799c7a66b5be96ef98839050cd28"
+    },
+    {
+      "path": "results/historical/final_study/models/cnn_freq_fold2_seed101_60ep.pt",
+      "bytes": 286113,
+      "sha256": "a9c42361edcba07ebc9c5c8265208e7eee932c516912724ef8bc97ab6b542469"
+    },
+    {
+      "path": "results/historical/final_study/models/cnn_freq_fold3_seed101_60ep.pt",
+      "bytes": 286113,
+      "sha256": "b600b20680a8548e9fce92886faedfc869765ac1e644cb6dedb262e6e167791d"
+    },
+    {
+      "path": "results/historical/final_study/models/cnn_freq_fold4_seed101_60ep.pt",
+      "bytes": 285985,
+      "sha256": "0e7a45f7f65ba8a0fac601800ce86ffe4770fb16ff9ac943c5b4e3d0fc58a7c1"
+    },
+    {
+      "path": "results/historical/final_study/models/cnn_freq_seed101_60ep.pt",
+      "bytes": 286113,
+      "sha256": "645f0d136afe46fbfb7e6514ba4473528d929908bc45edb92c9628a76c490ae7"
+    },
+    {
+      "path": "results/historical/final_study/results/holdout/cnn_freq_fold1_seed101_60ep/test.json",
+      "bytes": 108919,
+      "sha256": "359d1a2c878e3d1bdd8b939288a62af0e1126fba7ac7924c6e687a3756575243"
+    },
+    {
+      "path": "results/historical/final_study/results/holdout/cnn_freq_fold1_seed101_60ep/test_predictions.csv",
+      "bytes": 9434,
+      "sha256": "b746fefde510715d341ccccc9524c38f45c88a086061b6514d9633d41f5900fb"
+    },
+    {
+      "path": "results/historical/final_study/results/holdout/cnn_freq_fold2_seed101_60ep/test.json",
+      "bytes": 109020,
+      "sha256": "0726f19e8fe55add38457bf6cbc5daae44723a8a0894bc0448d533f496835c9d"
+    },
+    {
+      "path": "results/historical/final_study/results/holdout/cnn_freq_fold2_seed101_60ep/test_predictions.csv",
+      "bytes": 9591,
+      "sha256": "8df8bf7405feb0ffcddc7d8e292f069a2010b29732b0604fb2caeb343d4cfe9a"
+    },
+    {
+      "path": "results/historical/final_study/results/holdout/cnn_freq_fold3_seed101_60ep/test.json",
+      "bytes": 109059,
+      "sha256": "779124e1e66233e8530a186b1629e2df907f38069706b9230f5abcf1e44e2a26"
+    },
+    {
+      "path": "results/historical/final_study/results/holdout/cnn_freq_fold3_seed101_60ep/test_predictions.csv",
+      "bytes": 9752,
+      "sha256": "cb35c1f82b69516ed4e6a7914ae039172d726b1788f42a128dd0087c66ac209f"
+    },
+    {
+      "path": "results/historical/final_study/results/holdout/cnn_freq_fold4_seed101_60ep/test.json",
+      "bytes": 108942,
+      "sha256": "b288ca876717841814f4a7c1b4edee916fbb03522908b60217bcf44acc9fe0b0"
+    },
+    {
+      "path": "results/historical/final_study/results/holdout/cnn_freq_fold4_seed101_60ep/test_predictions.csv",
+      "bytes": 9778,
+      "sha256": "812c3b48cfc220da899d8b3f81feca897a7c0204ca3e9e2287d9cc7f53f5be48"
+    },
+    {
+      "path": "results/historical/final_study/results/holdout/cnn_freq_seed101_60ep/test.json",
+      "bytes": 109051,
+      "sha256": "530aec8107bb3e96978fb7e4ef27d9d5989973ecd2f0443ebb3f7683c3edd8cc"
+    },
+    {
+      "path": "results/historical/final_study/results/holdout/cnn_freq_seed101_60ep/test_predictions.csv",
+      "bytes": 9776,
+      "sha256": "f71739564d1b6b6da486d4e92695b498641635771ce15472ca969b3dbae6d0bd"
+    },
+    {
+      "path": "results/historical/final_study/results/statistics_baseline/model.json",
+      "bytes": 58609,
+      "sha256": "2f25595a785675f99778450d15d01fb4fd6335fa73f103328246c1c7a82893f3"
+    },
+    {
+      "path": "results/historical/final_study/results/statistics_baseline/model.npz",
+      "bytes": 53011,
+      "sha256": "176c41ff888fb3e9a3157d0afcdd7efb4e5f84931d3912f03f0b357394a00969"
+    },
+    {
+      "path": "results/historical/final_study/results/statistics_baseline/search.json",
+      "bytes": 1723,
+      "sha256": "f4524d00dcfb6bafd6538f4f905d16d61f334a848c8cd9e84ff5fbcbb463c681"
+    },
+    {
+      "path": "results/historical/final_study/results/statistics_baseline/validation.json",
+      "bytes": 25324,
+      "sha256": "91285a28cf18c9f3c1b914a39492c268794d489bb5fa5ee524be893685909153"
+    },
+    {
+      "path": "results/historical/final_study/results/statistics_baseline/validation_predictions.csv",
+      "bytes": 9743,
+      "sha256": "44f19ad6a994f8a33a5ca6cf07cd2402848e2b60563cfe3259ba0689c8015903"
+    },
+    {
+      "path": "results/historical/final_study/results/statistics_baseline/validation_predictions_l2_0.1.csv",
+      "bytes": 9743,
+      "sha256": "7e3d0398e650e0e475200275fa9fb4194fdb0d6fa0c7346029eef8ffe84fefab"
+    },
+    {
+      "path": "results/historical/final_study/runs/cnn_freq_fold1_seed101_60ep/history.json",
+      "bytes": 50704,
+      "sha256": "66a7b8a143c06f9d3756ea75cbba7a016dc32d877f0d0d9393b7cfe13a085021"
+    },
+    {
+      "path": "results/historical/final_study/runs/cnn_freq_fold1_seed101_60ep/manifest.json",
+      "bytes": 86491,
+      "sha256": "d2e743cfb32c14e998722b61ed13a494589da07df015d4c778631c33d5ed70df"
+    },
+    {
+      "path": "results/historical/final_study/runs/cnn_freq_fold1_seed101_60ep/run.json",
+      "bytes": 87080,
+      "sha256": "de895082cfc4e1bc7903b617e453a4827f665931776a94231affa134b5194987"
+    },
+    {
+      "path": "results/historical/final_study/runs/cnn_freq_fold1_seed101_60ep/validation.json",
+      "bytes": 24268,
+      "sha256": "ab294d5ba28c5720cf8f76b1d9b93e97a07d32b0d2dcc518ecfec5f70f6ed14e"
+    },
+    {
+      "path": "results/historical/final_study/runs/cnn_freq_fold2_seed101_60ep/history.json",
+      "bytes": 50724,
+      "sha256": "9aae765a17c0cef04da95b7fbf814f14736fdc2448f21a707202bd4609aa128e"
+    },
+    {
+      "path": "results/historical/final_study/runs/cnn_freq_fold2_seed101_60ep/manifest.json",
+      "bytes": 86491,
+      "sha256": "5c01084ab84a0b5ad2f2e12ff7237df68d53b4769e7f972894c827b51115755b"
+    },
+    {
+      "path": "results/historical/final_study/runs/cnn_freq_fold2_seed101_60ep/run.json",
+      "bytes": 87081,
+      "sha256": "f8b2bd444f11bd183d5c30e80cb9849c067dc04ce0415e068ba135990b2f5a19"
+    },
+    {
+      "path": "results/historical/final_study/runs/cnn_freq_fold2_seed101_60ep/validation.json",
+      "bytes": 24169,
+      "sha256": "ee5de6f2d55a68cbd91b13f06f5912a3e7886047006e995a744421d39e8f2f45"
+    },
+    {
+      "path": "results/historical/final_study/runs/cnn_freq_fold3_seed101_60ep/history.json",
+      "bytes": 51310,
+      "sha256": "8185b1e038e9bf1a5eeefa2599024c360a8f565f393c5712529baa6992582ea9"
+    },
+    {
+      "path": "results/historical/final_study/runs/cnn_freq_fold3_seed101_60ep/manifest.json",
+      "bytes": 86491,
+      "sha256": "679934240221495e57afd0afda867c9e13cd348576bea861398e09207a5b9955"
+    },
+    {
+      "path": "results/historical/final_study/runs/cnn_freq_fold3_seed101_60ep/run.json",
+      "bytes": 87081,
+      "sha256": "39995ba9dd750d17720986a607e01f63435217406ddb8fb08c129446c40e8e84"
+    },
+    {
+      "path": "results/historical/final_study/runs/cnn_freq_fold3_seed101_60ep/validation.json",
+      "bytes": 24343,
+      "sha256": "4c033040dd1bae4c814e8065eb8ee4b4401f39dec37eb8ff27a7335c6f3e6c35"
+    },
+    {
+      "path": "results/historical/final_study/runs/cnn_freq_fold4_seed101_60ep/history.json",
+      "bytes": 50717,
+      "sha256": "e8ccec2d4c5a7cfef045ee058c1051e93f734c22804037d4196a60de0ea51336"
+    },
+    {
+      "path": "results/historical/final_study/runs/cnn_freq_fold4_seed101_60ep/manifest.json",
+      "bytes": 86406,
+      "sha256": "2b5e5c6f1bc94a6279706884216d2cffead8a46b8385eb423b89a7738526556e"
+    },
+    {
+      "path": "results/historical/final_study/runs/cnn_freq_fold4_seed101_60ep/run.json",
+      "bytes": 86995,
+      "sha256": "4563310dc85f4bde688f7dcbffa3a3608f2ca885b2e31d35b4bab1fd06eed5ef"
+    },
+    {
+      "path": "results/historical/final_study/runs/cnn_freq_fold4_seed101_60ep/validation.json",
+      "bytes": 24339,
+      "sha256": "4b3279e8b83084a54491fcf0197b7eedb593e87019999e958c721b4344304344"
+    },
+    {
+      "path": "results/historical/final_study/runs/cnn_freq_seed101_60ep/history.json",
+      "bytes": 51304,
+      "sha256": "e2822a0f49c5b5338f35f43a2f9f64e6243d25e9336c0869332d9aef094255d2"
+    },
+    {
+      "path": "results/historical/final_study/runs/cnn_freq_seed101_60ep/manifest.json",
+      "bytes": 86485,
+      "sha256": "70312d0eedc295695ee4c4c3458054aa8212490fc4392f0556c14e5a83156761"
+    },
+    {
+      "path": "results/historical/final_study/runs/cnn_freq_seed101_60ep/run.json",
+      "bytes": 87075,
+      "sha256": "5baa67286b46830400a426b8b12791a2bf2bd9d882425eac0fa7fd57ab5edb4e"
+    },
+    {
+      "path": "results/historical/final_study/runs/cnn_freq_seed101_60ep/validation.json",
+      "bytes": 24358,
+      "sha256": "9628ead46b5e05b32edeafca03b4bfb314c4986318bca55d703ca51880bafd4b"
+    },
+    {
+      "path": "results/historical/infra_v3/cnn_freq_cv_seed101_audit.json",
+      "bytes": 3142,
+      "sha256": "33a8c466ba8588c7e063a0605730479095bae602f1269ff353707fb1bd52b612"
+    },
+    {
+      "path": "results/historical/infra_v3/crnn_freq_cv_seed101_audit.json",
+      "bytes": 3140,
+      "sha256": "6016602c7472240ad12ddc1740bd17738c1fe96c51b058d7eb956dcf37035a66"
+    },
+    {
+      "path": "archive/source_before_package/classify.py",
+      "bytes": 11721,
+      "sha256": "8bc5fa4964e23d92e8273afa54253e35d94dc329076dab154efc35f8c619d51c"
+    },
+    {
+      "path": "archive/source_before_package/diagnostics.py",
+      "bytes": 26167,
+      "sha256": "3ee58a0a64e6716e3ddc590f36dd4f09818ef56d8d78841521f93daa5ef2af6d"
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+[
+  {
+    "l2": 0.001,
+    "optimization": {
+      "optimizer": "scipy L-BFGS-B",
+      "iterations": 875,
+      "success": true,
+      "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+      "objective": 1.7624999698471595,
+      "seconds": 11.439433280999992
+    },
+    "train": {
+      "accuracy": 0.6775,
+      "macro_f1": 0.6706992395554559,
+      "loss": 1.403888807397713,
+      "n": 1200
+    },
+    "validation": {
+      "accuracy": 0.4221105527638191,
+      "macro_f1": 0.3886256053887633,
+      "loss": 2.136989132987495,
+      "n": 398
+    }
+  },
+  {
+    "l2": 0.01,
+    "optimization": {
+      "optimizer": "scipy L-BFGS-B",
+      "iterations": 443,
+      "success": true,
+      "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+      "objective": 2.5926320641371468,
+      "seconds": 5.535118842999964
+    },
+    "train": {
+      "accuracy": 0.485,
+      "macro_f1": 0.4621361400307829,
+      "loss": 2.2480493132338912,
+      "n": 1200
+    },
+    "validation": {
+      "accuracy": 0.37185929648241206,
+      "macro_f1": 0.32545400599634683,
+      "loss": 2.4824200465471864,
+      "n": 398
+    }
+  },
+  {
+    "l2": 0.1,
+    "optimization": {
+      "optimizer": "scipy L-BFGS-B",
+      "iterations": 174,
+      "success": true,
+      "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+      "objective": 3.271752594324422,
+      "seconds": 2.3574345830000993
+    },
+    "train": {
+      "accuracy": 0.285,
+      "macro_f1": 0.23831125440479486,
+      "loss": 3.0384851917928053,
+      "n": 1200
+    },
+    "validation": {
+      "accuracy": 0.25879396984924624,
+      "macro_f1": 0.2025095563812814,
+      "loss": 3.1177796849078168,
+      "n": 398
+    }
+  }
+]

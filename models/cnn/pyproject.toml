@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "esc50-sound"
+version = "0.1.0"
+description = "Reproducible ESC-50 environmental sound classification research"
+requires-python = ">=3.11"
+dependencies = [
+  "torch>=2.5,<3",
+  "numpy>=2,<3",
+  "scipy>=1.14,<2",
+  "soundfile>=0.13,<1",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ipython>=8", "nbformat>=5.10"]
+report = ["matplotlib>=3.9"]
+
+[project.scripts]
+esc50 = "esc50_sound.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

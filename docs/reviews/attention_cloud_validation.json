@@ -1,0 +1,78 @@
+{
+  "environment": {
+    "torch": "2.10.0+cpu",
+    "cuda_available": false,
+    "dataset": "synthetic, uninformative random features; never ESC-50 accuracy"
+  },
+  "runs": [
+    {
+      "model": "crnn_freq_ta",
+      "status": "completed",
+      "elapsed_seconds": 5.602,
+      "epoch": 1,
+      "parameter_count": 251939,
+      "checkpoint_validation": "verified embedded manifest",
+      "sealed_test_evaluated": false,
+      "prediction_shape": [
+        2,
+        50
+      ],
+      "attention_keys": [
+        "temporal"
+      ],
+      "validation_present": true,
+      "checkpoint_present": true
+    },
+    {
+      "model": "crnn_freq_ca",
+      "status": "completed",
+      "elapsed_seconds": 6.046,
+      "epoch": 1,
+      "parameter_count": 252906,
+      "checkpoint_validation": "verified embedded manifest",
+      "sealed_test_evaluated": false,
+      "prediction_shape": [
+        2,
+        50
+      ],
+      "attention_keys": [
+        "channel"
+      ],
+      "validation_present": true,
+      "checkpoint_present": true
+    },
+    {
+      "model": "crnn_freq_tca",
+      "status": "completed",
+      "elapsed_seconds": 6.037,
+      "epoch": 1,
+      "parameter_count": 253035,
+      "checkpoint_validation": "verified embedded manifest",
+      "sealed_test_evaluated": false,
+      "prediction_shape": [
+        2,
+        50
+      ],
+      "attention_keys": [
+        "channel",
+        "temporal"
+      ],
+      "validation_present": true,
+      "checkpoint_present": true
+    }
+  ],
+  "tests": {
+    "attention_architecture_and_grid": "16 passed (pytest -q tests/test_attention_grid.py tests/test_attention.py)",
+    "non_runner_suite": "153 passed (pytest -q --ignore=tests/test_runner.py)",
+    "runner_suite": "16 passed (pytest -q tests/test_runner.py)",
+    "total_unique_tests": 169,
+    "qualification": "Separate groups passed, but single combined suite intermittently stalled on POSIX process timeout tests in this cloud runtime."
+  },
+  "constraints": {
+    "environment": "CPU-only, no CUDA GPU",
+    "real_esc50_wav_files": "missing from uploaded ZIP",
+    "real_feature_cache": "missing",
+    "real_audio_training": "not run",
+    "results": "synthetic end-to-end correctness only"
+  }
+}

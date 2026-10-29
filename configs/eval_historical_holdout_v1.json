@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "stage": "exploratory_holdout",
+  "partition": "test",
+  "train_folds": [1, 2, 3],
+  "val_fold": 4,
+  "test_fold": 5,
+  "source_policy": "source-strict",
+  "dataset_identity": "ESC-50 official metadata as shipped with research package",
+  "metadata_sha256": "ca660da60191a97de289983a05821c9382d852a38a2ba8428980816b68cf6246",
+  "selection_disclosure": "Historical Fold 5 was already evaluated; this is retrospective artifact verification, NOT independent confirmation",
+  "preregistration_ref": null
+}

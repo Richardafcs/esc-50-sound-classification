@@ -1,0 +1,608 @@
+{
+  "comparison": [
+    {
+      "model": "cnn_freq",
+      "label": "CNN",
+      "seeds": [
+        101,
+        202,
+        303
+      ],
+      "parameters": 49058,
+      "validation": {
+        "accuracy": [
+          0.7261306532663316,
+          0.7236180904522613,
+          0.7286432160804021
+        ],
+        "macro_f1": [
+          0.719429677059304,
+          0.7078517517166728,
+          0.7145118405845957
+        ]
+      },
+      "holdout": {
+        "accuracy": [
+          0.615,
+          0.6475,
+          0.63
+        ],
+        "macro_f1": [
+          0.5991819137175175,
+          0.6371115341486859,
+          0.6167131701997767
+        ]
+      }
+    },
+    {
+      "model": "crnn_freq",
+      "label": "CNN + GRU",
+      "seeds": [
+        101,
+        202,
+        303
+      ],
+      "parameters": 251810,
+      "validation": {
+        "accuracy": [
+          0.7512562814070352,
+          0.7386934673366834,
+          0.7261306532663316
+        ],
+        "macro_f1": [
+          0.7421106767329678,
+          0.7317859675584133,
+          0.7151917166081252
+        ]
+      },
+      "holdout": {
+        "accuracy": [
+          0.62,
+          0.655,
+          0.6425
+        ],
+        "macro_f1": [
+          0.5950498130292854,
+          0.6382387105349147,
+          0.6279981928228665
+        ]
+      }
+    },
+    {
+      "model": "cnn_freq_matched",
+      "label": "Pooled MLP",
+      "seeds": [
+        101,
+        202,
+        303
+      ],
+      "parameters": 252036,
+      "validation": {
+        "accuracy": [
+          0.7160804020100503,
+          0.7286432160804021,
+          0.7236180904522613
+        ],
+        "macro_f1": [
+          0.7058796324074961,
+          0.7171785182481776,
+          0.7119013648889808
+        ]
+      },
+      "holdout": {
+        "accuracy": [
+          0.5775,
+          0.625,
+          0.6425
+        ],
+        "macro_f1": [
+          0.5554006414234575,
+          0.6046315038441166,
+          0.6214544952467553
+        ]
+      }
+    },
+    {
+      "model": "cnn_freq_token",
+      "label": "Tokenwise MLP",
+      "seeds": [
+        101,
+        202,
+        303
+      ],
+      "parameters": 252036,
+      "validation": {
+        "accuracy": [
+          0.6532663316582915,
+          0.7286432160804021,
+          0.7085427135678392
+        ],
+        "macro_f1": [
+          0.6232695275170979,
+          0.7194889135632168,
+          0.6931358310106458
+        ]
+      },
+      "holdout": {
+        "accuracy": [
+          0.5475,
+          0.6225,
+          0.61
+        ],
+        "macro_f1": [
+          0.513958176189136,
+          0.6099290473887997,
+          0.5964820777777434
+        ]
+      }
+    },
+    {
+      "model": "statistics",
+      "label": "Statistics",
+      "seeds": [],
+      "parameters": 6450,
+      "validation": {
+        "accuracy": [
+          0.4221105527638191
+        ],
+        "macro_f1": [
+          0.3886256053887633
+        ]
+      },
+      "holdout": {
+        "accuracy": [
+          0.3725
+        ],
+        "macro_f1": [
+          0.35042361367562613
+        ]
+      }
+    }
+  ],
+  "learning_curves": [
+    {
+      "model": "cnn_freq",
+      "selected_epoch": 47,
+      "epochs": 60
+    },
+    {
+      "model": "crnn_freq",
+      "selected_epoch": 58,
+      "epochs": 60
+    }
+  ],
+  "synthetic_stress": {
+    "cnn_freq": {
+      "clean": {
+        "accuracy": 0.615,
+        "macro_f1": 0.5991819137175175,
+        "n": 400
+      },
+      "snr_20": {
+        "accuracy": 0.425,
+        "macro_f1": 0.38358326140065363,
+        "n": 400
+      },
+      "snr_10": {
+        "accuracy": 0.245,
+        "macro_f1": 0.1965571601413099,
+        "n": 400
+      },
+      "snr_0": {
+        "accuracy": 0.0625,
+        "macro_f1": 0.030003744245366323,
+        "n": 400
+      },
+      "gain_-6": {
+        "accuracy": 0.595,
+        "macro_f1": 0.5807820194940938,
+        "n": 400
+      },
+      "gain_6": {
+        "accuracy": 0.5775,
+        "macro_f1": 0.5645698689444146,
+        "n": 400
+      }
+    },
+    "crnn_freq": {
+      "clean": {
+        "accuracy": 0.62,
+        "macro_f1": 0.5950498130292854,
+        "n": 400
+      },
+      "snr_20": {
+        "accuracy": 0.4525,
+        "macro_f1": 0.4129024699071139,
+        "n": 400
+      },
+      "snr_10": {
+        "accuracy": 0.25,
+        "macro_f1": 0.202983676406137,
+        "n": 400
+      },
+      "snr_0": {
+        "accuracy": 0.07,
+        "macro_f1": 0.03715646504577595,
+        "n": 400
+      },
+      "gain_-6": {
+        "accuracy": 0.605,
+        "macro_f1": 0.5862864610823286,
+        "n": 400
+      },
+      "gain_6": {
+        "accuracy": 0.615,
+        "macro_f1": 0.5916635816883495,
+        "n": 400
+      }
+    }
+  },
+  "top_confusions": {
+    "cnn_freq": {
+      "zero_recall": [
+        "airplane"
+      ],
+      "largest_confusions": [
+        {
+          "true": "crickets",
+          "predicted": "chirping birds",
+          "clips": 4,
+          "true_class_support": 8
+        },
+        {
+          "true": "airplane",
+          "predicted": "thunderstorm",
+          "clips": 4,
+          "true_class_support": 8
+        },
+        {
+          "true": "cow",
+          "predicted": "breathing",
+          "clips": 3,
+          "true_class_support": 8
+        },
+        {
+          "true": "wind",
+          "predicted": "cow",
+          "clips": 3,
+          "true_class_support": 8
+        },
+        {
+          "true": "pig",
+          "predicted": "car horn",
+          "clips": 2,
+          "true_class_support": 8
+        },
+        {
+          "true": "frog",
+          "predicted": "dog",
+          "clips": 2,
+          "true_class_support": 8
+        },
+        {
+          "true": "cat",
+          "predicted": "rooster",
+          "clips": 2,
+          "true_class_support": 8
+        },
+        {
+          "true": "chirping birds",
+          "predicted": "crickets",
+          "clips": 2,
+          "true_class_support": 8
+        },
+        {
+          "true": "water drops",
+          "predicted": "can opening",
+          "clips": 2,
+          "true_class_support": 8
+        },
+        {
+          "true": "wind",
+          "predicted": "snoring",
+          "clips": 2,
+          "true_class_support": 8
+        },
+        {
+          "true": "clapping",
+          "predicted": "rain",
+          "clips": 2,
+          "true_class_support": 8
+        },
+        {
+          "true": "clapping",
+          "predicted": "keyboard typing",
+          "clips": 2,
+          "true_class_support": 8
+        }
+      ]
+    },
+    "crnn_freq": {
+      "zero_recall": [
+        "airplane",
+        "fireworks"
+      ],
+      "largest_confusions": [
+        {
+          "true": "fireworks",
+          "predicted": "keyboard typing",
+          "clips": 5,
+          "true_class_support": 8
+        },
+        {
+          "true": "airplane",
+          "predicted": "thunderstorm",
+          "clips": 4,
+          "true_class_support": 8
+        },
+        {
+          "true": "pig",
+          "predicted": "rooster",
+          "clips": 3,
+          "true_class_support": 8
+        },
+        {
+          "true": "frog",
+          "predicted": "dog",
+          "clips": 3,
+          "true_class_support": 8
+        },
+        {
+          "true": "crickets",
+          "predicted": "chirping birds",
+          "clips": 3,
+          "true_class_support": 8
+        },
+        {
+          "true": "wind",
+          "predicted": "thunderstorm",
+          "clips": 3,
+          "true_class_support": 8
+        },
+        {
+          "true": "hen",
+          "predicted": "hand saw",
+          "clips": 2,
+          "true_class_support": 8
+        },
+        {
+          "true": "chirping birds",
+          "predicted": "crickets",
+          "clips": 2,
+          "true_class_support": 8
+        },
+        {
+          "true": "water drops",
+          "predicted": "mouse click",
+          "clips": 2,
+          "true_class_support": 8
+        },
+        {
+          "true": "wind",
+          "predicted": "chainsaw",
+          "clips": 2,
+          "true_class_support": 8
+        },
+        {
+          "true": "clapping",
+          "predicted": "keyboard typing",
+          "clips": 2,
+          "true_class_support": 8
+        },
+        {
+          "true": "coughing",
+          "predicted": "sneezing",
+          "clips": 2,
+          "true_class_support": 8
+        }
+      ]
+    }
+  },
+  "order_probe": {
+    "cnn_freq": {
+      "clean_accuracy": 0.615,
+      "permutation_accuracy_change_pp": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "changed_prediction_percent": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "crnn_freq": {
+      "clean_accuracy": 0.62,
+      "permutation_accuracy_change_pp": [
+        0.2500000000000058,
+        -0.7499999999999951,
+        -1.0000000000000009,
+        -0.5000000000000004,
+        -1.0000000000000009
+      ],
+      "changed_prediction_percent": [
+        11.25,
+        8.5,
+        9.75,
+        10.75,
+        9.0
+      ]
+    },
+    "cnn_freq_matched": {
+      "clean_accuracy": 0.5775,
+      "permutation_accuracy_change_pp": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "changed_prediction_percent": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "cnn_freq_token": {
+      "clean_accuracy": 0.5475,
+      "permutation_accuracy_change_pp": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "changed_prediction_percent": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    }
+  },
+  "scope": "Derived from saved artifacts only; no training, inference, tuning, audio loading or remote-runtime access",
+  "cross_validation": {
+    "cnn_freq": [
+      {
+        "tag": "cnn_freq_fold1_seed101_60ep",
+        "model": "cnn_freq",
+        "test_fold": 1,
+        "val_fold": 5,
+        "train_folds": [
+          2,
+          3,
+          4
+        ],
+        "accuracy": 0.6475,
+        "macro_f1": 0.6257654872475306
+      },
+      {
+        "tag": "cnn_freq_fold2_seed101_60ep",
+        "model": "cnn_freq",
+        "test_fold": 2,
+        "val_fold": 1,
+        "train_folds": [
+          3,
+          4,
+          5
+        ],
+        "accuracy": 0.65,
+        "macro_f1": 0.6468904777712826
+      },
+      {
+        "tag": "cnn_freq_fold3_seed101_60ep",
+        "model": "cnn_freq",
+        "test_fold": 3,
+        "val_fold": 2,
+        "train_folds": [
+          1,
+          4,
+          5
+        ],
+        "accuracy": 0.68,
+        "macro_f1": 0.6692774553933525
+      },
+      {
+        "tag": "cnn_freq_fold4_seed101_60ep",
+        "model": "cnn_freq",
+        "test_fold": 4,
+        "val_fold": 3,
+        "train_folds": [
+          1,
+          2,
+          5
+        ],
+        "accuracy": 0.7325,
+        "macro_f1": 0.7237101869578649
+      },
+      {
+        "tag": "cnn_freq_seed101_60ep",
+        "model": "cnn_freq",
+        "test_fold": 5,
+        "val_fold": 4,
+        "train_folds": [
+          1,
+          2,
+          3
+        ],
+        "accuracy": 0.615,
+        "macro_f1": 0.5991819137175175
+      }
+    ],
+    "crnn_freq": [
+      {
+        "tag": "crnn_freq_fold1_seed101_60ep",
+        "model": "crnn_freq",
+        "test_fold": 1,
+        "val_fold": 5,
+        "train_folds": [
+          2,
+          3,
+          4
+        ],
+        "accuracy": 0.71,
+        "macro_f1": 0.700935358758888
+      },
+      {
+        "tag": "crnn_freq_fold2_seed101_60ep",
+        "model": "crnn_freq",
+        "test_fold": 2,
+        "val_fold": 1,
+        "train_folds": [
+          3,
+          4,
+          5
+        ],
+        "accuracy": 0.6725,
+        "macro_f1": 0.6658725727317057
+      },
+      {
+        "tag": "crnn_freq_fold3_seed101_60ep",
+        "model": "crnn_freq",
+        "test_fold": 3,
+        "val_fold": 2,
+        "train_folds": [
+          1,
+          4,
+          5
+        ],
+        "accuracy": 0.6925,
+        "macro_f1": 0.6811016693257237
+      },
+      {
+        "tag": "crnn_freq_fold4_seed101_60ep",
+        "model": "crnn_freq",
+        "test_fold": 4,
+        "val_fold": 3,
+        "train_folds": [
+          1,
+          2,
+          5
+        ],
+        "accuracy": 0.72,
+        "macro_f1": 0.7077793867639067
+      },
+      {
+        "tag": "crnn_freq_seed101_60ep",
+        "model": "crnn_freq",
+        "test_fold": 5,
+        "val_fold": 4,
+        "train_folds": [
+          1,
+          2,
+          3
+        ],
+        "accuracy": 0.62,
+        "macro_f1": 0.5950498130292854
+      }
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "registered_before_repeated_results": true,
+  "nonrecurrent_roster": [
+    "cnn_freq",
+    "cnn_freq_matched",
+    "cnn_freq_token"
+  ],
+  "nonrecurrent_comparator": "highest mean validation accuracy over seeds101,202,303; ties prefer measured lower CPU p95 latency, then fewer parameters",
+  "recurrent_selection": "mean validation accuracy at least0.03 above strongest predeclared nonrecurrent comparator; mean macroF1 no lower than that comparator",
+  "deployment_targets": {
+    "workload": "one at-most5second clip, CPU2threads, warmed WAV-to-logits",
+    "p95_ms_max": 100,
+    "compact_checkpoint_bytes_max": 5242880
+  },
+  "selection_fallback": "best eligible nonrecurrent comparator; still retain and report the trained CNN+GRU hybrid",
+  "confirmation_seed": 101,
+  "notes": "Operational thresholds for this offline prototype; not universal significance or real-world robustness guarantees. Tokenwise versus pooled heads also differ in dropout granularity."
+}

@@ -1,0 +1,1231 @@
+{
+  "version": 1,
+  "artifact": {
+    "identity": "ESC50 bilingual reports and Colab reader",
+    "revision": "final-20261029",
+    "view": "Final documents, rendered figures, saved cloud readback"
+  },
+  "categories": [
+    {
+      "id": "source",
+      "label": "Source authority and confidence",
+      "applicable": true,
+      "assessment": "Eight principal claim families mapped to official references, actual source, execution or explicit historical boundaries; paper reading was abstract/metadata level."
+    },
+    {
+      "id": "value",
+      "label": "SQL/value accuracy",
+      "applicable": true,
+      "assessment": "Seven numerical table families checked against raw prediction audits, seed aggregates, paired effects or timing records; no SQL is used."
+    },
+    {
+      "id": "chart",
+      "label": "Within-chart agreement",
+      "applicable": true,
+      "assessment": "All six scientific figures visually checked as PNGs; legends, seed/SD meanings and displayed values agree with saved tables."
+    },
+    {
+      "id": "details",
+      "label": "Complete source details",
+      "applicable": true,
+      "assessment": "Six quantitative figures link data and plotting code in both reports."
+    },
+    {
+      "id": "cross",
+      "label": "Cross-artifact consistency",
+      "applicable": true,
+      "assessment": "Four named comparisons checked: bilingual reports, bilingual guides, reader/report and README/report; cloud readback independently confirms the delivered reader."
+    },
+    {
+      "id": "quality",
+      "label": "Data-quality controls",
+      "applicable": true,
+      "assessment": "Metadata/cache alignment and source isolation checked; perceptual near-duplicates remain unverified and are explicitly disclosed."
+    },
+    {
+      "id": "support",
+      "label": "Conclusion support",
+      "applicable": true,
+      "assessment": "Five question families A\u2013E remain within measured development scope; three seeds reuse one validation split, and E uses seed101 only."
+    },
+    {
+      "id": "clarity",
+      "label": "Analytical clarity",
+      "applicable": true,
+      "assessment": "Four bilingual documents explain inputs, architecture, metrics and comparison boundaries; this is internal review, not user comprehension evidence."
+    },
+    {
+      "id": "visual",
+      "label": "Visual and interaction consistency",
+      "applicable": true,
+      "assessment": "Six final figure PNGs plus the saved Colab reader inspected; no dashboard controls or cross-device usability claim."
+    },
+    {
+      "id": "use",
+      "label": "Report usefulness and completeness",
+      "applicable": true,
+      "assessment": "Five registered question families A\u2013E answered; future pretrained/RL ideas clearly unimplemented."
+    }
+  ],
+  "units": [
+    {
+      "id": "source-0",
+      "label": "Dataset and split",
+      "kind": "claim",
+      "revision": "final-20261029",
+      "categories": {
+        "source": {
+          "checks": [
+            {
+              "id": "review",
+              "state": "passed",
+              "evidence": [
+                "results/colab_matrix_20261028/analysis/audit.json",
+                "results/colab_matrix_20261028/final_independent_review.json",
+                "docs/bilingual_20261028/guide_en.md",
+                "docs/bilingual_20261028/report_en.md"
+              ],
+              "revision": "final-20261029"
+            }
+          ],
+          "findings": []
+        }
+      }
+    },
+    {
+      "id": "source-1",
+      "label": "Frontends and models",
+      "kind": "claim",
+      "revision": "final-20261029",
+      "categories": {
+        "source": {
+          "checks": [
+            {
+              "id": "review",
+              "state": "passed",
+              "evidence": [
+                "results/colab_matrix_20261028/analysis/audit.json",
+                "results/colab_matrix_20261028/final_independent_review.json",
+                "docs/bilingual_20261028/guide_en.md",
+                "docs/bilingual_20261028/report_en.md"
+              ],
+              "revision": "final-20261029"
+            }
+          ],
+          "findings": []
+        }
+      }
+    },
+    {
+      "id": "source-2",
+      "label": "Classical baselines",
+      "kind": "claim",
+      "revision": "final-20261029",
+      "categories": {
+        "source": {
+          "checks": [
+            {
+              "id": "review",
+              "state": "passed",
+              "evidence": [
+                "results/colab_matrix_20261028/analysis/audit.json",
+                "results/colab_matrix_20261028/final_independent_review.json",
+                "docs/bilingual_20261028/guide_en.md",
+                "docs/bilingual_20261028/report_en.md"
+              ],
+              "revision": "final-20261029"
+            }
+          ],
+          "findings": []
+        }
+      }
+    },
+    {
+      "id": "source-3",
+      "label": "Architecture",
+      "kind": "claim",
+      "revision": "final-20261029",
+      "categories": {
+        "source": {
+          "checks": [
+            {
+              "id": "review",
+              "state": "passed",
+              "evidence": [
+                "results/colab_matrix_20261028/analysis/audit.json",
+                "results/colab_matrix_20261028/final_independent_review.json",
+                "docs/bilingual_20261028/guide_en.md",
+                "docs/bilingual_20261028/report_en.md"
+              ],
+              "revision": "final-20261029"
+            }
+          ],
+          "findings": []
+        }
+      }
+    },
+    {
+      "id": "source-4",
+      "label": "Augmentation",
+      "kind": "claim",
+      "revision": "final-20261029",
+      "categories": {
+        "source": {
+          "checks": [
+            {
+              "id": "review",
+              "state": "passed",
+              "evidence": [
+                "results/colab_matrix_20261028/analysis/audit.json",
+                "results/colab_matrix_20261028/final_independent_review.json",
+                "docs/bilingual_20261028/guide_en.md",
+                "docs/bilingual_20261028/report_en.md"
+              ],
+              "revision": "final-20261029"
+            }
+          ],
+          "findings": []
+        }
+      }
+    },
+    {
+      "id": "source-5",
+      "label": "Feature sampling",
+      "kind": "claim",
+      "revision": "final-20261029",
+      "categories": {
+        "source": {
+          "checks": [
+            {
+              "id": "review",
+              "state": "passed",
+              "evidence": [
+                "results/colab_matrix_20261028/analysis/audit.json",
+                "results/colab_matrix_20261028/final_independent_review.json",
+                "docs/bilingual_20261028/guide_en.md",
+                "docs/bilingual_20261028/report_en.md"
+              ],
+              "revision": "final-20261029"
+            }
+          ],
+          "findings": []
+        }
+      }
+    },
+    {
+      "id": "source-6",
+      "label": "Stress and runtime",
+      "kind": "claim",
+      "revision": "final-20261029",
+      "categories": {
+        "source": {
+          "checks": [
+            {
+              "id": "review",
+              "state": "passed",
+              "evidence": [
+                "results/colab_matrix_20261028/analysis/audit.json",
+                "results/colab_matrix_20261028/final_independent_review.json",
+                "docs/bilingual_20261028/guide_en.md",
+                "docs/bilingual_20261028/report_en.md"
+              ],
+              "revision": "final-20261029"
+            }
+          ],
+          "findings": []
+        }
+      }
+    },
+    {
+      "id": "source-7",
+      "label": "Historical boundary",
+      "kind": "claim",
+      "revision": "final-20261029",
+      "categories": {
+        "source": {
+          "checks": [
+            {
+              "id": "review",
+              "state": "passed",
+              "evidence": [
+                "results/colab_matrix_20261028/analysis/audit.json",
+                "results/colab_matrix_20261028/final_independent_review.json",
+                "docs/bilingual_20261028/guide_en.md",
+                "docs/bilingual_20261028/report_en.md"
+              ],
+              "revision": "final-20261029"
+            }
+          ],
+          "findings": []
+        }
+      }
+    },
+    {
+      "id": "table-8",
+      "label": "baseline table",
+      "kind": "component",
+      "revision": "final-20261029",
+      "categories": {
+        "value": {
+          "checks": [
+            {
+              "id": "review",
+              "state": "passed",
+              "evidence": [
+                "results/colab_matrix_20261028/analysis/audit.json",
+                "results/colab_matrix_20261028/final_independent_review.json",
+                "results/colab_matrix_20261028/runtime_verification/warm_latency.json",
+                "docs/bilingual_20261028/report_en.md"
+              ],
+              "revision": "final-20261029"
+            }
+          ],
+          "findings": []
+        }
+      }
+    },
+    {
+      "id": "table-9",
+      "label": "architecture table",
+      "kind": "component",
+      "revision": "final-20261029",
+      "categories": {
+        "value": {
+          "checks": [
+            {
+              "id": "review",
+              "state": "passed",
+              "evidence": [
+                "results/colab_matrix_20261028/analysis/audit.json",
+                "results/colab_matrix_20261028/final_independent_review.json",
+                "results/colab_matrix_20261028/runtime_verification/warm_latency.json",
+                "docs/bilingual_20261028/report_en.md"
+              ],
+              "revision": "final-20261029"
+            }
+          ],
+          "findings": []
+        }
+      }
+    },
+    {
+      "id": "table-10",
+      "label": "augmentation table",
+      "kind": "component",
+      "revision": "final-20261029",
+      "categories": {
+        "value": {
+          "checks": [
+            {
+              "id": "review",
+              "state": "passed",
+              "evidence": [
+                "results/colab_matrix_20261028/analysis/audit.json",
+                "results/colab_matrix_20261028/final_independent_review.json",
+                "results/colab_matrix_20261028/runtime_verification/warm_latency.json",
+                "docs/bilingual_20261028/report_en.md"
+              ],
+              "revision": "final-20261029"
+            }
+          ],
+          "findings": []
+        }
+      }
+    },
+    {
+      "id": "table-11",
+      "label": "paired effects table",
+      "kind": "component",
+      "revision": "final-20261029",
+      "categories": {
+        "value": {
+          "checks": [
+            {
+              "id": "review",
+              "state": "passed",
+              "evidence": [
+                "results/colab_matrix_20261028/analysis/audit.json",
+                "results/colab_matrix_20261028/final_independent_review.json",
+                "results/colab_matrix_20261028/runtime_verification/warm_latency.json",
+                "docs/bilingual_20261028/report_en.md"
+              ],
+              "revision": "final-20261029"
+            }
+          ],
+          "findings": []
+        }
+      }
+    },
+    {
+      "id": "table-12",
+      "label": "feature sampling table",
+      "kind": "component",
+      "revision": "final-20261029",
+      "categories": {
+        "value": {
+          "checks": [
+            {
+              "id": "review",
+              "state": "passed",
+              "evidence": [
+                "results/colab_matrix_20261028/analysis/audit.json",
+                "results/colab_matrix_20261028/final_independent_review.json",
+                "results/colab_matrix_20261028/runtime_verification/warm_latency.json",
+                "docs/bilingual_20261028/report_en.md"
+              ],
+              "revision": "final-20261029"
+            }
+          ],
+          "findings": []
+        }
+      }
+    },
+    {
+      "id": "table-13",
+      "label": "stress table",
+      "kind": "component",
+      "revision": "final-20261029",
+      "categories": {
+        "value": {
+          "checks": [
+            {
+              "id": "review",
+              "state": "passed",
+              "evidence": [
+                "results/colab_matrix_20261028/analysis/audit.json",
+                "results/colab_matrix_20261028/final_independent_review.json",
+                "results/colab_matrix_20261028/runtime_verification/warm_latency.json",
+                "docs/bilingual_20261028/report_en.md"
+              ],
+              "revision": "final-20261029"
+            }
+          ],
+          "findings": []
+        }
+      }
+    },
+    {
+      "id": "table-14",
+      "label": "timing table",
+      "kind": "component",
+      "revision": "final-20261029",
+      "categories": {
+        "value": {
+          "checks": [
+            {
+              "id": "review",
+              "state": "passed",
+              "evidence": [
+                "results/colab_matrix_20261028/analysis/audit.json",
+                "results/colab_matrix_20261028/final_independent_review.json",
+                "results/colab_matrix_20261028/runtime_verification/warm_latency.json",
+                "docs/bilingual_20261028/report_en.md"
+              ],
+              "revision": "final-20261029"
+            }
+          ],
+          "findings": []
+        }
+      }
+    },
+    {
+      "id": "figure-architecture",
+      "label": "architecture",
+      "kind": "component",
+      "revision": "final-20261029",
+      "categories": {
+        "chart": {
+          "checks": [
+            {
+              "id": "review",
+              "state": "passed",
+              "evidence": [
+                "results/colab_matrix_20261028/figures/architecture.png",
+                "tools/plot_colab_matrix.py",
+                "docs/bilingual_20261028/report_en.md",
+                "docs/bilingual_20261028/report_zh.md"
+              ],
+              "revision": "final-20261029"
+            }
+          ],
+          "findings": []
+        },
+        "details": {
+          "checks": [
+            {
+              "id": "review",
+              "state": "passed",
+              "evidence": [
+                "results/colab_matrix_20261028/figures/architecture.png",
+                "tools/plot_colab_matrix.py",
+                "docs/bilingual_20261028/report_en.md",
+                "docs/bilingual_20261028/report_zh.md"
+              ],
+              "revision": "final-20261029"
+            }
+          ],
+          "findings": []
+        },
+        "visual": {
+          "checks": [
+            {
+              "id": "review",
+              "state": "passed",
+              "evidence": [
+                "results/colab_matrix_20261028/figures/architecture.png",
+                "tools/plot_colab_matrix.py",
+                "docs/bilingual_20261028/report_en.md",
+                "docs/bilingual_20261028/report_zh.md"
+              ],
+              "revision": "final-20261029"
+            }
+          ],
+          "findings": []
+        }
+      }
+    },
+    {
+      "id": "figure-augmentation",
+      "label": "augmentation",
+      "kind": "component",
+      "revision": "final-20261029",
+      "categories": {
+        "chart": {
+          "checks": [
+            {
+              "id": "review",
+              "state": "passed",
+              "evidence": [
+                "results/colab_matrix_20261028/figures/augmentation.png",
+                "tools/plot_colab_matrix.py",
+                "docs/bilingual_20261028/report_en.md",
+                "docs/bilingual_20261028/report_zh.md"
+              ],
+              "revision": "final-20261029"
+            }
+          ],
+          "findings": []
+        },
+        "details": {
+          "checks": [
+            {
+              "id": "review",
+              "state": "passed",
+              "evidence": [
+                "results/colab_matrix_20261028/figures/augmentation.png",
+                "tools/plot_colab_matrix.py",
+                "docs/bilingual_20261028/report_en.md",
+                "docs/bilingual_20261028/report_zh.md"
+              ],
+              "revision": "final-20261029"
+            }
+          ],
+          "findings": []
+        },
+        "visual": {
+          "checks": [
+            {
+              "id": "review",
+              "state": "passed",
+              "evidence": [
+                "results/colab_matrix_20261028/figures/augmentation.png",
+                "tools/plot_colab_matrix.py",
+                "docs/bilingual_20261028/report_en.md",
+                "docs/bilingual_20261028/report_zh.md"
+              ],
+              "revision": "final-20261029"
+            }
+          ],
+          "findings": []
+        }
+      }
+    },
+    {
+      "id": "figure-paired_effects",
+      "label": "paired_effects",
+      "kind": "component",
+      "revision": "final-20261029",
+      "categories": {
+        "chart": {
+          "checks": [
+            {
+              "id": "review",
+              "state": "passed",
+              "evidence": [
+                "results/colab_matrix_20261028/figures/paired_effects.png",
+                "tools/plot_colab_matrix.py",
+                "docs/bilingual_20261028/report_en.md",
+                "docs/bilingual_20261028/report_zh.md"
+              ],
+              "revision": "final-20261029"
+            }
+          ],
+          "findings": []
+        },
+        "details": {
+          "checks": [
+            {
+              "id": "review",
+              "state": "passed",
+              "evidence": [
+                "results/colab_matrix_20261028/figures/paired_effects.png",
+                "tools/plot_colab_matrix.py",
+                "docs/bilingual_20261028/report_en.md",
+                "docs/bilingual_20261028/report_zh.md"
+              ],
+              "revision": "final-20261029"
+            }
+          ],
+          "findings": []
+        },
+        "visual": {
+          "checks": [
+            {
+              "id": "review",
+              "state": "passed",
+              "evidence": [
+                "results/colab_matrix_20261028/figures/paired_effects.png",
+                "tools/plot_colab_matrix.py",
+                "docs/bilingual_20261028/report_en.md",
+                "docs/bilingual_20261028/report_zh.md"
+              ],
+              "revision": "final-20261029"
+            }
+          ],
+          "findings": []
+        }
+      }
+    },
+    {
+      "id": "figure-feature_sampling",
+      "label": "feature_sampling",
+      "kind": "component",
+      "revision": "final-20261029",
+      "categories": {
+        "chart": {
+          "checks": [
+            {
+              "id": "review",
+              "state": "passed",
+              "evidence": [
+                "results/colab_matrix_20261028/figures/feature_sampling.png",
+                "tools/plot_colab_matrix.py",
+                "docs/bilingual_20261028/report_en.md",
+                "docs/bilingual_20261028/report_zh.md"
+              ],
+              "revision": "final-20261029"
+            }
+          ],
+          "findings": []
+        },
+        "details": {
+          "checks": [
+            {
+              "id": "review",
+              "state": "passed",
+              "evidence": [
+                "results/colab_matrix_20261028/figures/feature_sampling.png",
+                "tools/plot_colab_matrix.py",
+                "docs/bilingual_20261028/report_en.md",
+                "docs/bilingual_20261028/report_zh.md"
+              ],
+              "revision": "final-20261029"
+            }
+          ],
+          "findings": []
+        },
+        "visual": {
+          "checks": [
+            {
+              "id": "review",
+              "state": "passed",
+              "evidence": [
+                "results/colab_matrix_20261028/figures/feature_sampling.png",
+                "tools/plot_colab_matrix.py",
+                "docs/bilingual_20261028/report_en.md",
+                "docs/bilingual_20261028/report_zh.md"
+              ],
+              "revision": "final-20261029"
+            }
+          ],
+          "findings": []
+        }
+      }
+    },
+    {
+      "id": "figure-robustness",
+      "label": "robustness",
+      "kind": "component",
+      "revision": "final-20261029",
+      "categories": {
+        "chart": {
+          "checks": [
+            {
+              "id": "review",
+              "state": "passed",
+              "evidence": [
+                "results/colab_matrix_20261028/figures/robustness.png",
+                "tools/plot_colab_matrix.py",
+                "docs/bilingual_20261028/report_en.md",
+                "docs/bilingual_20261028/report_zh.md"
+              ],
+              "revision": "final-20261029"
+            }
+          ],
+          "findings": []
+        },
+        "details": {
+          "checks": [
+            {
+              "id": "review",
+              "state": "passed",
+              "evidence": [
+                "results/colab_matrix_20261028/figures/robustness.png",
+                "tools/plot_colab_matrix.py",
+                "docs/bilingual_20261028/report_en.md",
+                "docs/bilingual_20261028/report_zh.md"
+              ],
+              "revision": "final-20261029"
+            }
+          ],
+          "findings": []
+        },
+        "visual": {
+          "checks": [
+            {
+              "id": "review",
+              "state": "passed",
+              "evidence": [
+                "results/colab_matrix_20261028/figures/robustness.png",
+                "tools/plot_colab_matrix.py",
+                "docs/bilingual_20261028/report_en.md",
+                "docs/bilingual_20261028/report_zh.md"
+              ],
+              "revision": "final-20261029"
+            }
+          ],
+          "findings": []
+        }
+      }
+    },
+    {
+      "id": "figure-learning_curves",
+      "label": "learning_curves",
+      "kind": "component",
+      "revision": "final-20261029",
+      "categories": {
+        "chart": {
+          "checks": [
+            {
+              "id": "review",
+              "state": "passed",
+              "evidence": [
+                "results/colab_matrix_20261028/figures/learning_curves.png",
+                "tools/plot_colab_matrix.py",
+                "docs/bilingual_20261028/report_en.md",
+                "docs/bilingual_20261028/report_zh.md"
+              ],
+              "revision": "final-20261029"
+            }
+          ],
+          "findings": []
+        },
+        "details": {
+          "checks": [
+            {
+              "id": "review",
+              "state": "passed",
+              "evidence": [
+                "results/colab_matrix_20261028/figures/learning_curves.png",
+                "tools/plot_colab_matrix.py",
+                "docs/bilingual_20261028/report_en.md",
+                "docs/bilingual_20261028/report_zh.md"
+              ],
+              "revision": "final-20261029"
+            }
+          ],
+          "findings": []
+        },
+        "visual": {
+          "checks": [
+            {
+              "id": "review",
+              "state": "passed",
+              "evidence": [
+                "results/colab_matrix_20261028/figures/learning_curves.png",
+                "tools/plot_colab_matrix.py",
+                "docs/bilingual_20261028/report_en.md",
+                "docs/bilingual_20261028/report_zh.md"
+              ],
+              "revision": "final-20261029"
+            }
+          ],
+          "findings": []
+        }
+      }
+    },
+    {
+      "id": "reader",
+      "label": "Saved Colab reader",
+      "kind": "component",
+      "revision": "final-20261029",
+      "categories": {
+        "visual": {
+          "checks": [
+            {
+              "id": "review",
+              "state": "passed",
+              "evidence": [
+                "results/colab_matrix_20261028/bilingual_notebook_verification.json"
+              ],
+              "revision": "final-20261029"
+            }
+          ],
+          "findings": []
+        }
+      }
+    },
+    {
+      "id": "cross-0",
+      "label": "Chinese/English reports",
+      "kind": "comparison",
+      "revision": "final-20261029",
+      "categories": {
+        "cross": {
+          "checks": [
+            {
+              "id": "review",
+              "state": "passed",
+              "evidence": [
+                "docs/bilingual_20261028/report_en.md",
+                "docs/bilingual_20261028/report_zh.md",
+                "docs/bilingual_20261028/guide_en.md",
+                "docs/bilingual_20261028/guide_zh.md",
+                "README.md",
+                "notebooks/ESC50_Bilingual_Results_20261028_output.ipynb"
+              ],
+              "revision": "final-20261029"
+            }
+          ],
+          "findings": []
+        }
+      }
+    },
+    {
+      "id": "cross-1",
+      "label": "Chinese/English guides",
+      "kind": "comparison",
+      "revision": "final-20261029",
+      "categories": {
+        "cross": {
+          "checks": [
+            {
+              "id": "review",
+              "state": "passed",
+              "evidence": [
+                "docs/bilingual_20261028/report_en.md",
+                "docs/bilingual_20261028/report_zh.md",
+                "docs/bilingual_20261028/guide_en.md",
+                "docs/bilingual_20261028/guide_zh.md",
+                "README.md",
+                "notebooks/ESC50_Bilingual_Results_20261028_output.ipynb"
+              ],
+              "revision": "final-20261029"
+            }
+          ],
+          "findings": []
+        }
+      }
+    },
+    {
+      "id": "cross-2",
+      "label": "Reader/report",
+      "kind": "comparison",
+      "revision": "final-20261029",
+      "categories": {
+        "cross": {
+          "checks": [
+            {
+              "id": "review",
+              "state": "passed",
+              "evidence": [
+                "docs/bilingual_20261028/report_en.md",
+                "docs/bilingual_20261028/report_zh.md",
+                "docs/bilingual_20261028/guide_en.md",
+                "docs/bilingual_20261028/guide_zh.md",
+                "README.md",
+                "notebooks/ESC50_Bilingual_Results_20261028_output.ipynb"
+              ],
+              "revision": "final-20261029"
+            }
+          ],
+          "findings": []
+        }
+      }
+    },
+    {
+      "id": "cross-3",
+      "label": "README/report",
+      "kind": "comparison",
+      "revision": "final-20261029",
+      "categories": {
+        "cross": {
+          "checks": [
+            {
+              "id": "review",
+              "state": "passed",
+              "evidence": [
+                "docs/bilingual_20261028/report_en.md",
+                "docs/bilingual_20261028/report_zh.md",
+                "docs/bilingual_20261028/guide_en.md",
+                "docs/bilingual_20261028/guide_zh.md",
+                "README.md",
+                "notebooks/ESC50_Bilingual_Results_20261028_output.ipynb"
+              ],
+              "revision": "final-20261029"
+            }
+          ],
+          "findings": []
+        }
+      }
+    },
+    {
+      "id": "alignment",
+      "label": "Metadata/cache alignment",
+      "kind": "control",
+      "revision": "final-20261029",
+      "categories": {
+        "quality": {
+          "checks": [
+            {
+              "id": "review",
+              "state": "passed",
+              "evidence": [
+                "results/colab_matrix_20261028/data_preflight.json"
+              ],
+              "revision": "final-20261029"
+            }
+          ],
+          "findings": []
+        }
+      }
+    },
+    {
+      "id": "isolation",
+      "label": "Source role isolation",
+      "kind": "control",
+      "revision": "final-20261029",
+      "categories": {
+        "quality": {
+          "checks": [
+            {
+              "id": "review",
+              "state": "passed",
+              "evidence": [
+                "results/colab_matrix_20261028/analysis/audit.json",
+                "results/colab_matrix_20261028/final_independent_review.json"
+              ],
+              "revision": "final-20261029"
+            }
+          ],
+          "findings": []
+        }
+      }
+    },
+    {
+      "id": "near-duplicate",
+      "label": "Perceptual near-duplicate audit",
+      "kind": "control",
+      "revision": "final-20261029",
+      "categories": {
+        "quality": {
+          "checks": [
+            {
+              "id": "review",
+              "state": "unverified",
+              "evidence": [
+                "docs/bilingual_20261028/report_en.md"
+              ],
+              "revision": "final-20261029"
+            }
+          ],
+          "findings": []
+        }
+      }
+    },
+    {
+      "id": "question-A",
+      "label": "Track A",
+      "kind": "question",
+      "revision": "final-20261029",
+      "categories": {
+        "support": {
+          "checks": [
+            {
+              "id": "review",
+              "state": "passed",
+              "evidence": [
+                "results/colab_matrix_20261028/analysis/audit.json",
+                "results/colab_matrix_20261028/final_independent_review.json",
+                "docs/bilingual_20261028/report_en.md"
+              ],
+              "revision": "final-20261029"
+            }
+          ],
+          "findings": []
+        },
+        "use": {
+          "checks": [
+            {
+              "id": "review",
+              "state": "passed",
+              "evidence": [
+                "results/colab_matrix_20261028/analysis/audit.json",
+                "results/colab_matrix_20261028/final_independent_review.json",
+                "docs/bilingual_20261028/report_en.md"
+              ],
+              "revision": "final-20261029"
+            }
+          ],
+          "findings": []
+        }
+      }
+    },
+    {
+      "id": "question-B",
+      "label": "Track B",
+      "kind": "question",
+      "revision": "final-20261029",
+      "categories": {
+        "support": {
+          "checks": [
+            {
+              "id": "review",
+              "state": "passed",
+              "evidence": [
+                "results/colab_matrix_20261028/analysis/audit.json",
+                "results/colab_matrix_20261028/final_independent_review.json",
+                "docs/bilingual_20261028/report_en.md"
+              ],
+              "revision": "final-20261029"
+            }
+          ],
+          "findings": []
+        },
+        "use": {
+          "checks": [
+            {
+              "id": "review",
+              "state": "passed",
+              "evidence": [
+                "results/colab_matrix_20261028/analysis/audit.json",
+                "results/colab_matrix_20261028/final_independent_review.json",
+                "docs/bilingual_20261028/report_en.md"
+              ],
+              "revision": "final-20261029"
+            }
+          ],
+          "findings": []
+        }
+      }
+    },
+    {
+      "id": "question-C",
+      "label": "Track C",
+      "kind": "question",
+      "revision": "final-20261029",
+      "categories": {
+        "support": {
+          "checks": [
+            {
+              "id": "review",
+              "state": "passed",
+              "evidence": [
+                "results/colab_matrix_20261028/analysis/audit.json",
+                "results/colab_matrix_20261028/final_independent_review.json",
+                "docs/bilingual_20261028/report_en.md"
+              ],
+              "revision": "final-20261029"
+            }
+          ],
+          "findings": []
+        },
+        "use": {
+          "checks": [
+            {
+              "id": "review",
+              "state": "passed",
+              "evidence": [
+                "results/colab_matrix_20261028/analysis/audit.json",
+                "results/colab_matrix_20261028/final_independent_review.json",
+                "docs/bilingual_20261028/report_en.md"
+              ],
+              "revision": "final-20261029"
+            }
+          ],
+          "findings": []
+        }
+      }
+    },
+    {
+      "id": "question-D",
+      "label": "Track D",
+      "kind": "question",
+      "revision": "final-20261029",
+      "categories": {
+        "support": {
+          "checks": [
+            {
+              "id": "review",
+              "state": "passed",
+              "evidence": [
+                "results/colab_matrix_20261028/analysis/audit.json",
+                "results/colab_matrix_20261028/final_independent_review.json",
+                "docs/bilingual_20261028/report_en.md"
+              ],
+              "revision": "final-20261029"
+            }
+          ],
+          "findings": []
+        },
+        "use": {
+          "checks": [
+            {
+              "id": "review",
+              "state": "passed",
+              "evidence": [
+                "results/colab_matrix_20261028/analysis/audit.json",
+                "results/colab_matrix_20261028/final_independent_review.json",
+                "docs/bilingual_20261028/report_en.md"
+              ],
+              "revision": "final-20261029"
+            }
+          ],
+          "findings": []
+        }
+      }
+    },
+    {
+      "id": "question-E",
+      "label": "Track E",
+      "kind": "question",
+      "revision": "final-20261029",
+      "categories": {
+        "support": {
+          "checks": [
+            {
+              "id": "review",
+              "state": "passed",
+              "evidence": [
+                "results/colab_matrix_20261028/analysis/audit.json",
+                "results/colab_matrix_20261028/final_independent_review.json",
+                "docs/bilingual_20261028/report_en.md"
+              ],
+              "revision": "final-20261029"
+            }
+          ],
+          "findings": []
+        },
+        "use": {
+          "checks": [
+            {
+              "id": "review",
+              "state": "passed",
+              "evidence": [
+                "results/colab_matrix_20261028/analysis/audit.json",
+                "results/colab_matrix_20261028/final_independent_review.json",
+                "docs/bilingual_20261028/report_en.md"
+              ],
+              "revision": "final-20261029"
+            }
+          ],
+          "findings": []
+        }
+      }
+    },
+    {
+      "id": "clarity-guide_en",
+      "label": "guide_en",
+      "kind": "component",
+      "revision": "final-20261029",
+      "categories": {
+        "clarity": {
+          "checks": [
+            {
+              "id": "review",
+              "state": "passed",
+              "evidence": [
+                "docs/bilingual_20261028/guide_en.md"
+              ],
+              "revision": "final-20261029"
+            }
+          ],
+          "findings": []
+        }
+      }
+    },
+    {
+      "id": "clarity-guide_zh",
+      "label": "guide_zh",
+      "kind": "component",
+      "revision": "final-20261029",
+      "categories": {
+        "clarity": {
+          "checks": [
+            {
+              "id": "review",
+              "state": "passed",
+              "evidence": [
+                "docs/bilingual_20261028/guide_zh.md"
+              ],
+              "revision": "final-20261029"
+            }
+          ],
+          "findings": []
+        }
+      }
+    },
+    {
+      "id": "clarity-report_en",
+      "label": "report_en",
+      "kind": "component",
+      "revision": "final-20261029",
+      "categories": {
+        "clarity": {
+          "checks": [
+            {
+              "id": "review",
+              "state": "passed",
+              "evidence": [
+                "docs/bilingual_20261028/report_en.md"
+              ],
+              "revision": "final-20261029"
+            }
+          ],
+          "findings": []
+        }
+      }
+    },
+    {
+      "id": "clarity-report_zh",
+      "label": "report_zh",
+      "kind": "component",
+      "revision": "final-20261029",
+      "categories": {
+        "clarity": {
+          "checks": [
+            {
+              "id": "review",
+              "state": "passed",
+              "evidence": [
+                "docs/bilingual_20261028/report_zh.md"
+              ],
+              "revision": "final-20261029"
+            }
+          ],
+          "findings": []
+        }
+      }
+    }
+  ]
+}

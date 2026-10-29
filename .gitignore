@@ -1,0 +1,84 @@
+# Python, editor and local environment state
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.venv/
+venv/
+.DS_Store
+.cache/
+# Private local settings
+.env
+.env.*
+!.env.example
+.ipynb_checkpoints/
+# Downloaded audio and generated feature arrays
+/data/ESC-50/audio/
+/data/*.npz
+/data/*.npz.json
+# Full local experiments: only the explicit regression-fixture allowlist below is shared
+/results/**
+!/results/**/
+!/results/README.md
+# Local frozen snapshots and original downloads
+/archive/**
+!/archive/**/
+!/archive/README.md
+# Duplicate distribution ZIPs and package assemblies stay local
+/releases/
+# Archived and bulky training notebook outputs stay local
+/notebooks/archive/
+/notebooks/executed/*
+!/notebooks/executed/ESC50_Bilingual_Results_20261028_output.ipynb
+# Local optional tool state
+/mlruns/
+/wandb/
+/logs/
+# Keep only the files required by tests/historical_fixtures.json
+!/archive/source_before_package/classify.py
+!/archive/source_before_package/diagnostics.py
+!/results/historical/final_study/models/cnn_freq_fold1_seed101_60ep.pt
+!/results/historical/final_study/models/cnn_freq_fold2_seed101_60ep.pt
+!/results/historical/final_study/models/cnn_freq_fold3_seed101_60ep.pt
+!/results/historical/final_study/models/cnn_freq_fold4_seed101_60ep.pt
+!/results/historical/final_study/models/cnn_freq_seed101_60ep.pt
+!/results/historical/final_study/results/holdout/cnn_freq_fold1_seed101_60ep/test.json
+!/results/historical/final_study/results/holdout/cnn_freq_fold1_seed101_60ep/test_predictions.csv
+!/results/historical/final_study/results/holdout/cnn_freq_fold2_seed101_60ep/test.json
+!/results/historical/final_study/results/holdout/cnn_freq_fold2_seed101_60ep/test_predictions.csv
+!/results/historical/final_study/results/holdout/cnn_freq_fold3_seed101_60ep/test.json
+!/results/historical/final_study/results/holdout/cnn_freq_fold3_seed101_60ep/test_predictions.csv
+!/results/historical/final_study/results/holdout/cnn_freq_fold4_seed101_60ep/test.json
+!/results/historical/final_study/results/holdout/cnn_freq_fold4_seed101_60ep/test_predictions.csv
+!/results/historical/final_study/results/holdout/cnn_freq_seed101_60ep/test.json
+!/results/historical/final_study/results/holdout/cnn_freq_seed101_60ep/test_predictions.csv
+!/results/historical/final_study/results/statistics_baseline/model.json
+!/results/historical/final_study/results/statistics_baseline/model.npz
+!/results/historical/final_study/results/statistics_baseline/search.json
+!/results/historical/final_study/results/statistics_baseline/validation.json
+!/results/historical/final_study/results/statistics_baseline/validation_predictions.csv
+!/results/historical/final_study/results/statistics_baseline/validation_predictions_l2_0.1.csv
+!/results/historical/final_study/runs/cnn_freq_fold1_seed101_60ep/history.json
+!/results/historical/final_study/runs/cnn_freq_fold1_seed101_60ep/manifest.json
+!/results/historical/final_study/runs/cnn_freq_fold1_seed101_60ep/run.json
+!/results/historical/final_study/runs/cnn_freq_fold1_seed101_60ep/validation.json
+!/results/historical/final_study/runs/cnn_freq_fold2_seed101_60ep/history.json
+!/results/historical/final_study/runs/cnn_freq_fold2_seed101_60ep/manifest.json
+!/results/historical/final_study/runs/cnn_freq_fold2_seed101_60ep/run.json
+!/results/historical/final_study/runs/cnn_freq_fold2_seed101_60ep/validation.json
+!/results/historical/final_study/runs/cnn_freq_fold3_seed101_60ep/history.json
+!/results/historical/final_study/runs/cnn_freq_fold3_seed101_60ep/manifest.json
+!/results/historical/final_study/runs/cnn_freq_fold3_seed101_60ep/run.json
+!/results/historical/final_study/runs/cnn_freq_fold3_seed101_60ep/validation.json
+!/results/historical/final_study/runs/cnn_freq_fold4_seed101_60ep/history.json
+!/results/historical/final_study/runs/cnn_freq_fold4_seed101_60ep/manifest.json
+!/results/historical/final_study/runs/cnn_freq_fold4_seed101_60ep/run.json
+!/results/historical/final_study/runs/cnn_freq_fold4_seed101_60ep/validation.json
+!/results/historical/final_study/runs/cnn_freq_seed101_60ep/history.json
+!/results/historical/final_study/runs/cnn_freq_seed101_60ep/manifest.json
+!/results/historical/final_study/runs/cnn_freq_seed101_60ep/run.json
+!/results/historical/final_study/runs/cnn_freq_seed101_60ep/validation.json
+!/results/historical/infra_v3/cnn_freq_cv_seed101_audit.json
+!/results/historical/infra_v3/crnn_freq_cv_seed101_audit.json

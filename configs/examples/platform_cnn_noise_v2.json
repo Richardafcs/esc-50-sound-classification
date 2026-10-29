@@ -1,0 +1,30 @@
+{
+  "schema_version": 2,
+  "model": "cnn_freq",
+  "dataset_backend": "feature_cache",
+  "metadata_root": "data/ESC-50",
+  "cache": "data/esc50_features.npz",
+  "output": "results/runs/cnn_noise_snr10_30_seed101",
+  "train_folds": [
+    1,
+    2,
+    3
+  ],
+  "val_fold": 4,
+  "test_fold": 5,
+  "source_strict": true,
+  "epochs": 60,
+  "batch_size": 32,
+  "lr": 0.001,
+  "scheduler": "cosine",
+  "seed": 101,
+  "threads": 3,
+  "device": "cpu",
+  "specaugment": false,
+  "max_seconds": 14400,
+  "raw_audio_root": "data/ESC-50",
+  "noise_probability": 0.5,
+  "noise_snr_min_db": 10.0,
+  "noise_snr_max_db": 30.0,
+  "mixup_alpha": 0.0
+}

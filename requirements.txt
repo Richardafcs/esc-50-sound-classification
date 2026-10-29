@@ -1,0 +1,4 @@
+torch>=2.5,<3
+numpy>=2,<3
+scipy>=1.14,<2
+soundfile>=0.13,<1

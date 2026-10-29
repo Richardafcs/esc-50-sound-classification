@@ -1,0 +1,378 @@
+{
+  "scope": "62 fitted models: original validation WAV replay; no test WAVs",
+  "device": "cuda",
+  "runs": [
+    {
+      "task": "A_logistic",
+      "clips": 398,
+      "changed_predictions": 0,
+      "input": "original validation WAV through project frontend"
+    },
+    {
+      "task": "A_cepstral_svm",
+      "clips": 398,
+      "changed_predictions": 0,
+      "input": "original validation WAV through project frontend"
+    },
+    {
+      "task": "B_cnn_freq_s101",
+      "clips": 398,
+      "changed_predictions": 0,
+      "input": "original validation WAV through project frontend"
+    },
+    {
+      "task": "B_cnn_freq_s202",
+      "clips": 398,
+      "changed_predictions": 0,
+      "input": "original validation WAV through project frontend"
+    },
+    {
+      "task": "B_cnn_freq_s303",
+      "clips": 398,
+      "changed_predictions": 0,
+      "input": "original validation WAV through project frontend"
+    },
+    {
+      "task": "B_crnn_freq_s101",
+      "clips": 398,
+      "changed_predictions": 0,
+      "input": "original validation WAV through project frontend"
+    },
+    {
+      "task": "B_crnn_freq_s202",
+      "clips": 398,
+      "changed_predictions": 0,
+      "input": "original validation WAV through project frontend"
+    },
+    {
+      "task": "B_crnn_freq_s303",
+      "clips": 398,
+      "changed_predictions": 0,
+      "input": "original validation WAV through project frontend"
+    },
+    {
+      "task": "B_crnn_freq_ta_s101",
+      "clips": 398,
+      "changed_predictions": 0,
+      "input": "original validation WAV through project frontend"
+    },
+    {
+      "task": "B_crnn_freq_ta_s202",
+      "clips": 398,
+      "changed_predictions": 0,
+      "input": "original validation WAV through project frontend"
+    },
+    {
+      "task": "B_crnn_freq_ta_s303",
+      "clips": 398,
+      "changed_predictions": 0,
+      "input": "original validation WAV through project frontend"
+    },
+    {
+      "task": "B_crnn_freq_ca_s101",
+      "clips": 398,
+      "changed_predictions": 0,
+      "input": "original validation WAV through project frontend"
+    },
+    {
+      "task": "B_crnn_freq_ca_s202",
+      "clips": 398,
+      "changed_predictions": 0,
+      "input": "original validation WAV through project frontend"
+    },
+    {
+      "task": "B_crnn_freq_ca_s303",
+      "clips": 398,
+      "changed_predictions": 0,
+      "input": "original validation WAV through project frontend"
+    },
+    {
+      "task": "B_crnn_freq_tca_s101",
+      "clips": 398,
+      "changed_predictions": 0,
+      "input": "original validation WAV through project frontend"
+    },
+    {
+      "task": "B_crnn_freq_tca_s202",
+      "clips": 398,
+      "changed_predictions": 0,
+      "input": "original validation WAV through project frontend"
+    },
+    {
+      "task": "B_crnn_freq_tca_s303",
+      "clips": 398,
+      "changed_predictions": 0,
+      "input": "original validation WAV through project frontend"
+    },
+    {
+      "task": "C_specaugment_s101",
+      "clips": 398,
+      "changed_predictions": 0,
+      "input": "original validation WAV through project frontend"
+    },
+    {
+      "task": "C_specaugment_s202",
+      "clips": 398,
+      "changed_predictions": 0,
+      "input": "original validation WAV through project frontend"
+    },
+    {
+      "task": "C_specaugment_s303",
+      "clips": 398,
+      "changed_predictions": 0,
+      "input": "original validation WAV through project frontend"
+    },
+    {
+      "task": "C_noise_s101",
+      "clips": 398,
+      "changed_predictions": 0,
+      "input": "original validation WAV through project frontend"
+    },
+    {
+      "task": "C_noise_s202",
+      "clips": 398,
+      "changed_predictions": 0,
+      "input": "original validation WAV through project frontend"
+    },
+    {
+      "task": "C_noise_s303",
+      "clips": 398,
+      "changed_predictions": 0,
+      "input": "original validation WAV through project frontend"
+    },
+    {
+      "task": "C_mixup_s101",
+      "clips": 398,
+      "changed_predictions": 0,
+      "input": "original validation WAV through project frontend"
+    },
+    {
+      "task": "C_mixup_s202",
+      "clips": 398,
+      "changed_predictions": 0,
+      "input": "original validation WAV through project frontend"
+    },
+    {
+      "task": "C_mixup_s303",
+      "clips": 398,
+      "changed_predictions": 0,
+      "input": "original validation WAV through project frontend"
+    },
+    {
+      "task": "D_sr16_fmax8_logmel64_s101",
+      "clips": 398,
+      "changed_predictions": 0,
+      "input": "original validation WAV through case-specific frontend"
+    },
+    {
+      "task": "D_sr16_fmax8_logmel64_s202",
+      "clips": 398,
+      "changed_predictions": 0,
+      "input": "original validation WAV through case-specific frontend"
+    },
+    {
+      "task": "D_sr16_fmax8_logmel64_s303",
+      "clips": 398,
+      "changed_predictions": 0,
+      "input": "original validation WAV through case-specific frontend"
+    },
+    {
+      "task": "D_sr16_fmax8_logmel32_s101",
+      "clips": 398,
+      "changed_predictions": 0,
+      "input": "original validation WAV through case-specific frontend"
+    },
+    {
+      "task": "D_sr16_fmax8_logmel32_s202",
+      "clips": 398,
+      "changed_predictions": 0,
+      "input": "original validation WAV through case-specific frontend"
+    },
+    {
+      "task": "D_sr16_fmax8_logmel32_s303",
+      "clips": 398,
+      "changed_predictions": 0,
+      "input": "original validation WAV through case-specific frontend"
+    },
+    {
+      "task": "D_sr16_fmax8_mfcc40_s101",
+      "clips": 398,
+      "changed_predictions": 0,
+      "input": "original validation WAV through case-specific frontend"
+    },
+    {
+      "task": "D_sr16_fmax8_mfcc40_s202",
+      "clips": 398,
+      "changed_predictions": 0,
+      "input": "original validation WAV through case-specific frontend"
+    },
+    {
+      "task": "D_sr16_fmax8_mfcc40_s303",
+      "clips": 398,
+      "changed_predictions": 0,
+      "input": "original validation WAV through case-specific frontend"
+    },
+    {
+      "task": "D_sr16_fmax8_loglinear64_s101",
+      "clips": 398,
+      "changed_predictions": 0,
+      "input": "original validation WAV through case-specific frontend"
+    },
+    {
+      "task": "D_sr16_fmax8_loglinear64_s202",
+      "clips": 398,
+      "changed_predictions": 0,
+      "input": "original validation WAV through case-specific frontend"
+    },
+    {
+      "task": "D_sr16_fmax8_loglinear64_s303",
+      "clips": 398,
+      "changed_predictions": 0,
+      "input": "original validation WAV through case-specific frontend"
+    },
+    {
+      "task": "D_sr32_fmax8_logmel64_s101",
+      "clips": 398,
+      "changed_predictions": 0,
+      "input": "original validation WAV through case-specific frontend"
+    },
+    {
+      "task": "D_sr32_fmax8_logmel64_s202",
+      "clips": 398,
+      "changed_predictions": 0,
+      "input": "original validation WAV through case-specific frontend"
+    },
+    {
+      "task": "D_sr32_fmax8_logmel64_s303",
+      "clips": 398,
+      "changed_predictions": 0,
+      "input": "original validation WAV through case-specific frontend"
+    },
+    {
+      "task": "D_sr32_fmax8_logmel32_s101",
+      "clips": 398,
+      "changed_predictions": 0,
+      "input": "original validation WAV through case-specific frontend"
+    },
+    {
+      "task": "D_sr32_fmax8_logmel32_s202",
+      "clips": 398,
+      "changed_predictions": 0,
+      "input": "original validation WAV through case-specific frontend"
+    },
+    {
+      "task": "D_sr32_fmax8_logmel32_s303",
+      "clips": 398,
+      "changed_predictions": 0,
+      "input": "original validation WAV through case-specific frontend"
+    },
+    {
+      "task": "D_sr32_fmax8_mfcc40_s101",
+      "clips": 398,
+      "changed_predictions": 0,
+      "input": "original validation WAV through case-specific frontend"
+    },
+    {
+      "task": "D_sr32_fmax8_mfcc40_s202",
+      "clips": 398,
+      "changed_predictions": 0,
+      "input": "original validation WAV through case-specific frontend"
+    },
+    {
+      "task": "D_sr32_fmax8_mfcc40_s303",
+      "clips": 398,
+      "changed_predictions": 0,
+      "input": "original validation WAV through case-specific frontend"
+    },
+    {
+      "task": "D_sr32_fmax8_loglinear64_s101",
+      "clips": 398,
+      "changed_predictions": 0,
+      "input": "original validation WAV through case-specific frontend"
+    },
+    {
+      "task": "D_sr32_fmax8_loglinear64_s202",
+      "clips": 398,
+      "changed_predictions": 0,
+      "input": "original validation WAV through case-specific frontend"
+    },
+    {
+      "task": "D_sr32_fmax8_loglinear64_s303",
+      "clips": 398,
+      "changed_predictions": 0,
+      "input": "original validation WAV through case-specific frontend"
+    },
+    {
+      "task": "D_sr32_fmax16_logmel64_s101",
+      "clips": 398,
+      "changed_predictions": 0,
+      "input": "original validation WAV through case-specific frontend"
+    },
+    {
+      "task": "D_sr32_fmax16_logmel64_s202",
+      "clips": 398,
+      "changed_predictions": 0,
+      "input": "original validation WAV through case-specific frontend"
+    },
+    {
+      "task": "D_sr32_fmax16_logmel64_s303",
+      "clips": 398,
+      "changed_predictions": 0,
+      "input": "original validation WAV through case-specific frontend"
+    },
+    {
+      "task": "D_sr32_fmax16_logmel32_s101",
+      "clips": 398,
+      "changed_predictions": 0,
+      "input": "original validation WAV through case-specific frontend"
+    },
+    {
+      "task": "D_sr32_fmax16_logmel32_s202",
+      "clips": 398,
+      "changed_predictions": 0,
+      "input": "original validation WAV through case-specific frontend"
+    },
+    {
+      "task": "D_sr32_fmax16_logmel32_s303",
+      "clips": 398,
+      "changed_predictions": 0,
+      "input": "original validation WAV through case-specific frontend"
+    },
+    {
+      "task": "D_sr32_fmax16_mfcc40_s101",
+      "clips": 398,
+      "changed_predictions": 0,
+      "input": "original validation WAV through case-specific frontend"
+    },
+    {
+      "task": "D_sr32_fmax16_mfcc40_s202",
+      "clips": 398,
+      "changed_predictions": 0,
+      "input": "original validation WAV through case-specific frontend"
+    },
+    {
+      "task": "D_sr32_fmax16_mfcc40_s303",
+      "clips": 398,
+      "changed_predictions": 0,
+      "input": "original validation WAV through case-specific frontend"
+    },
+    {
+      "task": "D_sr32_fmax16_loglinear64_s101",
+      "clips": 398,
+      "changed_predictions": 0,
+      "input": "original validation WAV through case-specific frontend"
+    },
+    {
+      "task": "D_sr32_fmax16_loglinear64_s202",
+      "clips": 398,
+      "changed_predictions": 0,
+      "input": "original validation WAV through case-specific frontend"
+    },
+    {
+      "task": "D_sr32_fmax16_loglinear64_s303",
+      "clips": 398,
+      "changed_predictions": 0,
+      "input": "original validation WAV through case-specific frontend"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "scope": "New runs versus historical saved development runs; not fresh heldout evidence",
+  "runs": [
+    {
+      "model": "cnn_freq",
+      "seed": 101,
+      "predictions_equal": true,
+      "best_epoch_equal": true,
+      "weights_equal": true
+    },
+    {
+      "model": "cnn_freq",
+      "seed": 202,
+      "predictions_equal": true,
+      "best_epoch_equal": true,
+      "weights_equal": true
+    },
+    {
+      "model": "cnn_freq",
+      "seed": 303,
+      "predictions_equal": true,
+      "best_epoch_equal": true,
+      "weights_equal": true
+    },
+    {
+      "model": "crnn_freq",
+      "seed": 101,
+      "predictions_equal": true,
+      "best_epoch_equal": true,
+      "weights_equal": true
+    },
+    {
+      "model": "crnn_freq",
+      "seed": 202,
+      "predictions_equal": true,
+      "best_epoch_equal": true,
+      "weights_equal": true
+    },
+    {
+      "model": "crnn_freq",
+      "seed": 303,
+      "predictions_equal": true,
+      "best_epoch_equal": true,
+      "weights_equal": true
+    }
+  ]
+}

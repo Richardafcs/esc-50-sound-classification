@@ -1,0 +1,30 @@
+{
+  "checks": [
+    {
+      "pdf": "ESC50_Complete_Study_Report_EN.pdf",
+      "pages": 18,
+      "embedded_figures": 7,
+      "all_source_headings_retained": true,
+      "all_figure_pixels_match_originals": true,
+      "page_boundaries_pass": true,
+      "blank_pages": 0,
+      "sha256": "cf4a7975ba45a6a1384451fd8fe2e79a91b98628faeee1b903405d00c816a7e1",
+      "fitted_task_rows_verified": 62,
+      "paired_aggregate_rows": 25
+    },
+    {
+      "pdf": "ESC50_CNN_CRNN_Baseline_Report_EN.pdf",
+      "pages": 18,
+      "embedded_figures": 8,
+      "all_source_headings_retained": true,
+      "all_figure_pixels_match_originals": true,
+      "page_boundaries_pass": true,
+      "blank_pages": 0,
+      "sha256": "658aa14e127d2298b37ae3d5eeee9f3ce813797f29fae85920e04d1c9f62fb31"
+    }
+  ],
+  "total_figures": 15,
+  "visual_review": "All 36 pages inspected in rendered contact sheets; changed table/code pages also inspected individually",
+  "scope": "Existing reviewed results exported; no new model training or dataset evaluation",
+  "historical_confusion_matrix_mapping": "CNN=right_confusion; CRNN=left_confusion, verified against comparison.json"
+}

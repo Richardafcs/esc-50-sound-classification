@@ -1,0 +1,299 @@
+{
+  "confirmation_schema_version": 1,
+  "frozen_at_utc": "2026-10-27T22:25:16.448990+00:00",
+  "selection": {
+    "nonrecurrent_candidates": [
+      {
+        "model": "cnn_freq",
+        "specaugment": false,
+        "seeds": [
+          {
+            "seed": 101,
+            "accuracy": 0.7261306532663316,
+            "macro_f1": 0.719429677059304
+          },
+          {
+            "seed": 202,
+            "accuracy": 0.7236180904522613,
+            "macro_f1": 0.7078517517166728
+          },
+          {
+            "seed": 303,
+            "accuracy": 0.7286432160804021,
+            "macro_f1": 0.7145118405845957
+          }
+        ],
+        "accuracy": 0.7261306532663316,
+        "macro_f1": 0.7139310897868576,
+        "parameters": 49058,
+        "cpu_p95_ms": 3.6379898607265204,
+        "checkpoint_bytes": 286113
+      },
+      {
+        "model": "cnn_freq_matched",
+        "specaugment": false,
+        "seeds": [
+          {
+            "seed": 101,
+            "accuracy": 0.7160804020100503,
+            "macro_f1": 0.7058796324074961
+          },
+          {
+            "seed": 202,
+            "accuracy": 0.7286432160804021,
+            "macro_f1": 0.7171785182481776
+          },
+          {
+            "seed": 303,
+            "accuracy": 0.7236180904522613,
+            "macro_f1": 0.7119013648889808
+          }
+        ],
+        "accuracy": 0.7227805695142379,
+        "macro_f1": 0.7116531718482181,
+        "parameters": 252036,
+        "cpu_p95_ms": 3.3865791483549397,
+        "checkpoint_bytes": 1098587
+      },
+      {
+        "model": "cnn_freq_token",
+        "specaugment": false,
+        "seeds": [
+          {
+            "seed": 101,
+            "accuracy": 0.6532663316582915,
+            "macro_f1": 0.6232695275170979
+          },
+          {
+            "seed": 202,
+            "accuracy": 0.7286432160804021,
+            "macro_f1": 0.7194889135632168
+          },
+          {
+            "seed": 303,
+            "accuracy": 0.7085427135678392,
+            "macro_f1": 0.6931358310106458
+          }
+        ],
+        "accuracy": 0.696817420435511,
+        "macro_f1": 0.6786314240303201,
+        "parameters": 252036,
+        "cpu_p95_ms": 3.404399612918496,
+        "checkpoint_bytes": 1098587
+      }
+    ],
+    "strongest_nonrecurrent": {
+      "model": "cnn_freq",
+      "specaugment": false,
+      "seeds": [
+        {
+          "seed": 101,
+          "accuracy": 0.7261306532663316,
+          "macro_f1": 0.719429677059304
+        },
+        {
+          "seed": 202,
+          "accuracy": 0.7236180904522613,
+          "macro_f1": 0.7078517517166728
+        },
+        {
+          "seed": 303,
+          "accuracy": 0.7286432160804021,
+          "macro_f1": 0.7145118405845957
+        }
+      ],
+      "accuracy": 0.7261306532663316,
+      "macro_f1": 0.7139310897868576,
+      "parameters": 49058,
+      "cpu_p95_ms": 3.6379898607265204,
+      "checkpoint_bytes": 286113
+    },
+    "recurrent_candidate": {
+      "model": "crnn_freq",
+      "specaugment": false,
+      "seeds": [
+        {
+          "seed": 101,
+          "accuracy": 0.7512562814070352,
+          "macro_f1": 0.7421106767329678
+        },
+        {
+          "seed": 202,
+          "accuracy": 0.7386934673366834,
+          "macro_f1": 0.7317859675584133
+        },
+        {
+          "seed": 303,
+          "accuracy": 0.7261306532663316,
+          "macro_f1": 0.7151917166081252
+        }
+      ],
+      "accuracy": 0.7386934673366833,
+      "macro_f1": 0.7296961202998354,
+      "parameters": 251810
+    },
+    "recurrent_mean_gain_pp": 1.2562814070351647,
+    "augmentation_pilot_passed": false,
+    "chosen": {
+      "model": "cnn_freq",
+      "specaugment": false,
+      "seeds": [
+        {
+          "seed": 101,
+          "accuracy": 0.7261306532663316,
+          "macro_f1": 0.719429677059304
+        },
+        {
+          "seed": 202,
+          "accuracy": 0.7236180904522613,
+          "macro_f1": 0.7078517517166728
+        },
+        {
+          "seed": 303,
+          "accuracy": 0.7286432160804021,
+          "macro_f1": 0.7145118405845957
+        }
+      ],
+      "accuracy": 0.7261306532663316,
+      "macro_f1": 0.7139310897868576,
+      "parameters": 49058,
+      "cpu_p95_ms": 3.6379898607265204,
+      "checkpoint_bytes": 286113
+    },
+    "confirmation_seed": 101,
+    "test_used_for_selection": false,
+    "interpretation": "Development recipe selection; augmentation is not a recurrence-only intervention"
+  },
+  "test_used_for_selection": false,
+  "primary_confirmation_seed": 101,
+  "checkpoint_sha256": {
+    "cnn_freq_seed101_60ep": "645f0d136afe46fbfb7e6514ba4473528d929908bc45edb92c9628a76c490ae7",
+    "cnn_freq_seed202_60ep": "78a7ff72f3ad9411a09e80864b1eb03618440c46f99ab47b31aa31a13e04e2fa",
+    "cnn_freq_seed303_60ep": "3ffc94187bc2133c1191f27caa2abd3840864872c684f11189bddffa7795f8d5",
+    "crnn_freq_seed101_60ep": "037eee005bb092b7c1c7b61cdba55f2fc2d59f0d0cff60845a93fd562cc4f282",
+    "crnn_freq_seed202_60ep": "14d7946c434f1da1bb6874e1fb6c4bffcbb575aae1c4f6184fc6f1489f6e3414",
+    "crnn_freq_seed303_60ep": "46ba84173e0129c0fcc5097ffff5e5cecf061c48444667b2593e9f6f1356ee26",
+    "cnn_freq_matched_seed101_60ep": "fa30754a5a155ae7cf7e39312832e820bce3fe8275764515cb986c34ff9668d1",
+    "cnn_freq_matched_seed202_60ep": "1d68c135353b6da53d0cc83a5f68a24cc0089fa183074370eab9b87a8bc812cc",
+    "cnn_freq_matched_seed303_60ep": "64e3c40cc025b6695e9fcb95d7787e803a0c9ca3ec5f6f34a19ac2a891625b05",
+    "cnn_freq_token_seed101_60ep": "d40a6387f6d98e1952e47f72144f404c5b2be01dc687f7099c4e2fb7d3498d2b",
+    "cnn_freq_token_seed202_60ep": "861517f00c91c39aee86bacdf07bc790b7f0118fb6e00ecb6c0466fa056bfd3e",
+    "cnn_freq_token_seed303_60ep": "035ceb4265bcf64ce7fe202ea9a1e92d0c38b0a009f4742d01668c1d7ada61df"
+  },
+  "holdout_roster": [
+    "cnn_freq_seed101_60ep",
+    "cnn_freq_seed202_60ep",
+    "cnn_freq_seed303_60ep",
+    "crnn_freq_seed101_60ep",
+    "crnn_freq_seed202_60ep",
+    "crnn_freq_seed303_60ep",
+    "cnn_freq_matched_seed101_60ep",
+    "cnn_freq_matched_seed202_60ep",
+    "cnn_freq_matched_seed303_60ep",
+    "cnn_freq_token_seed101_60ep",
+    "cnn_freq_token_seed202_60ep",
+    "cnn_freq_token_seed303_60ep"
+  ],
+  "order_tags": [
+    "cnn_freq_seed101_60ep",
+    "crnn_freq_seed101_60ep",
+    "cnn_freq_matched_seed101_60ep",
+    "cnn_freq_token_seed101_60ep"
+  ],
+  "stress_tags": [
+    "cnn_freq_seed101_60ep",
+    "crnn_freq_seed101_60ep"
+  ],
+  "measurement_protocol": {
+    "order": {
+      "split": "test",
+      "permutation_seeds": [
+        101,
+        202,
+        303,
+        404,
+        505
+      ]
+    },
+    "stress": {
+      "split": "test",
+      "conditions": [
+        "clean",
+        "snr_20",
+        "snr_10",
+        "snr_0",
+        "gain_-6",
+        "gain_6"
+      ],
+      "seed": 2026
+    }
+  },
+  "cross_validation": {
+    "models": [
+      "cnn_freq",
+      "crnn_freq"
+    ],
+    "seed": 101,
+    "epochs": 60,
+    "scheduler": "cosine",
+    "specaugment": false,
+    "fold_roles": [
+      {
+        "test_fold": 1,
+        "val_fold": 5,
+        "train_folds": [
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "test_fold": 2,
+        "val_fold": 1,
+        "train_folds": [
+          3,
+          4,
+          5
+        ]
+      },
+      {
+        "test_fold": 3,
+        "val_fold": 2,
+        "train_folds": [
+          1,
+          4,
+          5
+        ]
+      },
+      {
+        "test_fold": 4,
+        "val_fold": 3,
+        "train_folds": [
+          1,
+          2,
+          5
+        ]
+      },
+      {
+        "test_fold": 5,
+        "val_fold": 4,
+        "train_folds": [
+          1,
+          2,
+          3
+        ]
+      }
+    ],
+    "interpretation": "Fixed-recipe characterization; folds1-4 already informed development. Not fully nested selection evaluation or five untouched confirmations."
+  },
+  "resource": {
+    "additional_wall_seconds": 1800,
+    "per_training_run_seconds": 300,
+    "per_process_seconds": 480,
+    "currency_spend": 0
+  },
+  "statistical_baseline": {
+    "model_sha256": "176c41ff888fb3e9a3157d0afcdd7efb4e5f84931d3912f03f0b357394a00969",
+    "selected_l2": 0.001
+  }
+}

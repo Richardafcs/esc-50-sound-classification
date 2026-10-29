@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "valid": true,
+  "model": "cnn_freq",
+  "seed": 101,
+  "assessment": "retrospective fixed-recipe 5-fold evidence audit, NOT preregistered independent confirmation",
+  "protocol": "three training folds + separate validation fold, not ESC-50 standard four training folds",
+  "selection_disclosure": "Retrospective historical five-fold characterization; folds were accessed during earlier development, not an independent confirmation",
+  "metadata_sha256": "ca660da60191a97de289983a05821c9382d852a38a2ba8428980816b68cf6246",
+  "n": 2000,
+  "overall_accuracy": 0.665,
+  "macro_f1_from_pooled_confusion": 0.6601803253884259,
+  "mean_fold_accuracy": 0.665,
+  "sd_fold_accuracy_descriptive": 0.044194173824159244,
+  "mean_fold_macro_f1": 0.6529651042175095,
+  "test_fold_results": [
+    {
+      "test_fold": 1,
+      "n": 400,
+      "accuracy": 0.6475,
+      "macro_f1": 0.6257654872475306,
+      "predictions_sha256": "b746fefde510715d341ccccc9524c38f45c88a086061b6514d9633d41f5900fb",
+      "checkpoint_sha256": "d3c62d9183b8858c2d75f90406790c555f4e799c7a66b5be96ef98839050cd28",
+      "run_manifest_id": "a9b9d1bbba37c9e071289b67858e0edfd4fb2a068c7fdaf26a4fdc4645f974de"
+    },
+    {
+      "test_fold": 2,
+      "n": 400,
+      "accuracy": 0.65,
+      "macro_f1": 0.6468904777712826,
+      "predictions_sha256": "8df8bf7405feb0ffcddc7d8e292f069a2010b29732b0604fb2caeb343d4cfe9a",
+      "checkpoint_sha256": "a9c42361edcba07ebc9c5c8265208e7eee932c516912724ef8bc97ab6b542469",
+      "run_manifest_id": "25b8c8efedecd89d6f6dc3dadba49930bf01a1698ebfcc64da36cfd5da1ba526"
+    },
+    {
+      "test_fold": 3,
+      "n": 400,
+      "accuracy": 0.68,
+      "macro_f1": 0.6692774553933525,
+      "predictions_sha256": "cb35c1f82b69516ed4e6a7914ae039172d726b1788f42a128dd0087c66ac209f",
+      "checkpoint_sha256": "b600b20680a8548e9fce92886faedfc869765ac1e644cb6dedb262e6e167791d",
+      "run_manifest_id": "b7a0845021352fb24fc4aae49edbffd9a0b26b7ae014a787ce4c86967d3bf4ac"
+    },
+    {
+      "test_fold": 4,
+      "n": 400,
+      "accuracy": 0.7325,
+      "macro_f1": 0.7237101869578649,
+      "predictions_sha256": "812c3b48cfc220da899d8b3f81feca897a7c0204ca3e9e2287d9cc7f53f5be48",
+      "checkpoint_sha256": "0e7a45f7f65ba8a0fac601800ce86ffe4770fb16ff9ac943c5b4e3d0fc58a7c1",
+      "run_manifest_id": "8d1cfaac6de05d6b6c04c246e7e17aad88d05f13a3b55c22382f751adc244d2c"
+    },
+    {
+      "test_fold": 5,
+      "n": 400,
+      "accuracy": 0.615,
+      "macro_f1": 0.5991819137175175,
+      "predictions_sha256": "f71739564d1b6b6da486d4e92695b498641635771ce15472ca969b3dbae6d0bd",
+      "checkpoint_sha256": "645f0d136afe46fbfb7e6514ba4473528d929908bc45edb92c9628a76c490ae7",
+      "run_manifest_id": "83d790817180890bc88a3c8b6ceaf1ba43343c3bc5ddf9917de14cd0f6ff4337"
+    }
+  ],
+  "num_unique_test_sources": 1524,
+  "warnings": [
+    "CV folds share training data and are not independent replicates",
+    "Historical development accessed folds prior to this retrospective audit",
+    "Some original source IDs may appear in more than one official fold; source-strict training removes overlaps"
+  ],
+  "test_metrics_read": true
+}
