@@ -1,6 +1,9 @@
 # Phase 1 — Attention-CRNN implementation and research protocol
 
-**Status (2026-10-28):** Three architectures implemented; unit/integration validation described in `docs/reviews/attention_cloud_validation.json`. **No real ESC-50 Attention models have been trained** in this package. Original baseline weights and historical conclusions have not been changed.
+> **Update - 5 November 2026:** The subsequent study completed all nine attention-specific runs (TA, CA, and TA+CA, each with seeds 101/202/303 and 60 epochs). The architecture group has 15 runs in total, including the six CNN/BiGRU references. The text below preserves the initial implementation-stage plan; its original “not trained” status is no longer current. See the [executed group results](../../reports/evidence/matrix_20261028/analysis/groups.csv) and [final research report](../../reports/final_20261105/Final_Research_Report_EN.md).
+
+
+**Historical phase-one status (2026-10-28):** Three architectures implemented; unit/integration validation described in `docs/reviews/attention_cloud_validation.json`. **No real ESC-50 Attention models have been trained** in this package. Original baseline weights and historical conclusions have not been changed.
 
 ## What is new
 

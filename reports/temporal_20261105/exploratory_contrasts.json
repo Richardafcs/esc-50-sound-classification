@@ -1,0 +1,29 @@
+{
+  "scope": "Post hoc comparisons prompted by the observed reversal/shuffle ordering; no family-wise correction or new confirmation.",
+  "contrasts": {
+    "reverse_minus_shuffle17": {
+      "delta_accuracy_pp": -3.936348408710218,
+      "source_bootstrap_low_pp": -6.310679611650485,
+      "source_bootstrap_high_pp": -1.7500000000000002,
+      "n_clips": 398,
+      "n_sources": 295,
+      "bootstrap_resamples": 4000,
+      "bootstrap_seed": 20261105,
+      "minimum_resample_clips": 360,
+      "maximum_resample_clips": 450,
+      "uncertainty_scope": "source sampling conditional on the fixed models and corruption realization; not training-seed or noise-draw population uncertainty"
+    },
+    "reverse_minus_shuffle29": {
+      "delta_accuracy_pp": -4.941373534338359,
+      "source_bootstrap_low_pp": -7.26083185241601,
+      "source_bootstrap_high_pp": -2.7430870216148393,
+      "n_clips": 398,
+      "n_sources": 295,
+      "bootstrap_resamples": 4000,
+      "bootstrap_seed": 20261105,
+      "minimum_resample_clips": 360,
+      "maximum_resample_clips": 450,
+      "uncertainty_scope": "source sampling conditional on the fixed models and corruption realization; not training-seed or noise-draw population uncertainty"
+    }
+  }
+}

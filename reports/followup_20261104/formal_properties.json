@@ -1,0 +1,128 @@
+{
+  "schema_version": 1,
+  "solver": "Z3",
+  "solver_version": "4.15.2",
+  "verification_kind": "SMT counterexample queries over stated abstract specifications",
+  "scope_limit": "Not a proof of Python/PyTorch correspondence, floating-point behavior, bootstrap coverage, dataset independence, or learned-model robustness.",
+  "checks": [
+    {
+      "property": "paired_net_correct_count",
+      "expected": "unsat",
+      "actual": "unsat",
+      "premises": "sat",
+      "passed": true,
+      "scope": "All nonnegative integer 2x2 paired-correctness tables with N>0."
+    },
+    {
+      "property": "paired_difference_bounds",
+      "expected": "unsat",
+      "actual": "unsat",
+      "premises": "sat",
+      "passed": true,
+      "scope": "The paired accuracy difference, after division by N, lies in [-1,1]."
+    },
+    {
+      "property": "paired_accuracy_normalization",
+      "expected": "unsat",
+      "actual": "unsat",
+      "premises": "sat",
+      "passed": true,
+      "scope": "Exact real normalization of two counts by the same positive denominator."
+    },
+    {
+      "property": "cluster_resample_positive_denominator_3_groups",
+      "expected": "unsat",
+      "actual": "unsat",
+      "premises": "sat",
+      "passed": true,
+      "scope": "Three nonempty sources, nonnegative integer multiplicities, at least one draw."
+    },
+    {
+      "property": "cluster_resample_difference_bounds_3_groups",
+      "expected": "unsat",
+      "actual": "unsat",
+      "premises": "sat",
+      "passed": true,
+      "scope": "Clip-weighted paired difference remains in [-1,1] after whole-source resampling."
+    },
+    {
+      "property": "joint_source_permutation_invariance_3_groups",
+      "expected": "unsat",
+      "actual": "unsat",
+      "premises": "sat",
+      "passed": true,
+      "scope": "Jointly permuting source size, paired sum, and draw multiplicity changes neither sum."
+    },
+    {
+      "property": "same_cluster_draws_commute_with_fixed_seed_mean",
+      "expected": "unsat",
+      "actual": "unsat",
+      "premises": "sat",
+      "passed": true,
+      "scope": "A fixed three-seed average shares the resampled denominator; no seed-independence claim."
+    },
+    {
+      "property": "normalized_added_noise_energy",
+      "expected": "unsat",
+      "actual": "unsat",
+      "premises": "sat",
+      "passed": true,
+      "scope": "Ideal real arithmetic with positive signal/noise RMS and no clipping or renormalization."
+    },
+    {
+      "property": "normalized_added_noise_positive_power",
+      "expected": "unsat",
+      "actual": "unsat",
+      "premises": "sat",
+      "passed": true,
+      "scope": "A nonzero signal and nonzero centered noise have positive scaled-noise power."
+    },
+    {
+      "property": "negative_control_source_mean_equals_clip_mean",
+      "expected": "sat",
+      "actual": "sat",
+      "premises": "sat",
+      "passed": true,
+      "scope": "Counterexample: clip-weighted difference 1/3 versus equally weighted source mean 1/2.",
+      "counterexample": {
+        "size_a": "1",
+        "size_b": "2",
+        "delta_a": "1",
+        "delta_b": "0"
+      }
+    },
+    {
+      "property": "negative_control_constant_bootstrap_denominator",
+      "expected": "sat",
+      "actual": "sat",
+      "premises": "sat",
+      "passed": true,
+      "scope": "Drawing three sources with replacement need not preserve six original clips: here it gives three.",
+      "counterexample": {
+        "w0": "3",
+        "n2": "3",
+        "w1": "0",
+        "w2": "0",
+        "n0": "1",
+        "n1": "2"
+      }
+    },
+    {
+      "property": "negative_control_unnormalized_noise_hits_requested_snr",
+      "expected": "sat",
+      "actual": "sat",
+      "premises": "sat",
+      "passed": true,
+      "scope": "Without RMS normalization, signal power 4 plus noise power 1 misses requested ratio 1.",
+      "counterexample": {
+        "Q": "1",
+        "noise_amplitude": "1",
+        "ratio_root": "1",
+        "P": "4"
+      }
+    }
+  ],
+  "all_passed": true,
+  "proved_properties": 9,
+  "confirmed_negative_controls": 3
+}

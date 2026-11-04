@@ -2,13 +2,23 @@
 
 A team research project for environmental sound classification with classical baselines, a frequency-preserving CNN, CNN + BiGRU (CRNN), channel attention, audio augmentation, and feature comparisons.
 
-The completed study contains **65 registered tasks**, including **60 neural runs of 60 epochs**. This repository shares the implementation, protocols, portable CNN/CRNN models, compact result evidence, English PDF reports, all report figures, and the full regression suite. Large local experiment collections are intentionally excluded.
+The completed study contains **65 registered tasks**, including **60 neural runs of 60 epochs**. This repository shares the implementation, protocols, portable CNN/CRNN models, a compact PANNs linear head, result evidence, English PDF reports, all report figures, and the full regression suite. Large local experiment collections are intentionally excluded.
 
 ## Start here
 
+Checkpoint: [Model improvement report](reports/checkpoint_20261105/README.md) — the five assignment requirements, nine selected figures, 26-publication review and explicit baseline identity.
+
+New performance phase: [Frozen PANNs + linear classifier](reports/panns_20261105/README.md) — executed on Colab T4, **91.21% accuracy / 91.10% macro-F1** on the same development-validation split. External pretraining and a larger encoder distinguish it from the original scratch-trained study.
+
+Final: [Complete English research report](reports/pdf/ESC50_Final_Research_Report_EN.pdf) — 35 pages, all 19 figures, completed three-seed robustness and temporal interventions. [Evidence and model decision](reports/final_20261105/README.md).
+
+Latest: [5 November temporal-order probe](reports/temporal_20261105/README.md) — real encoder-token interventions with existing CNN/CRNN weights.
+
+Latest: [4 November research follow-up](reports/followup_20261104/README.md) — three-seed robustness, prediction errors, and feature convergence.
+
 | Purpose | Entry point |
 | --- | --- |
-| Read complete English PDFs | [Latest matrix study](reports/pdf/ESC50_Complete_Study_Report_EN.pdf) · [CNN/CRNN baseline study](reports/pdf/ESC50_CNN_CRNN_Baseline_Report_EN.pdf) |
+| Read complete English PDFs | [Model improvement checkpoint](reports/pdf/ESC50_Model_Improvement_Checkpoint_EN.pdf) · [PANNs transfer study](reports/pdf/ESC50_PANNs_Transfer_Report_EN.pdf) · [Final research report](reports/pdf/ESC50_Final_Research_Report_EN.pdf) · [Original matrix study](reports/pdf/ESC50_Complete_Study_Report_EN.pdf) · [CNN/CRNN baseline study](reports/pdf/ESC50_CNN_CRNN_Baseline_Report_EN.pdf) |
 | Understand the project | [English guide](docs/guides/guide_en.md) · [Chinese guide](docs/guides/guide_zh.md) |
 | Inspect findings and figures | [Reports and evidence](reports/README.md) |
 | Predict with pretrained models | [Portable CNN and CRNN](models/README.md) |
@@ -17,7 +27,7 @@ The completed study contains **65 registered tasks**, including **60 neural runs
 
 ## Install and check
 
-Use Python 3.11 or later. Repository access is required because the project is private.
+Use Python 3.11 or later.
 
 ```sh
 git clone https://github.com/Richardafcs/esc-50-sound-classification.git
@@ -70,10 +80,11 @@ python -m esc50_sound predict --checkpoint results/runs/new_cnn/best.pt \
 | CNN (`cnn_freq`) | 72.61% ± 0.25 pp | Mean ± sample SD, three training seeds |
 | CNN + BiGRU / CRNN (`crnn_freq`) | 73.87% ± 1.26 pp | Mean ± sample SD, three training seeds |
 | CRNN + channel attention | 74.37% ± 1.15 pp | Mean ± sample SD, three training seeds |
+| Frozen PANNs + linear head | 91.21% | One fixed fit; external AudioSet pretraining |
 
 CNN and CRNN are the deep-learning baselines; logistic regression and SVM are the classical baselines. The classical input representations differ, so their score difference is not a classifier-only comparison. The selected seed101 CRNN checkpoint scores 75.13% on validation; this is distinct from its three-seed mean.
 
-Channel attention adds about 0.50 percentage points over CRNN in this development setting. Synthetic Gaussian-noise augmentation improves the seed101 CNN at 10 dB added-noise SNR from 23.37% to 62.81%, but accuracy at 0 dB remains only 26.13%. Consult the reports for every condition, macro-F1, paired differences, and limitations.
+Channel attention adds about 0.50 percentage points over CRNN in this development setting; its conditional source-bootstrap interval spans zero (-1.22 to +2.17 pp). All nine attention-specific training runs are complete. Across three fixed training seeds, Gaussian-noise augmentation improves CNN accuracy at 10 dB added-noise SNR from 23.37% to 61.31%; at 0 dB it reaches 25.38%. Consult the final report for every condition, macro-F1, paired differences, and limitations.
 
 These are **development-validation** results on the same 398 clips. Earlier research accessed all ESC-50 folds, so these results do not establish fresh independent confirmation, field robustness, state of the art, or production readiness. The reports keep historical test results separate from the latest validation study.
 
@@ -85,7 +96,7 @@ The [summary tables and verification receipts](reports/evidence/matrix_20261028/
 | --- | --- |
 | Source, configs, tests, dataset metadata and licenses | Downloaded WAVs and generated feature caches |
 | Portable CNN/CRNN checkpoints and model cards | Bulk matrix weights, optimizer states, raw experiment logs |
-| Two English PDFs, all 15 PNG figures and 13 SVG versions | Duplicate release ZIPs and standalone package assemblies |
+| Five English PDFs, all 22 scientific figures and available SVG versions | Duplicate release ZIPs and standalone package assemblies |
 | Curated summary CSVs and verification records | Historical pilot outputs, source archives, bulky training notebooks |
 | 45 byte-preserved regression files, about 3.47 MB | New experiment outputs under `results/runs/` |
 

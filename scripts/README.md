@@ -4,6 +4,10 @@ The installed application entry point is `python -m esc50_sound`. Run repository
 
 | Task | Entry points |
 | --- | --- |
+| Checkpoint manuscript and nine saved figures | `python scripts/build_checkpoint_report.py` |
+| Frozen PANNs extraction and single-head fit | `python scripts/run_panns_linear_probe.py --help` |
+| PANNs paired analysis and figures from shared evidence | `python scripts/analyze_panns_transfer.py` |
+| PANNs English report and PDF | `python scripts/build_panns_report.py` |
 | Audit the current complete study | `python scripts/analyze_colab_matrix.py --require-complete` |
 | Plot the current study | `python scripts/plot_colab_matrix.py` |
 | Historical figure regeneration | `python scripts/make_figures.py --svg --include-cv` |

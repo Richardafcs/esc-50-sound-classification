@@ -17,7 +17,8 @@ dependencies = [
 [project.optional-dependencies]
 dev = ["pytest>=8", "ipython>=8", "nbformat>=5.10"]
 baseline = ["scikit-learn>=1.4,<2"]
-report = ["matplotlib>=3.9"]
+report = ["matplotlib>=3.9", "reportlab>=4.2,<5", "Pillow>=10", "pypdf>=5"]
+transfer = ["torchlibrosa==0.1.0", "librosa==0.11.0", "scikit-learn==1.6.1", "joblib>=1.4,<2"]
 
 [project.scripts]
 esc50 = "esc50_sound.cli:main"

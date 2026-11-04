@@ -1,0 +1,21 @@
+{
+  "reported_baseline": {
+    "name": "cnn_freq",
+    "parameters": 49058,
+    "train_clips": 1200,
+    "validation_clips": 398,
+    "frontend": "16kHz, 64 Mel bands, FFT512, hop256, natural-log power",
+    "accuracy_mean_percent": 72.61306532663316
+  },
+  "team_repository_original": {
+    "repository": "z5438749/COMP9444-Project",
+    "inspected_commit": "60081c7c724b84baa5ebde09231cb43ba942b825",
+    "path": "esc50-baseline/model.py",
+    "name": "CNNBaseline",
+    "parameters": 1368386,
+    "frontend": "22.05kHz, 128 Mel bands, FFT2048, hop512, clip-relative power_to_db",
+    "validation_clips_default": 400,
+    "result_artifact_in_repository": false,
+    "same_implementation_as_reported_baseline": false
+  }
+}

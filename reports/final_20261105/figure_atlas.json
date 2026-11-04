@@ -1,0 +1,116 @@
+[
+  {
+    "title": "Three-seed development validation; SD is not a confidence interval.",
+    "path": "reports/figures/matrix_20261028/architecture.png",
+    "scope": "Original development matrix",
+    "number": 1
+  },
+  {
+    "title": "Augmentation affects training only; validation recordings stay clean.",
+    "path": "reports/figures/matrix_20261028/augmentation.png",
+    "scope": "Original development matrix",
+    "number": 2
+  },
+  {
+    "title": "Within-seed deltas; these are not significance tests.",
+    "path": "reports/figures/matrix_20261028/paired_effects.png",
+    "scope": "Original development matrix",
+    "number": 3
+  },
+  {
+    "title": "Track D uses the 26,658-parameter pooled CNN; interpret separately from the main architecture track.",
+    "path": "reports/figures/matrix_20261028/feature_sampling.png",
+    "scope": "Original development matrix",
+    "number": 4
+  },
+  {
+    "title": "Original seed101 robustness comparison: one fitted checkpoint per model",
+    "path": "reports/figures/matrix_20261028/robustness.png",
+    "scope": "Original development matrix",
+    "number": 5
+  },
+  {
+    "title": "Fixed-seed101 validation curves; checkpoints use minimum cross-entropy.",
+    "path": "reports/figures/matrix_20261028/learning_curves.png",
+    "scope": "Original development matrix",
+    "number": 6
+  },
+  {
+    "title": "A real validation waveform and Log-Mel representation",
+    "path": "reports/figures/matrix_20261028/frontend_example.png",
+    "scope": "Original development matrix",
+    "number": 7
+  },
+  {
+    "title": "Completed three-seed Gaussian-noise and gain results; bars show sample SD, not confidence intervals",
+    "path": "reports/final_20261105/three_seed_robustness.png",
+    "scope": "November inference/analysis follow-up",
+    "number": 8
+  },
+  {
+    "title": "Feature-study loss trajectories: Log-Mel 32 and Log-Mel 64, three fixed seeds",
+    "path": "reports/followup_20261104/convergence/validation_loss_curves.png",
+    "scope": "November inference/analysis follow-up",
+    "number": 9
+  },
+  {
+    "title": "Four selected real-audio error cases: waveform and Log-Mel evidence, not causal explanations",
+    "path": "reports/followup_20261104/error_cases/error_case_atlas.png",
+    "scope": "November inference/analysis follow-up",
+    "number": 10
+  },
+  {
+    "title": "CRNN encoder-token intervention effects with conditional source-bootstrap intervals",
+    "path": "reports/temporal_20261105/crnn_accuracy_change.png",
+    "scope": "November inference/analysis follow-up",
+    "number": 11
+  },
+  {
+    "title": "Historical study - Model comparison",
+    "path": "reports/figures/baseline_20261028/model_comparison.png",
+    "scope": "Historical baseline study; not new confirmation",
+    "number": 12
+  },
+  {
+    "title": "Historical study - Learning curves",
+    "path": "reports/figures/baseline_20261028/learning_curves.png",
+    "scope": "Historical baseline study; not new confirmation",
+    "number": 13
+  },
+  {
+    "title": "Historical study - Named confusions",
+    "path": "reports/figures/baseline_20261028/top_confusions.png",
+    "scope": "Historical baseline study; not new confirmation",
+    "number": 14
+  },
+  {
+    "title": "Historical study - Order probe",
+    "path": "reports/figures/baseline_20261028/order_probe.png",
+    "scope": "Historical baseline study; not new confirmation",
+    "number": 15
+  },
+  {
+    "title": "Historical study - Synthetic stress",
+    "path": "reports/figures/baseline_20261028/synthetic_stress.png",
+    "scope": "Historical baseline study; not new confirmation",
+    "number": 16
+  },
+  {
+    "title": "Historical study - Five-fold characterization",
+    "path": "reports/figures/baseline_20261028/cross_validation.png",
+    "scope": "Historical baseline study; not new confirmation",
+    "number": 17
+  },
+  {
+    "title": "Historical study - CNN primary fold-5 confusion matrix",
+    "path": "reports/figures/baseline_20261028/cnn_confusion.png",
+    "scope": "Historical baseline study; not new confirmation",
+    "number": 18
+  },
+  {
+    "title": "Historical study - CRNN (CNN + BiGRU) primary fold-5 confusion matrix",
+    "path": "reports/figures/baseline_20261028/crnn_confusion.png",
+    "scope": "Historical baseline study; not new confirmation",
+    "number": 19
+  }
+]

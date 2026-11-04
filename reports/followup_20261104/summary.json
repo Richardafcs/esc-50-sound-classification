@@ -1,0 +1,36 @@
+{
+  "scope": "Source-strict Fold4 development analysis; historical folds were exposed; no independent confirmation, training, test-fold inference, hash or file-integrity checks",
+  "n_clips": 398,
+  "n_sources": 295,
+  "clean_prediction_sets": 24,
+  "seeds": [
+    101,
+    202,
+    303
+  ],
+  "bootstrap_resamples": 4000,
+  "bootstrap_seed": 20261104,
+  "estimand": "Clip-weighted paired accuracy difference. Resample G original sources with replacement and keep every clip of each selected source; each draw uses its actual clip count denominator. Use identical source draws for all paired models and fixed training seeds.",
+  "uncertainty": "Intervals condition on the fitted models and one fixed corruption realization per clip/condition. Three seeds reuse the same audio and are not 3N independent observations. Fixed-three-seed mean intervals do not quantify the distribution of future training runs.",
+  "persistent_errors": {
+    "cnn": {
+      "clips": 83,
+      "sources": 66
+    },
+    "crnn": {
+      "clips": 64,
+      "sources": 52
+    },
+    "shared_four_families": {
+      "clips": 41,
+      "sources": 31
+    }
+  },
+  "robustness_prediction_sets": 54,
+  "robustness_complete": true,
+  "missing_robustness": [],
+  "source_size_min": 1,
+  "source_size_max": 8,
+  "bootstrap_clip_denominator_min": 353,
+  "bootstrap_clip_denominator_max": 454
+}

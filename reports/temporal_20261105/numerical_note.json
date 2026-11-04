@@ -1,0 +1,6 @@
+{
+  "initial_failure": "CNN seed303 roll19 float32 max absolute logit difference exceeded fixed 1e-5 guard",
+  "observed_max_abs_logit_difference": 1.1444091796875e-05,
+  "revision": "Keep the original float32 predictions; compare pooling in float64 at 1e-12 mixed tolerance and require CNN prediction invariance. Report both measured float32 changes and classification margins. No model weights or observations are tuned.",
+  "scope": "Numerical implementation correction after a recorded failed attempt; not a new architecture or independent confirmation"
+}

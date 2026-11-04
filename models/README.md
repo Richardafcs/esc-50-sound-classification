@@ -4,8 +4,9 @@
 | --- | --- | --- |
 | CNN (`cnn_freq`) | [cnn](cnn/) | Historically frozen default, seed101 |
 | CNN + BiGRU / CRNN (`crnn_freq`) | [crnn](crnn/) | Recurrent comparison model, seed101 |
+| Frozen PANNs + linear head | [panns_linear](panns_linear/MODEL_CARD.md) | New clean-development candidate; requires external encoder |
 
-Each directory contains the checkpoint, model definitions, prediction entry point, model card, and file-hash manifest. Read the corresponding `MODEL_CARD.md` before use. From the project root:
+The historical CNN and CRNN directories contain the checkpoint, model definitions, prediction entry point, model card and original manifest. The PANNs directory contains the small fitted linear head, label mapping and embedding-level inference; it requires the official external backbone. Read the corresponding `MODEL_CARD.md` before use. From the project root:
 
 ```sh
 python models/cnn/predict.py --checkpoint models/cnn/checkpoint.pt --audio YOUR_SHORT_CLIP.wav

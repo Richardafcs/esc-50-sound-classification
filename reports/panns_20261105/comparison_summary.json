@@ -1,0 +1,62 @@
+{
+  "panns_accuracy": 0.9120603015075377,
+  "panns_macro_f1": 0.9110258659469186,
+  "correct": 363,
+  "clips": 398,
+  "sources": 295,
+  "scope": "development validation; fixed external-pretrained encoder and deterministic head; historical fold exposure and unresolved pretraining overlap",
+  "comparisons": {
+    "CNN": {
+      "reference": "CNN",
+      "reference_accuracy_mean": 0.7261306532663316,
+      "reference_accuracy_sample_sd": 0.0025125628140703626,
+      "delta_accuracy_pp": 18.592964824120603,
+      "source_bootstrap_low_pp": 13.829624355466203,
+      "source_bootstrap_high_pp": 23.570433718629598,
+      "n_clips": 398,
+      "n_sources": 295,
+      "bootstrap_resamples": 4000,
+      "bootstrap_seed": 20261105,
+      "minimum_resample_clips": 360,
+      "maximum_resample_clips": 450,
+      "uncertainty_scope": "Source sampling conditional on the single PANNs fit and three fixed reference fits; not independent confirmation or training-seed population uncertainty"
+    },
+    "BiGRU": {
+      "reference": "BiGRU",
+      "reference_accuracy_mean": 0.7386934673366834,
+      "reference_accuracy_sample_sd": 0.012562814070351758,
+      "delta_accuracy_pp": 17.33668341708543,
+      "source_bootstrap_low_pp": 13.267792894658566,
+      "source_bootstrap_high_pp": 21.675302245250432,
+      "n_clips": 398,
+      "n_sources": 295,
+      "bootstrap_resamples": 4000,
+      "bootstrap_seed": 20261105,
+      "minimum_resample_clips": 360,
+      "maximum_resample_clips": 450,
+      "uncertainty_scope": "Source sampling conditional on the single PANNs fit and three fixed reference fits; not independent confirmation or training-seed population uncertainty"
+    },
+    "Channel Attention": {
+      "reference": "Channel Attention",
+      "reference_accuracy_mean": 0.7437185929648241,
+      "reference_accuracy_sample_sd": 0.011514009283808656,
+      "delta_accuracy_pp": 16.834170854271356,
+      "source_bootstrap_low_pp": 12.612612612612612,
+      "source_bootstrap_high_pp": 21.347331583552055,
+      "n_clips": 398,
+      "n_sources": 295,
+      "bootstrap_resamples": 4000,
+      "bootstrap_seed": 20261105,
+      "minimum_resample_clips": 360,
+      "maximum_resample_clips": 450,
+      "uncertainty_scope": "Source sampling conditional on the single PANNs fit and three fixed reference fits; not independent confirmation or training-seed population uncertainty"
+    }
+  },
+  "previous_four_family_persistent_errors": {
+    "total": 41,
+    "panns_repaired": 26,
+    "still_wrong": 15
+  },
+  "primary_comparison": "Channel Attention",
+  "practical_screen_pass": true
+}

@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "status": "completed",
+  "protocol": "esc50_legacy_stress_v1",
+  "checkpoint_task": "C_noise_s202",
+  "training_seed": 202,
+  "noise_seed": 2026,
+  "split": "validation",
+  "clips": 398,
+  "sources": 295,
+  "checkpoint": "/Users/richardhuang/Downloads/esc50-sound-classification/results/matrix_20261028/execution/runs/C_augmentation/C_noise_s202/best.pt",
+  "audio_root": "/Users/richardhuang/Desktop/ComputerVision/ai-research-engineering/projects/esc50-sound-classification/data/ESC-50/audio",
+  "torch_version": "2.13.0",
+  "device": "cpu",
+  "threads": 2,
+  "conditions": {
+    "clean": {
+      "n": 398,
+      "accuracy": 0.7412060301507538,
+      "macro_f1": 0.7340779300193084
+    },
+    "snr_20": {
+      "n": 398,
+      "accuracy": 0.7010050251256281,
+      "macro_f1": 0.6938507898048616,
+      "realized_snr_db_range": [
+        19.999998840781863,
+        20.00000148055586
+      ]
+    },
+    "snr_10": {
+      "n": 398,
+      "accuracy": 0.5879396984924623,
+      "macro_f1": 0.5698297670596904,
+      "realized_snr_db_range": [
+        9.999998721094762,
+        10.00000148876413
+      ]
+    },
+    "snr_0": {
+      "n": 398,
+      "accuracy": 0.2185929648241206,
+      "macro_f1": 0.2061241017597539,
+      "realized_snr_db_range": [
+        -1.2624047198239435e-06,
+        1.3364001545992232e-06
+      ]
+    },
+    "gain_-6": {
+      "n": 398,
+      "accuracy": 0.6859296482412061,
+      "macro_f1": 0.6740414948312781
+    },
+    "gain_6": {
+      "n": 398,
+      "accuracy": 0.7010050251256281,
+      "macro_f1": 0.6877750412642052
+    }
+  },
+  "scope": "Fixed checkpoints and one Gaussian realization per clip/condition; no training or test inference",
+  "elapsed_seconds": 24.75812254101038,
+  "clean_prediction_matches": 398
+}

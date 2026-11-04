@@ -1,0 +1,161 @@
+{
+  "population": {
+    "clips": 398,
+    "sources": 295,
+    "fixed_seeds": [
+      101,
+      202,
+      303
+    ]
+  },
+  "effect_definition": "condition minus identity, accuracy pp",
+  "bootstrap": {
+    "unit": "src_file",
+    "replicates": 4000,
+    "rng_seed": 20261105,
+    "seed_aggregation": "fixed mean"
+  },
+  "effects": {
+    "cnn_freq/reverse": {
+      "delta_accuracy_pp": 0.0,
+      "source_bootstrap_low_pp": 0.0,
+      "source_bootstrap_high_pp": 0.0,
+      "n_clips": 398,
+      "n_sources": 295,
+      "bootstrap_resamples": 4000,
+      "bootstrap_seed": 20261105,
+      "minimum_resample_clips": 360,
+      "maximum_resample_clips": 450,
+      "uncertainty_scope": "source sampling conditional on the fixed models and corruption realization; not training-seed or noise-draw population uncertainty"
+    },
+    "cnn_freq/roll19": {
+      "delta_accuracy_pp": 0.0,
+      "source_bootstrap_low_pp": 0.0,
+      "source_bootstrap_high_pp": 0.0,
+      "n_clips": 398,
+      "n_sources": 295,
+      "bootstrap_resamples": 4000,
+      "bootstrap_seed": 20261105,
+      "minimum_resample_clips": 360,
+      "maximum_resample_clips": 450,
+      "uncertainty_scope": "source sampling conditional on the fixed models and corruption realization; not training-seed or noise-draw population uncertainty"
+    },
+    "cnn_freq/shuffle17": {
+      "delta_accuracy_pp": 0.0,
+      "source_bootstrap_low_pp": 0.0,
+      "source_bootstrap_high_pp": 0.0,
+      "n_clips": 398,
+      "n_sources": 295,
+      "bootstrap_resamples": 4000,
+      "bootstrap_seed": 20261105,
+      "minimum_resample_clips": 360,
+      "maximum_resample_clips": 450,
+      "uncertainty_scope": "source sampling conditional on the fixed models and corruption realization; not training-seed or noise-draw population uncertainty"
+    },
+    "cnn_freq/shuffle29": {
+      "delta_accuracy_pp": 0.0,
+      "source_bootstrap_low_pp": 0.0,
+      "source_bootstrap_high_pp": 0.0,
+      "n_clips": 398,
+      "n_sources": 295,
+      "bootstrap_resamples": 4000,
+      "bootstrap_seed": 20261105,
+      "minimum_resample_clips": 360,
+      "maximum_resample_clips": 450,
+      "uncertainty_scope": "source sampling conditional on the fixed models and corruption realization; not training-seed or noise-draw population uncertainty"
+    },
+    "crnn_freq/reverse": {
+      "delta_accuracy_pp": -5.025125628140704,
+      "source_bootstrap_low_pp": -7.54281668187348,
+      "source_bootstrap_high_pp": -2.601626016260163,
+      "n_clips": 398,
+      "n_sources": 295,
+      "bootstrap_resamples": 4000,
+      "bootstrap_seed": 20261105,
+      "minimum_resample_clips": 360,
+      "maximum_resample_clips": 450,
+      "uncertainty_scope": "source sampling conditional on the fixed models and corruption realization; not training-seed or noise-draw population uncertainty"
+    },
+    "crnn_freq/roll19": {
+      "delta_accuracy_pp": -1.4237855946398659,
+      "source_bootstrap_low_pp": -2.938892493363526,
+      "source_bootstrap_high_pp": 0.08460775069640881,
+      "n_clips": 398,
+      "n_sources": 295,
+      "bootstrap_resamples": 4000,
+      "bootstrap_seed": 20261105,
+      "minimum_resample_clips": 360,
+      "maximum_resample_clips": 450,
+      "uncertainty_scope": "source sampling conditional on the fixed models and corruption realization; not training-seed or noise-draw population uncertainty"
+    },
+    "crnn_freq/shuffle17": {
+      "delta_accuracy_pp": -1.0887772194304857,
+      "source_bootstrap_low_pp": -2.6403273319659326,
+      "source_bootstrap_high_pp": 0.41881334280831795,
+      "n_clips": 398,
+      "n_sources": 295,
+      "bootstrap_resamples": 4000,
+      "bootstrap_seed": 20261105,
+      "minimum_resample_clips": 360,
+      "maximum_resample_clips": 450,
+      "uncertainty_scope": "source sampling conditional on the fixed models and corruption realization; not training-seed or noise-draw population uncertainty"
+    },
+    "crnn_freq/shuffle29": {
+      "delta_accuracy_pp": -0.08375209380234507,
+      "source_bootstrap_low_pp": -1.4696069782804844,
+      "source_bootstrap_high_pp": 1.3202139072468042,
+      "n_clips": 398,
+      "n_sources": 295,
+      "bootstrap_resamples": 4000,
+      "bootstrap_seed": 20261105,
+      "minimum_resample_clips": 360,
+      "maximum_resample_clips": 450,
+      "uncertainty_scope": "source sampling conditional on the fixed models and corruption realization; not training-seed or noise-draw population uncertainty"
+    }
+  },
+  "identity_receipts": [
+    {
+      "model": "cnn_freq",
+      "seed": 101,
+      "identity_head_max_abs_logit_difference": 0.0,
+      "saved_clean_predictions_matched": 398,
+      "pool64_max_abs_difference": 0.0
+    },
+    {
+      "model": "cnn_freq",
+      "seed": 202,
+      "identity_head_max_abs_logit_difference": 0.0,
+      "saved_clean_predictions_matched": 398,
+      "pool64_max_abs_difference": 0.0
+    },
+    {
+      "model": "cnn_freq",
+      "seed": 303,
+      "identity_head_max_abs_logit_difference": 0.0,
+      "saved_clean_predictions_matched": 398,
+      "pool64_max_abs_difference": 0.0
+    },
+    {
+      "model": "crnn_freq",
+      "seed": 101,
+      "identity_head_max_abs_logit_difference": 0.0,
+      "saved_clean_predictions_matched": 398,
+      "pool64_max_abs_difference": null
+    },
+    {
+      "model": "crnn_freq",
+      "seed": 202,
+      "identity_head_max_abs_logit_difference": 0.0,
+      "saved_clean_predictions_matched": 398,
+      "pool64_max_abs_difference": null
+    },
+    {
+      "model": "crnn_freq",
+      "seed": 303,
+      "identity_head_max_abs_logit_difference": 0.0,
+      "saved_clean_predictions_matched": 398,
+      "pool64_max_abs_difference": null
+    }
+  ],
+  "torch_version": "2.13.0"
+}

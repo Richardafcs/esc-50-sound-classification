@@ -1,0 +1,158 @@
+{
+  "crnn_freq_ca": {
+    "per_seed": [
+      {
+        "seed": 101,
+        "n": 398,
+        "a_correct": 299,
+        "b_correct": 300,
+        "both_correct": 287,
+        "both_wrong": 86,
+        "b_only_correct": 13,
+        "a_only_correct": 12,
+        "net_correct": 1,
+        "delta_accuracy_pp": 0.25125628140703515
+      },
+      {
+        "seed": 202,
+        "n": 398,
+        "a_correct": 294,
+        "b_correct": 297,
+        "both_correct": 281,
+        "both_wrong": 88,
+        "b_only_correct": 16,
+        "a_only_correct": 13,
+        "net_correct": 3,
+        "delta_accuracy_pp": 0.7537688442211056
+      },
+      {
+        "seed": 303,
+        "n": 398,
+        "a_correct": 289,
+        "b_correct": 291,
+        "both_correct": 277,
+        "both_wrong": 95,
+        "b_only_correct": 14,
+        "a_only_correct": 12,
+        "net_correct": 2,
+        "delta_accuracy_pp": 0.5025125628140703
+      }
+    ],
+    "conditional_fixed_three_seed_effect": {
+      "delta_accuracy_pp": 0.5025125628140703,
+      "source_bootstrap_low_pp": -1.2166937340495783,
+      "source_bootstrap_high_pp": 2.1667534722222226,
+      "n_clips": 398,
+      "n_sources": 295,
+      "bootstrap_resamples": 4000,
+      "bootstrap_seed": 20261104,
+      "minimum_resample_clips": 353,
+      "maximum_resample_clips": 454,
+      "uncertainty_scope": "source sampling conditional on the fixed models and corruption realization; not training-seed or noise-draw population uncertainty"
+    }
+  },
+  "crnn_freq_ta": {
+    "per_seed": [
+      {
+        "seed": 101,
+        "n": 398,
+        "a_correct": 299,
+        "b_correct": 298,
+        "both_correct": 265,
+        "both_wrong": 66,
+        "b_only_correct": 33,
+        "a_only_correct": 34,
+        "net_correct": -1,
+        "delta_accuracy_pp": -0.25125628140703515
+      },
+      {
+        "seed": 202,
+        "n": 398,
+        "a_correct": 294,
+        "b_correct": 279,
+        "both_correct": 254,
+        "both_wrong": 79,
+        "b_only_correct": 25,
+        "a_only_correct": 40,
+        "net_correct": -15,
+        "delta_accuracy_pp": -3.7688442211055277
+      },
+      {
+        "seed": 303,
+        "n": 398,
+        "a_correct": 289,
+        "b_correct": 286,
+        "both_correct": 250,
+        "both_wrong": 73,
+        "b_only_correct": 36,
+        "a_only_correct": 39,
+        "net_correct": -3,
+        "delta_accuracy_pp": -0.7537688442211056
+      }
+    ],
+    "conditional_fixed_three_seed_effect": {
+      "delta_accuracy_pp": -1.5912897822445562,
+      "source_bootstrap_low_pp": -4.472601598934043,
+      "source_bootstrap_high_pp": 1.250078320802005,
+      "n_clips": 398,
+      "n_sources": 295,
+      "bootstrap_resamples": 4000,
+      "bootstrap_seed": 20261104,
+      "minimum_resample_clips": 353,
+      "maximum_resample_clips": 454,
+      "uncertainty_scope": "source sampling conditional on the fixed models and corruption realization; not training-seed or noise-draw population uncertainty"
+    }
+  },
+  "crnn_freq_tca": {
+    "per_seed": [
+      {
+        "seed": 101,
+        "n": 398,
+        "a_correct": 299,
+        "b_correct": 295,
+        "both_correct": 268,
+        "both_wrong": 72,
+        "b_only_correct": 27,
+        "a_only_correct": 31,
+        "net_correct": -4,
+        "delta_accuracy_pp": -1.0050251256281406
+      },
+      {
+        "seed": 202,
+        "n": 398,
+        "a_correct": 294,
+        "b_correct": 285,
+        "both_correct": 255,
+        "both_wrong": 74,
+        "b_only_correct": 30,
+        "a_only_correct": 39,
+        "net_correct": -9,
+        "delta_accuracy_pp": -2.2613065326633164
+      },
+      {
+        "seed": 303,
+        "n": 398,
+        "a_correct": 289,
+        "b_correct": 290,
+        "both_correct": 258,
+        "both_wrong": 77,
+        "b_only_correct": 32,
+        "a_only_correct": 31,
+        "net_correct": 1,
+        "delta_accuracy_pp": 0.25125628140703515
+      }
+    ],
+    "conditional_fixed_three_seed_effect": {
+      "delta_accuracy_pp": -1.0050251256281406,
+      "source_bootstrap_low_pp": -3.7820320620452548,
+      "source_bootstrap_high_pp": 1.7369727047146404,
+      "n_clips": 398,
+      "n_sources": 295,
+      "bootstrap_resamples": 4000,
+      "bootstrap_seed": 20261104,
+      "minimum_resample_clips": 353,
+      "maximum_resample_clips": 454,
+      "uncertainty_scope": "source sampling conditional on the fixed models and corruption realization; not training-seed or noise-draw population uncertainty"
+    }
+  }
+}

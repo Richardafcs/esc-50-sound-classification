@@ -13,8 +13,15 @@ from PIL import Image as PILImage
 
 P=Path(__file__).resolve().parents[1];OUT=P / 'reports/pdf';TMP=P/'.cache/pdf';OUT.mkdir(parents=True,exist_ok=True);TMP.mkdir(parents=True,exist_ok=True)
 FONT=Path('/System/Library/Fonts/Supplemental')
-for name,file in [('Body','Arial.ttf'),('BodyBold','Arial Bold.ttf'),('BodyItalic','Arial Italic.ttf'),('BodyBoldItalic','Arial Bold Italic.ttf'),('Mono','Courier New.ttf')]:
- pdfmetrics.registerFont(TTFont(name,str(FONT/file)))
+if (FONT/'Arial.ttf').is_file():
+ for name,file in [('Body','Arial.ttf'),('BodyBold','Arial Bold.ttf'),('BodyItalic','Arial Italic.ttf'),('BodyBoldItalic','Arial Bold Italic.ttf'),('Mono','Courier New.ttf')]:
+  pdfmetrics.registerFont(TTFont(name,str(FONT/file)))
+else:
+ import reportlab
+ FONT=Path(reportlab.__file__).parent/'fonts'
+ for name,file in [('Body','Vera.ttf'),('BodyBold','VeraBd.ttf'),('BodyItalic','VeraIt.ttf'),('BodyBoldItalic','VeraBI.ttf')]:
+  pdfmetrics.registerFont(TTFont(name,str(FONT/file)))
+ pdfmetrics.registerFont(pdfmetrics.Font('Mono','Courier','WinAnsiEncoding'))
 pdfmetrics.registerFontFamily('Body',normal='Body',bold='BodyBold',italic='BodyItalic',boldItalic='BodyBoldItalic')
 NAVY=colors.HexColor('#153047');TEAL=colors.HexColor('#167D8D');INK=colors.HexColor('#23323E');MUTED=colors.HexColor('#576775');LIGHT=colors.HexColor('#F1F6F8');LINE=colors.HexColor('#D8E2E8')
 W,H=A4;M=44;CW=W-2*M
