@@ -6,6 +6,12 @@ The study asks how architecture, targeted noise augmentation and frozen pretrain
 
 The completed noise-transfer study compares matched clean-only and clean/Gaussian-trained linear heads on frozen PANNs features. Across six fixed recorded-background conditions, the adapted-minus-clean difference is **+1.05 pp [-0.54, +2.59]**, conditional 95% source-bootstrap interval; clean change is **+0.75 pp**. [Executed notebook](notebooks/ESC50_Noise_Transfer.ipynb) · [Protocol and findings](reports/noise_transfer_20261106/README.md).
 
+## Research question and continuation
+
+Which model and training choices improve environmental sound classification, and how far do their benefits transfer across acoustic conditions? The completed work compares architectures, a frozen pretrained alternative and controlled noise adaptation. Its strongest new result is a large matched-Gaussian gain with an uncertain average gain on recorded backgrounds.
+
+The next question is the effect of **training-noise distribution**: Gaussian versus recorded-background exposure, with the PANNs encoder and linear-head objective fixed, evaluated on new background sources across a predefined SNR grid. The recorded-background-trained head has not yet been fitted. This does not isolate noise diversity or establish new-target generalization. [Research scope, evidence and next phase](reports/research_scope_and_next_steps.md).
+
 ## Results notebooks
 
 Supporting studies: [Transfer robustness and matched MLP heads](notebooks/ESC50_Transfer_Followup.ipynb) · [External recording evaluation](notebooks/ESC50_External_Transfer.ipynb) · [Short-recording input-policy diagnostic](notebooks/ESC50_Duration_Diagnostic.ipynb) · [Research overview](reports/research_overview.md)
