@@ -1,0 +1,9 @@
+model,duration_group,recordings,accuracy,median_seconds
+noise_cnn_s101,At least 5 seconds,154,0.24675324675324675,8.73721875
+noise_cnn_s101,Under 5 seconds,105,0.10476190476190476,1.929625
+noise_cnn_s202,At least 5 seconds,154,0.2987012987012987,8.73721875
+noise_cnn_s202,Under 5 seconds,105,0.09523809523809523,1.929625
+noise_cnn_s303,At least 5 seconds,154,0.2597402597402597,8.73721875
+noise_cnn_s303,Under 5 seconds,105,0.10476190476190476,1.929625
+panns_lr,At least 5 seconds,154,0.5714285714285714,8.73721875
+panns_lr,Under 5 seconds,105,0.2761904761904762,1.929625

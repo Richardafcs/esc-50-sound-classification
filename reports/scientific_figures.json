@@ -157,5 +157,29 @@
     "title": "Restored earlier CNN/MLP capacity controls",
     "path": "reports/transfer_followup_20261105/restored_mlp_controls.png",
     "scope": "Completed transfer robustness and fixed-budget head follow-up"
+  },
+  {
+    "number": 27,
+    "title": "External recording accuracy and macro recall",
+    "path": "reports/external_fsd_20261105/external_accuracy.png",
+    "scope": "Frozen-model external six-category evaluation; known ESC50 recording IDs excluded"
+  },
+  {
+    "number": 28,
+    "title": "External paired recording-bootstrap effects",
+    "path": "reports/external_fsd_20261105/external_paired_effects.png",
+    "scope": "Frozen-model external six-category evaluation; known ESC50 recording IDs excluded"
+  },
+  {
+    "number": 29,
+    "title": "External six-class recall",
+    "path": "reports/external_fsd_20261105/external_class_recall.png",
+    "scope": "Frozen-model external six-category evaluation; known ESC50 recording IDs excluded"
+  },
+  {
+    "number": 30,
+    "title": "External PANNs confusion counts",
+    "path": "reports/external_fsd_20261105/external_confusion.png",
+    "scope": "Frozen-model external six-category evaluation; known ESC50 recording IDs excluded"
   }
 ]

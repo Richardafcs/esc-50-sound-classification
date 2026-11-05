@@ -1,0 +1,5 @@
+model,recordings,correct,within_six_errors,outside_six_errors
+noise_cnn_s101,259,49,25,185
+noise_cnn_s202,259,56,14,189
+noise_cnn_s303,259,51,22,186
+panns_lr,259,117,10,132

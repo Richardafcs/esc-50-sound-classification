@@ -1,0 +1,56 @@
+{
+  "stage": "Frozen before any FSD waveform/model prediction",
+  "dataset": "Official FSDnoisy18k v1.0 manually verified test partition",
+  "source": "https://zenodo.org/records/2529934",
+  "question": "Does frozen PANNs LR outperform mean accuracy of three frozen noise-trained CNNs on the mapped external recordings?",
+  "classes": {
+    "Clapping": 22,
+    "Engine": 44,
+    "Fireworks": 48,
+    "Rain": 10,
+    "Wind": 16,
+    "Walk_or_footsteps": 25
+  },
+  "eligibility": "All official test rows in six mapped classes; exclude Freesound IDs appearing anywhere in the 2000-row ESC50 metadata",
+  "excluded_recordings": 5,
+  "recordings": 259,
+  "models": [
+    "Existing PANNs Cnn14_16k + original StandardScaler/LR",
+    "Existing noiseCNN seed101",
+    "Existing noiseCNN seed202",
+    "Existing noiseCNN seed303"
+  ],
+  "fitting": false,
+  "added_noise": false,
+  "label_masking": false,
+  "audio": "Decode full mono waveform; resample_poly to16000Hz; partition consecutive nonoverlapping80000sample windows; zero-pad final fragment; no clipping/peak normalization",
+  "aggregation": "Softmax over all50 per window; arithmetic mean weighted by actual unpadded sample counts; argmax all50 once per original recording",
+  "primary": "Clip accuracy PANNs minus mean of3 noiseCNN accuracies, percentage points",
+  "secondary": [
+    "Macro recall over6 targets",
+    "Macro F1 over6 targets, counting outside6 predictions as errors",
+    "Per-class recall",
+    "Outside6 prediction rate"
+  ],
+  "bootstrap": {
+    "resamples": 4000,
+    "seed": 20261106,
+    "unit": "unique Freesound recording ID, equivalent to row resampling here",
+    "paired": true,
+    "scope": "Conditional fixed fits, mapped labels and known-recording-ID exclusions; not uploader/pretraining uncertainty"
+  },
+  "budget": {
+    "max_inference_minutes": 30,
+    "hardware": "Previously authorized Colab T4",
+    "purchases": false,
+    "new_fits": 0
+  },
+  "stop": "Evaluate once, report all4 systems and all6 classes; no score-driven remapping, trimming, retraining or model selection",
+  "limitations": [
+    "Six-class external subset, not an original20class FSD benchmark or full50class ESC50 benchmark",
+    "Clean means manually verified labels, not acoustically noise-free",
+    "Freesound-ID disjointness does not rule out reuploads, perceptual duplicates, shared uploaders or AudioSet pretraining exposure",
+    "Engine/wind/footsteps label domains may differ",
+    "Full-recording window aggregation differs from fixed5s ESC50 protocol; do not attribute score difference solely to distribution shift"
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "status": "completed",
+  "recordings": 259,
+  "unique_recording_ids": 259,
+  "classes": 6,
+  "windows": 534,
+  "fits": 0,
+  "added_noise": false,
+  "esc50_waveforms_read": 0,
+  "all50_output_classes": true,
+  "aggregation": "valid-duration-weighted probabilities",
+  "primary_effect": {
+    "comparison": "panns_minus_mean_noise_cnn",
+    "delta_pp": 25.096525096525095,
+    "low_pp": 19.81981981981982,
+    "high_pp": 30.630630630630634
+  },
+  "metrics": [
+    {
+      "model": "panns_lr",
+      "recordings": 259,
+      "correct": 117,
+      "accuracy": 0.4517374517374517,
+      "macro_recall": 0.46402805892937476,
+      "macro_f1": 0.5807383919133343,
+      "outside_target_rate": 0.5096525096525096
+    },
+    {
+      "model": "noise_cnn_s101",
+      "recordings": 259,
+      "correct": 49,
+      "accuracy": 0.1891891891891892,
+      "macro_recall": 0.18910818713450292,
+      "macro_f1": 0.2864565156602236,
+      "outside_target_rate": 0.7142857142857143
+    },
+    {
+      "model": "noise_cnn_s202",
+      "recordings": 259,
+      "correct": 56,
+      "accuracy": 0.21621621621621623,
+      "macro_recall": 0.21744826810616283,
+      "macro_f1": 0.33378090508561126,
+      "outside_target_rate": 0.7297297297297297
+    },
+    {
+      "model": "noise_cnn_s303",
+      "recordings": 259,
+      "correct": 51,
+      "accuracy": 0.1969111969111969,
+      "macro_recall": 0.20242352676563205,
+      "macro_f1": 0.30433333978929766,
+      "outside_target_rate": 0.7181467181467182
+    }
+  ],
+  "inference_seconds": 28.97557369699996,
+  "environment": {
+    "python": "3.13.16",
+    "numpy": "2.4.6",
+    "torch": "2.11.0+cu130",
+    "device": "Tesla T4"
+  }
+}

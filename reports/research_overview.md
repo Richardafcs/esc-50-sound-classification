@@ -15,6 +15,7 @@
 | Frozen PANNs transfer | One fixed LR head, extraction/fit reproduced | 91.21% accuracy /91.10% macro-F1 | External pretraining/capacity/frontend confounded |
 | New matched robustness | PANNs LR plus three noise-CNN fits, clean/10 dB | 69.85% versus 61.56%; +8.29 pp [1.83, 14.74] | Higher absolute noisy accuracy, larger clean-to-noisy loss |
 | New matched PANNs heads | Six fixed 100-epoch fits, Identity versus ReLU | Linear 91.12%/68.76%; ReLU 89.78%/67.34%, clean/noisy | No gain for this ReLU configuration |
+| External mapped FSD evaluation | Four frozen systems, 259 recording IDs, six target categories, all 50 outputs | PANNs 45.17% versus noise-CNN mean 20.08%; difference +25.10pp | Known ESC-50 IDs excluded; pretraining and perceptual overlap unresolved |
 
 The original 65-task matrix includes 60 neural fits, two classical fits and three stress tasks. Earlier CNN/BiGRU references overlap later records and are not extra independent replications. The six recovered earlier MLP fits and six new transfer-head fits are separate stages.
 
@@ -24,10 +25,12 @@ The evaluated research CNN has 49,058 parameters. The original team-repository C
 
 Retain the existing PANNs logistic classifier as the strongest observed transfer system among the tested heads. Keep noise augmentation's matched-Gaussian result and all MLP/attention negative findings in the report. Describe absolute noisy accuracy, clean-to-noisy loss and conditional error transitions separately. Avoid additional architecture/width/learning-rate searches on the same 398 recordings.
 
-The next substantive question requires compatible new recording sources and realistic noise. If such evaluation data are unavailable, retain development-only conclusions rather than relabeling an exposed fold as independent confirmation.
+The mapped external-recording evaluation is now complete, with explicit recording-ID exclusions. It covers six target categories under a different duration/aggregation protocol; it does not establish full 50-class or pretraining-disjoint generalization. Realistic interfering-noise evaluation and broader independent-source coverage remain distinct next questions.
 
 ## Reading and implementation
 
 The [26-publication literature map](checkpoint_20261105/literature_review.md) distinguishes reading depth, original task, and implemented adaptation. PANNs' frozen one-/three-layer transfer experiments motivate the classifier question; this project uses a different 16 kHz checkpoint, split and optimization recipe. Published benchmark scores are not included as our measured predictions.
 
 [Earlier MLP evidence](mlp_controls_20261105/README.md) · [New matched experiment](transfer_followup_20261105/README.md) · [Original matrix tables](evidence/matrix_20261028/analysis/)
+
+[External recording evaluation and error analysis](external_fsd_20261105/README.md).
