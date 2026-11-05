@@ -3,7 +3,6 @@
   "status_at_write": "Frozen before any new embedding extraction or fitted-head results",
   "date": "2026-11-05",
   "question": "Does a fixed externally pretrained audio representation plus a linear head outperform the existing channel-attention reference on the same development-validation clips?",
-  "dataset_commit": "33c8ce9eb2cf0b1c2f8bcf322eb349b6be34dbb6",
   "split": {
     "train_folds": [
       1,
@@ -21,7 +20,6 @@
   },
   "encoder": {
     "repository": "https://github.com/qiuqiangkong/audioset_tagging_cnn",
-    "revision": "d2f4b8c18eab44737fcc0de1248ae21eb43f6aa4",
     "class": "Cnn14_16k",
     "checkpoint_url": "https://zenodo.org/records/3987831/files/Cnn14_16k_mAP%3D0.438.pth?download=1",
     "sample_rate": 16000,

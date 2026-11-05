@@ -291,7 +291,6 @@ def main():
             "model": "Cnn14_16k",
             "model_config": MODEL_CONFIG,
             "batch_size": 8,
-            "panns_source_revision": subprocess.check_output(["git", "-C", args.panns_repo, "rev-parse", "HEAD"], text=True).strip(),
             "linear_head": "StandardScaler + LogisticRegression",
             "C": 1.0, "solver": "lbfgs",
             "max_iter": 3000, "tol": 1e-6,

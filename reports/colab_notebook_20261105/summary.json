@@ -88,7 +88,6 @@
       "classes_num": 527
     },
     "batch_size": 8,
-    "panns_source_revision": "d2f4b8c18eab44737fcc0de1248ae21eb43f6aa4",
     "linear_head": "StandardScaler + LogisticRegression",
     "C": 1.0,
     "solver": "lbfgs",

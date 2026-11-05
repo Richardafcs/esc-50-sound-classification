@@ -1,7 +1,6 @@
-# Research notebook
+# Executed research notebooks
 
-[ESC50_Results.ipynb](ESC50_Results.ipynb) contains the complete English analysis, a fresh Colab PANNs extraction and linear-head fit, full result tables and all 22 saved scientific figures. Executed outputs are retained in the same notebook.
+- [Complete ESC-50 study](ESC50_Results.ipynb): all main results, restored earlier MLP controls, all 22 original scientific figures and four new follow-up figures. Original PANNs extraction/refitting is optional; the default recomputes saved results.
+- [Transfer robustness and matched heads](ESC50_Transfer_Followup.ipynb): the executable clean/10 dB comparison and six fixed-budget PANNs-head fits, with complete outputs.
 
-[Run in Google Colab](https://colab.research.google.com/github/Richardafcs/esc-50-sound-classification/blob/main/notebooks/ESC50_Results.ipynb)
-
-Select a GPU runtime and run all cells. The scratch-model study is displayed from its completed experimental records; it is not retrained by this notebook. The fresh PANNs run is clearly identified separately.
+Both were executed in Colab and retain tables and image outputs. A fresh follow-up run requires a Colab GPU runtime and downloads the official audio/backbone; completed outputs are reused without repeating head fits. Historical scratch-model fits are identified separately and are not retrained by either notebook.

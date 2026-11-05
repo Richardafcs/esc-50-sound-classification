@@ -1,0 +1,13 @@
+model,label,seed,accuracy,macro_f1,n,parameters,best_epoch,epochs,stage
+cnn_freq,CNN + linear head,101,0.7261306532663316,0.719429677059304,398,49058,47,60,Earlier fixed-recipe capacity-control study
+cnn_freq,CNN + linear head,202,0.7236180904522613,0.7078517517166728,398,49058,49,60,Earlier fixed-recipe capacity-control study
+cnn_freq,CNN + linear head,303,0.7286432160804021,0.7145118405845957,398,49058,46,60,Earlier fixed-recipe capacity-control study
+crnn_freq,CNN + BiGRU,101,0.7512562814070352,0.7421106767329678,398,251810,58,60,Earlier fixed-recipe capacity-control study
+crnn_freq,CNN + BiGRU,202,0.7386934673366834,0.7317859675584133,398,251810,58,60,Earlier fixed-recipe capacity-control study
+crnn_freq,CNN + BiGRU,303,0.7261306532663316,0.7151917166081252,398,251810,30,60,Earlier fixed-recipe capacity-control study
+cnn_freq_matched,CNN + pooled MLP,101,0.7160804020100503,0.7058796324074961,398,252036,32,60,Earlier fixed-recipe capacity-control study
+cnn_freq_matched,CNN + pooled MLP,202,0.7286432160804021,0.7171785182481776,398,252036,52,60,Earlier fixed-recipe capacity-control study
+cnn_freq_matched,CNN + pooled MLP,303,0.7236180904522613,0.7119013648889808,398,252036,48,60,Earlier fixed-recipe capacity-control study
+cnn_freq_token,CNN + tokenwise MLP,101,0.6532663316582915,0.6232695275170979,398,252036,13,60,Earlier fixed-recipe capacity-control study
+cnn_freq_token,CNN + tokenwise MLP,202,0.7286432160804021,0.7194889135632168,398,252036,30,60,Earlier fixed-recipe capacity-control study
+cnn_freq_token,CNN + tokenwise MLP,303,0.7085427135678392,0.6931358310106458,398,252036,20,60,Earlier fixed-recipe capacity-control study

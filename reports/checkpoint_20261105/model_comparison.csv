@@ -7,4 +7,6 @@ CRNN + temporal/channel attention,B_architecture,72.8643216080402,1.256281407035
 CNN + mixup,C_augmentation,71.60804020100502,0.6647616359458777,70.6536177229569,0.4356122853304089,49058,0,3,from scratch
 CNN + noise,C_augmentation,73.11557788944724,0.8703772902356206,71.99194875758343,1.2261597152794335,49058,0,3,from scratch
 CNN + specaugment,C_augmentation,71.85929648241206,1.1514009283808657,70.75004362358649,1.3788174104075326,49058,0,3,from scratch
+CNN + pooled MLP,historical_capacity_controls,72.27805695142379,0.6323144418149704,71.1653171848218,0.565353032620331,252036,0,3,Earlier matched-capacity scratch comparison
+CNN + tokenwise MLP,historical_capacity_controls,69.6817420435511,3.903242947313581,67.863142403032,4.972248916899883,252036,0,3,Earlier matched-capacity scratch comparison
 Frozen PANNs + linear head,transfer,91.20603015075378,not estimated,91.10258659469186,not estimated,102450,81033231,1,external AudioSet pretraining

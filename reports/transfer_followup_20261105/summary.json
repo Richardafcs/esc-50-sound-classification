@@ -1,0 +1,128 @@
+{
+  "status": "completed",
+  "protocol": "esc50_seed_sequence_stress_v2",
+  "clips": 398,
+  "sources": 295,
+  "test_waveforms_read": 0,
+  "head_fits": 6,
+  "head_epochs": 100,
+  "head_selection": "fixed final epoch; no validation selection",
+  "training_embedding_origin": "Existing clean training embeddings, aligned by filename",
+  "realized_snr": {
+    "min_db": 9.999998779390856,
+    "max_db": 10.000001335198675,
+    "mean_db": 10.00000007271402
+  },
+  "clean_prediction_changes_from_previous": {
+    "noise_cnn_s101": 0,
+    "noise_cnn_s202": 0,
+    "noise_cnn_s303": 0,
+    "panns_lr": 0
+  },
+  "total_seconds": 88.733455994,
+  "primary_effect": {
+    "comparison": "panns_lr_minus_noise_cnn",
+    "condition": "snr_10",
+    "delta_pp": 8.291457286432161,
+    "low_pp": 1.8271229985489683,
+    "high_pp": 14.738730317136486
+  },
+  "effects": [
+    {
+      "comparison": "panns_lr_minus_noise_cnn",
+      "condition": "clean",
+      "delta_pp": 18.090452261306528,
+      "low_pp": 13.350349040139616,
+      "high_pp": 22.954012811263418
+    },
+    {
+      "comparison": "mlp_relu_minus_factorized_linear",
+      "condition": "clean",
+      "delta_pp": -1.3400335008375206,
+      "low_pp": -2.519017741854159,
+      "high_pp": -0.2603829339378237
+    },
+    {
+      "comparison": "factorized_linear_minus_panns_lr",
+      "condition": "clean",
+      "delta_pp": -0.08375209380234509,
+      "low_pp": -1.4202673350041772,
+      "high_pp": 1.2313158818253898
+    },
+    {
+      "comparison": "mlp_relu_minus_panns_lr",
+      "condition": "clean",
+      "delta_pp": -1.423785594639866,
+      "low_pp": -3.159063566448062,
+      "high_pp": 0.1633986928104575
+    },
+    {
+      "comparison": "panns_lr_minus_noise_cnn",
+      "condition": "snr_10",
+      "delta_pp": 8.291457286432161,
+      "low_pp": 1.8271229985489683,
+      "high_pp": 14.738730317136486
+    },
+    {
+      "comparison": "mlp_relu_minus_factorized_linear",
+      "condition": "snr_10",
+      "delta_pp": -1.4237855946398659,
+      "low_pp": -3.0459133179179143,
+      "high_pp": 0.24271844660194172
+    },
+    {
+      "comparison": "factorized_linear_minus_panns_lr",
+      "condition": "snr_10",
+      "delta_pp": -1.0887772194304859,
+      "low_pp": -2.9167427007299267,
+      "high_pp": 0.5968371477349185
+    },
+    {
+      "comparison": "mlp_relu_minus_panns_lr",
+      "condition": "snr_10",
+      "delta_pp": -2.512562814070352,
+      "low_pp": -4.970328801491179,
+      "high_pp": -0.08679431131260786
+    },
+    {
+      "comparison": "panns_loss_minus_noise_cnn_loss",
+      "condition": "clean_to_snr10",
+      "delta_pp": 9.798994974874372,
+      "low_pp": 3.1925808247042893,
+      "high_pp": 16.62361678205811
+    }
+  ],
+  "losses": [
+    {
+      "model": "panns_lr",
+      "delta_pp": 21.35678391959799,
+      "low_pp": 15.980116295218371,
+      "high_pp": 26.666666666666668
+    },
+    {
+      "model": "noise_cnn",
+      "delta_pp": 11.557788944723619,
+      "low_pp": 7.512868997280289,
+      "high_pp": 15.752984730587942
+    },
+    {
+      "model": "factorized_linear",
+      "delta_pp": 22.36180904522613,
+      "low_pp": 17.34926698664577,
+      "high_pp": 27.338383657164044
+    },
+    {
+      "model": "mlp_relu",
+      "delta_pp": 22.445561139028474,
+      "low_pp": 17.578579968375177,
+      "high_pp": 27.35962358380494
+    }
+  ],
+  "environment": {
+    "python": "3.13.16",
+    "torch": "2.11.0+cu130",
+    "numpy": "2.4.6",
+    "gpu": "Tesla T4"
+  },
+  "uncertainty": "Conditional on these fixed fits, recording sources, historical development selection and one Gaussian draw per clip"
+}

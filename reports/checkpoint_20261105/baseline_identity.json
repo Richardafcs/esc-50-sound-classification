@@ -9,7 +9,6 @@
   },
   "team_repository_original": {
     "repository": "z5438749/COMP9444-Project",
-    "inspected_commit": "60081c7c724b84baa5ebde09231cb43ba942b825",
     "path": "esc50-baseline/model.py",
     "name": "CNNBaseline",
     "parameters": 1368386,

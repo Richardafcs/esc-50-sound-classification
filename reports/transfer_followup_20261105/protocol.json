@@ -1,0 +1,90 @@
+{
+  "stage": "Fixed before new robustness predictions or head fits",
+  "primary_question": "Does the existing frozen PANNs system outperform the mean of three fixed noise-trained CNNs on the same 10 dB Gaussian-corrupted validation clips?",
+  "split": {
+    "train_clips": 1200,
+    "validation_clips": 398,
+    "validation_sources": 295,
+    "test_waveforms_read": false
+  },
+  "primary_models": [
+    "Frozen PANNs Cnn14_16k plus existing StandardScaler and logistic head",
+    "Existing noise-trained CNN seeds 101,202,303"
+  ],
+  "conditions": [
+    "clean",
+    "snr_10"
+  ],
+  "waveforms": {
+    "sample_rate": 16000,
+    "samples": 80000,
+    "decode_once": true,
+    "resampling": "scipy.signal.resample_poly",
+    "shared_tensor_before_frontends": true,
+    "noise_protocol": "esc50_seed_sequence_stress_v2",
+    "noise_seed": 2026,
+    "noise": "Per-clip zero-mean unit-RMS Gaussian draw, scaled to 10 dB added-noise SNR; no clipping or peak normalization",
+    "legacy_noise_results": "Kept separate; never substituted for new matched predictions"
+  },
+  "primary_metric": "PANNs accuracy at 10 dB minus mean accuracy of three fixed noiseCNNs at 10 dB, in percentage points",
+  "secondary_metrics": [
+    "Macro-F1 averaged over all 50 classes",
+    "Clean-to-noisy accuracy loss for each system",
+    "Difference in clean-to-noisy loss",
+    "Per-fit paired repairs and new errors",
+    "Per-class changes"
+  ],
+  "head_ablation": {
+    "question": "Effect of adding ReLU to a fixed two-layer classifier on frozen PANNs features",
+    "models": {
+      "factorized_linear": "Linear(2048,49) -> Identity -> Linear(49,50)",
+      "mlp_relu": "Linear(2048,49) -> ReLU -> Linear(49,50)"
+    },
+    "parameters_per_head": 102901,
+    "scaler": "StandardScaler fit on training embeddings only",
+    "seeds": [
+      101,
+      202,
+      303
+    ],
+    "paired_initial_weights": true,
+    "paired_minibatch_order": true,
+    "optimizer": "AdamW",
+    "lr": 0.001,
+    "weight_decay": 0.0001,
+    "batch_size": 32,
+    "epochs": 100,
+    "scheduler": null,
+    "dropout": 0,
+    "gradient_clip_norm": 5,
+    "checkpoint_rule": "Fixed final epoch100; no validation checkpoint selection",
+    "selection": "No architecture or hyperparameter search; all six fits reported",
+    "evaluation": "Final clean and same10dB embeddings; no noise input in head training",
+    "original_logistic_head": "Separate existing optimization/system reference, not a controlled nonlinearity comparison"
+  },
+  "bootstrap": {
+    "resamples": 4000,
+    "rng_seed": 20261105,
+    "unit": "src_file",
+    "paired": true,
+    "all_clips_per_sampled_source": true,
+    "denominator": "actual sampled clip count",
+    "training_seeds": "Average paired fixed-fit differences within clips before source resampling",
+    "scope": "Conditional on these fitted models, historical validation selection and one noise realization per clip"
+  },
+  "budget": {
+    "hardware": "already-authorized Colab T4",
+    "max_minutes": 30,
+    "purchases": false,
+    "backbone_training": false,
+    "new_head_fits": 6
+  },
+  "stop_rule": "Complete the fixed two-condition inference and six small head fits; preserve negative results; no score-driven additional conditions or retraining",
+  "limitations": [
+    "All official folds have historical exposure",
+    "AudioSet overlap has not been comprehensively excluded",
+    "Primary models differ in pretraining,capacity,frontend and training",
+    "Matched-head contrast changes the activation in a fixed bottleneck parameterization; it does not prove MLPs universally help or hurt",
+    "No field-noise or independent-data confirmation"
+  ]
+}

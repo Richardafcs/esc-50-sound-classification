@@ -2,6 +2,7 @@
 
 | Experiment | Entry point |
 | --- | --- |
+| Matched transfer robustness and six head fits | `run_transfer_followup.py` |
 | Frozen PANNs extraction and linear classifier | `run_panns_linear_probe.py` |
 | Gaussian-noise and gain inference | `run_robustness_three_seeds.py` |
 | CNN/CRNN encoder-token interventions | `run_temporal_order_probe.py` |

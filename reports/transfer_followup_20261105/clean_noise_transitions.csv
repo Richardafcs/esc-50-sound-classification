@@ -1,0 +1,11 @@
+System,Seed,Correct to correct,Correct to wrong,Wrong to correct,Wrong to wrong
+PANNs + logistic,0,265,98,13,22
+Noise-trained CNN,101,221,68,26,83
+Noise-trained CNN,202,217,78,18,85
+Noise-trained CNN,303,232,57,21,88
+PANNs + factorized linear,101,261,103,11,23
+PANNs + factorized linear,202,260,106,11,21
+PANNs + factorized linear,303,266,92,12,28
+PANNs + ReLU MLP,101,260,99,10,29
+PANNs + ReLU MLP,202,258,102,12,26
+PANNs + ReLU MLP,303,250,103,14,31

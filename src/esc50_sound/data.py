@@ -1,4 +1,4 @@
-"""Pinned ESC-50 acquisition, metadata/source splits and validated feature caches.
+"""Official ESC-50 acquisition, metadata/source splits and validated feature caches.
 
 No fitted normalization statistics are computed until training selects its rows.
 """
@@ -15,7 +15,7 @@ import numpy as np
 import torch
 from .audio import FRONTEND, log_mel, read_audio
 from .records import environment, write_json
-DATA_COMMIT = '33c8ce9eb2cf0b1c2f8bcf322eb349b6be34dbb6'
+DATA_URL = 'https://github.com/karolpiczak/ESC-50/archive/refs/heads/master.zip'
 
 def metadata_records(rows):
     return [dict(filename=str(r['filename']), fold=int(r['fold']), target=int(r['target']), category=str(r['category']), src_file=str(r['src_file'])) for r in rows]
@@ -68,9 +68,9 @@ def prepare(args):
         root.parent.mkdir(parents=True, exist_ok=True)
         if shutil.disk_usage(root.parent).free < 2 * 1024 ** 3:
             raise RuntimeError('Need at least 2 GiB free for download, extraction, feature cache')
-        archive = root.parent / f'esc50-{DATA_COMMIT}.zip'
-        url = f'https://github.com/karoldvl/ESC-50/archive/{DATA_COMMIT}.zip'
-        print(f'Downloading official pinned dataset: {url}', flush=True)
+        archive = root.parent / 'esc50.zip'
+        url = DATA_URL
+        print(f'Downloading official dataset: {url}', flush=True)
         request = urllib.request.Request(url, headers={'User-Agent': 'ESC50-research-baseline'})
         size = 0
         with urllib.request.urlopen(request, timeout=60) as response, open(archive, 'wb') as out:
@@ -94,7 +94,7 @@ def prepare(args):
                     target.parent.mkdir(parents=True, exist_ok=True)
                     with zipped.open(member) as src, open(target, 'wb') as dst:
                         shutil.copyfileobj(src, dst)
-        write_json(root / 'provenance.json', dict(commit=DATA_COMMIT, archive_url=url))
+        write_json(root / 'provenance.json', dict(archive_url=url))
         archive.unlink()
     rows = read_metadata(root)
     audit = audit_metadata(rows)
@@ -120,7 +120,7 @@ def prepare(args):
     finally:
         if temporary is not None:
             temporary.unlink(missing_ok=True)
-    provenance = json.loads((root / 'provenance.json').read_text()) if (root / 'provenance.json').exists() else {'commit': 'unverified local copy'}
+    provenance = json.loads((root / 'provenance.json').read_text()) if (root / 'provenance.json').exists() else {'source': 'local copy'}
     write_json(str(cache) + '.json', dict(schema_version=2, frontend=FRONTEND, audit=audit, provenance=provenance, environment=environment()))
     print(json.dumps(dict(cache=str(cache), shape=list(np.stack(features).shape), audit=audit), indent=2))
 

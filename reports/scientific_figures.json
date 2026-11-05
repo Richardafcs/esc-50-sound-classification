@@ -133,5 +133,29 @@
     "path": "reports/panns_20261105/confusion_matrix.png",
     "note": "All-class row-normalized confusion matrix for the fixed pretrained system",
     "scope": "Frozen PANNs transfer, development validation"
+  },
+  {
+    "number": 23,
+    "title": "Matched clean and10dB accuracy and macro-F1",
+    "path": "reports/transfer_followup_20261105/matched_robustness.png",
+    "scope": "Completed transfer robustness and fixed-budget head follow-up"
+  },
+  {
+    "number": 24,
+    "title": "Primary transfer and matched-head source-bootstrap effects",
+    "path": "reports/transfer_followup_20261105/paired_transfer_effects.png",
+    "scope": "Completed transfer robustness and fixed-budget head follow-up"
+  },
+  {
+    "number": 25,
+    "title": "All six fixed-budget head training curves",
+    "path": "reports/transfer_followup_20261105/matched_head_learning_curves.png",
+    "scope": "Completed transfer robustness and fixed-budget head follow-up"
+  },
+  {
+    "number": 26,
+    "title": "Restored earlier CNN/MLP capacity controls",
+    "path": "reports/transfer_followup_20261105/restored_mlp_controls.png",
+    "scope": "Completed transfer robustness and fixed-budget head follow-up"
   }
 ]

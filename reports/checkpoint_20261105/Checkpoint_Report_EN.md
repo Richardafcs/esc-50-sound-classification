@@ -1,3 +1,5 @@
+> Historical checkpoint snapshot: the later completed [transfer follow-up](../../notebooks/ESC50_Transfer_Followup.ipynb) adds matched PANNs noise evaluation and six matched-head fits. Statements below about planned experiments describe the checkpoint stage.
+
 # Improving Environmental Sound Classification on ESC-50: Model Improvement Checkpoint
 
 **COMP9444 — Deep Learning | Research Checkpoint | 5 November 2026**
