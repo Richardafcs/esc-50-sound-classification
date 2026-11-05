@@ -1,0 +1,156 @@
+{
+  "status": "completed",
+  "protocol": {
+    "status": "Fixed before new head fits or evaluation predictions",
+    "date": "2026-11-06",
+    "question": "Does Gaussian-noise training of a linear classifier on frozen PANNs features transfer to recorded background interference?",
+    "target_task": "Classify the designated ESC-50 foreground recording in an additive mixture; backgrounds may contain other events. This is not multi-label scene annotation.",
+    "split": {
+      "train_clips": 1200,
+      "development_clips": 398,
+      "development_sources": 295,
+      "all_official_folds_historically_exposed": true,
+      "test_waveforms_read": false
+    },
+    "encoder": "Official frozen Cnn14_16k; eval mode; 2048-dimensional embedding",
+    "scaler": "One StandardScaler fitted on clean training embeddings, fixed for both heads",
+    "heads": [
+      "clean_refit",
+      "gaussian_adapted"
+    ],
+    "historical_reference": "Existing unchanged logistic head",
+    "solver": {
+      "library": "scikit-learn==1.6.1",
+      "type": "L2 multinomial LogisticRegression",
+      "C": 1.0,
+      "solver": "lbfgs",
+      "max_iter": 3000,
+      "tol": 1e-06,
+      "class_weight": null
+    },
+    "training": {
+      "variants_per_target": 2,
+      "seed": 20261106,
+      "snr_db_uniform": [
+        10,
+        30
+      ],
+      "clean_weight": 0.5,
+      "weight_per_noisy_variant": 0.25,
+      "total_weight_per_original_clip": 1,
+      "total_weight": 1200,
+      "augmentation": "Zero-mean Gaussian noise added to waveform before frozen encoder; no clipping/peak normalization"
+    },
+    "evaluation": {
+      "sample_rate": 16000,
+      "samples": 80000,
+      "snr_db": 10,
+      "backgrounds": [
+        "NRIVER",
+        "OHALLWAY",
+        "TCAR"
+      ],
+      "channel": "ch01",
+      "start_seconds": [
+        30,
+        150
+      ],
+      "segments_per_background": 2,
+      "fully_crossed": true,
+      "background_selection": "Fixed metadata-based diversity: river, hallway, car. No listening-based eligibility claim and no prediction-based exclusions.",
+      "recorded_backgrounds_used_in_training": false,
+      "conditions": [
+        "clean",
+        "historical_shared_gaussian10",
+        "NRIVER_30s",
+        "NRIVER_150s",
+        "OHALLWAY_30s",
+        "OHALLWAY_150s",
+        "TCAR_30s",
+        "TCAR_150s"
+      ],
+      "mixture": "Original target + zero-mean background scaled by full-window power ratio; no clipping or peak normalization",
+      "silence_policy": "Abort on zero/nonfinite target or background power; no score-based exclusion"
+    },
+    "primary": "Adapted-minus-clean-refit accuracy, equal-weight average of the six recorded-background conditions within target, then clip-weighted mean over targets",
+    "secondary": [
+      "Clean accuracy difference",
+      "50-class macro-F1 per condition; average across conditions explicitly labelled",
+      "Gaussian accuracy difference",
+      "Paired repairs and introduced errors",
+      "Environment-specific differences",
+      "True-class margins and probability shifts, descriptive"
+    ],
+    "bootstrap": {
+      "unit": "src_file",
+      "resamples": 4000,
+      "seed": 20261106,
+      "paired": true,
+      "noise_conditions": "Fixed six segments; average differences per clip before source resampling",
+      "scope": "Conditional on fixed heads, observed target sources and fixed backgrounds; no population-of-environments interval"
+    },
+    "decision": "Report joint clean/noisy effects; no clean noninferiority margin supplied; no automatic default replacement or third fit",
+    "sources": {
+      "backgrounds": "https://zenodo.org/records/1227121",
+      "background_document": "https://zenodo.org/records/1227121/files/DEMAND.pdf?download=1",
+      "encoder": "https://github.com/qiuqiangkong/audioset_tagging_cnn",
+      "dataset": "https://github.com/karolpiczak/ESC-50"
+    },
+    "budget": {
+      "hardware": "Previously authorized Colab Tesla T4",
+      "max_compute_minutes": 30,
+      "new_head_fits": 2,
+      "encoder_training": false,
+      "additional_purchases": false
+    },
+    "stop": "Complete the fixed comparison; stop on input failure or nonconvergence before scientific interpretation; no score-driven changes"
+  },
+  "primary": {
+    "condition": "recorded_mean_primary",
+    "delta_pp": 1.0469011725293136,
+    "low_pp": -0.543266648764769,
+    "high_pp": 2.585675718369476
+  },
+  "new_head_fits": 2,
+  "encoder_fits": 0,
+  "train_clips": 1200,
+  "development_clips": 398,
+  "development_sources": 295,
+  "recorded_conditions": 6,
+  "target_noise_pairs": 2388,
+  "test_waveforms_read": 0,
+  "fit_records": [
+    {
+      "model": "clean_refit",
+      "rows": 1200,
+      "total_weight": 1200.0,
+      "iterations": 137,
+      "converged": true,
+      "seconds": 13.352992991000065
+    },
+    {
+      "model": "gaussian_adapted",
+      "rows": 3600,
+      "total_weight": 1200.0,
+      "iterations": 435,
+      "converged": true,
+      "seconds": 73.29821434899986
+    }
+  ],
+  "scaler_difference_from_historical": {
+    "mean_max_abs": 0.0,
+    "scale_max_abs": 0.0
+  },
+  "historical_clean_correct": 363,
+  "historical_gaussian_correct": 278,
+  "training_realized_snr": {
+    "min_db": 10.01827026989609,
+    "max_db": 29.999624072343025
+  },
+  "compute_seconds": 174.90356913300002,
+  "environment": {
+    "python": "3.13.16",
+    "torch": "2.11.0+cu130",
+    "gpu": "Tesla T4"
+  }
+}

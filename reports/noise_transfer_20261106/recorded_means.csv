@@ -1,0 +1,4 @@
+model,condition,accuracy,macro_f1,metric_scope
+clean_refit,recorded_mean,0.8907035175879398,0.8914643063882867,Equal-weight mean over six conditions; macro-F1 computed separately within each condition
+gaussian_adapted,recorded_mean,0.9011725293132328,0.9020759291549764,Equal-weight mean over six conditions; macro-F1 computed separately within each condition
+historical_lr,recorded_mean,0.8907035175879398,0.8914643063882867,Equal-weight mean over six conditions; macro-F1 computed separately within each condition

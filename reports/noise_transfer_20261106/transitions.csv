@@ -1,0 +1,9 @@
+condition,repairs,new_errors,both_correct,both_wrong
+clean,5,2,361,30
+historical_shared_gaussian10,61,5,273,59
+NRIVER_30s,23,7,333,35
+NRIVER_150s,15,6,340,37
+OHALLWAY_30s,11,5,357,25
+OHALLWAY_150s,6,13,339,40
+TCAR_30s,7,7,357,27
+TCAR_150s,8,7,356,27

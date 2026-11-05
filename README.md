@@ -2,13 +2,17 @@
 
 CNN, BiGRU, attention, audio augmentation and frozen PANNs comparisons on ESC-50.
 
+The study asks how architecture, targeted noise augmentation and frozen pretrained features affect classification accuracy, noise sensitivity and performance on other recordings. Its numerical baseline is the independently implemented research CNN.
+
+The completed noise-transfer study compares matched clean-only and clean/Gaussian-trained linear heads on frozen PANNs features. Across six fixed recorded-background conditions, the adapted-minus-clean difference is **+1.05 pp [-0.54, +2.59]**, conditional 95% source-bootstrap interval; clean change is **+0.75 pp**. [Executed notebook](notebooks/ESC50_Noise_Transfer.ipynb) · [Protocol and findings](reports/noise_transfer_20261106/README.md).
+
 ## Results notebooks
 
-Latest: [Short-recording input-policy diagnostic](notebooks/ESC50_Duration_Diagnostic.ipynb) · [External recording evaluation](notebooks/ESC50_External_Transfer.ipynb) · [Transfer robustness and matched MLP heads](notebooks/ESC50_Transfer_Followup.ipynb) · [Run follow-up in Colab](https://colab.research.google.com/github/Richardafcs/esc-50-sound-classification/blob/main/notebooks/ESC50_Transfer_Followup.ipynb) · [Research overview](reports/research_overview.md)
+Supporting studies: [Transfer robustness and matched MLP heads](notebooks/ESC50_Transfer_Followup.ipynb) · [External recording evaluation](notebooks/ESC50_External_Transfer.ipynb) · [Short-recording input-policy diagnostic](notebooks/ESC50_Duration_Diagnostic.ipynb) · [Research overview](reports/research_overview.md)
 
 [Open the complete notebook](notebooks/ESC50_Results.ipynb) · [Run in Google Colab](https://colab.research.google.com/github/Richardafcs/esc-50-sound-classification/blob/main/notebooks/ESC50_Results.ipynb)
 
-The notebook displays model metrics, paired comparisons, all 33 scientific figures, noise robustness, temporal interventions, feature experiments, per-class errors, the full experiment ledger and the literature review. It can optionally repeat the original frozen PANNs extraction and fit. The separate follow-up notebook executes the matched robustness and fixed-budget head experiment. Previously completed CNN/CRNN experiments are identified separately.
+The notebook displays model metrics, paired comparisons, all 36 scientific figures, noise robustness, temporal interventions, feature experiments, per-class errors, the full experiment ledger and the literature review. It can optionally repeat the original frozen PANNs extraction and fit. The separate follow-up notebook executes the matched robustness and fixed-budget head experiment. Previously completed CNN/CRNN experiments are identified separately.
 
 ## Project layout
 
@@ -23,7 +27,7 @@ reports/          Compact numerical evidence and original figures
 docs/             Methods and model descriptions
 ```
 
-All four notebooks retain executed Colab outputs. Model inference used Tesla T4; the latest comprehensive report was executed on Colab from saved evidence. The earlier PANNs extraction/refit reproduced 363/398 correct. The new fixed study completed matched clean/10 dB inference and six 100-epoch head fits in 88.73 seconds, excluding setup/downloads.
+All five notebooks retain executed Colab outputs. Model inference used Tesla T4; the latest comprehensive report was executed on Colab from saved evidence. The earlier PANNs extraction/refit reproduced 363/398 correct. The new fixed study completed matched clean/10 dB inference and six 100-epoch head fits in 88.73 seconds, excluding setup/downloads.
 
 ## Main findings
 
@@ -36,7 +40,7 @@ All four notebooks retain executed Colab outputs. Model inference used Tesla T4;
 
 Scratch-model values are mean ± sample SD over three fixed fits. PANNs uses one fixed head fit. These are development results on 398 clips from 295 sources; all official folds have historical exposure. External pretraining, capacity and frontend differences prevent causal attribution of the PANNs gain to one factor.
 
-The research CNN has 49,058 parameters. It differs from the team's original 1,368,386-parameter CNN, whose score is not inferred here.
+The research CNN has 49,058 parameters. The separate team implementation is outside this study.
 
 ## Matched robustness and MLP follow-up
 
@@ -44,7 +48,7 @@ At 10 dB, frozen PANNs + the existing logistic head achieves **69.85%**, versus 
 
 The new parameter-matched PANNs heads use 2048→49→50 and 102,901 parameters. Factorized linear averages 91.12% clean/68.76% noisy; ReLU averages 89.78%/67.34%. There is no observed gain from this ReLU configuration. Earlier pooled/tokenwise CNN-MLP controls (72.28%/69.68%) have been restored to the complete comparison.
 
-All original 22 scientific figures, four transfer-head figures, four external-evaluation figures and three input-policy diagnostic figures are retained. See the [experiment evidence](reports/transfer_followup_20261105/README.md) for all metrics, paired intervals and limitations.
+All original 22 scientific figures, four transfer-head figures, four external-evaluation figures three input-policy diagnostic figures and three Gaussian-to-recorded-noise figures are retained. See the [experiment evidence](reports/transfer_followup_20261105/README.md) for all metrics, paired intervals and limitations.
 
 ## External recording evaluation
 

@@ -199,5 +199,23 @@
     "title": "Input-policy six-class recall",
     "path": "reports/duration_probe_20261105/duration_policy_class_recall.png",
     "scope": "Exploratory frozen-PANNs input-policy comparison; exposed external recordings"
+  },
+  {
+    "title": "Frozen PANNs accuracy by fixed evaluation condition",
+    "path": "reports/noise_transfer_20261106/accuracy_by_environment.png",
+    "scope": "Frozen PANNs Gaussian-to-recorded-noise transfer",
+    "number": 34
+  },
+  {
+    "title": "Gaussian-adapted minus clean-refit accuracy with conditional source intervals",
+    "path": "reports/noise_transfer_20261106/paired_accuracy_effects.png",
+    "scope": "Frozen PANNs Gaussian-to-recorded-noise transfer",
+    "number": 35
+  },
+  {
+    "title": "Repairs and new errors across fixed conditions",
+    "path": "reports/noise_transfer_20261106/paired_error_transitions.png",
+    "scope": "Frozen PANNs Gaussian-to-recorded-noise transfer",
+    "number": 36
   }
 ]

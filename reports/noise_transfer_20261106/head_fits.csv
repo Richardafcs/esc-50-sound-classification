@@ -1,0 +1,3 @@
+model,rows,total_weight,iterations,converged,seconds
+clean_refit,1200,1200.0,137,True,13.352992991000065
+gaussian_adapted,3600,1200.0,435,True,73.29821434899986
