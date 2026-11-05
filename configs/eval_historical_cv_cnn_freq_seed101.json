@@ -2,7 +2,6 @@
   "schema_version": 1,
   "model": "cnn_freq",
   "seed": 101,
-  "metadata_sha256": "ca660da60191a97de289983a05821c9382d852a38a2ba8428980816b68cf6246",
   "dataset_identity": "ESC-50 source metadata shipped in project package",
   "selection_disclosure": "Retrospective historical five-fold characterization; folds were accessed during earlier development, not an independent confirmation",
   "folds": [

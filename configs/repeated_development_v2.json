@@ -60,13 +60,5 @@
     "process_seconds_per_run": 480,
     "total_development_seconds_after_setup": 1800,
     "currency_spend": 0
-  },
-  "code_sha256": {
-    "esc50.py": "a484680f5f213226fcc984edf76c69004a2df8e91d417407c22a213ec4b67f6e",
-    "study.py": "044bda997710d93871bbb57f7012725a45ddfacf51a3a5eb05ba7336e0c3f575",
-    "diagnostics.py": "3ee58a0a64e6716e3ddc590f36dd4f09818ef56d8d78841521f93daa5ef2af6d",
-    "classify.py": "8bc5fa4964e23d92e8273afa54253e35d94dc329076dab154efc35f8c619d51c",
-    "runner.py": "eda1e253955d7a34ac495bd83c80fb2d822af7e2bf1e547a9725c897e819f592",
-    "artifacts.py": "2c3ca152edfa72777011b8715e3910c12fdfb8a3d640307e7325bb83412ba7d1"
   }
 }

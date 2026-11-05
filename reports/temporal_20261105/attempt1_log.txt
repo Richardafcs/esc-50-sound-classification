@@ -1,6 +1,0 @@
-Traceback (most recent call last):
-  File "/Users/richardhuang/Downloads/esc50-sound-classification/scripts/run_temporal_order_probe.py", line 351, in <module>
-    main()
-  File "/Users/richardhuang/Downloads/esc50-sound-classification/scripts/run_temporal_order_probe.py", line 177, in main
-    raise RuntimeError(
-RuntimeError: CNN invariance failure: roll19, seed=303, maxdiff=1.1444091796875e-05

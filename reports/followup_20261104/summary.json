@@ -1,5 +1,5 @@
 {
-  "scope": "Source-strict Fold4 development analysis; historical folds were exposed; no independent confirmation, training, test-fold inference, hash or file-integrity checks",
+  "scope": "Source-strict Fold4 development analysis; historical folds were exposed; no independent confirmation, training, test-fold inference",
   "n_clips": 398,
   "n_sources": 295,
   "clean_prediction_sets": 24,

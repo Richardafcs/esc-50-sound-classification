@@ -1,8 +1,8 @@
 # Literature relevance and implementation decisions
 
-The supplied research conversation was read in full after loading its earlier messages. It provided the literature leads; paper claims were checked against original records, selected full text, publishers/proceedings and author repositories. The map below includes the conversation's numbered entries, separates M2D-CLAP from M2D2, and adds the generic mixup reference needed to describe the implemented loss. It is a targeted relevance map, not a systematic review or independent reproduction.
+This targeted review connects primary literature to the implemented experiments. It is not a systematic review or an exact reproduction.
 
-Reading depth distinguishes selected full-text inspection from abstract/repository screening. Core CNN/CRNN reading also builds on the earlier documented method audit. Abstract-only entries do not support detailed architecture or ablation claims. Access-limited full-text claims remain unverified. AI-assisted literature screening was used; the original papers, implementation and saved experiments are the sources of scientific claims.
+Reading depth distinguishes selected full-text inspection from abstract/repository screening. Core CNN/CRNN reading also builds on the earlier documented method audit. Abstract-only entries do not support detailed architecture or ablation claims. Access-limited full-text claims remain unverified. The original papers, implementation and saved experiments support the scientific claims.
 
 | Reference | Method / reading depth | Decision for this checkpoint |
 | --- | --- | --- |

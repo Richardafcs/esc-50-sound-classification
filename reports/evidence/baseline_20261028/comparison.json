@@ -5562,8 +5562,5 @@
     "predicted_classes": 50
   },
   "left_path": "results/final_study/results/holdout/crnn_freq_seed101_60ep/test_predictions.csv",
-  "right_path": "results/final_study/results/holdout/cnn_freq_seed101_60ep/test_predictions.csv",
-  "left_sha256": "5decd876d44232b2618280d9dd6b577c0f17d26105b5e282fa7955de43c6c584",
-  "right_sha256": "f71739564d1b6b6da486d4e92695b498641635771ce15472ca969b3dbae6d0bd",
-  "metadata_sha256": "ca660da60191a97de289983a05821c9382d852a38a2ba8428980816b68cf6246"
+  "right_path": "results/final_study/results/holdout/cnn_freq_seed101_60ep/test_predictions.csv"
 }

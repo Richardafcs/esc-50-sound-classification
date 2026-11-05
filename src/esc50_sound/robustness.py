@@ -1,13 +1,12 @@
-"""Validation-only inference with the original study's paired perturbations.
+"""Validation-only inference with shared per-clip synthetic perturbations.
 
-No training, cache loading, or file-integrity hashing. A small SHA-256 of the
-noise-address string preserves the original experiment's random-noise mapping;
-it does not read or verify file contents.
+New runs use seed-sequence v2; saved historical results retain their original
+perturbations and are not overwritten or mixed with the new protocol.
 """
 from __future__ import annotations
 
 import csv
-import hashlib
+import numpy as np
 import json
 import math
 from pathlib import Path
@@ -21,7 +20,7 @@ from .evaluation import compute_metrics
 from .models import build_model
 
 CONDITIONS = ('clean', 'snr_20', 'snr_10', 'snr_0', 'gain_-6', 'gain_6')
-PROTOCOL = 'esc50_legacy_stress_v1'
+PROTOCOL = 'esc50_seed_sequence_stress_v2'
 FAMILIES = {
     'cnn': ('B_architecture', 'B_cnn_freq', 'cnn_freq'),
     'crnn': ('B_architecture', 'B_crnn_freq', 'crnn_freq'),
@@ -40,7 +39,8 @@ def validation_rows(metadata_root: Path) -> list[dict]:
 
 def noise_address(filename: str, condition: str, seed: int = 2026) -> int:
     """Legacy per-clip RNG address, independent of model, order, and batching."""
-    return int(hashlib.sha256(f'{seed}:{condition}:{filename}'.encode()).hexdigest()[:8], 16)
+    inputs = [seed, CONDITIONS.index(condition), *filename.encode("utf-8")]
+    return int(np.random.SeedSequence(inputs).generate_state(1)[0])
 
 
 def perturb(wave: torch.Tensor, condition: str, filename: str,

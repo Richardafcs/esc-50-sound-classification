@@ -1,6 +1,0 @@
-{
-  "scope": "Replay portable saved normalization and linear coefficients on all original validation embeddings; encoder not rerun",
-  "clips": 398,
-  "changed_predictions": 0,
-  "correct": 363
-}

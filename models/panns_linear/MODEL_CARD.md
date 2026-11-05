@@ -7,7 +7,7 @@ A single linear probe trained on 1,200 source-strict ESC-50 development recordin
 - Input to this head: the exact 2,048-dimensional author-model embedding, not the 527 AudioSet output probabilities or a spectrogram.
 - Head: train-only StandardScaler plus L2 multinomial logistic regression, C=1, L-BFGS; 102,450 coefficients and biases. One fit, 137 iterations, normal convergence.
 - `linear_head.npz`: fitted training means/scales, coefficients, intercepts and class IDs. `class_names.json`: ESC-50 label mapping.
-- `predict_embeddings.py`: NumPy inference on saved embedding NPZ files. It reproduces all 398 original validation predictions without rerunning the encoder.
+- `predict_embeddings.py`: NumPy inference on saved embedding NPZ files. It applies the stored scaler and classifier without rerunning the encoder.
 
 From the project root, with the local feature cache available:
 
@@ -20,4 +20,4 @@ For waveform-to-feature reproduction, use [the research runner](../../scripts/ru
 
 All folds have historical exposure and AudioSet/ESC-50 overlap has not been comprehensively excluded. This is a stronger clean-development candidate, not an independently confirmed replacement for a deployed system. Encoder capacity, frontend and external pretraining differ from the scratch-trained baselines. Noise robustness, calibration, unknown-sound rejection and deployment latency remain unevaluated. The head alone is small; the complete encoder is much larger than the earlier CNN.
 
-[Full English report](../../reports/panns_20261105/report_en.md) · [Chinese explanation](../../reports/panns_20261105/report_zh.md). Retain ESC-50 licensing and recording credits; the small head export does not grant rights to the external backbone or dataset.
+[Complete executed notebook](../../notebooks/ESC50_Results.ipynb). Retain ESC-50 licensing and recording credits; the small head export does not grant rights to the external backbone or dataset.

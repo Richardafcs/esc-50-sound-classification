@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Chrome ChatGPT implementation draft, integrated for the fixed ESC-50 protocol.
+# Frozen PANNs embeddings and a fixed ESC-50 linear classifier.
 import argparse
 import csv
 import json

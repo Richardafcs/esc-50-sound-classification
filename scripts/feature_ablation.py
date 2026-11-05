@@ -14,7 +14,7 @@ def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     sub = parser.add_subparsers(dest="action", required=True)
     sub.add_parser("plan", help="Print the 12 prespecified cases")
-    prepare = sub.add_parser("prepare", help="Generate caches from official WAV; no file hashes")
+    prepare = sub.add_parser("prepare", help="Generate feature caches from official WAV")
     prepare.add_argument("--raw-root", default="data/ESC-50")
     prepare.add_argument("--cache-dir", default="data/feature_ablation")
     prepare.add_argument("--case", default="all", help="Specific case from plan, or all")

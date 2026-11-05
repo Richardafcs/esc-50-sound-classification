@@ -1,0 +1,21 @@
+{
+  "completed_utc": "2026-11-05T00:43:08.909813+00:00",
+  "new_panns_extraction_and_fit": true,
+  "validation_clips": 398,
+  "validation_sources": 295,
+  "new_accuracy": 0.9120603015075377,
+  "new_macro_f1": 0.9110258659469186,
+  "correct": 363,
+  "converged": true,
+  "saved_figure_count": 22,
+  "existing_matrix_tasks": 65,
+  "existing_robustness_conditions": 54,
+  "existing_temporal_conditions": 30,
+  "runtime": {
+    "python": "3.13.16",
+    "torch": "2.11.0+cu130",
+    "numpy": "2.1.3",
+    "gpu": "Tesla T4",
+    "platform": "Linux-6.6.159+-x86_64-with-glibc2.39"
+  }
+}

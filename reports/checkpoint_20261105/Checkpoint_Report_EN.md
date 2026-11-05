@@ -309,13 +309,11 @@ Partial encoder fine-tuning and more complex pretrained architectures, including
 
 The existing experimental evidence is sufficient for the present checkpoint without additional training. Future work should address a specific unresolved research question rather than repeat architecture searches solely to obtain a higher development-validation score.
 
-### 5.4 Research Process and Reproducibility
+### 5.4 Reproducibility
 
 The study retains model configurations, training histories, selected checkpoints, prediction records, and evaluation summaries for the completed experiments.
 
 The pretrained study additionally retains its extracted embeddings, fitted linear classifier, per-recording predictions, probabilities, and evaluation outputs.
-
-AI-assisted research discussions were used to challenge interpretations, examine alternative explanations, and refine reporting boundaries. These discussions do not constitute independent experimental replication or verified discussions with human project members.
 
 For repository integration, the original team baseline should remain intact, while the independently conducted research and its results should be documented separately. This preserves the distinction between the original implementation and the experimentally evaluated systems.
 
@@ -331,44 +329,7 @@ The central finding is not that a particular attention module or training trick 
 
 This conclusion is supported within the evaluated development setting, while independent-source validation and pretrained-data overlap remain unresolved.
 
-## Appendix A. Representation and temporal diagnostics
+## Evidence and references
 
-The feature/sampling study compared 12 configurations across three seeds using a separate 26,658-parameter frequency-pooled CNN. Log-Mel 32 exceeded Log-Mel 64 by 4.02, 4.44 and 6.03 pp in the three sampling/bandwidth settings. Because that architecture differs from the main frequency-preserving CNN and from PANNs, these findings do not justify changing every model to 32 bands. Thirty of 36 feature runs selected epochs 51-60; that alone does not establish failed convergence.
+All comparative tables, the full 22-figure atlas, class-level results, the 65-task ledger and the complete literature matrix are displayed in [the executable results notebook](../../notebooks/ESC50_Results.ipynb). Original source data remain in the adjacent evidence folders. The notebook separates previously completed scratch-model experiments from its new PANNs extraction and head fit.
 
-![Separate pooled-CNN feature and sampling study](../figures/matrix_20261028/feature_sampling.png)
-
-An inference-only temporal diagnostic reordered 39 encoder tokens in six existing CNN/BiGRU checkpoints. BiGRU accuracy changed from 73.87% to 68.84% under reversal: -5.03 pp, conditional source interval [-7.54,-2.60]. The CNN had zero prediction changes under the evaluated permutations. Reversal acts after the CNN encoder, not on raw audio, and two shuffled orders showed much smaller mean changes. This demonstrates conditional sensitivity to ordering, not proof that long-range recurrence is responsible for a reliable accuracy gain.
-
-![BiGRU encoder-token interventions and conditional intervals](../temporal_20261105/crnn_accuracy_change.png)
-
-## Appendix B. Evidence, code and complete figure delivery
-
-The companion project includes [all fitted-system metrics](model_comparison.csv), [six robustness-condition means](robustness_comparison.csv), [baseline identity](baseline_identity.json), [PANNs clip predictions](../panns_20261105/validation_predictions.csv), [the 12 fixed reference fits](../panns_20261105/reference_predictions.csv), [paired transfer intervals](../panns_20261105/paired_differences.csv), [attention effects](../final_20261105/attention_paired_effects.json) and [per-class comparison](../panns_20261105/per_class_comparison.csv).
-
-Implementation: [CNN/GRU/attention definitions](../../src/esc50_sound/models.py), [training and model selection](../../src/esc50_sound/training.py), [waveform augmentation](../../src/esc50_sound/augmentation.py), [frozen PANNs extraction and fitting](../../scripts/run_panns_linear_probe.py), [offline paired transfer analysis](../../scripts/analyze_panns_transfer.py) and [exported linear-head model card](../../models/panns_linear/MODEL_CARD.md).
-
-This checkpoint embeds its nine selected scientific figures. The [35-page original-study and follow-up report](../pdf/ESC50_Final_Research_Report_EN.pdf) retains all 19 earlier figures, including eight explicitly historical baseline figures; the [11-page PANNs report](../pdf/ESC50_PANNs_Transfer_Report_EN.pdf) retains all three new transfer figures and all 50 class results. Thus all 22 scientific figures remain available in the companion delivery. Historical fold-5 and fold-rotation figures are not merged with development validation to claim a performance improvement.
-
-The [broader literature map](literature_review.md) contains 26 screened publications or publication families. It distinguishes original tasks, pretraining regime, selected-method reading and abstract-only screening. No published leaderboard values are used as if they were our predictions.
-
-## References
-
-1. Piczak, K. J. (2015). *ESC: Dataset for Environmental Sound Classification.* [Official ESC-50 dataset repository](https://github.com/karolpiczak/ESC-50).
-
-2. Zhang et al. (2019). *Learning Attentive Representations for Environmental Sound Classification.* *IEEE Access.* [DOI: 10.1109/ACCESS.2019.2939495](https://doi.org/10.1109/ACCESS.2019.2939495).
-
-3. Salamon, J., & Bello, J. P. (2017; preprint 2016). *Deep Convolutional Neural Networks and Data Augmentation for Environmental Sound Classification.* [arXiv:1608.04363](https://arxiv.org/abs/1608.04363).
-
-4. Park, D. S., et al. (2019). *SpecAugment: A Simple Data Augmentation Method for Automatic Speech Recognition.* [arXiv:1904.08779](https://arxiv.org/abs/1904.08779).
-
-5. Zhang, H., Cisse, M., Dauphin, Y. N., & Lopez-Paz, D. (ICLR 2018; preprint 2017). *mixup: Beyond Empirical Risk Minimization.* [arXiv:1710.09412](https://arxiv.org/abs/1710.09412).
-
-6. Tokozume, Y., Ushiku, Y., & Harada, T. (ICLR 2018; preprint 2017). *Learning from Between-class Examples for Deep Sound Recognition.* [arXiv:1711.10282](https://arxiv.org/abs/1711.10282).
-
-7. Kong, Q., Cao, Y., Iqbal, T., Wang, Y., Wang, W., & Plumbley, M. D. (2020; preprint 2019). *PANNs: Large-Scale Pretrained Audio Neural Networks for Audio Pattern Recognition.* [arXiv:1912.10211](https://arxiv.org/abs/1912.10211).
-
-8. Gong, Y., Chung, Y.-A., & Glass, J. (2021). *AST: Audio Spectrogram Transformer.* [arXiv:2104.01778](https://arxiv.org/abs/2104.01778).
-
-9. Chen, S., et al. (ICML 2023; preprint 2022). *BEATs: Audio Pre-Training with Acoustic Tokenizers.* [arXiv:2212.09058](https://arxiv.org/abs/2212.09058).
-
-10. Elizalde, B., Deshmukh, S., Al Ismail, M., & Wang, H. (ICASSP 2023; preprint 2022). *CLAP: Learning Audio Concepts From Natural Language Supervision.* [arXiv:2206.04769](https://arxiv.org/abs/2206.04769).

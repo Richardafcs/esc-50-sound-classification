@@ -1,24 +1,10 @@
-# Script navigation
+# Experiment runners
 
-The installed application entry point is `python -m esc50_sound`. Run repository scripts from the project root.
-
-| Task | Entry points |
+| Experiment | Entry point |
 | --- | --- |
-| Checkpoint manuscript and nine saved figures | `python scripts/build_checkpoint_report.py` |
-| Frozen PANNs extraction and single-head fit | `python scripts/run_panns_linear_probe.py --help` |
-| PANNs paired analysis and figures from shared evidence | `python scripts/analyze_panns_transfer.py` |
-| PANNs English report and PDF | `python scripts/build_panns_report.py` |
-| Audit the current complete study | `python scripts/analyze_colab_matrix.py --require-complete` |
-| Plot the current study | `python scripts/plot_colab_matrix.py` |
-| Historical figure regeneration | `python scripts/make_figures.py --svg --include-cv` |
-| Feature experiment commands | `python scripts/feature_ablation.py --help` |
-| Evaluation / platform / registry | `research_evaluation.py`, `research_platform.py`, `model_registry.py` |
-| Notebook generation | `build_notebook.py`, `build_matrix_execution.py`, `build_bilingual_notebook.py` |
-| Report generation | `write_matrix_reports.py`, `build_english_pdf_reports.py`, `verify_english_pdf_reports.py` |
-| Frozen-era compatibility | [legacy](legacy/): old launchers and original diagnostic/report utilities |
+| Frozen PANNs extraction and linear classifier | `run_panns_linear_probe.py` |
+| Gaussian-noise and gain inference | `run_robustness_three_seeds.py` |
+| CNN/CRNN encoder-token interventions | `run_temporal_order_probe.py` |
+| Feature and sampling experiments | `feature_ablation.py` |
 
-Only explicitly invoked training scripts train models. Historical Colab orchestration in the optional local `archive/orchestration/` collection retains the exact original source and runtime assumptions; it belongs with frozen releases rather than current launch commands. New implementation belongs in `src/esc50_sound/`, not in root-level Python files.
-
-## Fresh-checkout scope
-
-The application, platform catalog, prediction bundles and full test suite work from the shared repository. Full-study audit/plotting/report-generation commands above require the original local run collection, which is excluded from Git. Read the shared PDFs, summary CSVs, and figure originals under `reports/` without that collection. `verify_english_pdf_reports.py` uses the shared report evidence; install `Pillow`, `pypdf`, and `pdfplumber` to run it.
+Use `--help` for arguments. The [results notebook](../notebooks/ESC50_Results.ipynb) contains the executed analysis and figures. Report and PDF generation utilities are excluded from this repository.

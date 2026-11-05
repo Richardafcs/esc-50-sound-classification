@@ -4,16 +4,91 @@
   "date": "2026-11-05",
   "question": "Does a fixed externally pretrained audio representation plus a linear head outperform the existing channel-attention reference on the same development-validation clips?",
   "dataset_commit": "33c8ce9eb2cf0b1c2f8bcf322eb349b6be34dbb6",
-  "split": {"train_folds": [1,2,3], "validation_fold": 4, "designated_test_fold": 5, "exclude_validation_sources_in_test": true, "exclude_train_sources_in_validation_or_test": true, "expected_train_clips": 1200, "expected_validation_clips": 398, "expected_validation_sources": 295, "test_waveforms_read": false},
-  "encoder": {"repository": "https://github.com/qiuqiangkong/audioset_tagging_cnn", "revision": "d2f4b8c18eab44737fcc0de1248ae21eb43f6aa4", "class": "Cnn14_16k", "checkpoint_url": "https://zenodo.org/records/3987831/files/Cnn14_16k_mAP%3D0.438.pth?download=1", "sample_rate": 16000, "window_size": 512, "hop_size": 160, "mel_bins": 64, "fmin": 50, "fmax": 8000, "classes_num": 527, "embedding": "model output_dict['embedding'], 2048 features, post fc1 ReLU, eval mode", "frozen": true, "waveform_resampling": "scipy.signal.resample_poly", "amplitude_normalization": "none", "strict_checkpoint_loading": true},
-  "head": {"preprocessing": "StandardScaler fit on training embeddings only", "estimator": "LogisticRegression", "C": 1.0, "solver": "lbfgs", "max_iter": 3000, "tol": 0.000001, "class_weight": null, "fit_intercept": true, "hyperparameter_search": false, "repeated_seed_fits": false},
+  "split": {
+    "train_folds": [
+      1,
+      2,
+      3
+    ],
+    "validation_fold": 4,
+    "designated_test_fold": 5,
+    "exclude_validation_sources_in_test": true,
+    "exclude_train_sources_in_validation_or_test": true,
+    "expected_train_clips": 1200,
+    "expected_validation_clips": 398,
+    "expected_validation_sources": 295,
+    "test_waveforms_read": false
+  },
+  "encoder": {
+    "repository": "https://github.com/qiuqiangkong/audioset_tagging_cnn",
+    "revision": "d2f4b8c18eab44737fcc0de1248ae21eb43f6aa4",
+    "class": "Cnn14_16k",
+    "checkpoint_url": "https://zenodo.org/records/3987831/files/Cnn14_16k_mAP%3D0.438.pth?download=1",
+    "sample_rate": 16000,
+    "window_size": 512,
+    "hop_size": 160,
+    "mel_bins": 64,
+    "fmin": 50,
+    "fmax": 8000,
+    "classes_num": 527,
+    "embedding": "model output_dict['embedding'], 2048 features, post fc1 ReLU, eval mode",
+    "frozen": true,
+    "waveform_resampling": "scipy.signal.resample_poly",
+    "amplitude_normalization": "none",
+    "strict_checkpoint_loading": true
+  },
+  "head": {
+    "preprocessing": "StandardScaler fit on training embeddings only",
+    "estimator": "LogisticRegression",
+    "C": 1.0,
+    "solver": "lbfgs",
+    "max_iter": 3000,
+    "tol": 1e-06,
+    "class_weight": null,
+    "fit_intercept": true,
+    "hyperparameter_search": false,
+    "repeated_seed_fits": false
+  },
   "primary_metric": "100 * (PANNs clip accuracy minus mean clip accuracy of the three existing fixed channel-attention fits)",
-  "reference_seeds": [101,202,303],
+  "reference_seeds": [
+    101,
+    202,
+    303
+  ],
   "practical_screening_threshold_pp": 3.0,
   "threshold_interpretation": "A practical screen only, not a statistical theorem or independent confirmation",
-  "bootstrap": {"resamples": 4000, "rng_seed": 20261105, "unit": "295 src_file groups", "paired": true, "retain_all_clips_per_sampled_source": true, "denominator": "actual resampled clip count", "average_fixed_reference_fits_before_resampling": true},
-  "secondary_outputs": ["macro-F1", "per-class metrics and confusion matrix", "paired differences versus CNN and BiGRU", "paired repairs and new errors versus each reference fit", "extraction and head fitting time", "runtime environment and convergence"],
-  "budget": {"preferred_hardware": "already authorized Colab T4", "maximum_runtime_minutes": 45, "embedding_extractions": 1, "head_fits": 1, "fine_tuning": false, "new_tests": false, "file_hash_checks": false, "purchase_or_upgrade": false},
+  "bootstrap": {
+    "resamples": 4000,
+    "rng_seed": 20261105,
+    "unit": "295 src_file groups",
+    "paired": true,
+    "retain_all_clips_per_sampled_source": true,
+    "denominator": "actual resampled clip count",
+    "average_fixed_reference_fits_before_resampling": true
+  },
+  "secondary_outputs": [
+    "macro-F1",
+    "per-class metrics and confusion matrix",
+    "paired differences versus CNN and BiGRU",
+    "paired repairs and new errors versus each reference fit",
+    "extraction and head fitting time",
+    "runtime environment and convergence"
+  ],
+  "budget": {
+    "preferred_hardware": "already authorized Colab T4",
+    "maximum_runtime_minutes": 45,
+    "embedding_extractions": 1,
+    "head_fits": 1,
+    "fine_tuning": false,
+    "new_tests": false,
+    "purchase_or_upgrade": false
+  },
   "stopping_rule": "Stop after the fixed extraction, fit and evaluation regardless of score. Preserve failures; resolve implementation errors without tuning on validation accuracy.",
-  "limitations": ["All official folds have historical development exposure", "AudioSet and ESC-50 overlap is not comprehensively excluded", "External pretraining, encoder capacity and frontend differ from scratch-trained references; this is a system comparison, not an attention-only causal effect", "Source-bootstrap uncertainty conditions on these fixed fits", "Not a standard five-fold ESC-50 benchmark or untouched-test result"]
+  "limitations": [
+    "All official folds have historical development exposure",
+    "AudioSet and ESC-50 overlap is not comprehensively excluded",
+    "External pretraining, encoder capacity and frontend differ from scratch-trained references; this is a system comparison, not an attention-only causal effect",
+    "Source-bootstrap uncertainty conditions on these fixed fits",
+    "Not a standard five-fold ESC-50 benchmark or untouched-test result"
+  ]
 }

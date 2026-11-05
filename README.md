@@ -1,109 +1,54 @@
 # ESC-50 Environmental Sound Classification
 
-A team research project for environmental sound classification with classical baselines, a frequency-preserving CNN, CNN + BiGRU (CRNN), channel attention, audio augmentation, and feature comparisons.
+CNN, BiGRU, attention, audio augmentation and frozen PANNs comparisons on ESC-50.
 
-The completed study contains **65 registered tasks**, including **60 neural runs of 60 epochs**. This repository shares the implementation, protocols, portable CNN/CRNN models, a compact PANNs linear head, result evidence, English PDF reports, all report figures, and the full regression suite. Large local experiment collections are intentionally excluded.
+## Results notebook
 
-## Start here
+[Open the complete notebook](notebooks/ESC50_Results.ipynb) · [Run in Google Colab](https://colab.research.google.com/github/Richardafcs/esc-50-sound-classification/blob/main/notebooks/ESC50_Results.ipynb)
 
-Checkpoint: [Model improvement report](reports/checkpoint_20261105/README.md) — the five assignment requirements, nine selected figures, 26-publication review and explicit baseline identity.
+The notebook displays model metrics, paired comparisons, all 22 saved scientific figures, noise robustness, temporal interventions, feature experiments, per-class errors, the full experiment ledger and the literature review. It also runs a new frozen PANNs feature extraction and linear-classifier fit in Colab. Previously completed CNN/CRNN experiments are identified separately.
 
-New performance phase: [Frozen PANNs + linear classifier](reports/panns_20261105/README.md) — executed on Colab T4, **91.21% accuracy / 91.10% macro-F1** on the same development-validation split. External pretraining and a larger encoder distinguish it from the original scratch-trained study.
-
-Final: [Complete English research report](reports/pdf/ESC50_Final_Research_Report_EN.pdf) — 35 pages, all 19 figures, completed three-seed robustness and temporal interventions. [Evidence and model decision](reports/final_20261105/README.md).
-
-Latest: [5 November temporal-order probe](reports/temporal_20261105/README.md) — real encoder-token interventions with existing CNN/CRNN weights.
-
-Latest: [4 November research follow-up](reports/followup_20261104/README.md) — three-seed robustness, prediction errors, and feature convergence.
-
-| Purpose | Entry point |
-| --- | --- |
-| Read complete English PDFs | [Model improvement checkpoint](reports/pdf/ESC50_Model_Improvement_Checkpoint_EN.pdf) · [PANNs transfer study](reports/pdf/ESC50_PANNs_Transfer_Report_EN.pdf) · [Final research report](reports/pdf/ESC50_Final_Research_Report_EN.pdf) · [Original matrix study](reports/pdf/ESC50_Complete_Study_Report_EN.pdf) · [CNN/CRNN baseline study](reports/pdf/ESC50_CNN_CRNN_Baseline_Report_EN.pdf) |
-| Understand the project | [English guide](docs/guides/guide_en.md) · [Chinese guide](docs/guides/guide_zh.md) |
-| Inspect findings and figures | [Reports and evidence](reports/README.md) |
-| Predict with pretrained models | [Portable CNN and CRNN](models/README.md) |
-| Work in Colab | [Notebook guide](notebooks/README.md) |
-| Find commands | [Script catalog](scripts/README.md) |
-
-## Install and check
-
-Use Python 3.11 or later.
-
-```sh
-git clone https://github.com/Richardafcs/esc-50-sound-classification.git
-cd esc-50-sound-classification
-python -m venv .venv
-source .venv/bin/activate
-python -m pip install -e '.[dev,baseline,report]'
-python -m esc50_sound --help
-python -m pytest -q
-```
-
-The full CPU suite contains **274 tests**. Tests use synthetic inputs and small saved regression fixtures; they do not download audio or launch Colab training. GitHub Actions runs the suite on pushes and pull requests. For Windows, activate the environment with `.venv\Scripts\activate`.
-
-## Shared project layout
+## Project layout
 
 ```text
-src/esc50_sound/       Main Python implementation
-scripts/              Experiment, audit, and reporting tools
-configs/              Protocols, study matrix, and runnable examples
-data/                 Official dataset metadata, licensing, and credits
-notebooks/            Editable templates and a compact executed results reader
-models/               Portable CNN and CRNN inference bundles
-reports/              English PDFs, bilingual reports, all figures, summary evidence
-docs/                 Guides, methods, engineering notes, and reviews
-tests/                Full unit, integration, and research-contract suite
-results/historical/   Only the numerical fixtures required by the test suite
-archive/              Only two frozen source references required by tests
+notebooks/        Executable research and saved outputs
+src/esc50_sound/  Models, audio processing, training and evaluation
+scripts/          Experiment runners
+configs/          Experiment protocols and settings
+data/ESC-50/      Official metadata, license and recording credits
+models/           Portable CNN/CRNN models and the PANNs linear head
+reports/          Compact numerical evidence and original figures
+docs/             Methods and model descriptions
 ```
 
-## Data and a new experiment
+The latest notebook was executed on Colab Tesla T4: 46 code cells, 26 rendered images and 25 result tables. Its fresh PANNs fit reproduced 363/398 correct predictions.
 
-ESC-50 contains 2,000 five-second recordings in 50 classes. The dataset revision is pinned to `33c8ce9eb2cf0b1c2f8bcf322eb349b6be34dbb6`. The source-strict development roles are **1,200 training / 398 validation / 400 designated test clips**; two clips are excluded to avoid source overlap. Normalization is fitted on training recordings only.
+## Main findings
+
+| System | Development accuracy | Macro-F1 |
+| --- | ---: | ---: |
+| Research CNN | 72.61% ± 0.25 pp | 71.39% ± 0.58 pp |
+| CNN + BiGRU | 73.87% ± 1.26 pp | 72.97% ± 1.36 pp |
+| BiGRU + channel attention | 74.37% ± 1.15 pp | 73.48% ± 1.00 pp |
+| Frozen PANNs + linear classifier | 91.21% | 91.10% |
+
+Scratch-model values are mean ± sample SD over three fixed fits. PANNs uses one fixed head fit. These are development results on 398 clips from 295 sources; all official folds have historical exposure. External pretraining, capacity and frontend differences prevent causal attribution of the PANNs gain to one factor.
+
+The research CNN has 49,058 parameters. It differs from the team's original 1,368,386-parameter CNN, whose score is not inferred here.
+
+## Run locally
+
+Use Python 3.11 or newer:
 
 ```sh
-python -m esc50_sound prepare
-python -m esc50_sound train --model cnn_freq --seed 101 --epochs 60 \
-  --scheduler cosine --device cuda --output results/runs/new_cnn
-python -m esc50_sound predict --checkpoint results/runs/new_cnn/best.pt \
-  --audio YOUR_SHORT_CLIP.wav
+python -m pip install -e '.[baseline,notebook,transfer]'
+python -m esc50_sound --help
 ```
 
-`prepare` downloads the pinned official audio and builds the validated feature cache. Training requires the selected device; use `--device cpu` if needed. Choose a unique output directory for every run. Review the matrix notebook's resource budget before starting its full study.
+Open the notebook for the complete workflow. Select a Colab GPU runtime for PANNs extraction. Raw audio, feature caches, bulk run weights and document-generation scripts are excluded from Git.
 
-## Baselines and findings
+## Data and references
 
-| Model family | Validation accuracy | Scope |
-| --- | ---: | --- |
-| Log-Mel statistics + logistic regression | 42.21% | One selected classical model |
-| DCT cepstral statistics + Linear SVM | 40.20% | One selected classical model |
-| CNN (`cnn_freq`) | 72.61% ± 0.25 pp | Mean ± sample SD, three training seeds |
-| CNN + BiGRU / CRNN (`crnn_freq`) | 73.87% ± 1.26 pp | Mean ± sample SD, three training seeds |
-| CRNN + channel attention | 74.37% ± 1.15 pp | Mean ± sample SD, three training seeds |
-| Frozen PANNs + linear head | 91.21% | One fixed fit; external AudioSet pretraining |
+Dataset: [official ESC-50](https://github.com/karolpiczak/ESC-50), pinned revision `33c8ce9eb2cf0b1c2f8bcf322eb349b6be34dbb6`. Retain the [CC BY-NC 3.0 license](data/ESC-50/LICENSE) and [recording credits](data/ESC-50/meta/esc50.csv).
 
-CNN and CRNN are the deep-learning baselines; logistic regression and SVM are the classical baselines. The classical input representations differ, so their score difference is not a classifier-only comparison. The selected seed101 CRNN checkpoint scores 75.13% on validation; this is distinct from its three-seed mean.
-
-Channel attention adds about 0.50 percentage points over CRNN in this development setting; its conditional source-bootstrap interval spans zero (-1.22 to +2.17 pp). All nine attention-specific training runs are complete. Across three fixed training seeds, Gaussian-noise augmentation improves CNN accuracy at 10 dB added-noise SNR from 23.37% to 61.31%; at 0 dB it reaches 25.38%. Consult the final report for every condition, macro-F1, paired differences, and limitations.
-
-These are **development-validation** results on the same 398 clips. Earlier research accessed all ESC-50 folds, so these results do not establish fresh independent confirmation, field robustness, state of the art, or production readiness. The reports keep historical test results separate from the latest validation study.
-
-## Evidence and repository scope
-
-The [summary tables and verification receipts](reports/evidence/matrix_20261028/) retain the numerical values from the completed study. The recorded waveform replay matched all **24,676 predictions** from 62 fitted models on 398 validation clips each. The retained receipts describe that historical check; this lean checkout does not contain every original model and raw run log needed to repeat the full replay.
-
-| Shared in Git | Local and ignored |
-| --- | --- |
-| Source, configs, tests, dataset metadata and licenses | Downloaded WAVs and generated feature caches |
-| Portable CNN/CRNN checkpoints and model cards | Bulk matrix weights, optimizer states, raw experiment logs |
-| Five English PDFs, all 22 scientific figures and available SVG versions | Duplicate release ZIPs and standalone package assemblies |
-| Curated summary CSVs and verification records | Historical pilot outputs, source archives, bulky training notebooks |
-| 45 byte-preserved regression files, about 3.47 MB | New experiment outputs under `results/runs/` |
-
-The [.gitignore](.gitignore) enforces this scope. The [fixture manifest](tests/historical_fixtures.json) identifies the exact historical files needed by tests. The [layout map](docs/project_layout_migration.json) records relocations, including paths printed inside older reports. Some dated engineering notes describe optional local evidence that is intentionally absent from a fresh checkout. Full-history audit and figure-regeneration commands need that original local collection; ordinary development, inference, tests, and reading the reports do not.
-
-## Provenance and licensing
-
-Current implementation lives in `src/`; frozen compatibility utilities live in `scripts/legacy/`. Keep historical evidence unchanged and record new experiments separately. The published checks were produced by the research agents and have not been independently replicated by external reviewers.
-
-Dataset: [official ESC-50](https://github.com/karolpiczak/ESC-50). Retain the [dataset license](data/ESC-50/LICENSE) and [per-recording credits](data/ESC-50/meta/esc50.csv). The dataset is distributed overall under CC BY-NC 3.0; this project does not grant additional commercial-use rights.
+Pretrained model: [official PANNs implementation](https://github.com/qiuqiangkong/audioset_tagging_cnn). The notebook and [literature review](reports/checkpoint_20261105/literature_review.md) describe the sources and implemented adaptations.

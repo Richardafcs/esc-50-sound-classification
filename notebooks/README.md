@@ -1,10 +1,7 @@
-# Notebook guide
+# Research notebook
 
-## Shared, editable templates
+[ESC50_Results.ipynb](ESC50_Results.ipynb) contains the complete English analysis, a fresh Colab PANNs extraction and linear-head fit, full result tables and all 22 saved scientific figures. Executed outputs are retained in the same notebook.
 
-- [Safe plan-mode console](templates/ESC50_Colab_Research_Console.ipynb).
-- [Full matrix controller](templates/ESC50_Matrix_Full_20261028.ipynb): can launch training on a fresh project; inspect the resource budget first.
-- [Bilingual results reader](templates/ESC50_Bilingual_Results_20261028.ipynb): redraws embedded saved results without training.
-- [Executed results reader](executed/ESC50_Bilingual_Results_20261028_output.ipynb): compact, self-contained tables and figures from the audited study.
+[Run in Google Colab](https://colab.research.google.com/github/Richardafcs/esc-50-sound-classification/blob/main/notebooks/ESC50_Results.ipynb)
 
-Bulky full-training output notebooks, pilots and archived notebooks remain local and are ignored by Git. The two [English PDF reports](../reports/README.md) carry the complete readable findings and all research figures. Use a new output directory for any new training run.
+Select a GPU runtime and run all cells. The scratch-model study is displayed from its completed experimental records; it is not retrained by this notebook. The fresh PANNs run is clearly identified separately.
