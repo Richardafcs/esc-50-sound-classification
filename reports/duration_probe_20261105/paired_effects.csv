@@ -1,0 +1,4 @@
+comparison,population,recordings,delta_pp,low_pp,high_pp
+native_minus_right_pad,native_eligible,102,5.88235294117647,-0.9803921568627451,12.745098039215685
+left_pad_minus_right_pad,native_eligible,102,-0.9803921568627451,-7.8431372549019605,5.88235294117647
+left_pad_minus_right_pad,all_short,105,-1.9047619047619049,-8.571428571428571,4.761904761904762

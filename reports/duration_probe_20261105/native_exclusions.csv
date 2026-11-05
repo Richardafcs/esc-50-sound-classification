@@ -1,0 +1,4 @@
+filename,category,samples,reason
+76187.wav,footsteps,4887,Below4960-sample architecture minimum; retained in original external benchmark
+384141.wav,clapping,4895,Below4960-sample architecture minimum; retained in original external benchmark
+384155.wav,clapping,4843,Below4960-sample architecture minimum; retained in original external benchmark

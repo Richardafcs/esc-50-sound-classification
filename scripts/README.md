@@ -2,6 +2,7 @@
 
 | Experiment | Entry point |
 | --- | --- |
+| Frozen PANNs input-duration diagnostic | `run_duration_probe.py` |
 | External mapped FSD recording evaluation | `run_external_fsd.py` |
 | Matched transfer robustness and six head fits | `run_transfer_followup.py` |
 | Frozen PANNs extraction and linear classifier | `run_panns_linear_probe.py` |

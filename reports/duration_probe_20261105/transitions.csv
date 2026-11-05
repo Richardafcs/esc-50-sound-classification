@@ -1,0 +1,4 @@
+policy,population,recordings,prediction_flips,both_correct,repairs,new_errors,both_wrong,mean_true_class_probability_change
+native,native_eligible,102,46,24,10,4,64,0.06337005309446607
+left_pad,native_eligible,102,50,21,6,7,68,-0.018586238671100905
+left_pad,all_short,105,53,21,6,8,70,-0.021817155521090575

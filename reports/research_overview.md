@@ -16,6 +16,7 @@
 | New matched robustness | PANNs LR plus three noise-CNN fits, clean/10 dB | 69.85% versus 61.56%; +8.29 pp [1.83, 14.74] | Higher absolute noisy accuracy, larger clean-to-noisy loss |
 | New matched PANNs heads | Six fixed 100-epoch fits, Identity versus ReLU | Linear 91.12%/68.76%; ReLU 89.78%/67.34%, clean/noisy | No gain for this ReLU configuration |
 | External mapped FSD evaluation | Four frozen systems, 259 recording IDs, six target categories, all 50 outputs | PANNs 45.17% versus noise-CNN mean 20.08%; difference +25.10pp | Known ESC-50 IDs excluded; pretraining and perceptual overlap unresolved |
+| Short-recording input policy | Same 102 eligible recordings, right/native/left, zero fits | Native 33.33% versus right 27.45%; +5.88pp [−0.98,+12.75]; many prediction flips | Sensitivity established; accuracy benefit and mechanism uncertain |
 
 The original 65-task matrix includes 60 neural fits, two classical fits and three stress tasks. Earlier CNN/BiGRU references overlap later records and are not extra independent replications. The six recovered earlier MLP fits and six new transfer-head fits are separate stages.
 
@@ -34,3 +35,5 @@ The [26-publication literature map](checkpoint_20261105/literature_review.md) di
 [Earlier MLP evidence](mlp_controls_20261105/README.md) · [New matched experiment](transfer_followup_20261105/README.md) · [Original matrix tables](evidence/matrix_20261028/analysis/)
 
 [External recording evaluation and error analysis](external_fsd_20261105/README.md).
+
+The bounded input-policy diagnostic is complete. Keep the original classifier and right-padding default; do not select a native/left policy from this exposed panel. See the [complete diagnostic evidence](duration_probe_20261105/README.md).

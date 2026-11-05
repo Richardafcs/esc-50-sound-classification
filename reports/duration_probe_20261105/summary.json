@@ -1,0 +1,126 @@
+{
+  "status": "completed",
+  "short_recordings": 105,
+  "primary_recordings": 102,
+  "native_excluded": 3,
+  "conditions": [
+    "right_pad",
+    "native",
+    "left_pad"
+  ],
+  "fits": 0,
+  "baseline_replay": {
+    "recordings": 105,
+    "prediction_changes": 0,
+    "max_probability_difference": 3.012842269201066e-05,
+    "tolerance": 0.001
+  },
+  "negative_control": {
+    "recordings": 10,
+    "prediction_changes": 0,
+    "max_probability_difference": 1.4581847681660598e-05,
+    "tolerance": 0.001
+  },
+  "primary_effect": {
+    "comparison": "native_minus_right_pad",
+    "population": "native_eligible",
+    "recordings": 102,
+    "delta_pp": 5.88235294117647,
+    "low_pp": -0.9803921568627451,
+    "high_pp": 12.745098039215685
+  },
+  "metrics": [
+    {
+      "policy": "right_pad",
+      "population": "all_short",
+      "recordings": 105,
+      "correct": 29,
+      "accuracy": 0.2761904761904762,
+      "macro_recall": 0.3231150793650794,
+      "macro_f1": 0.4420899470899471,
+      "outside_six_rate": 0.7142857142857143
+    },
+    {
+      "policy": "right_pad",
+      "population": "native_eligible",
+      "recordings": 102,
+      "correct": 28,
+      "accuracy": 0.27450980392156865,
+      "macro_recall": 0.3194444444444444,
+      "macro_f1": 0.4398435702783529,
+      "outside_six_rate": 0.7156862745098039
+    },
+    {
+      "policy": "native",
+      "population": "native_eligible",
+      "recordings": 102,
+      "correct": 34,
+      "accuracy": 0.3333333333333333,
+      "macro_recall": 0.342948717948718,
+      "macro_f1": 0.45921822020344183,
+      "outside_six_rate": 0.5784313725490197
+    },
+    {
+      "policy": "left_pad",
+      "population": "all_short",
+      "recordings": 105,
+      "correct": 27,
+      "accuracy": 0.2571428571428571,
+      "macro_recall": 0.270260989010989,
+      "macro_f1": 0.3890336953494848,
+      "outside_six_rate": 0.7238095238095238
+    },
+    {
+      "policy": "left_pad",
+      "population": "native_eligible",
+      "recordings": 102,
+      "correct": 27,
+      "accuracy": 0.2647058823529412,
+      "macro_recall": 0.2739316239316239,
+      "macro_f1": 0.39417989417989413,
+      "outside_six_rate": 0.7156862745098039
+    }
+  ],
+  "transitions": [
+    {
+      "policy": "native",
+      "population": "native_eligible",
+      "recordings": 102,
+      "prediction_flips": 46,
+      "both_correct": 24,
+      "repairs": 10,
+      "new_errors": 4,
+      "both_wrong": 64,
+      "mean_true_class_probability_change": 0.06337005309446607
+    },
+    {
+      "policy": "left_pad",
+      "population": "native_eligible",
+      "recordings": 102,
+      "prediction_flips": 50,
+      "both_correct": 21,
+      "repairs": 6,
+      "new_errors": 7,
+      "both_wrong": 68,
+      "mean_true_class_probability_change": -0.018586238671100905
+    },
+    {
+      "policy": "left_pad",
+      "population": "all_short",
+      "recordings": 105,
+      "prediction_flips": 53,
+      "both_correct": 21,
+      "repairs": 6,
+      "new_errors": 8,
+      "both_wrong": 70,
+      "mean_true_class_probability_change": -0.021817155521090575
+    }
+  ],
+  "inference_seconds": 23.979857089999996,
+  "environment": {
+    "python": "3.13.16",
+    "numpy": "2.4.6",
+    "torch": "2.11.0+cu130",
+    "gpu": "Tesla T4"
+  }
+}

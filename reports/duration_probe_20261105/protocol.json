@@ -1,0 +1,52 @@
+{
+  "stage": "Fixed before duration-policy model predictions",
+  "question": "Does native-duration input alter or improve the existing frozen PANNs classifier on the architecture-compatible short external subset?",
+  "status_of_panel": "Previously exposed FSD subset; explanatory diagnostic, not independent validation or model selection",
+  "hypothesis": "Native input improves paired recording accuracy relative to original right-zero-pad5s",
+  "weakening_evidence": "No improvement, more new errors than repairs, or little prediction sensitivity",
+  "model": "Existing frozen Cnn14_16k backbone, original train-only StandardScaler and original LR export",
+  "model_source": "https://github.com/qiuqiangkong/audioset_tagging_cnn/blob/master/pytorch/models.py",
+  "fit_count": 0,
+  "recordings": 105,
+  "primary_native_eligible": 102,
+  "native_excluded": 3,
+  "minimum_native_samples": 4960,
+  "minimum_derivation": "Centered512-sampleSTFT withhop160 has1+floor(N/160)frames; five2x temporalpool stages needatleast32frames; N>=4960(.31s). ReflectpaddingrequiresN>256, already satisfied.",
+  "conditions": {
+    "right_pad": "Original16k waveform right-zero-pad to80000samples; original baseline",
+    "native": "Original waveform at actual length; no padding/truncation; only>=4960samples",
+    "left_pad": "Original16k waveform left-zero-pad to80000samples; prespecified secondary placement control"
+  },
+  "outputs": "All50 ESC50 classes compete; no subset mask, threshold, amplitude normalization, augmentation or classifier adjustment",
+  "primary_estimand": "Native accuracy minus right-pad accuracy on the same102 eligible recordings, percentage points",
+  "secondary": [
+    "Right/left agreement onall105",
+    "Native/right prediction flips, repairs/newerrors and true-class probability changes",
+    "Outside-six errors and six-class recalls on102",
+    "Results for3architecture-excluded recordings underpadded policies only",
+    "Left-minus-right pairedcontrast also shown on same102eligible recordings"
+  ],
+  "negative_control": "First80000samples of10long recordings with smallestnumeric FreesoundIDs; compare fixed/native codepaths on IDENTICAL five-secondinputs. These are not prior whole-recording aggregate predictions.",
+  "baseline_replay": "Firstrecompute all105right-pad labels and compare existing PANNs prediction CSV; stopiflabels differ before native/left analysis",
+  "bootstrap": {
+    "resamples": 4000,
+    "seed": 20261107,
+    "unit": "unique recordingID",
+    "paired": true,
+    "interval": "95%percentile; conditional fixedfits, exposedrecordings, deterministicinput policies"
+  },
+  "budget": {
+    "hardware": "authorizedColabT4",
+    "max_inference_minutes": 30,
+    "purchases": false
+  },
+  "stop": "Onepass perfixedcondition; no other padding/native variants, learning-rate/architecture search or hybrid259recording score. Original externalbenchmark unchanged; no automaticdeployment-policy replacement.",
+  "limitations": [
+    "Length changes boundary behavior and temporalpooling statistics, notjustamountofzero-valuedinput",
+    "An improvement on exposed102recordings doesnotestablish unseen-data generalization",
+    "Three architecture-incompatible clips stayinoriginal259benchmark and areexplicitlyexcludedonlyfromnative contrast",
+    "Secondary comparisons descriptive withoutfamilywise correction; true-class confidence is not probability calibration"
+  ],
+  "baseline_probability_replay": "Compare all50 saved original probability columns on105 short recordings; maximum absolute difference tolerance0.001, plus zeroargmax changes. Stopifnotmet.",
+  "negative_control_tolerance": "Zeroargmaxchanges and maximum absolute probability difference<=0.001 between fixed/native paths"
+}

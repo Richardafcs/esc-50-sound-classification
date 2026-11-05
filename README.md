@@ -4,11 +4,11 @@ CNN, BiGRU, attention, audio augmentation and frozen PANNs comparisons on ESC-50
 
 ## Results notebooks
 
-Latest: [External recording evaluation](notebooks/ESC50_External_Transfer.ipynb) · [Transfer robustness and matched MLP heads](notebooks/ESC50_Transfer_Followup.ipynb) · [Run follow-up in Colab](https://colab.research.google.com/github/Richardafcs/esc-50-sound-classification/blob/main/notebooks/ESC50_Transfer_Followup.ipynb) · [Research overview](reports/research_overview.md)
+Latest: [Short-recording input-policy diagnostic](notebooks/ESC50_Duration_Diagnostic.ipynb) · [External recording evaluation](notebooks/ESC50_External_Transfer.ipynb) · [Transfer robustness and matched MLP heads](notebooks/ESC50_Transfer_Followup.ipynb) · [Run follow-up in Colab](https://colab.research.google.com/github/Richardafcs/esc-50-sound-classification/blob/main/notebooks/ESC50_Transfer_Followup.ipynb) · [Research overview](reports/research_overview.md)
 
 [Open the complete notebook](notebooks/ESC50_Results.ipynb) · [Run in Google Colab](https://colab.research.google.com/github/Richardafcs/esc-50-sound-classification/blob/main/notebooks/ESC50_Results.ipynb)
 
-The notebook displays model metrics, paired comparisons, all 30 scientific figures, noise robustness, temporal interventions, feature experiments, per-class errors, the full experiment ledger and the literature review. It can optionally repeat the original frozen PANNs extraction and fit. The separate follow-up notebook executes the matched robustness and fixed-budget head experiment. Previously completed CNN/CRNN experiments are identified separately.
+The notebook displays model metrics, paired comparisons, all 33 scientific figures, noise robustness, temporal interventions, feature experiments, per-class errors, the full experiment ledger and the literature review. It can optionally repeat the original frozen PANNs extraction and fit. The separate follow-up notebook executes the matched robustness and fixed-budget head experiment. Previously completed CNN/CRNN experiments are identified separately.
 
 ## Project layout
 
@@ -23,7 +23,7 @@ reports/          Compact numerical evidence and original figures
 docs/             Methods and model descriptions
 ```
 
-All three notebooks retain executed Colab outputs. Model inference used Tesla T4; the final comprehensive report was rerun on Colab CPU from saved evidence. The earlier PANNs extraction/refit reproduced 363/398 correct. The new fixed study completed matched clean/10 dB inference and six 100-epoch head fits in 88.73 seconds, excluding setup/downloads.
+All four notebooks retain executed Colab outputs. Model inference used Tesla T4; the latest comprehensive report was executed on Colab from saved evidence. The earlier PANNs extraction/refit reproduced 363/398 correct. The new fixed study completed matched clean/10 dB inference and six 100-epoch head fits in 88.73 seconds, excluding setup/downloads.
 
 ## Main findings
 
@@ -44,13 +44,19 @@ At 10 dB, frozen PANNs + the existing logistic head achieves **69.85%**, versus 
 
 The new parameter-matched PANNs heads use 2048→49→50 and 102,901 parameters. Factorized linear averages 91.12% clean/68.76% noisy; ReLU averages 89.78%/67.34%. There is no observed gain from this ReLU configuration. Earlier pooled/tokenwise CNN-MLP controls (72.28%/69.68%) have been restored to the complete comparison.
 
-All original 22 scientific figures, four transfer-head figures and four external-evaluation figures are retained. See the [experiment evidence](reports/transfer_followup_20261105/README.md) for all metrics, paired intervals and limitations.
+All original 22 scientific figures, four transfer-head figures, four external-evaluation figures and three input-policy diagnostic figures are retained. See the [experiment evidence](reports/transfer_followup_20261105/README.md) for all metrics, paired intervals and limitations.
 
 ## External recording evaluation
 
 [Executed external notebook](notebooks/ESC50_External_Transfer.ipynb) · [Run in Colab](https://colab.research.google.com/github/Richardafcs/esc-50-sound-classification/blob/main/notebooks/ESC50_External_Transfer.ipynb)
 
 With all 50 output labels active, frozen PANNs achieves **45.17% accuracy** on 259 FSD recordings in six mapped categories, versus **20.08%** for the three-fit noise-CNN mean. The paired difference is **+25.10 pp [+19.82, +30.63]**, conditional recording-bootstrap 95% interval. Five known ESC-50 recording IDs were excluded before inference. No training or noise injection occurs. This is a mapped external subset, not full-50-class confirmation; perceptual duplicates and pretraining exposure remain unresolved. [Protocol and evidence](reports/external_fsd_20261105/README.md).
+
+## Short-recording input policy
+
+[Executed diagnostic notebook](notebooks/ESC50_Duration_Diagnostic.ipynb) · [Protocol and evidence](reports/duration_probe_20261105/README.md)
+
+On the same 102 eligible short recordings, original right-padding yields **27.45%**, native duration **33.33%**, and left-padding **26.47%** accuracy. Native minus right is **+5.88 pp [−0.98, +12.75]**; its accuracy gain is uncertain. Native and left-padding change 46 and 50 predictions, respectively. This supports input-policy sensitivity without identifying a single internal padding mechanism. The original external benchmark and default inference policy are retained; no model is fitted or selected.
 
 ## Run locally
 

@@ -23,3 +23,5 @@ All folds have historical exposure and AudioSet/ESC-50 overlap has not been comp
 [Complete executed notebook](../../notebooks/ESC50_Results.ipynb). Retain ESC-50 licensing and recording credits; the small head export does not grant rights to the external backbone or dataset.
 
 A fixed external check on 259 FSD recordings in six mapped categories gives 45.17% accuracy with all 50 output labels active. Known ESC-50 recording IDs are excluded; broader independence remains unresolved. See the [external evaluation](../../reports/external_fsd_20261105/README.md). This low absolute external performance limits deployment claims.
+
+A follow-up input-policy diagnostic on 102 eligible short FSD recordings gives native 33.33% versus original right-padding 27.45%, paired difference +5.88pp [−0.98,+12.75]. The accuracy improvement is uncertain, so the default remains unchanged. [Diagnostic evidence](../../reports/duration_probe_20261105/README.md).
