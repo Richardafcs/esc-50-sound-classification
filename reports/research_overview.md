@@ -28,7 +28,7 @@ The evaluated research CNN has 49,058 parameters. The separate team implementati
 
 The controlled noise-adaptation cycle is complete. Recorded-background exposure improves designated-foreground recovery on the reserved recorded panel, while giving up much of the Gaussian head's matched-noise benefit. Report this tradeoff alongside clean performance, the original architecture comparison and all negative head/input-policy findings. No universal default, isolated acoustic mechanism or blind foreground-generalization claim follows.
 
-The next question is either portability to additional foreground/background sources or a controlled investigation of noise structure. It is not automatically another attention or MLP search. [Research scope and continuation choices](research_scope_and_next_steps.md) · [Latest executed evidence](noise_distribution_20261107/README.md).
+The current delivery is the completed course checkpoint. Use the [English course report](checkpoint_20261105/Checkpoint_Report_EN.md) as the primary narrative. The [extended research scope](research_scope_and_next_steps.md) and [latest experimental evidence](noise_distribution_20261107/README.md) remain supplementary; no additional research is scheduled for this delivery.
 
 ## Reading and implementation
 

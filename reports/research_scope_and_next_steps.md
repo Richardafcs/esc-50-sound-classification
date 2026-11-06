@@ -1,5 +1,8 @@
 # Research Question, Completed Findings and Future Directions
 
+> Current delivery scope: complete the supplied COMP9444 course checkpoint. The [course report](checkpoint_20261105/Checkpoint_Report_EN.md) is the primary deliverable. The material below records completed extensions and possible future questions; these are not active tasks or additional course requirements.
+
+
 Updated 7 November 2026, after the controlled training-noise-distribution experiment.
 
 ## Research identity

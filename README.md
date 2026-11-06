@@ -2,15 +2,17 @@
 
 CNN, BiGRU, attention, audio augmentation and frozen PANNs comparisons on ESC-50.
 
-The study asks how architecture, targeted noise augmentation and frozen pretrained features affect classification accuracy, noise sensitivity and performance on other recordings. Its numerical baseline is the independently implemented research CNN.
+This project completes the supplied COMP9444 model-improvement checkpoint using an independent CNN baseline, implemented improvements and a pretrained alternative. The course report is the main submission narrative; executed notebooks provide the supporting evidence.
 
-The completed noise-transfer study compares matched clean-only and clean/Gaussian-trained linear heads on frozen PANNs features. Across six fixed recorded-background conditions, the adapted-minus-clean difference is **+1.05 pp [-0.54, +2.59]**, conditional 95% source-bootstrap interval; clean change is **+0.75 pp**. [Executed notebook](notebooks/ESC50_Noise_Transfer.ipynb) · [Protocol and findings](reports/noise_transfer_20261106/README.md).
+## Course checkpoint — completed
 
-## Research question and completed continuation
+The course deliverable analyzes the CNN baseline, implements CRNN/attention/augmentation improvements, evaluates a pretrained alternative, reports appropriate metrics, and compares positive and negative results. All five supplied checkpoint activities are covered by completed experiments.
 
-The study compares model choices and asks how noise-training benefits transfer across acoustic conditions. The latest fixed-encoder experiment fits one recorded-background LR head and evaluates it with the existing clean and Gaussian heads on 36 predefined conditions from six reserved recordings. Recorded-minus-Gaussian accuracy changes by **+1.36 pp [+0.41, +2.32]**, conditional 95% target-source interval; clean difference is **-0.25 pp**. Recorded exposure improves accuracy over Gaussian exposure on the fixed recorded panel, while Gaussian-10-dB accuracy falls by **10.30 pp** relative to the Gaussian head.
+**Submission entry:** [English checkpoint report](reports/checkpoint_20261105/Checkpoint_Report_EN.md) · [Executed results notebook](notebooks/ESC50_Results.ipynb) · [Open in Colab](https://colab.research.google.com/github/Richardafcs/esc-50-sound-classification/blob/main/notebooks/ESC50_Results.ipynb)
 
-[Executed noise-distribution notebook](notebooks/ESC50_Noise_Distribution.ipynb) · [Open in Colab](https://colab.research.google.com/github/Richardafcs/esc-50-sound-classification/blob/main/notebooks/ESC50_Noise_Distribution.ipynb) · [Protocol and results](reports/noise_distribution_20261107/README.md) · [Source review](reports/noise_distribution_20261107/literature_review.md) · [Research scope](reports/research_scope_and_next_steps.md)
+The core results are CNN 72.61%, CNN–BiGRU 73.87%, channel attention 74.37%, and frozen PANNs plus a linear classifier 91.21% development accuracy. The report explains the shared evaluation, macro-F1, robustness, complexity and limitations. The course checkpoint is complete; no further experiments are planned for this delivery.
+
+Completed noise-transfer, external-recording and input-policy studies remain available as supporting evidence. They are optional extensions, not outstanding course requirements. [Additional completed experiments](reports/research_overview.md).
 
 ## Results notebooks
 
@@ -54,7 +56,7 @@ At 10 dB, frozen PANNs + the existing logistic head achieves **69.85%**, versus 
 
 The new parameter-matched PANNs heads use 2048→49→50 and 102,901 parameters. Factorized linear averages 91.12% clean/68.76% noisy; ReLU averages 89.78%/67.34%. There is no observed gain from this ReLU configuration. Earlier pooled/tokenwise CNN-MLP controls (72.28%/69.68%) have been restored to the complete comparison.
 
-All original 22 scientific figures, four transfer-head figures, four external-evaluation figures three input-policy diagnostic figures and three Gaussian-to-recorded-noise figures are retained. See the [experiment evidence](reports/transfer_followup_20261105/README.md) for all metrics, paired intervals and limitations.
+All 40 scientific figures, including the four training-noise-distribution figures, are retained. See the [experiment evidence](reports/transfer_followup_20261105/README.md) for all metrics, paired intervals and limitations.
 
 ## External recording evaluation
 
