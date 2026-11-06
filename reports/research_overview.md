@@ -17,18 +17,22 @@
 | New matched PANNs heads | Six fixed 100-epoch fits, Identity versus ReLU | Linear 91.12%/68.76%; ReLU 89.78%/67.34%, clean/noisy | No gain for this ReLU configuration |
 | External mapped FSD evaluation | Four frozen systems, 259 recording IDs, six target categories, all 50 outputs | PANNs 45.17% versus noise-CNN mean 20.08%; difference +25.10pp | Known ESC-50 IDs excluded; pretraining and perceptual overlap unresolved |
 | Short-recording input policy | Same 102 eligible recordings, right/native/left, zero fits | Native 33.33% versus right 27.45%; +5.88pp [−0.98,+12.75]; many prediction flips | Sensitivity established; accuracy benefit and mechanism uncertain |
+| Gaussian readout adaptation | Two converged heads, fixed encoder/objective | Gaussian 10 dB 69.85%→83.92%; initial recorded mean +1.05pp [−0.54,2.59] | Matched-noise benefit, uncertain transfer on the initial panel |
+| Recorded readout adaptation | One converged head; six reserved recordings × two windows × three SNRs | Recorded grid 84.79% versus Gaussian head 83.43%; +1.36pp [0.41,2.32]; Gaussian 10 dB −10.30pp | Conditional training-distribution effect with a substantial cross-noise tradeoff |
 
 The original 65-task matrix includes 60 neural fits, two classical fits and three stress tasks. Earlier CNN/BiGRU references overlap later records and are not extra independent replications. The six recovered earlier MLP fits and six new transfer-head fits are separate stages.
 
-The evaluated research CNN has 49,058 parameters. The original team-repository CNN has 1,368,386 parameters and no committed result evidence; no research score is assigned to it.
+The evaluated research CNN has 49,058 parameters. The separate team implementation is outside this study.
 
 ## Current decision
 
-Retain the existing PANNs logistic classifier as the strongest observed transfer system among the tested heads. Keep noise augmentation's matched-Gaussian result and all MLP/attention negative findings in the report. Describe absolute noisy accuracy, clean-to-noisy loss and conditional error transitions separately. Avoid additional architecture/width/learning-rate searches on the same 398 recordings.
+The controlled noise-adaptation cycle is complete. Recorded-background exposure improves designated-foreground recovery on the reserved recorded panel, while giving up much of the Gaussian head's matched-noise benefit. Report this tradeoff alongside clean performance, the original architecture comparison and all negative head/input-policy findings. No universal default, isolated acoustic mechanism or blind foreground-generalization claim follows.
 
-The mapped external-recording evaluation is now complete, with explicit recording-ID exclusions. It covers six target categories under a different duration/aggregation protocol; it does not establish full 50-class or pretraining-disjoint generalization. Realistic interfering-noise evaluation and broader independent-source coverage remain distinct next questions.
+The next question is either portability to additional foreground/background sources or a controlled investigation of noise structure. It is not automatically another attention or MLP search. [Research scope and continuation choices](research_scope_and_next_steps.md) · [Latest executed evidence](noise_distribution_20261107/README.md).
 
 ## Reading and implementation
+
+The [focused noise-distribution source review](noise_distribution_20261107/literature_review.md) adds primary robustness and recorded-interference context.
 
 The [26-publication literature map](checkpoint_20261105/literature_review.md) distinguishes reading depth, original task, and implemented adaptation. PANNs' frozen one-/three-layer transfer experiments motivate the classifier question; this project uses a different 16 kHz checkpoint, split and optimization recipe. Published benchmark scores are not included as our measured predictions.
 

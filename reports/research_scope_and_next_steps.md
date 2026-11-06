@@ -1,82 +1,76 @@
-# Research Question, Findings and Next Phase
+# Research Question, Completed Findings and Future Directions
 
-Updated 6 November 2026, after completing the matched PANNs noise-adaptation experiment.
+Updated 7 November 2026, after the controlled training-noise-distribution experiment.
 
 ## Research identity
 
-This is a comparative environmental-sound classification study that has developed into a focused investigation of noise adaptation. Its central question is:
-
 **Which model and training choices improve environmental sound classification under the available labelled-data regime, and how far do their benefits transfer across acoustic conditions?**
 
-Three subquestions organize the work:
+The project began with CNN/RNN environmental-sound classification and developed into a comparative study of architecture, pretrained representations and noise adaptation. The independently implemented 49,058-parameter CNN is the original numerical baseline. The latest controlled experiment uses the existing Gaussian-adapted PANNs readout as its primary comparator. These are different comparison levels, not conflicting baseline definitions. The separate team implementation is outside this study.
 
-1. Do recurrent modelling and attention provide useful gains over the independently implemented CNN, considering the available capacity controls?
-2. How does a frozen pretrained audio system compare with the evaluated scratch-trained alternatives?
-3. Which improvements from noise-aware training remain evident when the interference distribution changes?
+Three questions organize the completed evidence:
 
-The architecture experiments answer the original CNN/RNN brief. The controlled readout experiments provide a sharper continuation question. This organization is retrospective and consistent with the project's evolution; it does not imply that every experiment was preregistered together.
+1. Do recurrence and attention provide useful gains over the independent CNN, considering the available capacity controls?
+2. How does a frozen pretrained audio system compare with the tested scratch-trained alternatives?
+3. How does the training-interference distribution affect recognition when the evaluation interference changes?
 
-The numerical baseline is the independent 49,058-parameter research CNN. The separate team implementation is outside this study. The supplied course checkpoint is substantially covered, but course completion is not a reason to terminate a worthwhile research question. Conversely, a request to continue research is not evidence that additional model complexity is useful.
+This organization reflects the actual evolution of the project. The experiments were not all preregistered together. The contribution is empirical comparison and characterization of transfer limits, not a novel architecture or a state-of-the-art benchmark claim.
 
-## What has been established
+## What the completed studies establish
 
-| Finding | Evidence | Claim boundary |
+| Stage | Observed evidence | Interpretation boundary |
 | --- | --- | --- |
-| The evaluated recurrent/attention modifications produce modest development differences | CNN 72.61%, BiGRU 73.87%, channel attention 74.37%, over three fixed fits; attention's additional gain is uncertain | No universal architecture ranking, isolated temporal mechanism or proof that attention cannot help |
-| The pretrained system has the largest observed clean-accuracy advantage | Frozen PANNs plus the historical linear head reaches 91.21%; the external six-category panel gives 45.17% versus noise-CNN mean 20.08% | Pretraining, capacity, frontend and architecture change together; external coverage and pretraining independence are limited |
-| Gaussian sensitivity can be substantially reduced without updating PANNs | Matched clean versus Gaussian-adapted heads give 69.85% versus 83.92% at 10 dB; difference +14.07 pp, conditional interval [10.20, 18.32] | Shows a correctable component of readout error in this setting, not an invariant representation or information-loss mechanism |
-| Broad recorded-background benefit remains unresolved | Six-condition recorded mean 89.07% versus 90.12%; primary difference +1.05 pp, conditional interval [-0.54, 2.59] | An uncertain difference is neither equivalence nor proof of failed transfer |
+| CNN, BiGRU and attention | Three-fit mean accuracy 72.61%, 73.87% and 74.37%; attention adds an uncertain 0.50 pp | Modest development differences, not universal architectural or temporal-mechanism claims |
+| Capacity and head controls | Pooled/token MLP means 72.28%/69.68%; matched PANNs ReLU heads did not improve the evaluated linear alternative | No evidence requiring added nonlinearity in these configurations; not a universal MLP rejection |
+| Frozen PANNs alternative | Historical linear head reaches 91.21% accuracy and 91.10% macro-F1 | Full-system comparison changes pretraining, capacity, frontend and architecture together; no isolated pretraining effect |
+| External six-category diagnostic | PANNs 45.17% versus noise-CNN mean 20.08% on 259 mapped recording IDs, all 50 outputs active | Narrow exposed external panel; not an independent full-50-class or pretraining-disjoint benchmark |
+| Duration/input intervention | Native versus right-padding difference +5.88 pp, interval [−0.98, 12.75] on 102 eligible recordings | Input sensitivity, without established accuracy benefit or a causal padding mechanism |
+| Matched Gaussian adaptation | Frozen-PANNs clean versus Gaussian heads: 69.85% versus 83.92% at shared Gaussian 10 dB; +14.07 pp [10.20, 18.32] | A readout-level intervention repairs errors under this tested noise condition; it does not create a noise-invariant encoder |
+| Initial recorded transfer | Gaussian-adapted minus clean mean +1.05 pp [−0.54, 2.59] across six fixed 10-dB segments | Uncertain transfer on that panel, not equivalence or proof of failure |
+| New recorded-background adaptation | Recorded versus Gaussian heads: 84.79% versus 83.43% across the reserved recorded grid; +1.36 pp [0.41, 2.32] | Positive conditional training-distribution effect, accompanied by a substantial Gaussian tradeoff |
 
-The matched heads change clean accuracy from 91.21% to 91.96%, a +0.75 pp difference with interval [-0.51, 2.06]. This does not establish clean superiority or noninferiority. The original default classifier remains available; the adapted head is supported as a candidate for the tested Gaussian condition, not as a universally preferred replacement.
+Intervals refer to their respective stated protocols. They do not all describe the same uncertainty or population. The historical architecture fits, augmentation fits, head fits and inference-only diagnostics are not interchangeable replications.
 
-Sources: [architecture comparison](checkpoint_20261105/model_comparison.csv), [matched transfer/head study](transfer_followup_20261105/README.md), [external evaluation](external_fsd_20261105/README.md), [completed noise-adaptation experiment](noise_transfer_20261106/README.md).
+Sources: [complete executed notebook](../notebooks/ESC50_Results.ipynb), [original comparison](checkpoint_20261105/model_comparison.csv), [head controls](transfer_followup_20261105/README.md), [external evaluation](external_fsd_20261105/README.md), [duration diagnostic](duration_probe_20261105/README.md), [Gaussian adaptation](noise_transfer_20261106/README.md), [new distribution comparison](noise_distribution_20261107/README.md).
 
-## What the new result changes
+## The decisive new comparison
 
-The missing frozen-PANNs/noise-adaptation comparison has now been completed. Repeating the same request for more attention, another MLP or a larger encoder would bypass the question left by that experiment.
+The latest question was fixed before its new fit and predictions: with the representation and linear objective unchanged, does replacing Gaussian training interference with recorded backgrounds improve recognition under other recorded backgrounds?
 
-The recorded panel was much less damaging to the clean-trained head than Gaussian noise at the same 10 dB: its clean-to-recorded mean loss is approximately 2.14 pp, compared with 21.36 pp for Gaussian. These are descriptive differences computed from the saved accuracies. Equal waveform SNR does not make the tested conditions equally difficult. This does not invalidate the fixed-10-dB comparison, prove a ceiling, or identify why transfer is uncertain.
+Exactly one new recorded-adapted logistic head was fitted. It shares the frozen PANNs encoder, clean-training scaler, 1,200 foreground targets, C=1 objective and total training weight with the existing Gaussian head. It reuses the exact saved per-target training SNR values. Both adapted heads allocate 0.50 weight to clean and 0.25 to each of two waveform variants; total weight is 1,200. The noise family is the intended intervention.
 
-The panel contains only three background recordings and six fixed segments, crossed with the same 398 target clips. It does not provide 2,388 independent target recordings or a representative sample of all acoustic environments. Target-source bootstrap intervals condition on the chosen backgrounds and fitted models. Backgrounds can contain competing events; the label denotes the designated foreground recording, not all events in a scene.
+Training and evaluation use six different DEMAND recordings each, with one recording from each of six metadata categories per role. Previously exposed NRIVER, OHALLWAY and TCAR are excluded. Evaluation uses two fixed windows per recording and 0/10/20 dB, fully crossed with the same 398 development targets. The 14,328 mixtures contain 398 foreground clips from 295 sources, not 14,328 independent recordings. Full settings are in the [fixed protocol](noise_distribution_20261107/protocol.json).
 
-All official ESC-50 folds and the existing external panel have historical exposure. New-target generalization and conditional transfer to new background sources are separate claims. The latter can be studied without inventing a requirement to collect an untouched full-50-class dataset. The former requires additional target-source evidence, with its own label and exposure protocol.
+| Evaluation | Clean-trained LR | Gaussian-adapted LR | Recorded-adapted LR |
+| --- | ---: | ---: | ---: |
+| Clean | 91.21% | 91.96% | 91.71% |
+| Gaussian 10 dB | 69.85% | 83.92% | 73.62% |
+| Reserved recorded grid | 82.88% | 83.43% | 84.79% |
 
-## The next research question
+**The main finding is a distribution-dependent tradeoff.** Recorded training improves the fixed recorded panel over Gaussian training by **+1.36 pp [0.41, 2.32]**, but loses **10.30 pp [6.95, 13.84]** at Gaussian 10 dB relative to the Gaussian head. Their clean difference is −0.25 pp [−1.86, 1.45], which does not establish clean equivalence or noninferiority. The recorded head retains some Gaussian benefit over clean training (+3.77 pp); it simply does not retain the Gaussian-trained head's full benefit.
 
-**With the representation and linear-classifier objective fixed, how does Gaussian versus recorded-background training exposure affect recognition under previously unseen recorded interference?**
+Recorded-grid mean per-condition macro-F1 also improves, from 83.78% to 85.18%, and mean NLL falls from 0.772 to 0.699. All six recording-level mean differences are positive; leave-one-recording-out point estimates range from +1.09 to +1.52 pp. These are consistency diagnostics within the selected panel, not independent confirmations or environmental-population inference. The apparently larger gain at lower SNR is descriptive, not a confirmed interaction.
 
-This is a question about the **training-noise distribution**. A recorded-versus-Gaussian comparison also changes spectral structure, temporal structure and possibly diversity. It cannot isolate diversity or coverage breadth alone. It is an established-method comparison, not a proposed new architecture.
+The paired primary interval resamples 295 foreground source groups after retaining all conditions within clips. It conditions on the fitted heads, augmentation realization and selected background panel. It does not cover new training draws or future environments. Foreground targets remain historically exposed; the background holdout concerns adaptation-source identities, not verified independence from AudioSet pretraining.
 
-### Minimal controlled continuation
+## What remains unexplained
 
-| System | Status | Role |
-| --- | --- | --- |
-| Clean-trained PANNs linear head | Completed | Reference |
-| Gaussian-adapted PANNs linear head | Completed | Existing noise-training comparator |
-| Recorded-background-adapted PANNs linear head | Not fitted | New intervention |
+Gaussian-to-recorded substitution changes spectrum, temporal structure, event content and source diversity together. The intervention therefore does not isolate any one of them. PSD summaries characterize the selected background signals; they do not prove energetic masking, informational masking or semantic shortcut reliance. A frozen encoder also precludes claiming that the new head learned an invariant representation.
 
-Keep the frozen encoder, class mapping, target split, clean-training scaler, classifier family, regularization and total per-target training weight fixed. Match the augmentation weight, number of training variants and training SNR exposure to the Gaussian comparator. Only the training-noise distribution should intentionally change. Existing training-exposure records make the Gaussian SNR assignments inspectable.
+Backgrounds can contain other ESC-50 events. The task is recovery of the designated foreground label, including at 0 dB, rather than complete polyphonic tagging or a guarantee that one event is perceptually dominant. No listening-based neutrality screening was performed. Equal full-window SNR does not mean equal perceptual difficulty, and these additive mixtures do not reproduce all aspects of naturally recorded scenes.
 
-Reserve new background recordings/environments for evaluation before fitting the new head or viewing its predictions. Different channels or time cuts from a training recording do not constitute independent environments. The six already-exposed diagnostic segments must not be relabelled as a fresh evaluation panel.
+The largest observed performance differences come from choosing the pretrained system and changing the training exposure, while the tested attention and nonlinear-head changes have less convincing incremental evidence. This motivates the study's emphasis; it is not proof that attention or fine-tuning cannot help.
 
-Use a predefined SNR grid and report the full degradation curves, clean results and background-specific results. Do not choose evaluation SNR from final accuracy in order to force equal damage. Any optional severity calibration must use separately designated calibration data and define a different estimand explicitly.
+## Completion and worthwhile continuation
 
-Before execution, fix the background-source roles, foreground-label semantics, mixture rule, SNR grid, primary weighting over targets/conditions, interval scope, convergence handling and stopping rule. No arbitrary practical gain threshold or acceptable clean-loss margin is supplied here. Exact background choices and the next execution protocol have not yet been fixed, and no new head is trained during this assessment.
+The original checkpoint now has a completed baseline analysis, implemented improvements and alternatives, appropriate metrics, paired comparisons and a discussion of favorable and unfavorable findings. This experimental cycle is complete. All **40 scientific figures** remain in the complete executed notebook, with the new four also available as editable plotting code in the dedicated notebook. No additional fit or model search was triggered by the result.
 
-### Decision value and stopping
+Completion of this cycle does not mean every research question is resolved. The next question depends on the intended contribution:
 
-- **A recorded-training advantage on held-out backgrounds:** supports a useful training-distribution intervention within this fixed system. It does not prove that diversity alone caused the gain, that the encoder is invariant, or that the result holds for new target sources.
-- **An uncertain or unfavorable difference:** means this particular intervention has not demonstrated an advantage under the specified protocol. It does not establish equivalence, irreversible information loss or the necessity of fine-tuning.
-- **A clean/noisy trade-off:** must remain visible; choosing a default requires an actual operating objective rather than a favorable pooled score.
+- **Portability:** Evaluate the three existing heads on independently sourced foregrounds and additional background recordings. This tests whether the observed tradeoff persists beyond exposed targets. A carefully mapped partial-class study can be useful if its claims remain partial; a fresh 50-class dataset is not a blanket prerequisite for further research.
+- **Mechanism:** Compare original recorded backgrounds with phase-randomized, PSD-matched surrogates while fixing SNR, source assignment and training objective. This can investigate sensitivity beyond the preserved power spectrum, but does not isolate semantic or perceptual masking. Reusing current panels would be exploratory, rather than newly blinded confirmation.
+- **Engineering tradeoff:** Mixed Gaussian/recorded training is now a motivated candidate, but requires an explicit target operating distribution and matched augmentation budget. The present results do not show that it preserves both advantages. There is no justified universal default without such an objective.
 
-Complete one fixed comparison and report the result regardless of direction. Do not expand architectures, backgrounds or SNR conditions in response to the evaluation score. Encoder fine-tuning becomes a separate future question if evidence and an intended use justify changing the representation. New-target-only inference would address another generalization axis; it is not a substitute for this controlled contrast.
+Another attention sweep, MLP search or encoder fine-tuning run would answer a different question and needs its own hypothesis and controls. None is required to finish the current report, and an unfavorable or uncertain result is not by itself evidence that a larger model is necessary.
 
-## How the existing research should be presented
-
-The main report should establish the baseline and evaluation population, summarize the architectural comparisons, introduce the pretrained alternative, present controlled noise training/readout adaptation, and explain the transfer limits. The recorded-background primary interval belongs in the main argument alongside the positive Gaussian result.
-
-Capacity controls should appear where they constrain architectural interpretation. Full frontend sweeps, attention variants, head variants, token-order interventions, duration/padding diagnostics and segment-level tables belong in supporting sections. All **36 scientific figures** remain in the [complete executed notebook](../notebooks/ESC50_Results.ipynb); the figure count is an evidence inventory, not a count of independent findings.
-
-Report consolidation and the next protocol can progress together. The immediate deliverable is one current research argument and one answerable continuation question, not another unconnected experiment. The remaining strategic choice is how much weight a later phase should give to new-target generalization versus conditional noise transfer; the current priority is the latter because it permits a controlled intervention with the existing representation.
-
-No claim of sample efficiency across dataset sizes, measured deployment efficiency, state-of-the-art performance or algorithmic novelty is made. [PANNs Section V](https://arxiv.org/html/1912.10211) already describes frozen-feature transfer and fine-tuning; this project evaluates concrete systems and their limits under its stated protocols.
+The [primary-source review](noise_distribution_20261107/literature_review.md) records relevant prior augmentation, transfer and robustness studies, reading depth and mismatches with this experiment. It establishes context without importing published scores as this project's evidence.

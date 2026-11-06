@@ -217,5 +217,29 @@
     "path": "reports/noise_transfer_20261106/paired_error_transitions.png",
     "scope": "Frozen PANNs Gaussian-to-recorded-noise transfer",
     "number": 36
+  },
+  {
+    "number": 37,
+    "title": "Full reserved-background SNR degradation curves",
+    "path": "reports/noise_distribution_20261107/snr_accuracy_curves.png",
+    "scope": "Fixed-representation training-noise distribution comparison"
+  },
+  {
+    "number": 38,
+    "title": "Recording-specific recorded-minus-Gaussian differences",
+    "path": "reports/noise_distribution_20261107/environment_snr_effects.png",
+    "scope": "Fixed-representation training-noise distribution comparison"
+  },
+  {
+    "number": 39,
+    "title": "Paired effects conditional on fixed heads and noise panel",
+    "path": "reports/noise_distribution_20261107/paired_distribution_effects.png",
+    "scope": "Fixed-representation training-noise distribution comparison"
+  },
+  {
+    "number": 40,
+    "title": "Clean, Gaussian and recorded accuracy tradeoffs",
+    "path": "reports/noise_distribution_20261107/clean_noise_tradeoffs.png",
+    "scope": "Fixed-representation training-noise distribution comparison"
   }
 ]

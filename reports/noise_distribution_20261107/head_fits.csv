@@ -1,0 +1,2 @@
+model,rows,total_weight,iterations,converged,seconds,feature_dtype,transformed_dtype
+recorded_adapted,3600,1200.0,169,True,26.120547364000004,float32,float32

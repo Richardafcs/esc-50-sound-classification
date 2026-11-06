@@ -6,11 +6,11 @@ The study asks how architecture, targeted noise augmentation and frozen pretrain
 
 The completed noise-transfer study compares matched clean-only and clean/Gaussian-trained linear heads on frozen PANNs features. Across six fixed recorded-background conditions, the adapted-minus-clean difference is **+1.05 pp [-0.54, +2.59]**, conditional 95% source-bootstrap interval; clean change is **+0.75 pp**. [Executed notebook](notebooks/ESC50_Noise_Transfer.ipynb) · [Protocol and findings](reports/noise_transfer_20261106/README.md).
 
-## Research question and continuation
+## Research question and completed continuation
 
-Which model and training choices improve environmental sound classification, and how far do their benefits transfer across acoustic conditions? The completed work compares architectures, a frozen pretrained alternative and controlled noise adaptation. Its strongest new result is a large matched-Gaussian gain with an uncertain average gain on recorded backgrounds.
+The study compares model choices and asks how noise-training benefits transfer across acoustic conditions. The latest fixed-encoder experiment fits one recorded-background LR head and evaluates it with the existing clean and Gaussian heads on 36 predefined conditions from six reserved recordings. Recorded-minus-Gaussian accuracy changes by **+1.36 pp [+0.41, +2.32]**, conditional 95% target-source interval; clean difference is **-0.25 pp**. Recorded exposure improves accuracy over Gaussian exposure on the fixed recorded panel, while Gaussian-10-dB accuracy falls by **10.30 pp** relative to the Gaussian head.
 
-The next question is the effect of **training-noise distribution**: Gaussian versus recorded-background exposure, with the PANNs encoder and linear-head objective fixed, evaluated on new background sources across a predefined SNR grid. The recorded-background-trained head has not yet been fitted. This does not isolate noise diversity or establish new-target generalization. [Research scope, evidence and next phase](reports/research_scope_and_next_steps.md).
+[Executed noise-distribution notebook](notebooks/ESC50_Noise_Distribution.ipynb) · [Open in Colab](https://colab.research.google.com/github/Richardafcs/esc-50-sound-classification/blob/main/notebooks/ESC50_Noise_Distribution.ipynb) · [Protocol and results](reports/noise_distribution_20261107/README.md) · [Source review](reports/noise_distribution_20261107/literature_review.md) · [Research scope](reports/research_scope_and_next_steps.md)
 
 ## Results notebooks
 
@@ -18,7 +18,7 @@ Supporting studies: [Transfer robustness and matched MLP heads](notebooks/ESC50_
 
 [Open the complete notebook](notebooks/ESC50_Results.ipynb) · [Run in Google Colab](https://colab.research.google.com/github/Richardafcs/esc-50-sound-classification/blob/main/notebooks/ESC50_Results.ipynb)
 
-The notebook displays model metrics, paired comparisons, all 36 scientific figures, noise robustness, temporal interventions, feature experiments, per-class errors, the full experiment ledger and the literature review. It can optionally repeat the original frozen PANNs extraction and fit. The separate follow-up notebook executes the matched robustness and fixed-budget head experiment. Previously completed CNN/CRNN experiments are identified separately.
+The notebook displays model metrics, paired comparisons, all 40 scientific figures, noise robustness, temporal interventions, feature experiments, per-class errors, the full experiment ledger and the literature review. It can optionally repeat the original frozen PANNs extraction and fit. The separate follow-up notebook executes the matched robustness and fixed-budget head experiment. Previously completed CNN/CRNN experiments are identified separately.
 
 ## Project layout
 
@@ -33,7 +33,7 @@ reports/          Compact numerical evidence and original figures
 docs/             Methods and model descriptions
 ```
 
-All five notebooks retain executed Colab outputs. Model inference used Tesla T4; the latest comprehensive report was executed on Colab from saved evidence. The earlier PANNs extraction/refit reproduced 363/398 correct. The new fixed study completed matched clean/10 dB inference and six 100-epoch head fits in 88.73 seconds, excluding setup/downloads.
+All six notebooks retain executed Colab outputs. The latest scientific comparison used Tesla T4 and completed one converged LR fit plus the full fixed evaluation in 243.48 seconds, excluding setup/downloads. The complete notebook was also executed on Colab from saved evidence. Earlier extraction/refitting and the six fixed-budget head fits are separate stages.
 
 ## Main findings
 

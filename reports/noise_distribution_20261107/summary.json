@@ -1,0 +1,173 @@
+{
+  "status": "completed",
+  "protocol": {
+    "study": "Training-noise distribution transfer with frozen PANNs",
+    "protocol_frozen_before_new_fit_and_predictions": true,
+    "frozen_at_utc": "2026-11-06T21:56:51.394776+00:00",
+    "question": "Does recorded-background rather than Gaussian training exposure improve designated-foreground recovery on reserved recorded backgrounds?",
+    "target_population": {
+      "training_folds": [
+        1,
+        2,
+        3
+      ],
+      "training_clips": 1200,
+      "development_fold": 4,
+      "development_clips": 398,
+      "development_sources": 295,
+      "source_key": "src_file",
+      "all_official_target_folds_historically_exposed": true
+    },
+    "representation": {
+      "model": "Official PANNs Cnn14_16k",
+      "sample_rate": 16000,
+      "embedding_dimensions": 2048,
+      "frozen": true,
+      "scaler": "Saved clean-training StandardScaler; float32 transform retained"
+    },
+    "training": {
+      "backgrounds": [
+        "DKITCHEN",
+        "NFIELD",
+        "OMEETING",
+        "PRESTO",
+        "SPSQUARE",
+        "TBUS"
+      ],
+      "seed": 20261107,
+      "crop_seed": 20261108,
+      "channel": "ch01",
+      "exposure_csv": "reports/noise_transfer_20261106/training_exposure.csv",
+      "snr_rule": "Exact saved per-target, per-variant Gaussian SNR values; originally uniform 10\u201330 dB",
+      "assignment_rule": "Permute 1200 target indices with default_rng(seed). At shuffled position j, A=j mod6, B=(j+1+(floor(j/6) mod5)) mod6. Separate crop_seed samples uniform valid sample offsets. Two distinct recordings per target; 200 uses per background per variant; 40 uses per ordered distinct background pair.",
+      "clean_weight": 0.5,
+      "variant_weights": [
+        0.25,
+        0.25
+      ],
+      "variants_per_target": 2,
+      "total_sample_weight": 1200
+    },
+    "classifier": {
+      "family": "L2 multinomial logistic regression",
+      "C": 1,
+      "solver": "lbfgs",
+      "tol": 1e-06,
+      "max_iter": 3000,
+      "scikit_learn": "1.6.1",
+      "new_head_fits": 1,
+      "reused_heads": [
+        "clean_refit",
+        "gaussian_adapted"
+      ],
+      "penalty_coefficient": "1/(C*sum(sample_weight)); intercept unpenalized"
+    },
+    "evaluation": {
+      "backgrounds": [
+        "DLIVING",
+        "NPARK",
+        "OOFFICE",
+        "PCAFETER",
+        "STRAFFIC",
+        "TMETRO"
+      ],
+      "start_seconds": [
+        60,
+        210
+      ],
+      "segment_seconds": 5,
+      "channel": "ch01",
+      "snr_db_grid": [
+        0,
+        10,
+        20
+      ],
+      "excluded_prior_recordings": [
+        "NRIVER",
+        "OHALLWAY",
+        "TCAR"
+      ],
+      "recorded_conditions": 36,
+      "target_noise_pairs": 14328,
+      "additional_controls": [
+        "clean",
+        "historical_shared_gaussian10"
+      ],
+      "selection": "Metadata-based one recording per DEMAND category in each role; all sources/offsets/SNRs fixed before new predictions; no outcome-based screening",
+      "mixture_rule": "Mean-center background; full-window foreground power/added-noise power SNR; float32 additive waveform; no clipping or peak normalization",
+      "label_semantics": "Recover designated original foreground label; backgrounds may contain competing classes; no listening-validated semantic neutrality claim"
+    },
+    "analysis": {
+      "primary": "recorded_adapted minus gaussian_adapted mean accuracy over all 36 recorded conditions and 398 clips",
+      "weighting": "Equal clips and equal environments/windows/SNRs; complete balanced panel required",
+      "secondary": [
+        "recorded minus clean",
+        "clean accuracy and clean differences",
+        "Gaussian 10 dB control",
+        "per-SNR and per-environment accuracy/macro-F1/NLL",
+        "per-head clean-to-noisy loss",
+        "leave-one-environment-out descriptive means"
+      ],
+      "bootstrap_resamples": 4000,
+      "bootstrap_seed": 20261107,
+      "bootstrap_unit": "295 foreground src_file groups; all clips and fixed conditions travel together",
+      "interval_scope": "Conditional on fixed heads, augmentation realization, background recordings, segments and grid; no environment-population or training-seed uncertainty",
+      "no_practical_or_noninferiority_margin_specified": true,
+      "secondary_intervals": "Descriptive, unadjusted"
+    },
+    "budget": {
+      "encoder_fits": 0,
+      "new_head_fits": 1,
+      "compute_timeout_seconds": 1800,
+      "hardware": "Colab T4",
+      "stop_rule": "Complete one fixed comparison regardless of outcome. Stop for unavailable/invalid required source or failed convergence; no score-driven additional heads, sources, SNRs or fine-tuning."
+    },
+    "sources": {
+      "backgrounds": "https://zenodo.org/records/1227121",
+      "background_license": "CC BY-SA 3.0",
+      "encoder": "https://github.com/qiuqiangkong/audioset_tagging_cnn",
+      "targets": "https://github.com/karolpiczak/ESC-50",
+      "objective": "https://github.com/scikit-learn/scikit-learn/blob/1.6.1/sklearn/linear_model/_logistic.py"
+    }
+  },
+  "new_head_fits": 1,
+  "encoder_fits": 0,
+  "primary": {
+    "group": "recorded_grid_primary",
+    "intervention": "recorded_adapted",
+    "comparator": "gaussian_adapted",
+    "delta_pp": 1.3609715242881073,
+    "low_pp": 0.4117586540789154,
+    "high_pp": 2.3219884488448845,
+    "conditions": 36,
+    "clips": 398,
+    "target_sources": 295,
+    "interval_scope": "Target-source resampling conditional on fixed heads, segments and SNR grid"
+  },
+  "fit": {
+    "model": "recorded_adapted",
+    "rows": 3600,
+    "total_weight": 1200.0,
+    "iterations": 169,
+    "converged": true,
+    "seconds": 26.120547364000004,
+    "feature_dtype": "float32",
+    "transformed_dtype": "float32"
+  },
+  "train_clips": 1200,
+  "development_clips": 398,
+  "development_sources": 295,
+  "training_background_recordings": 6,
+  "evaluation_background_recordings": 6,
+  "recorded_conditions": 36,
+  "target_noise_pairs": 14328,
+  "test_waveforms_read": 0,
+  "compute_seconds": 243.48126880500013,
+  "environment": {
+    "python": "3.13.16",
+    "torch": "2.14.1+cu130",
+    "numpy": "2.4.6",
+    "scikit_learn": "1.6.1",
+    "gpu": "Tesla T4"
+  }
+}

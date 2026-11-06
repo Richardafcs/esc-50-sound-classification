@@ -1,0 +1,41 @@
+Extracted recorded training variant 1 of 2.
+Extracted recorded training variant 2 of 2.
+Evaluated clean
+Evaluated historical_shared_gaussian10
+Evaluated DLIVING_60s_snr0
+Evaluated DLIVING_60s_snr10
+Evaluated DLIVING_60s_snr20
+Evaluated DLIVING_210s_snr0
+Evaluated DLIVING_210s_snr10
+Evaluated DLIVING_210s_snr20
+Evaluated NPARK_60s_snr0
+Evaluated NPARK_60s_snr10
+Evaluated NPARK_60s_snr20
+Evaluated NPARK_210s_snr0
+Evaluated NPARK_210s_snr10
+Evaluated NPARK_210s_snr20
+Evaluated OOFFICE_60s_snr0
+Evaluated OOFFICE_60s_snr10
+Evaluated OOFFICE_60s_snr20
+Evaluated OOFFICE_210s_snr0
+Evaluated OOFFICE_210s_snr10
+Evaluated OOFFICE_210s_snr20
+Evaluated PCAFETER_60s_snr0
+Evaluated PCAFETER_60s_snr10
+Evaluated PCAFETER_60s_snr20
+Evaluated PCAFETER_210s_snr0
+Evaluated PCAFETER_210s_snr10
+Evaluated PCAFETER_210s_snr20
+Evaluated STRAFFIC_60s_snr0
+Evaluated STRAFFIC_60s_snr10
+Evaluated STRAFFIC_60s_snr20
+Evaluated STRAFFIC_210s_snr0
+Evaluated STRAFFIC_210s_snr10
+Evaluated STRAFFIC_210s_snr20
+Evaluated TMETRO_60s_snr0
+Evaluated TMETRO_60s_snr10
+Evaluated TMETRO_60s_snr20
+Evaluated TMETRO_210s_snr0
+Evaluated TMETRO_210s_snr10
+Evaluated TMETRO_210s_snr20
+DISTRIBUTION_COMPARISON_COMPLETE {"group": "recorded_grid_primary", "intervention": "recorded_adapted", "comparator": "gaussian_adapted", "delta_pp": 1.3609715242881073, "low_pp": 0.4117586540789154, "high_pp": 2.3219884488448845, "conditions": 36, "clips": 398, "target_sources": 295, "interval_scope": "Target-source resampling conditional on fixed heads, segments and SNR grid"}
