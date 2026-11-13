@@ -2,7 +2,6 @@
 
 Optimization and feature definitions preserve the original experiment. Dataset
 validation, source splits, record helpers and metrics use their owning modules.
-Independent metric-recalculation oracles belong in research analysis tools.
 """
 from __future__ import annotations
 from datetime import datetime, timezone
@@ -113,6 +112,7 @@ def score_logistic(x, y, weights, bias):
     return (result, predicted)
 
 def baseline(args):
+    cache, _, sidecar = validated_cache(args.cache)
     out = new_output(args.output)
     (out / 'baseline_source.py').write_bytes(Path(__file__).read_bytes())
     train_folds = tuple((int(f) for f in args.train_folds.split(',')))
@@ -147,6 +147,7 @@ def baseline(args):
 def evaluate_test(args):
     if not args.allow_test:
         raise ValueError('Test predictions require an explicit --allow-test after recipe freeze')
+    cache, _, sidecar = validated_cache(args.cache)
     artifact = Path(args.artifact)
     manifest = json.loads((artifact / 'model.json').read_text())
     if manifest.get('baseline_version') != BASELINE_VERSION:

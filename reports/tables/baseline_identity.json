@@ -1,0 +1,17 @@
+{
+  "reported_baseline": {
+    "name": "cnn_freq",
+    "parameters": 49058,
+    "train_clips": 1200,
+    "validation_clips": 398,
+    "frontend": "16kHz, 64 Mel bands, FFT512, hop256, natural-log power",
+    "accuracy_mean_percent": 72.61306532663316,
+    "class_count": 50,
+    "comparison_role": "Primary scratch-trained CNN reference for the architecture and augmentation studies"
+  },
+  "other_reference_roles": {
+    "classical": "Log-Mel summary logistic regression and cepstral-statistics SVM provide earlier feature-based references.",
+    "transfer": "Clean-trained frozen PANNs plus logistic regression is the pretrained system reference.",
+    "noise_distribution": "The Gaussian-adapted PANNs readout is the comparator for the recorded-training-distribution experiment."
+  }
+}

@@ -1,8 +1,7 @@
 """Focused sample-rate / audio-feature ablations for ESC-50.
 
-Lightweight study path: validate official metadata, sample alignment, shapes,
-train-only normalization and split isolation. No redundant SHA-256 provenance
-chains. Historical checkpoints and legacy loaders are intentionally unchanged.
+Uses official metadata, aligned samples, train-only normalization and source
+splits. This separate pooled-CNN track retains its own model and feature settings.
 
 All selection uses the development validation fold; no test examples are
 consumed in feature-ablation training or summaries.
@@ -163,7 +162,7 @@ def prepare_case(raw_root: str | Path, cache_dir: str | Path, spec: FeatureSpec,
     finally:
         if temp is not None:
             temp.unlink(missing_ok=True)
-    write_json(sidecar, dict(schema='feature_ablation_v1', spec=asdict(spec), clips=len(rows), shape=list(data.shape), source='official ESC-50 WAV; no raw-file or cache SHA chain', metadata='meta/esc50.csv', has_test_metrics=False))
+    write_json(sidecar, dict(schema='feature_ablation_v1', spec=asdict(spec), clips=len(rows), shape=list(data.shape), source='official ESC-50 WAV', metadata='meta/esc50.csv', has_test_metrics=False))
     return path
 
 def load_case(raw_root: str | Path, cache_dir: str | Path, spec: FeatureSpec, *, require_complete=True):

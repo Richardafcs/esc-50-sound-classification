@@ -68,7 +68,7 @@ def main():
     parser.add_argument("--metadata-root", type=Path,
                         default=ROOT / "data/ESC-50")
     parser.add_argument("--output", type=Path,
-                        default=ROOT / "reports/temporal_20261105")
+                        default=ROOT / "reports/results/temporal_order")
     args = parser.parse_args()
     if args.execute and args.audio_root is None:
         parser.error("--audio-root is required with --execute")

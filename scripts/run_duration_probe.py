@@ -116,7 +116,7 @@ def main():
     out.mkdir(parents=True,exist_ok=True);started=time.perf_counter()
     def limit(*_):raise TimeoutError('30-minute inference budget exhausted')
     signal.signal(signal.SIGALRM,limit);signal.alarm(1800);torch.set_num_threads(2)
-    data=ROOT/'reports/duration_probe_20261105'
+    data=ROOT/'reports/results/input_duration'
     rows=list(csv.DictReader((data/'short_recordings.csv').open()))
     controls=list(csv.DictReader((data/'full_window_controls.csv').open()))
     waves=[decode(args.assets/'audio'/r['filename']) for r in rows]

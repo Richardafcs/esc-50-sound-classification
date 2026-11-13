@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "esc50-sound"
 version = "0.1.0"
-description = "Reproducible ESC-50 environmental sound classification research"
+description = "COMP9444 environmental sound classification course project"
 requires-python = ">=3.11"
 dependencies = [
   "torch>=2.5,<3",

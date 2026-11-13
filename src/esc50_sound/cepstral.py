@@ -40,6 +40,7 @@ def _scores(y, prediction):
 def fit_cepstral_svm(args):
     from sklearn.svm import LinearSVC
     from sklearn.exceptions import ConvergenceWarning
+    cache, _, sidecar = validated_cache(args.cache)
     indices = source_split(cache, tuple((int(v) for v in args.train_folds.split(','))), args.val_fold, args.test_fold, strict=not args.official_folds)
     train_ids, val_ids = (indices['train'], indices['validation'])
     x_train_raw = cepstral_statistics(cache['x'][train_ids])
@@ -79,6 +80,7 @@ def fit_cepstral_svm(args):
 def evaluate_cepstral_svm(args):
     if not args.allow_test:
         raise ValueError('Test is sealed; explicit --allow-test is required')
+    cache, _, sidecar = validated_cache(args.cache)
     artifact = Path(args.artifact)
     manifest = json.loads((artifact / 'model.json').read_text())
     if manifest.get('schema_version') != CEPS_VERSION:

@@ -57,7 +57,7 @@ def main():
     feature_cache.mkdir(parents=True,exist_ok=True)
     signal.signal(signal.SIGALRM,lambda *_: (_ for _ in ()).throw(TimeoutError('Fixed 30-minute compute budget reached')))
     signal.alarm(1800);started=time.perf_counter();torch.set_num_threads(2)
-    protocol=json.loads((ROOT/'reports/noise_transfer_20261106/protocol.json').read_text())
+    protocol=json.loads((ROOT/'reports/results/gaussian_adaptation/protocol.json').read_text())
     (out/'protocol.json').write_text(json.dumps(protocol,indent=2)+'\n')
     metadata=read_metadata(ROOT/'data/ESC-50');splits=split_rows(metadata)
     train=sorted([metadata[i] for i in splits['train']],key=lambda r:r['filename'])
@@ -73,7 +73,7 @@ def main():
     val_waves=torch.stack([read_audio(args.assets/'ESC-50/audio'/r['filename']) for r in val])
     print('Loaded 1200 training and 398 development targets; no test WAV reads.',flush=True)
     device=torch.device(args.device)
-    model=load_panns(ROOT/'official_panns',args.assets/'Cnn14_16k_mAP=0.438.pth',device)
+    model=load_panns(ROOT/'results/assets/official_panns',args.assets/'Cnn14_16k_mAP=0.438.pth',device)
     rng=np.random.default_rng(protocol['training']['seed']);augment=[];exposure=[];snr_values=[]
     for k in range(2):
         snrs=rng.uniform(10,30,len(train)).astype(np.float32)

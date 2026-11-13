@@ -1,7 +1,5 @@
-# Experiment outputs and regression fixtures
+# Local experiment outputs
 
-New experiments write to `results/runs/`, which is local and ignored by Git. Full matrix checkpoints, optimizer states, process logs and bulk historical studies also stay local.
+This directory stores locally generated feature caches, run checkpoints, optimizer states and logs. Its contents are excluded from Git, apart from this guide.
 
-Only the 43 historical numerical files listed in [the fixture manifest](../tests/historical_fixtures.json) are shared here, together with two archived reference source files elsewhere. They are small fixtures needed for the complete regression suite, not a complete training-data publication.
-
-Team-facing result summaries are in [curated report evidence](../reports/evidence/matrix_20261028/). Published reports and figures are indexed in [reports](../reports/README.md). Do not alter original fixture metrics to make a model appear better; generate a new experiment directory instead.
+The result tables, selected predictions and figures used in the report are in [reports/results/](../reports/results/README.md). Selected inference models are in [models/](../models/README.md). New runs should use a separate output directory so the published experiment files remain identifiable.

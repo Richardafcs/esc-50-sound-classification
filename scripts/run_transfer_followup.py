@@ -140,12 +140,12 @@ def main():
     write_csv(out/'paired_effects.csv',effects);write_csv(out/'accuracy_losses.csv',losses)
     # Runtime differences are described, not tuned away to recover earlier scores.
     reference={}
-    with (ROOT/'reports/panns_20261105/reference_predictions.csv').open() as stream:
+    with (ROOT/'reports/results/panns/reference_predictions.csv').open() as stream:
         ref={r['filename']:r for r in csv.DictReader(stream)}
     for seed in (101,202,303):
         old=np.array([int(ref[name][f'C_noise_s{seed}']) for name in names])
         reference[f'noise_cnn_s{seed}']=int((old!=predictions['noise_cnn',seed,'clean']).sum())
-    with (ROOT/'reports/colab_notebook_20261105/validation_predictions.csv').open() as stream:
+    with (ROOT/'reports/results/panns_reproduction/validation_predictions.csv').open() as stream:
         ref={r['filename']:int(r['prediction']) for r in csv.DictReader(stream)}
     reference['panns_lr']=int((np.array([ref[name] for name in names])!=predictions['panns_lr',0,'clean']).sum())
     per_class=[]

@@ -76,7 +76,7 @@ def main():
     signal.alarm(1800)
     torch.set_num_threads(2)
     device = torch.device(args.device)
-    evidence = ROOT / "reports/external_fsd_20261105"
+    evidence = ROOT / "reports/results/external_recordings"
     rows = list(csv.DictReader((evidence / "manifest.csv").open()))
     y = np.array([int(row["target"]) for row in rows])
     classes = sorted(set(y.tolist()))

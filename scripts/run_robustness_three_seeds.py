@@ -16,7 +16,7 @@ def main(argv=None):
     parser.add_argument('--run-root', type=Path, default=ROOT / 'results/matrix_20261028/execution/runs')
     parser.add_argument('--metadata-root', type=Path, default=ROOT / 'data/ESC-50')
     parser.add_argument('--audio-root', type=Path, default=ROOT / 'data/ESC-50/audio')
-    parser.add_argument('--output', type=Path, default=ROOT / 'reports/followup_20261104/robustness')
+    parser.add_argument('--output', type=Path, default=ROOT / 'reports/results/error_analysis/robustness')
     parser.add_argument('--batch-size', type=int, default=32)
     parser.add_argument('--threads', type=int, default=2)
     parser.add_argument('--device', choices=['cpu', 'cuda'], default='cpu')

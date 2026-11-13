@@ -122,7 +122,7 @@ def main():
     scaler.var_ = scaler.scale_ ** 2
     scaler.n_features_in_ = len(scaler.mean_)
     scaler.n_samples_seen_ = 1200
-    with project_path(training.get('exposure_csv', 'reports/noise_transfer_20261106/training_exposure.csv')).open(newline='') as stream:
+    with project_path(training.get('exposure_csv', 'reports/results/gaussian_adaptation/training_exposure.csv')).open(newline='') as stream:
         exposure_rows = list(csv.DictReader(stream))
     exposure_lookup = {(int(row['variant']), row['filename']): row for row in exposure_rows}
     if len(exposure_lookup) != 2400 or len(exposure_rows) != 2400:
@@ -132,7 +132,7 @@ def main():
     if not torch.isfinite(train_waves).all() or not torch.isfinite(val_waves).all():
         raise ValueError('Nonfinite foreground waveform')
     device = torch.device(args.device)
-    model = load_panns(ROOT / 'official_panns', args.assets / 'Cnn14_16k_mAP=0.438.pth', device)
+    model = load_panns(ROOT / 'results/assets/official_panns', args.assets / 'Cnn14_16k_mAP=0.438.pth', device)
     backgrounds = {name: background(args.assets / (name + '_ch01.wav')) for name in train_backgrounds}
     # One label-independent permutation, balanced distinct source pairs.
     count = len(train_backgrounds)
